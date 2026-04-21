@@ -181,10 +181,10 @@ export default function App() {
   return (
     <div className="scrolling-page font-serif">
       {/* Navigation */}
-      <nav className="nav-header no-print">
-        <div className="flex items-center gap-4">
-          <Logo className="w-16 h-12" />
-          <span className="font-bold tracking-widest text-ink text-xl">锦水微澜名师工作室</span>
+    <nav className="nav-header no-print">
+        <div className="flex items-center gap-3 md:gap-4 truncate">
+          <Logo className="w-10 h-8 md:w-16 md:h-12" />
+          <span className="font-bold tracking-widest text-ink text-lg md:text-xl truncate">锦水微澜名师工作室</span>
         </div>
         <div className="hidden md:flex gap-12 text-base uppercase tracking-[0.4em] font-bold text-ink">
           {menuItems.map(item => (
@@ -224,8 +224,8 @@ export default function App() {
         </div>
 
         {/* Large Decorative Character Background */}
-        <div className="absolute top-1/2 left-10 -translate-y-1/2 pointer-events-none opacity-[0.03] select-none">
-          <span className="text-[35rem] font-calligraphy leading-none">语</span>
+        <div className="absolute top-1/2 left-4 md:left-10 -translate-y-1/2 pointer-events-none opacity-[0.03] select-none">
+          <span className="text-[12rem] md:text-[35rem] font-calligraphy leading-none">语</span>
         </div>
 
         <div className="max-w-6xl mx-auto relative z-20 text-center md:text-left">
@@ -233,21 +233,21 @@ export default function App() {
             initial={{ opacity: 0, x: -20 }} 
             animate={{ opacity: 1, x: 0 }} 
             transition={{ duration: 1.2 }}
-            className="flex flex-col gap-10"
+            className="flex flex-col gap-6 md:gap-10"
           >
             <div>
-              <div className="flex items-center gap-3 mb-6 justify-center md:justify-start">
-                <div className="w-10 h-[2px] bg-cinnabar" />
-                <span className="text-cinnabar tracking-[0.4em] text-sm font-bold">语文教育中心 · 锦水微澜</span>
+              <div className="flex items-center gap-3 mb-4 md:mb-6 justify-center md:justify-start">
+                <div className="w-6 md:w-10 h-[2px] bg-cinnabar" />
+                <span className="text-cinnabar tracking-[0.2em] md:tracking-[0.4em] text-xs md:text-sm font-bold">语文教育中心 · 锦水微澜</span>
               </div>
               
-              <h1 className="text-6xl md:text-8xl font-serif text-ink tracking-tight whitespace-nowrap">
-                专注<span className="text-cinnabar font-calligraphy mx-2">语文</span>学习<br />
+              <h1 className="text-3xl sm:text-5xl md:text-8xl font-serif text-ink tracking-tight md:whitespace-nowrap leading-[1.2] md:leading-normal">
+                专注<span className="text-cinnabar font-calligraphy mx-1 md:mx-2">语文</span>学习<br />
                 深耕教研三十载
               </h1>
             </div>
 
-            <p className="text-ink/80 text-xl leading-loose tracking-[0.3em] font-medium border-l-2 border-gold/30 pl-6 max-w-lg italic">
+            <p className="text-ink/80 text-base md:text-xl leading-relaxed md:leading-loose tracking-[0.15em] md:tracking-[0.3em] font-medium border-l-2 border-gold/30 pl-4 md:pl-6 max-w-lg italic mx-auto md:mx-0">
               名著导读 · 汉字听写 · 读书会<br />
               让学习看得见，让文化润心田
             </p>
@@ -271,30 +271,30 @@ export default function App() {
           <div className="relative">
             <div className="vertical-label">ABOUT FOUNDER</div>
             <div className="ornament-line" />
-            <h2 className="text-5xl font-calligraphy mb-12">主理人 · <span className="text-cinnabar">黄国荣</span></h2>
+            <h2 className="text-3xl md:text-5xl font-calligraphy mb-8 md:mb-12">主理人 · <span className="text-cinnabar">黄国荣</span></h2>
             
-            <div className="grid md:grid-cols-12 gap-12 items-start">
-              <div className="md:col-span-4 sticky top-24">
-                <div className="gold-border p-8 bg-white/20">
-                  <div className="w-24 h-24 bg-ink text-paper rounded-full flex items-center justify-center text-4xl font-bold mb-6 mx-auto">黄</div>
-                  <h3 className="text-2xl font-bold text-center mb-2">黄国荣</h3>
-                  <p className="text-lg text-center text-gray-900 leading-relaxed font-bold">中学语文高级教师<br />江西省省优秀课题主持人<br />上高县名师工作室主理人</p>
+            <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+              <div className="md:col-span-4 md:sticky top-24">
+                <div className="gold-border p-6 md:p-8 bg-white/20">
+                  <div className="w-20 h-20 md:w-24 md:h-24 bg-ink text-paper rounded-full flex items-center justify-center text-3xl md:text-4xl font-bold mb-4 md:mb-6 mx-auto">黄</div>
+                  <h3 className="text-xl md:text-2xl font-bold text-center mb-1 md:mb-2 text-ink">黄国荣</h3>
+                  <p className="text-base md:text-lg text-center text-gray-900 leading-relaxed font-bold">中学语文高级教师<br />江西省省优秀课题主持人<br />上高县名师工作室主理人</p>
                   
-                  <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-border-gold/30">
+                  <div className="grid grid-cols-2 gap-4 mt-6 md:mt-8 pt-6 md:pt-8 border-t border-border-gold/30">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-cinnabar">30+</div>
-                      <div className="text-xs text-gray-500 uppercase tracking-tighter">年教龄</div>
+                      <div className="text-xl md:text-2xl font-bold text-cinnabar">30+</div>
+                      <div className="text-[10px] md:text-xs text-gray-500 uppercase tracking-tighter">年教龄</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-cinnabar">3项</div>
-                      <div className="text-xs text-gray-500 uppercase tracking-tighter">结题课题</div>
+                      <div className="text-xl md:text-2xl font-bold text-cinnabar">3项</div>
+                      <div className="text-[10px] md:text-xs text-gray-500 uppercase tracking-tighter">结题课题</div>
                     </div>
                   </div>
                 </div>
               </div>
               
               <div className="md:col-span-8">
-                <div className="prose prose-stone leading-loose text-ink text-xl font-normal space-y-8">
+                <div className="prose prose-stone leading-relaxed md:leading-loose text-ink text-base md:text-xl font-normal space-y-6 md:space-y-8">
                   <p>先后任教于<strong>上高中学、上高县锦阳中学</strong>。深耕语文教育三十余载，从2014年至今，一直担任上高县初中语文名师团队（初中语文名师工作室）负责人，并任上高县教体局兼职教研员。</p>
                   <p>主持三项省级课题获结题，其中<strong>《汉字词语听写训练工具的多场景运用研究》</strong>于2025年12月结题，并被评为<strong>省优秀课题</strong>。致力于教育教研改革创新，在教师培训、校园文化建设、家庭教育指导、学生心理咨询等方面取得多项重要成果。</p>
                   <p>近年来，积极投身教育技术创新，运用抖音平台（黄老师家庭教育）推广汉字听写训练工具，<strong>运用AI编程制作大量教学APP</strong>，助力智慧教育发展。与上高县家庭教育指导中心深度合作，深入多所学校开展家庭教育讲座，为学生及家长提供专业的家庭教育指导和心理咨询服务。组织开展公益读书会活动，引导学生通过做读书笔记养成良好学习习惯，有效提升学习内驱力，为学生的终身学习奠定基础。</p>
@@ -307,10 +307,10 @@ export default function App() {
         {/* Resources Grid */}
         <section id="resources" className="section-container">
           <div className="ornament-line" />
-          <h2 className="text-5xl font-calligraphy mb-4">资源导航 · <span className="text-cinnabar">锦水微澜</span></h2>
-          <p className="text-base text-gray-900 tracking-[0.3em] uppercase mb-12 font-bold">Resource Directory & Content Hub</p>
+          <h2 className="text-3xl md:text-5xl font-calligraphy mb-4">资源导航 · <span className="text-cinnabar">锦水微澜</span></h2>
+          <p className="text-xs md:text-base text-gray-900 tracking-[0.2em] md:tracking-[0.3em] uppercase mb-8 md:mb-12 font-bold">Resource Directory & Content Hub</p>
           
-          <div className="feature-grid">
+          <div className="feature-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <ResourceCard id="resources" icon={<Scroll />} title="教学资源" desc="单元课文、全套试卷、古诗词及作文范文资源。" color="border-prestige-sage" action={() => setView('resource-navigator')} />
             <ResourceCard id="hanzi" icon={<PenTool />} title="汉字听写" desc="《汉字听写》工具书与训练视频，上高县品牌赛事。" color="border-prestige-gold" />
             <ResourceCard id="shici" icon={<Trophy />} title="诗词大会" desc="经典言论解读与古诗文默写，全能竞赛备考手册。" color="border-prestige-slate" />
@@ -323,23 +323,23 @@ export default function App() {
         {/* Recent Highlights */}
         <section id="recent" className="section-container">
           <div className="ornament-line" />
-          <h2 className="text-5xl font-calligraphy mb-12">近期动态 · <span className="text-cinnabar">最新成果</span></h2>
-          <div className="space-y-6">
-            <div className="gold-border p-10 border-l-[4px] border-l-green-800 bg-white/20">
-              <h4 className="text-2xl font-bold text-ink mb-4">🏅 省优秀课题结题</h4>
-              <p className="text-xl text-ink leading-loose font-medium">
+          <h2 className="text-3xl md:text-5xl font-calligraphy mb-8 md:mb-12">近期动态 · <span className="text-cinnabar">最新成果</span></h2>
+          <div className="space-y-4 md:space-y-6">
+            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-green-800 bg-white/20">
+              <h4 className="text-xl md:text-2xl font-bold text-ink mb-2 md:mb-4">🏅 省优秀课题结题</h4>
+              <p className="text-base md:text-xl text-ink leading-relaxed md:leading-loose font-medium">
                 《汉字词语听写训练工具的多场景运用研究》于2025年12月正式结题，被评为省优秀课题。
               </p>
             </div>
-            <div className="gold-border p-10 border-l-[4px] border-l-gold bg-white/20">
-              <h4 className="text-2xl font-bold text-ink mb-4">📱 智能教育应用</h4>
-              <p className="text-xl text-ink leading-loose font-medium">
+            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-gold bg-white/20">
+              <h4 className="text-xl md:text-2xl font-bold text-ink mb-2 md:mb-4">📱 智能教育应用</h4>
+              <p className="text-base md:text-xl text-ink leading-relaxed md:leading-loose font-medium">
                 运用AI编程技术开发大量教学辅助APP，并利用抖音平台（黄老师家庭教育）推广汉字听写训练工具。
               </p>
             </div>
-            <div className="gold-border p-10 border-l-[4px] border-l-blue-800 bg-white/20">
-              <h4 className="text-2xl font-bold text-ink mb-4">🤝 家庭教育与心理辅导</h4>
-              <p className="text-xl text-ink leading-loose font-medium">
+            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-blue-800 bg-white/20">
+              <h4 className="text-xl md:text-2xl font-bold text-ink mb-2 md:mb-4">🤝 家庭教育与心理辅导</h4>
+              <p className="text-base md:text-xl text-ink leading-relaxed md:leading-loose font-medium">
                 与县家庭教育指导中心深度合作，开展专题讲座及心理咨询服务，助力学生健康成长。
               </p>
             </div>
@@ -348,10 +348,10 @@ export default function App() {
 
       </div>
 
-      <footer className="bg-paper-dark/50 py-20 text-center border-t border-border-gold/30 no-print">
-        <Logo className="w-24 h-20 mx-auto mb-8" />
-        <p className="text-lg tracking-[0.5em] text-ink mb-2 font-bold">锦水微澜名师工作室 · 黄国荣 编制</p>
-        <p className="text-sm uppercase text-ink font-bold tracking-[0.8em]">Jiangxi Shanggao</p>
+      <footer className="bg-paper-dark/50 py-12 md:py-20 text-center border-t border-border-gold/30 no-print">
+        <Logo className="w-16 h-14 md:w-24 md:h-20 mx-auto mb-6 md:mb-8" />
+        <p className="text-base md:text-lg tracking-[0.2em] md:tracking-[0.5em] text-ink mb-2 font-bold px-4">锦水微澜名师工作室 · 黄国荣 编制</p>
+        <p className="text-xs md:text-sm uppercase text-ink font-bold tracking-[0.4em] md:tracking-[0.8em]">Jiangxi Shanggao</p>
       </footer>
     </div>
   );
@@ -388,23 +388,23 @@ function ResourceNavigator() {
 
     return (
       <div key={id} id={id} className="gold-border bg-white overflow-hidden flex flex-col group transition-all hover:shadow-2xl animate-in fade-in zoom-in duration-500">
-        <div className="px-8 py-5 border-b border-border-gold/20 flex items-center justify-between bg-paper-dark/10">
-          <span className="text-2xl font-bold text-ink tracking-[0.1em]">{title}</span>
+        <div className="px-6 md:px-8 py-4 md:py-5 border-b border-border-gold/20 flex items-center justify-between bg-paper-dark/10">
+          <span className="text-xl md:text-2xl font-bold text-ink tracking-[0.1em]">{title}</span>
         </div>
-        <div className="divide-y divide-border-gold/5 py-4">
+        <div className="divide-y divide-border-gold/5 py-3 md:py-4">
           {filteredItems.map((item, idx) => (
             <a 
               key={idx} 
               href={item.file} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center justify-between px-8 py-4 hover:bg-gold/5 transition-colors group/item"
+              className="flex items-center justify-between px-6 md:px-8 py-3 md:py-4 hover:bg-gold/5 transition-colors group/item"
             >
-              <span className="text-xl font-medium text-ink/80 group-hover/item:text-cinnabar transition-colors truncate">
+              <span className="text-lg md:text-xl font-medium text-ink/80 group-hover/item:text-cinnabar transition-colors truncate">
                 {item.title || item.displayName}
               </span>
-              <span className="text-sm font-bold text-gold/60 group-hover/item:text-cinnabar transition-colors flex items-center shrink-0 tracking-[0.2em] ml-6">
-                打开 <ChevronRight className="w-5 h-5 ml-1" />
+              <span className="text-xs md:text-sm font-bold text-gold/60 group-hover/item:text-cinnabar transition-colors flex items-center shrink-0 tracking-[0.1em] md:tracking-[0.2em] ml-4 md:ml-6">
+                打开 <ChevronRight className="w-4 h-4 md:w-5 md:h-5 ml-1" />
               </span>
             </a>
           ))}
@@ -441,7 +441,7 @@ function ResourceNavigator() {
   const NavButton = ({ item }: NavButtonProps) => (
     <button 
       onClick={() => { setActiveTab(item.id); setFilter(""); }}
-      className={`px-6 md:px-8 py-3.5 rounded-full text-base font-bold tracking-[0.2em] transition-all border ${activeTab === item.id ? 'bg-ink border-ink text-white shadow-xl scale-105' : 'bg-white border-border-gold/30 text-ink hover:border-cinnabar hover:text-cinnabar'}`}
+      className={`px-4 md:px-8 py-2.5 md:py-3.5 rounded-full text-sm md:text-base font-bold tracking-[0.1em] md:tracking-[0.2em] transition-all border ${activeTab === item.id ? 'bg-ink border-ink text-white shadow-xl scale-105' : 'bg-white border-border-gold/30 text-ink hover:border-cinnabar hover:text-cinnabar'}`}
     >
       {item.label}
     </button>
@@ -450,21 +450,21 @@ function ResourceNavigator() {
   return (
     <div className="space-y-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
       {/* Navigator Top Section */}
-      <div className="bg-ink p-24 relative overflow-hidden text-center rounded-xl shadow-2xl">
-        <Logo className="w-28 h-24 mx-auto mb-10 bg-white/5 p-4 rounded-lg" />
-        <h1 className="text-6xl md:text-8xl font-bold tracking-[0.35em] text-paper mb-8">教学资源导航</h1>
-        <p className="text-paper/40 text-xl tracking-[0.8em] mb-16 font-light">锦水微澜教育资源库 / 专业教研同步平台</p>
+      <div className="bg-ink p-10 md:p-24 relative overflow-hidden text-center rounded-xl shadow-2xl">
+        <Logo className="w-16 h-14 md:w-28 md:h-24 mx-auto mb-6 md:mb-10 bg-white/5 p-2 md:p-4 rounded-lg" />
+        <h1 className="text-3xl md:text-8xl font-bold tracking-[0.1em] md:tracking-[0.35em] text-paper mb-4 md:mb-8">教学资源导航</h1>
+        <p className="text-paper/40 text-sm md:text-xl tracking-[0.2em] md:tracking-[0.8em] mb-8 md:mb-16 font-light italic">教研同步 / 优质资源共享</p>
         
         {/* Search Bar */}
         <div className="max-w-5xl mx-auto">
           <div className="relative">
-            <Search className="absolute left-8 top-1/2 -translate-y-1/2 w-8 h-8 text-gold/30" />
+            <Search className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 text-gold/30" />
             <input 
               type="text" 
-              placeholder="搜索教学资源、课文、知识点..." 
+              placeholder="搜索教学资源..." 
               value={filter}
               onChange={(e) => { setFilter(e.target.value); if(e.target.value) setActiveTab('all'); }}
-              className="w-full bg-white/5 border border-white/10 rounded-full py-7 pl-20 pr-10 text-paper text-2xl outline-none focus:border-gold/50 focus:bg-white/10 transition-all placeholder:text-paper/20 font-light"
+              className="w-full bg-white/5 border border-white/10 rounded-full py-4 md:py-7 pl-14 md:pl-20 pr-6 md:pr-10 text-paper text-lg md:text-2xl outline-none focus:border-gold/50 focus:bg-white/10 transition-all placeholder:text-paper/20 font-light"
             />
           </div>
         </div>
@@ -472,12 +472,12 @@ function ResourceNavigator() {
 
       {/* Grade Selection Row */}
       <div className="max-w-5xl mx-auto px-4">
-        <div className="flex flex-wrap items-center justify-center gap-4 bg-paper-dark/20 p-2 rounded-2xl border border-border-gold/10 shadow-inner">
+        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 bg-paper-dark/20 p-2 rounded-2xl border border-border-gold/10 shadow-inner">
           {grades.map(g => (
             <button
               key={g.id}
               onClick={() => setSelectedGrade(g.id)}
-              className={`flex-1 min-w-[120px] px-6 py-4 rounded-xl text-lg font-bold tracking-[0.4em] transition-all ${
+              className={`flex-1 min-w-[100px] md:min-w-[120px] px-4 md:px-6 py-3 md:py-4 rounded-xl text-base md:text-lg font-bold tracking-[0.2em] md:tracking-[0.4em] transition-all ${
                 selectedGrade === g.id 
                   ? 'bg-cinnabar text-white shadow-lg scale-105' 
                   : 'text-ink/40 hover:text-cinnabar hover:bg-white/50'
@@ -490,28 +490,29 @@ function ResourceNavigator() {
       </div>
 
       {/* Structured Navigation */}
-      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-center gap-16 pb-10">
+      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 pb-10 px-4">
         {/* 'All' Button as a balanced vertical seal */}
         <div className="flex shrink-0 px-4">
           <button 
             onClick={() => { setActiveTab('all'); setFilter(""); }}
-            className={`flex flex-col items-center justify-center gap-3 group transition-all ${activeTab === 'all' ? 'text-cinnabar' : 'text-gold hover:text-cinnabar'}`}
+            className={`flex flex-row md:flex-col items-center justify-center gap-3 group transition-all ${activeTab === 'all' ? 'text-cinnabar' : 'text-gold hover:text-cinnabar'}`}
           >
-            <div className={`w-14 h-14 rounded-full border-2 flex items-center justify-center transition-all ${activeTab === 'all' ? 'border-cinnabar bg-cinnabar text-white shadow-xl' : 'border-gold/30'}`}>
-              <Layout className="w-6 h-6" />
+            <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full border-2 flex items-center justify-center transition-all ${activeTab === 'all' ? 'border-cinnabar bg-cinnabar text-white shadow-xl' : 'border-gold/30'}`}>
+              <Layout className="w-5 h-5 md:w-6 md:h-6" />
             </div>
-            <span className="writing-vertical text-lg font-bold tracking-[0.6em] transition-colors">全部资源</span>
+            <span className="md:writing-vertical text-base md:text-lg font-bold tracking-[0.2em] md:tracking-[0.6em] transition-colors whitespace-nowrap">全部资源</span>
           </button>
         </div>
 
         <div className="w-px h-32 bg-border-gold/20 hidden md:block" />
+        <div className="w-full h-px bg-border-gold/20 md:hidden" />
 
         {/* 6+6 Balanced Groups */}
-        <div className="space-y-8 flex-1 max-w-5xl">
-          <div className="flex flex-wrap gap-4 justify-center md:justify-center">
+        <div className="space-y-6 md:space-y-8 flex-1 max-w-5xl w-full">
+          <div className="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-center">
             {unitItems.map(item => <NavButton key={item.id} item={item} />)}
           </div>
-          <div className="flex flex-wrap gap-4 justify-center md:justify-center">
+          <div className="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-center">
             {specialItems.map(item => <NavButton key={item.id} item={item} />)}
           </div>
         </div>
@@ -614,48 +615,48 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
     return (
       <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <PrintButton />
-        <div className="bg-green-900 overflow-hidden relative rounded-xl p-12 text-center text-white shadow-2xl">
-          <div className="absolute top-4 right-8 text-8xl font-serif opacity-10">钢</div>
-          <div className="w-20 h-28 bg-white/20 border border-white/30 rounded flex items-center justify-center text-4xl mb-6 mx-auto shadow-inner shadow-green-400/20">📗</div>
-          <h1 className="text-4xl font-bold tracking-widest mb-4">《钢铁是怎样炼成的》</h1>
-          <p className="text-white/60 text-sm tracking-widest">奥斯特洛夫斯基 著 · 八年级下册必读名著</p>
-          <div className="flex flex-wrap justify-center gap-2 mt-8">
+        <div className="bg-green-900 overflow-hidden relative rounded-xl p-8 md:p-12 text-center text-white shadow-2xl">
+          <div className="absolute top-4 right-8 text-6xl md:text-8xl font-serif opacity-10">钢</div>
+          <div className="w-16 h-24 md:w-20 md:h-28 bg-white/20 border border-white/30 rounded flex items-center justify-center text-3xl md:text-4xl mb-4 md:mb-6 mx-auto shadow-inner shadow-green-400/20">📗</div>
+          <h1 className="text-2xl md:text-5xl font-bold tracking-widest mb-4">《钢铁是怎样炼成的》</h1>
+          <p className="text-white/60 text-xs md:text-sm tracking-widest">奥斯特洛夫斯基 著 · 八年级下册必读名著</p>
+          <div className="flex flex-wrap justify-center gap-2 mt-6 md:mt-8">
             {['填空题 50空', '选择题 50题', '简答题 25题', '分析题 5题', '深度解读', '答案详解', '一键全印'].map(tag => (
-              <span key={tag} className="text-xs px-4 py-1.5 bg-white/10 rounded-full border border-white/10">{tag}</span>
+              <span key={tag} className="text-[10px] md:text-xs px-3 md:px-4 py-1 md:py-1.5 bg-white/10 rounded-full border border-white/10">{tag}</span>
             ))}
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <button onClick={() => onSubViewChange('choice')} className="group gold-border p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
-            <div className="w-12 h-1 bg-cinnabar mb-4" />
-            <h3 className="text-2xl font-bold mb-2 group-hover:text-cinnabar">选择题专练</h3>
-            <p className="text-gray-600 text-sm">共{data.choiceQuestions.length}题 · 四选一 · 自动分页优化</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <button onClick={() => onSubViewChange('choice')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
+            <div className="w-10 md:w-12 h-1 bg-cinnabar mb-3 md:mb-4" />
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-cinnabar">选择题专练</h3>
+            <p className="text-gray-600 text-xs md:text-sm">共{data.choiceQuestions.length}题 · 四选一 · 自动分页优化</p>
           </button>
-          <button onClick={() => onSubViewChange('fill-blank')} className="group gold-border p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
-            <div className="w-12 h-1 bg-teal-600 mb-4" />
-            <h3 className="text-2xl font-bold mb-2 group-hover:text-teal-600">填空题挑战</h3>
-            <p className="text-gray-600 text-sm">共{data.fillInBlanksQuestions?.length || 50}题 · 基础巩固 · 考点直击</p>
+          <button onClick={() => onSubViewChange('fill-blank')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
+            <div className="w-10 md:w-12 h-1 bg-teal-600 mb-3 md:mb-4" />
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-teal-600">填空题挑战</h3>
+            <p className="text-gray-600 text-xs md:text-sm">共{data.fillInBlanksQuestions?.length || 50}题 · 基础巩固 · 考点直击</p>
           </button>
-          <button onClick={() => onSubViewChange('short-answer')} className="group gold-border p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
-            <div className="w-12 h-1 bg-gold mb-4" />
-            <h3 className="text-2xl font-bold mb-2 group-hover:text-gold">简答与分析题</h3>
-            <p className="text-gray-600 text-sm">共{data.shortAnswerQuestions.length}题 · 深度考察 · 附答题线设计</p>
+          <button onClick={() => onSubViewChange('short-answer')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
+            <div className="w-10 md:w-12 h-1 bg-gold mb-3 md:mb-4" />
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-gold">简答与分析题</h3>
+            <p className="text-gray-600 text-xs md:text-sm">共{data.shortAnswerQuestions.length}题 · 深度考察 · 附答题线设计</p>
           </button>
-          <button onClick={() => onSubViewChange('interpretation')} className="group gold-border p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
-            <div className="w-12 h-1 bg-blue-800 mb-4" />
-            <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-800">深度文化解读</h3>
-            <p className="text-gray-600 text-sm">人物分析 · 主题梳理 · 中考考点归纳</p>
+          <button onClick={() => onSubViewChange('interpretation')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
+            <div className="w-10 md:w-12 h-1 bg-blue-800 mb-3 md:mb-4" />
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-blue-800">深度文化解读</h3>
+            <p className="text-gray-600 text-xs md:text-sm">人物分析 · 主题梳理 · 中考考点归纳</p>
           </button>
-          <button onClick={() => onSubViewChange('answer')} className="group gold-border p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
-            <div className="w-12 h-1 bg-green-800 mb-4" />
-            <h3 className="text-2xl font-bold mb-2 group-hover:text-green-800">标准答案详解</h3>
-            <p className="text-gray-600 text-sm">完整版答案 · 选择、填空、主观题汇总</p>
+          <button onClick={() => onSubViewChange('answer')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
+            <div className="w-10 md:w-12 h-1 bg-green-800 mb-3 md:mb-4" />
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-green-800">标准答案详解</h3>
+            <p className="text-gray-600 text-xs md:text-sm">完整版答案 · 选择、填空、主观题汇总</p>
           </button>
-          <button onClick={() => onSubViewChange('all')} className="group gold-border p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl md:col-span-2 border-cinnabar/30 bg-cinnabar/5">
-            <div className="w-12 h-1 bg-ink opacity-30 mb-4" />
-            <h3 className="text-2xl font-bold mb-2 group-hover:text-cinnabar">一键生成全书打印版</h3>
-            <p className="text-gray-600 text-sm">集合所有练习、解析与答案 · 自动分页排版 · 考试/资料自制神器</p>
+          <button onClick={() => onSubViewChange('all')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl md:col-span-2 border-cinnabar/30 bg-cinnabar/5">
+            <div className="w-12 h-1 bg-ink opacity-30 mb-3 md:mb-4" />
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-cinnabar">一键生成全书打印版</h3>
+            <p className="text-gray-600 text-xs md:text-sm">集合所有练习、解析与答案 · 自动分页排版 · 考试/资料自制神器</p>
           </button>
         </div>
 
