@@ -18,14 +18,20 @@
   select:focus,input:focus{outline:none;border-color:var(--gold);}
   input[type="file"]{padding:10px;background:#fff;cursor:pointer;}
   .hint{font-size:12px;color:#9c8b75;margin-top:4px;}
-  button{width:100%;padding:16px;margin-top:28px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:17px;font-weight:600;cursor:pointer;transition:background   
+  button{width:100%;padding:14px;margin-top:20px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;transition:background   
   .2s;}
   button:hover{background:#3d6b42;}
+  button.secondary{background:#8a7a65;margin-top:10px;}
+  button.secondary:hover{background:#6b5d4d;}
   #status{margin-top:20px;padding:16px;border-radius:10px;text-align:center;display:none;font-size:14px;line-height:1.6;}
   #status.success{background:#e8f5e9;color:var(--green);border:1px solid #c8e6c9;}
   #status.error{background:#fce8e6;color:#c62828;border:1px solid #ffcdd2;}
   #status.loading{background:#fff8e1;color:#f57f17;border:1px solid #ffe082;}
   .path-preview{margin-top:12px;padding:10px 14px;background:#f5f0e8;border-radius:8px;font-size:13px;color:#6b5d4d;font-family:monospace;}
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:200;}
+  .modal.active{display:flex;}
+  .modal-box{background:#fff;border-radius:14px;padding:28px;width:90%;max-width:460px;box-shadow:0 10px 40px rgba(0,0,0,.2);}
+  .modal-box h3{margin-bottom:16px;color:var(--green);}
   footer{text-align:center;padding:30px 0;font-size:12px;color:#a59985;}
   </style>
   </head>
@@ -42,15 +48,13 @@
       <option value="">请选择...</option>
       <option value="mingzhu">📚 名著导读</option>
       <option value="jiaoxue">📂 教学资源</option>
-      <option value="hanzi">✍️ 汉字听写</option>
-      <option value="shici">🌸 诗词大会</option>
-      <option value="dushuhui">📖 读书会</option>
     </select>
 
     <!-- 名著导读：选书 -->
     <div id="bookWrap" style="display:none;">
       <label>2. 选择书目</label>
       <select id="book"></select>
+      <button class="secondary" onclick="openAddModal('mingzhu')">➕ 添加新书目</button>
     </div>
 
     <!-- 教学资源：选年级 -->
@@ -63,15 +67,17 @@
     <div id="unitWrap" style="display:none;">
       <label>3. 选择单元</label>
       <select id="unit" onchange="onUnitChange()"></select>
+      <button class="secondary" onclick="openAddModal('unit')">➕ 添加新单元</button>
     </div>
 
     <!-- 教学资源：选课文 -->
     <div id="lessonWrap" style="display:none;">
       <label>4. 选择课文</label>
       <select id="lesson"></select>
+      <button class="secondary" onclick="openAddModal('lesson')">➕ 添加新课文</button>
     </div>
 
-    <label id="pageLabel">5. 页面类型</label>
+    <label id="pageLabel">页面类型</label>
     <select id="pageType">
       <option value="index.html">📑 书目/单元首页</option>
       <option value="tiankong.html">📝 填空题</option>
@@ -81,11 +87,11 @@
       <option value="daan.html">📋 答案详解</option>
     </select>
 
-    <label>6. 选择 HTML 文件</label>
+    <label>选择 HTML 文件</label>
     <input type="file" id="fileInput" accept=".html">
     <div class="hint">请上传 DeepSeek 生成的 HTML 文件</div>
 
-    <label>7. 发布密码</label>
+    <label>发布密码</label>
     <input type="password" id="password" placeholder="请输入发布密码">
 
     <div class="path-preview" id="pathPreview">保存路径：待选择...</div>
@@ -94,14 +100,28 @@
     <div id="status"></div>
   </div>
 
+  <!-- 添加新条目弹窗 -->
+  <div class="modal" id="addModal">
+    <div class="modal-box">
+      <h3 id="modalTitle">添加新书</h3>
+      <label>显示名称（中文）</label>
+      <input type="text" id="addName" placeholder="如：西游记">
+      <label>文件夹名（拼音，无空格）</label>
+      <input type="text" id="addFolder" placeholder="如：xiyou">
+      <div id="extraFields"></div>
+      <button onclick="submitAdd()">✅ 确认添加</button>
+      <button class="secondary" onclick="closeModal()">取消</button>
+    </div>
+  </div>
+
   <footer>锦水微澜教育工作室 · 黄国荣</footer>
 
   <script>
-  // ======================= 【课程映射表】 =======================
-  // 以后你要加新书/新课文，只需要在这里加一行！
-  const PATH_MAP = {
+  const WORKER_URL = 'https://jinshui-upload.afterthatspring.workers.dev'; // ⚠️ 改成你的 Worker 地址
+
+  // ========== 基础配置（内置） ==========
+  const BASE_MAP = {
     mingzhu: {
-      label: '📚 名著导读',
       books: [
         { name: '钢铁是怎样炼成的', folder: 'gangtie' },
         { name: '海底两万里', folder: 'haidi' },
@@ -110,163 +130,160 @@
       ]
     },
     jiaoxue: {
-      label: '📂 教学资源',
       grades: {
         'qi-xia': {
           label: '七年级下册',
           units: {
-            'unit-1': {
-              label: '第一单元 · 群星闪耀',
-              lessons: [
-                { name: '邓稼先', folder: 'dengjiaxian' },
-                { name: '说和做', folder: 'shuohezuo' },
-                { name: '列夫·托尔斯泰', folder: 'lieshi' },
-                { name: '孙权劝学', folder: 'sunquan' },
-              ]
-            },
-            'unit-2': {
-              label: '第二单元 · 家国情怀',
-              lessons: [
-                { name: '黄河颂', folder: 'huanghe' },
-                { name: '老山界', folder: 'laoshan' },
-                { name: '谁是最可爱的人', folder: 'keai' },
-                { name: '土地的誓言', folder: 'tudi' },
-                { name: '木兰诗', folder: 'mulan' },
-              ]
-            },
-            'unit-3': {
-              label: '第三单元 · 凡人微光',
-              lessons: [
-                { name: '阿长与山海经', folder: 'achang' },
-                { name: '山地回忆', folder: 'shandi' },
-                { name: '台阶', folder: 'taijie' },
-                { name: '卖油翁', folder: 'maiyou' },
-              ]
-            },
-            'unit-4': {
-              label: '第四单元 · 修身正己',
-              lessons: [
-                { name: '驿路梨花', folder: 'yilu' },
-                { name: '青春之光', folder: 'qingchun' },
-                { name: '有为有不为', folder: 'youwei' },
-                { name: '短文两篇', folder: 'duanwen' },
-              ]
-            },
-            'unit-5': {
-              label: '第五单元 · 哲理之思',
-              lessons: [
-                { name: '紫藤萝瀑布', folder: 'ziteng' },
-                { name: '井冈翠竹', folder: 'jinggang' },
-                { name: '外国诗二首', folder: 'waiguo' },
-                { name: '古代诗歌五首', folder: 'gushi' },
-              ]
-            },
-            'unit-6': {
-              label: '第六单元 · 科学探险',
-              lessons: [
-                { name: '太空一日', folder: 'taikong' },
-                { name: '"蛟龙"探海', folder: 'jiaolong' },
-                { name: '带上她的眼睛', folder: 'yanjing' },
-                { name: '活板', folder: 'huoban' },
-              ]
-            },
+            'unit-1': { label: '第一单元 · 群星闪耀', lessons: [
+              { name: '邓稼先', folder: 'dengjiaxian' },
+              { name: '说和做', folder: 'shuohezuo' },
+              { name: '列夫·托尔斯泰', folder: 'lieshi' },
+              { name: '孙权劝学', folder: 'sunquan' },
+            ]},
+            'unit-2': { label: '第二单元 · 家国情怀', lessons: [
+              { name: '黄河颂', folder: 'huanghe' },
+              { name: '老山界', folder: 'laoshan' },
+              { name: '谁是最可爱的人', folder: 'keai' },
+              { name: '土地的誓言', folder: 'tudi' },
+              { name: '木兰诗', folder: 'mulan' },
+            ]},
+            'unit-3': { label: '第三单元 · 凡人微光', lessons: [
+              { name: '阿长与山海经', folder: 'achang' },
+              { name: '山地回忆', folder: 'shandi' },
+              { name: '台阶', folder: 'taijie' },
+              { name: '卖油翁', folder: 'maiyou' },
+            ]},
+            'unit-4': { label: '第四单元 · 修身正己', lessons: [
+              { name: '驿路梨花', folder: 'yilu' },
+              { name: '青春之光', folder: 'qingchun' },
+              { name: '有为有不为', folder: 'youwei' },
+              { name: '短文两篇', folder: 'duanwen' },
+            ]},
+            'unit-5': { label: '第五单元 · 哲理之思', lessons: [
+              { name: '紫藤萝瀑布', folder: 'ziteng' },
+              { name: '井冈翠竹', folder: 'jinggang' },
+              { name: '外国诗二首', folder: 'waiguo' },
+              { name: '古代诗歌五首', folder: 'gushi' },
+            ]},
+            'unit-6': { label: '第六单元 · 科学探险', lessons: [
+              { name: '太空一日', folder: 'taikong' },
+              { name: '"蛟龙"探海', folder: 'jiaolong' },
+              { name: '带上她的眼睛', folder: 'yanjing' },
+              { name: '活板', folder: 'huoban' },
+            ]},
           }
-        },
-        // 以后加八年级，在这里复制上面的结构
-        // 'ba-xia': { label: '八年级下册', units: { ... } }
+        }
       }
-    },
-    // 其他分类暂时不需要细分，直接上传即可
-    hanzi: { label: '✍️ 汉字听写', simple: true },
-    shici: { label: '🌸 诗词大会', simple: true },
-    dushuhui: { label: '📖 读书会', simple: true },
+    }
   };
 
-  // ======================= 【核心逻辑，不用改】 =======================
-
-  const WORKER_URL = 'https://jinshui-upload.afterthatspring.workers.dev'; // ⚠️ 改成你的 Worker 地址
-
+  // 扩展配置（从服务器加载）
+  let EXT_MAP = {};
   let currentPath = '';
+  let addMode = '';
+  let addContext = {};
+
+  // 页面加载时读取扩展配置
+  async function loadConfig() {
+    try {
+      const res = await fetch(`${WORKER_URL}/api/config`);
+      const data = await res.json();
+      if (data.success && data.config) {
+        EXT_MAP = data.config;
+        mergeConfig();
+      }
+    } catch (e) {
+      console.log('暂无扩展配置');
+    }
+  }
+
+  function mergeConfig() {
+    // 合并名著
+    if (EXT_MAP.mingzhu) {
+      const existing = new Set(BASE_MAP.mingzhu.books.map(b => b.folder));
+      EXT_MAP.mingzhu.forEach(b => {
+        if (!existing.has(b.folder)) BASE_MAP.mingzhu.books.push(b);
+      });
+    }
+    // 合并教学资源
+    if (EXT_MAP.jiaoxue) {
+      deepMerge(BASE_MAP.jiaoxue.grades, EXT_MAP.jiaoxue);
+    }
+  }
+
+  function deepMerge(target, source) {
+    for (const key in source) {
+      if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+        if (!target[key]) target[key] = {};
+        deepMerge(target[key], source[key]);
+      } else {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  // ========== 页面交互 ==========
 
   function onCategoryChange() {
     const cat = document.getElementById('category').value;
-    const map = PATH_MAP[cat];
 
-    // 重置显示
     document.getElementById('bookWrap').style.display = 'none';
     document.getElementById('gradeWrap').style.display = 'none';
     document.getElementById('unitWrap').style.display = 'none';
     document.getElementById('lessonWrap').style.display = 'none';
 
-    if (!map) { updatePath(); return; }
-
     if (cat === 'mingzhu') {
-      // 填充书目
-      const sel = document.getElementById('book');
-      sel.innerHTML = '<option value="">请选择书目...</option>' +
-        map.books.map(b => `<option value="${b.folder}">${b.name}</option>`).join('');
+      fillSelect('book', '请选择书目...', BASE_MAP.mingzhu.books.map(b => ({value: b.folder, text: b.name})));
       document.getElementById('bookWrap').style.display = 'block';
     }
-
-    if (cat === 'jiaoxue') {
-      // 填充年级
-      const sel = document.getElementById('grade');
-      sel.innerHTML = '<option value="">请选择年级...</option>' +
-        Object.entries(map.grades).map(([k,v]) => `<option value="${k}">${v.label}</option>`).join('');
+    else if (cat === 'jiaoxue') {
+      const grades = Object.entries(BASE_MAP.jiaoxue.grades).map(([k,v]) => ({value: k, text: v.label}));
+      fillSelect('grade', '请选择年级...', grades);
       document.getElementById('gradeWrap').style.display = 'block';
     }
-
-    // 其他分类直接上传，不需要再选
     updatePath();
   }
 
   function onGradeChange() {
-    const cat = document.getElementById('category').value;
     const gradeKey = document.getElementById('grade').value;
-    const grade = PATH_MAP[cat].grades[gradeKey];
+    const grade = BASE_MAP.jiaoxue.grades[gradeKey];
 
     document.getElementById('unitWrap').style.display = 'none';
     document.getElementById('lessonWrap').style.display = 'none';
-    document.getElementById('unit').innerHTML = '';
-    document.getElementById('lesson').innerHTML = '';
 
     if (!grade) { updatePath(); return; }
 
-    const sel = document.getElementById('unit');
-    sel.innerHTML = '<option value="">请选择单元...</option>' +
-      Object.entries(grade.units).map(([k,v]) => `<option value="${k}">${v.label}</option>`).join('');
+    const units = Object.entries(grade.units).map(([k,v]) => ({value: k, text: v.label}));
+    fillSelect('unit', '请选择单元...', units);
     document.getElementById('unitWrap').style.display = 'block';
     updatePath();
   }
 
   function onUnitChange() {
-    const cat = document.getElementById('category').value;
     const gradeKey = document.getElementById('grade').value;
     const unitKey = document.getElementById('unit').value;
-    const unit = PATH_MAP[cat].grades[gradeKey].units[unitKey];
+    const unit = BASE_MAP.jiaoxue.grades[gradeKey]?.units[unitKey];
 
     document.getElementById('lessonWrap').style.display = 'none';
-    document.getElementById('lesson').innerHTML = '';
 
     if (!unit) { updatePath(); return; }
 
-    const sel = document.getElementById('lesson');
-    sel.innerHTML = '<option value="">请选择课文...</option>' +
-      unit.lessons.map(l => `<option value="${l.folder}">${l.name}</option>`).join('');
+    const lessons = unit.lessons.map(l => ({value: l.folder, text: l.name}));
+    fillSelect('lesson', '请选择课文...', lessons);
     document.getElementById('lessonWrap').style.display = 'block';
     updatePath();
+  }
+
+  function fillSelect(id, placeholder, items) {
+    const sel = document.getElementById(id);
+    sel.innerHTML = '<option value="">' + placeholder + '</option>' +
+      items.map(i => `<option value="${i.value}">${i.text}</option>`).join('');
   }
 
   function updatePath() {
     const cat = document.getElementById('category').value;
     const type = document.getElementById('pageType').value;
     let path = '';
-
-    if (!cat) {
-      currentPath = '';
-      document.getElementById('pathPreview').innerText = '保存路径：待选择...';
-      return;
-    }
 
     if (cat === 'mingzhu') {
       const book = document.getElementById('book').value;
@@ -278,19 +295,99 @@
       const lesson = document.getElementById('lesson').value;
       if (grade && unit && lesson) path = `jiaoxue/${grade}/${unit}/${lesson}/${type}`;
     }
-    else {
-      // 其他分类：只用分类名+文件名（平铺）
-      path = `${cat}/${type}`;
-    }
 
     currentPath = path;
     document.getElementById('pathPreview').innerText = path ? `保存路径：${path}` : '保存路径：待选择...';
   }
 
-  // 监听所有下拉框变化
   ['book','pageType','lesson'].forEach(id => {
     document.getElementById(id)?.addEventListener('change', updatePath);
   });
+
+  // ========== 添加新条目弹窗 ==========
+
+  function openAddModal(mode) {
+    addMode = mode;
+    const modal = document.getElementById('addModal');
+    const title = document.getElementById('modalTitle');
+    const extra = document.getElementById('extraFields');
+
+    document.getElementById('addName').value = '';
+    document.getElementById('addFolder').value = '';
+    extra.innerHTML = '';
+
+    if (mode === 'mingzhu') {
+      title.innerText = '➕ 添加新名著';
+    }
+    else if (mode === 'unit') {
+      title.innerText = '➕ 添加新单元';
+      extra.innerHTML = '<label>单元标题（如：第七单元 · 科技之光）</label><input type="text" id="addUnitLabel" placeholder="第七单元 · 科技之光">';
+    }
+    else if (mode === 'lesson') {
+      title.innerText = '➕ 添加新课文';
+    }
+
+    modal.classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('addModal').classList.remove('active');
+  }
+
+  async function submitAdd() {
+    const name = document.getElementById('addName').value.trim();
+    const folder = document.getElementById('addFolder').value.trim();
+    const password = document.getElementById('password').value;
+
+    if (!name || !folder) { alert('请填写完整'); return; }
+    if (!password) { alert('请输入发布密码'); return; }
+
+    let payload = {};
+
+    if (addMode === 'mingzhu') {
+      payload = { category: 'mingzhu', data: { name, folder } };
+    }
+    else if (addMode === 'unit') {
+      const label = document.getElementById('addUnitLabel').value.trim();
+      if (!label) { alert('请填写单元标题'); return; }
+      const grade = document.getElementById('grade').value;
+      payload = {
+        category: 'jiaoxue',
+        data: { [grade]: { units: { [folder]: { label, lessons: [] } } } }
+      };
+    }
+    else if (addMode === 'lesson') {
+      const grade = document.getElementById('grade').value;
+      const unit = document.getElementById('unit').value;
+      payload = {
+        category: 'jiaoxue',
+        data: { [grade]: { units: { [unit]: { lessons: [{ name, folder }] } } } }
+      };
+    }
+
+    try {
+      const res = await fetch(`${WORKER_URL}/api/config`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Upload-Password': password
+        },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        alert('✅ 添加成功！页面即将刷新');
+        location.reload();
+      } else {
+        alert('❌ 添加失败：' + (data.error || '未知错误'));
+      }
+    } catch (e) {
+      alert('❌ 网络错误：' + e.message);
+    }
+  }
+
+  // ========== 上传文件 ==========
 
   async function upload() {
     const file = document.getElementById('fileInput').files[0];
@@ -309,7 +406,7 @@
     show('正在发布，请稍候...', 'loading');
 
     try {
-      const res = await fetch(WORKER_URL, {
+      const res = await fetch(`${WORKER_URL}/api/upload`, {
         method: 'POST',
         headers: { 'X-Upload-Password': password },
         body: form
@@ -331,6 +428,9 @@
     s.className = cls;
     s.innerText = msg;
   }
+
+  // 页面加载时读取配置
+  loadConfig();
   </script>
 
   </body>
