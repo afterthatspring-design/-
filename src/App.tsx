@@ -5,7 +5,7 @@
 
 import React, { ReactNode, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, Scroll, BookOpen, PenTool, Image as ImageIcon, ArrowLeft, Book, Trophy, GraduationCap, Users, Waves, Printer, Search, FileText, Layout, Filter } from 'lucide-react';
+import { ChevronRight, Scroll, BookOpen, PenTool, Image as ImageIcon, ArrowLeft, Book, Trophy, GraduationCap, Users, Waves, Printer, Search, FileText, Layout, Filter, Menu, X } from 'lucide-react';
 import { GANGTIE_DATA } from './data/gangtie';
 import { RESOURCES_DATA, UNIT_NAMES } from './data/resources';
 
@@ -40,6 +40,7 @@ export default function App() {
   const [view, setView] = useState<ViewState>('main');
   const [subView, setSubView] = useState<BookSubView>('index');
   const [selectedBook, setSelectedBook] = useState<string>('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Handle scroll to top on view change
   useEffect(() => {
@@ -68,7 +69,7 @@ export default function App() {
   if (view === 'resource-navigator') {
     return (
       <div className="min-h-screen bg-paper font-serif relative">
-        <div className="absolute inset-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/soft-wallpaper.png')] opacity-20 mix-blend-multiply" />
+        <div className="absolute inset-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/soft-wallpaper.png')] opacity-10 mix-blend-multiply" />
         
         {/* Navigator Nav */}
         <nav className="sticky top-0 z-50 bg-paper/95 backdrop-blur-md border-b border-border-gold/30 px-6 py-4 flex justify-between items-center shadow-lg no-print">
@@ -99,7 +100,7 @@ export default function App() {
   if (view === 'book-detail') {
     return (
       <div className="min-h-screen bg-paper font-serif relative">
-        <div className="absolute inset-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/soft-wallpaper.png')] opacity-20 mix-blend-multiply" />
+        <div className="absolute inset-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/soft-wallpaper.png')] opacity-10 mix-blend-multiply" />
         
         {/* Detail Nav */}
         <nav className="sticky top-0 z-50 bg-paper/95 backdrop-blur-md border-b border-border-gold/30 px-6 py-4 flex justify-between items-center shadow-lg no-print">
@@ -131,7 +132,7 @@ export default function App() {
   if (view === 'books') {
     return (
       <div className="min-h-screen bg-paper font-serif relative">
-        <div className="absolute inset-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/soft-wallpaper.png')] opacity-40 mix-blend-multiply" />
+        <div className="absolute inset-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/soft-wallpaper.png')] opacity-10 mix-blend-multiply" />
         
         {/* Books Nav */}
         <nav className="sticky top-0 z-50 bg-paper/95 backdrop-blur-md border-b border-border-gold/30 px-6 py-4 flex justify-between items-center shadow-lg no-print">
@@ -154,12 +155,12 @@ export default function App() {
             initial="hidden" animate="visible" variants={containerVariants}
             className="flex flex-col h-full"
           >
-            <motion.div variants={itemVariants} className="mb-12 text-center md:text-left">
-              <h1 className="text-7xl font-calligraphy tracking-wide">名著导读 · <span className="text-cinnabar font-bold transition-all">经典目录</span></h1>
-              <p className="text-gold font-bold tracking-[0.3em] mt-4 opacity-60">CLASSIC LITERATURE DIRECTORY</p>
+            <motion.div variants={itemVariants} className="mb-8 md:mb-12 text-center md:text-left">
+              <h1 className="text-4xl md:text-7xl font-calligraphy tracking-wide">名著导读 · <span className="text-cinnabar font-bold transition-all">经典目录</span></h1>
+              <p className="text-gold font-bold tracking-[0.2em] md:tracking-[0.3em] mt-2 md:mt-4 opacity-60 text-xs md:text-base">CLASSIC LITERATURE DIRECTORY</p>
             </motion.div>
             
-            <motion.div variants={itemVariants} className="divide-y divide-border-gold/20 bg-white/40 backdrop-blur-md p-10 border border-border-gold shadow-2xl">
+            <motion.div variants={itemVariants} className="divide-y divide-border-gold/20 bg-white/40 backdrop-blur-md p-4 md:p-10 border border-border-gold shadow-2xl">
               <BookRow 
                 title="《钢铁是怎样炼成的》" 
                 author="奥斯特洛夫斯基" 
@@ -182,10 +183,19 @@ export default function App() {
     <div className="scrolling-page font-serif">
       {/* Navigation */}
     <nav className="nav-header no-print">
-        <div className="flex items-center gap-3 md:gap-4 truncate">
-          <Logo className="w-10 h-8 md:w-16 md:h-12" />
-          <span className="font-bold tracking-widest text-ink text-lg md:text-xl truncate">锦水微澜名师工作室</span>
+        <div className="flex items-center gap-2 md:gap-4 truncate">
+          <Logo className="w-8 h-6 md:w-16 md:h-12" />
+          <span className="font-bold tracking-widest text-ink text-sm md:text-xl truncate">锦水微澜名师工作室</span>
         </div>
+        
+        {/* Mobile menu trigger */}
+        <button 
+          className="md:hidden p-2 text-ink"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
         <div className="hidden md:flex gap-12 text-base uppercase tracking-[0.4em] font-bold text-ink">
           {menuItems.map(item => (
             <button 
@@ -198,6 +208,32 @@ export default function App() {
             </button>
           ))}
         </div>
+
+        {/* Mobile Navigation Overlay */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-full left-0 w-full bg-paper border-b border-border-gold/30 shadow-2xl flex flex-col p-6 z-50 md:hidden"
+            >
+              {menuItems.map(item => (
+                <button 
+                  key={item.name}
+                  onClick={() => {
+                    if (item.action) item.action();
+                    else document.getElementById(item.id!)?.scrollIntoView({ behavior: 'smooth' });
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="py-4 text-left border-b border-border-gold/10 text-ink font-bold tracking-[0.3em]"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Hero Section - Balanced Ink Wash & Educational Focus */}
@@ -275,7 +311,7 @@ export default function App() {
             
             <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
               <div className="md:col-span-4 md:sticky top-24">
-                <div className="gold-border p-6 md:p-8 bg-white/20">
+                <div className="gold-border p-6 md:p-8 bg-white/60">
                   <div className="w-20 h-20 md:w-24 md:h-24 bg-ink text-paper rounded-full flex items-center justify-center text-3xl md:text-4xl font-bold mb-4 md:mb-6 mx-auto">黄</div>
                   <h3 className="text-xl md:text-2xl font-bold text-center mb-1 md:mb-2 text-ink">黄国荣</h3>
                   <p className="text-base md:text-lg text-center text-gray-900 leading-relaxed font-bold">中学语文高级教师<br />江西省省优秀课题主持人<br />上高县名师工作室主理人</p>
@@ -294,7 +330,7 @@ export default function App() {
               </div>
               
               <div className="md:col-span-8">
-                <div className="prose prose-stone leading-relaxed md:leading-loose text-ink text-base md:text-xl font-normal space-y-6 md:space-y-8">
+                <div className="prose prose-stone leading-relaxed md:leading-loose text-ink text-sm md:text-lg font-normal space-y-4 md:space-y-6">
                   <p>先后任教于<strong>上高中学、上高县锦阳中学</strong>。深耕语文教育三十余载，从2014年至今，一直担任上高县初中语文名师团队（初中语文名师工作室）负责人，并任上高县教体局兼职教研员。</p>
                   <p>主持三项省级课题获结题，其中<strong>《汉字词语听写训练工具的多场景运用研究》</strong>于2025年12月结题，并被评为<strong>省优秀课题</strong>。致力于教育教研改革创新，在教师培训、校园文化建设、家庭教育指导、学生心理咨询等方面取得多项重要成果。</p>
                   <p>近年来，积极投身教育技术创新，运用抖音平台（黄老师家庭教育）推广汉字听写训练工具，<strong>运用AI编程制作大量教学APP</strong>，助力智慧教育发展。与上高县家庭教育指导中心深度合作，深入多所学校开展家庭教育讲座，为学生及家长提供专业的家庭教育指导和心理咨询服务。组织开展公益读书会活动，引导学生通过做读书笔记养成良好学习习惯，有效提升学习内驱力，为学生的终身学习奠定基础。</p>
@@ -305,12 +341,12 @@ export default function App() {
         </section>
 
         {/* Resources Grid */}
-        <section id="resources" className="section-container">
+        <section id="resources" className="section-container px-4">
           <div className="ornament-line" />
-          <h2 className="text-3xl md:text-5xl font-calligraphy mb-4">资源导航 · <span className="text-cinnabar">锦水微澜</span></h2>
-          <p className="text-xs md:text-base text-gray-900 tracking-[0.2em] md:tracking-[0.3em] uppercase mb-8 md:mb-12 font-bold">Resource Directory & Content Hub</p>
+          <h2 className="text-2xl md:text-5xl font-calligraphy mb-4">资源导航 · <span className="text-cinnabar">锦水微澜</span></h2>
+          <p className="text-[10px] md:text-base text-gray-900 tracking-[0.1em] md:tracking-[0.3em] uppercase mb-8 md:mb-12 font-bold">Resource Directory & Content Hub</p>
           
-          <div className="feature-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="feature-grid grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
             <ResourceCard id="resources" icon={<Scroll />} title="教学资源" desc="单元课文、全套试卷、古诗词及作文范文资源。" color="border-prestige-sage" action={() => setView('resource-navigator')} />
             <ResourceCard id="hanzi" icon={<PenTool />} title="汉字听写" desc="《汉字听写》工具书与训练视频，上高县品牌赛事。" color="border-prestige-gold" />
             <ResourceCard id="shici" icon={<Trophy />} title="诗词大会" desc="经典言论解读与古诗文默写，全能竞赛备考手册。" color="border-prestige-slate" />
@@ -325,21 +361,21 @@ export default function App() {
           <div className="ornament-line" />
           <h2 className="text-3xl md:text-5xl font-calligraphy mb-8 md:mb-12">近期动态 · <span className="text-cinnabar">最新成果</span></h2>
           <div className="space-y-4 md:space-y-6">
-            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-green-800 bg-white/20">
-              <h4 className="text-xl md:text-2xl font-bold text-ink mb-2 md:mb-4">🏅 省优秀课题结题</h4>
-              <p className="text-base md:text-xl text-ink leading-relaxed md:leading-loose font-medium">
+            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-green-800 bg-white/60">
+              <h4 className="text-lg md:text-2xl font-bold text-ink mb-2 md:mb-4">🏅 省优秀课题结题</h4>
+              <p className="text-sm md:text-lg text-ink leading-relaxed md:leading-loose font-medium">
                 《汉字词语听写训练工具的多场景运用研究》于2025年12月正式结题，被评为省优秀课题。
               </p>
             </div>
-            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-gold bg-white/20">
-              <h4 className="text-xl md:text-2xl font-bold text-ink mb-2 md:mb-4">📱 智能教育应用</h4>
-              <p className="text-base md:text-xl text-ink leading-relaxed md:leading-loose font-medium">
+            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-gold bg-white/60">
+              <h4 className="text-lg md:text-2xl font-bold text-ink mb-2 md:mb-4">📱 智能教育应用</h4>
+              <p className="text-sm md:text-lg text-ink leading-relaxed md:leading-loose font-medium">
                 运用AI编程技术开发大量教学辅助APP，并利用抖音平台（黄老师家庭教育）推广汉字听写训练工具。
               </p>
             </div>
-            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-blue-800 bg-white/20">
-              <h4 className="text-xl md:text-2xl font-bold text-ink mb-2 md:mb-4">🤝 家庭教育与心理辅导</h4>
-              <p className="text-base md:text-xl text-ink leading-relaxed md:leading-loose font-medium">
+            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-blue-800 bg-white/60">
+              <h4 className="text-lg md:text-2xl font-bold text-ink mb-2 md:mb-4">🤝 家庭教育与心理辅导</h4>
+              <p className="text-sm md:text-lg text-ink leading-relaxed md:leading-loose font-medium">
                 与县家庭教育指导中心深度合作，开展专题讲座及心理咨询服务，助力学生健康成长。
               </p>
             </div>
@@ -348,7 +384,7 @@ export default function App() {
 
       </div>
 
-      <footer className="bg-paper-dark/50 py-12 md:py-20 text-center border-t border-border-gold/30 no-print">
+      <footer className="bg-paper-dark py-12 md:py-20 text-center border-t border-border-gold/30 no-print">
         <Logo className="w-16 h-14 md:w-24 md:h-20 mx-auto mb-6 md:mb-8" />
         <p className="text-base md:text-lg tracking-[0.2em] md:tracking-[0.5em] text-ink mb-2 font-bold px-4">锦水微澜名师工作室 · 黄国荣 编制</p>
         <p className="text-xs md:text-sm uppercase text-ink font-bold tracking-[0.4em] md:tracking-[0.8em]">Jiangxi Shanggao</p>
@@ -583,14 +619,14 @@ function BookRow({ title, author, type, desc, onSelect }: { title: string, autho
   return (
     <div 
       onClick={onSelect}
-      className="group block p-6 hover:bg-white/40 transition-colors cursor-pointer"
+      className="group block p-4 md:p-6 hover:bg-white/40 transition-colors cursor-pointer"
     >
-      <div className="flex items-start justify-between mb-2">
-        <h4 className="text-2xl font-bold text-ink group-hover:text-cinnabar transition-all">{title}</h4>
-        <span className="text-xs text-cinnabar border border-cinnabar/40 px-3 py-1 rounded-full uppercase tracking-widest font-bold">{type}</span>
+      <div className="flex items-start justify-between mb-2 gap-4">
+        <h4 className="text-lg md:text-2xl font-bold text-ink group-hover:text-cinnabar transition-all leading-tight">{title}</h4>
+        <span className="text-[10px] md:text-xs text-cinnabar border border-cinnabar/40 px-2 md:px-3 py-0.5 md:py-1 rounded-full uppercase tracking-tighter md:tracking-widest font-bold whitespace-nowrap shrink-0">{type}</span>
       </div>
-      <p className="text-sm text-gold font-bold mb-3">{author}</p>
-      <p className="text-sm text-gray-700 opacity-90 group-hover:opacity-100 transition-opacity leading-relaxed">{desc}</p>
+      <p className="text-xs md:text-sm text-gold font-bold mb-2 md:mb-3">{author}</p>
+      <p className="text-xs md:text-sm text-gray-700 opacity-90 group-hover:opacity-100 transition-opacity leading-relaxed">{desc}</p>
     </div>
   );
 }
@@ -603,11 +639,13 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
   const PrintButton = () => (
     <button 
       onClick={() => window.print()} 
-      className="no-print fixed bottom-10 right-10 z-[100] bg-cinnabar text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center gap-2 group"
+      className="no-print fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] bg-cinnabar text-white h-12 md:h-16 flex items-center justify-center rounded-full shadow-2xl hover:scale-105 transition-all group overflow-hidden px-4 md:px-5"
       title="打印当前页面"
     >
-      <Printer className="w-6 h-6" />
-      <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 whitespace-nowrap font-bold">打印存档</span>
+      <div className="flex items-center justify-center">
+        <Printer className="w-5 h-5 md:w-6 md:h-6" />
+      </div>
+      <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 whitespace-nowrap font-bold text-sm md:text-base">打印存档</span>
     </button>
   );
 
@@ -1271,15 +1309,15 @@ function ResourceCard({ id, icon, title, desc, color, action }: { id: string, ic
   return (
     <div 
       onClick={action ? action : () => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
-      className={`gold-border p-8 border-l-[4px] ${color} bg-white/20 hover:bg-white/40 group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl no-print`}
+      className={`gold-border p-4 md:p-8 border-l-[3px] md:border-l-[4px] ${color} bg-white/60 hover:bg-white/80 group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl no-print flex flex-col h-full`}
     >
-      <div className="text-gold mb-6 group-hover:text-cinnabar transition-colors scale-125 origin-left">
+      <div className="text-gold mb-3 md:mb-6 group-hover:text-cinnabar transition-colors scale-90 md:scale-125 origin-left">
         {icon}
       </div>
-      <h3 className="text-3xl font-bold mb-4">{title}</h3>
-      <p className="text-xl text-ink font-medium leading-loose">{desc}</p>
-      <div className="mt-8 flex items-center text-lg text-gold opacity-100 transition-all font-bold tracking-widest transform group-hover:translate-x-2">
-        查看详情 <ChevronRight className="w-5 h-5 ml-2" />
+      <h3 className="text-base md:text-3xl font-bold mb-2 md:mb-4 leading-tight">{title}</h3>
+      <p className="text-[10px] md:text-xl text-ink font-medium leading-relaxed md:leading-loose flex-1 mb-4 md:mb-0">{desc}</p>
+      <div className="mt-auto flex items-center text-[10px] md:text-lg text-gold opacity-100 transition-all font-bold tracking-[0.05em] md:tracking-widest transform group-hover:translate-x-2">
+        <span className="hidden xs:inline">查看详情</span> <ChevronRight className="w-3 h-3 md:w-5 md:h-5 ml-0.5 md:ml-2" />
       </div>
     </div>
   );
