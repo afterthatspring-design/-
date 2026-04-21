@@ -32,6 +32,9 @@
   .modal.active{display:flex;}
   .modal-box{background:#fff;border-radius:14px;padding:28px;width:90%;max-width:460px;box-shadow:0 10px 40px rgba(0,0,0,.2);}
   .modal-box h3{margin-bottom:16px;color:var(--green);}
+  .type-toggle{display:flex;gap:8px;margin:10px 0;}
+  .type-toggle button{flex:1;margin-top:0;padding:10px;font-size:14px;background:#f5f0e8;color:var(--ink);border:2px solid #e5ddd0;}
+  .type-toggle button.active{background:var(--green);color:#fff;border-color:var(--green);}
   footer{text-align:center;padding:30px 0;font-size:12px;color:#a59985;}
   </style>
   </head>
@@ -46,8 +49,12 @@
     <label>1. 内容分类</label>
     <select id="category" onchange="onCategoryChange()">
       <option value="">请选择...</option>
-      <option value="mingzhu">📚 名著导读</option>
       <option value="jiaoxue">📂 教学资源</option>
+      <option value="hanzi">✍️ 汉字听写</option>
+      <option value="shici">🌸 诗词大会</option>
+      <option value="mingzhu">📚 名著导读</option>
+      <option value="dushuhui">📖 读书会</option>
+      <option value="keti">🎓 课题研究</option>
     </select>
 
     <!-- 名著导读：选书 -->
@@ -63,23 +70,51 @@
       <select id="grade" onchange="onGradeChange()"></select>
     </div>
 
-    <!-- 教学资源：选单元 -->
+    <!-- 教学资源：选类型（课文/专项） -->
+    <div id="resTypeWrap" style="display:none;">
+      <label>3. 资源类型</label>
+      <div class="type-toggle">
+        <button type="button" id="btnTextbook" class="active" onclick="setResType('textbook')">📘 按课文</button>
+        <button type="button" id="btnSpecial" onclick="setResType('special')">📑 按专项</button>
+      </div>
+    </div>
+
+    <!-- 按课文：选单元 -->
     <div id="unitWrap" style="display:none;">
-      <label>3. 选择单元</label>
+      <label>4. 选择单元</label>
       <select id="unit" onchange="onUnitChange()"></select>
       <button class="secondary" onclick="openAddModal('unit')">➕ 添加新单元</button>
     </div>
 
-    <!-- 教学资源：选课文 -->
+    <!-- 按课文：选课文 -->
     <div id="lessonWrap" style="display:none;">
-      <label>4. 选择课文</label>
+      <label>5. 选择课文</label>
       <select id="lesson"></select>
       <button class="secondary" onclick="openAddModal('lesson')">➕ 添加新课文</button>
     </div>
 
+    <!-- 按专项：选专项 -->
+    <div id="specialWrap" style="display:none;">
+      <label>4. 选择专项</label>
+      <select id="special" onchange="onSpecialChange()"></select>
+    </div>
+
+    <!-- 按专项：选单元号 -->
+    <div id="specialUnitWrap" style="display:none;">
+      <label>5. 选择单元</label>
+      <select id="specialUnit"></select>
+    </div>
+
+    <!-- 其他分类（汉字/诗词/读书会/课题）：子文件夹 -->
+    <div id="subFolderWrap" style="display:none;">
+      <label>2. 子文件夹名（可选）</label>
+      <input type="text" id="subFolder" placeholder="输入拼音，如2026-spring">
+      <div class="hint">留空则直接上传到根目录</div>
+    </div>
+
     <label id="pageLabel">页面类型</label>
     <select id="pageType">
-      <option value="index.html">📑 书目/单元首页</option>
+      <option value="index.html">📑 首页/目录</option>
       <option value="tiankong.html">📝 填空题</option>
       <option value="xuanze.html">🔘 选择题</option>
       <option value="jianda.html">✏️ 简答题</option>
@@ -119,7 +154,7 @@
   <script>
   const WORKER_URL = 'https://jinshui-upload.afterthatspring.workers.dev'; // ⚠️ 改成你的 Worker 地址
 
-  // ========== 基础配置（内置） ==========
+  // ======================= 【课程映射表】 =======================
   const BASE_MAP = {
     mingzhu: {
       books: [
@@ -171,17 +206,23 @@
               { name: '带上她的眼睛', folder: 'yanjing' },
               { name: '活板', folder: 'huoban' },
             ]},
-          }
+          },
+          specials: [
+            { name: '📝 单元试卷', folder: 'exam' },
+            { name: '✍️ 单元小练', folder: 'practice' },
+            { name: '📝 单元作文', folder: 'composition' },
+            { name: '📜 课外文言文', folder: 'extrawenyan' },
+            { name: '🌸 古诗词赏析', folder: 'poetry' },
+          ]
         }
       }
     }
   };
 
-  // 扩展配置（从服务器加载）
   let EXT_MAP = {};
   let currentPath = '';
   let addMode = '';
-  let addContext = {};
+  let resType = 'textbook'; // 'textbook' | 'special'
 
   // 页面加载时读取扩展配置
   async function loadConfig() {
@@ -198,14 +239,12 @@
   }
 
   function mergeConfig() {
-    // 合并名著
     if (EXT_MAP.mingzhu) {
       const existing = new Set(BASE_MAP.mingzhu.books.map(b => b.folder));
       EXT_MAP.mingzhu.forEach(b => {
         if (!existing.has(b.folder)) BASE_MAP.mingzhu.books.push(b);
       });
     }
-    // 合并教学资源
     if (EXT_MAP.jiaoxue) {
       deepMerge(BASE_MAP.jiaoxue.grades, EXT_MAP.jiaoxue);
     }
@@ -222,15 +261,19 @@
     }
   }
 
-  // ========== 页面交互 ==========
+  // ======================= 页面交互 =======================
 
   function onCategoryChange() {
     const cat = document.getElementById('category').value;
 
-    document.getElementById('bookWrap').style.display = 'none';
-    document.getElementById('gradeWrap').style.display = 'none';
-    document.getElementById('unitWrap').style.display = 'none';
-    document.getElementById('lessonWrap').style.display = 'none';
+    // 重置所有
+    ['bookWrap','gradeWrap','resTypeWrap','unitWrap','lessonWrap','specialWrap','specialUnitWrap','subFolderWrap'].forEach(id => {
+      document.getElementById(id).style.display = 'none';
+    });
+    document.getElementById('unit').innerHTML = '';
+    document.getElementById('lesson').innerHTML = '';
+    document.getElementById('special').innerHTML = '';
+    document.getElementById('specialUnit').innerHTML = '';
 
     if (cat === 'mingzhu') {
       fillSelect('book', '请选择书目...', BASE_MAP.mingzhu.books.map(b => ({value: b.folder, text: b.name})));
@@ -240,22 +283,52 @@
       const grades = Object.entries(BASE_MAP.jiaoxue.grades).map(([k,v]) => ({value: k, text: v.label}));
       fillSelect('grade', '请选择年级...', grades);
       document.getElementById('gradeWrap').style.display = 'block';
+      document.getElementById('resTypeWrap').style.display = 'block';
+      setResType('textbook');
+    }
+    else if (['hanzi','shici','dushuhui','keti'].includes(cat)) {
+      document.getElementById('subFolderWrap').style.display = 'block';
+    }
+
+    updatePath();
+  }
+
+  function setResType(type) {
+    resType = type;
+    document.getElementById('btnTextbook').classList.toggle('active', type === 'textbook');
+    document.getElementById('btnSpecial').classList.toggle('active', type === 'special');
+
+    document.getElementById('unitWrap').style.display = 'none';
+    document.getElementById('lessonWrap').style.display = 'none';
+    document.getElementById('specialWrap').style.display = 'none';
+    document.getElementById('specialUnitWrap').style.display = 'none';
+
+    const gradeKey = document.getElementById('grade').value;
+    if (!gradeKey) return;
+
+    if (type === 'textbook') {
+      const grade = BASE_MAP.jiaoxue.grades[gradeKey];
+      const units = Object.entries(grade.units).map(([k,v]) => ({value: k, text: v.label}));
+      fillSelect('unit', '请选择单元...', units);
+      document.getElementById('unitWrap').style.display = 'block';
+    } else {
+      const grade = BASE_MAP.jiaoxue.grades[gradeKey];
+      const specials = grade.specials.map(s => ({value: s.folder, text: s.name}));
+      fillSelect('special', '请选择专项...', specials);
+      document.getElementById('specialWrap').style.display = 'block';
+
+      // 专项需要选单元号 1-6
+      const unitNums = Array.from({length:6},(_,i)=>({value:`unit${i+1}`,text:`第${i+1}单元`}));
+      fillSelect('specialUnit', '请选择单元号...', unitNums);
+      document.getElementById('specialUnitWrap').style.display = 'block';
     }
     updatePath();
   }
 
   function onGradeChange() {
-    const gradeKey = document.getElementById('grade').value;
-    const grade = BASE_MAP.jiaoxue.grades[gradeKey];
-
-    document.getElementById('unitWrap').style.display = 'none';
-    document.getElementById('lessonWrap').style.display = 'none';
-
-    if (!grade) { updatePath(); return; }
-
-    const units = Object.entries(grade.units).map(([k,v]) => ({value: k, text: v.label}));
-    fillSelect('unit', '请选择单元...', units);
-    document.getElementById('unitWrap').style.display = 'block';
+    if (document.getElementById('category').value === 'jiaoxue') {
+      setResType(resType);
+    }
     updatePath();
   }
 
@@ -271,6 +344,10 @@
     const lessons = unit.lessons.map(l => ({value: l.folder, text: l.name}));
     fillSelect('lesson', '请选择课文...', lessons);
     document.getElementById('lessonWrap').style.display = 'block';
+    updatePath();
+  }
+
+  function onSpecialChange() {
     updatePath();
   }
 
@@ -291,20 +368,32 @@
     }
     else if (cat === 'jiaoxue') {
       const grade = document.getElementById('grade').value;
-      const unit = document.getElementById('unit').value;
-      const lesson = document.getElementById('lesson').value;
-      if (grade && unit && lesson) path = `jiaoxue/${grade}/${unit}/${lesson}/${type}`;
+      if (!grade) { path = ''; }
+      else if (resType === 'textbook') {
+        const unit = document.getElementById('unit').value;
+        const lesson = document.getElementById('lesson').value;
+        if (grade && unit && lesson) path = `jiaoxue/${grade}/${unit}/${lesson}/${type}`;
+      } else {
+        const special = document.getElementById('special').value;
+        const unit = document.getElementById('specialUnit').value;
+        if (grade && special && unit) path = `jiaoxue/${grade}/${special}/${unit}.html`;
+      }
+    }
+    else if (['hanzi','shici','dushuhui','keti'].includes(cat)) {
+      const sub = document.getElementById('subFolder').value.trim();
+      path = sub ? `${cat}/${sub}/${type}` : `${cat}/${type}`;
     }
 
     currentPath = path;
     document.getElementById('pathPreview').innerText = path ? `保存路径：${path}` : '保存路径：待选择...';
   }
 
-  ['book','pageType','lesson'].forEach(id => {
+  ['book','pageType','lesson','special','specialUnit','subFolder'].forEach(id => {
     document.getElementById(id)?.addEventListener('change', updatePath);
   });
+  document.getElementById('subFolder')?.addEventListener('input', updatePath);
 
-  // ========== 添加新条目弹窗 ==========
+  // ======================= 添加新条目弹窗 =======================
 
   function openAddModal(mode) {
     addMode = mode;
@@ -387,7 +476,7 @@
     }
   }
 
-  // ========== 上传文件 ==========
+  // ======================= 上传文件 =======================
 
   async function upload() {
     const file = document.getElementById('fileInput').files[0];
@@ -429,7 +518,6 @@
     s.innerText = msg;
   }
 
-  // 页面加载时读取配置
   loadConfig();
   </script>
 
