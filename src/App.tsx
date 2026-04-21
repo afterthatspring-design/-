@@ -237,7 +237,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section - Balanced Ink Wash & Educational Focus */}
-      <header className="relative bg-paper overflow-hidden py-40 md:py-56 px-6 border-b border-border-gold/15">
+      <header className="relative bg-paper overflow-hidden py-24 md:py-56 px-6 border-b border-border-gold/15">
         {/* Ink Wash Mountains Effect (山水) */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.05] flex items-end justify-center">
           <div className="w-full h-2/3 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-ink via-transparent to-transparent blur-3xl transform skew-y-2 translate-y-20" />
@@ -264,7 +264,7 @@ export default function App() {
           <span className="text-[12rem] md:text-[35rem] font-calligraphy leading-none">语</span>
         </div>
 
-        <div className="max-w-6xl mx-auto relative z-20 text-center md:text-left">
+        <div className="max-w-6xl mx-auto relative z-20 text-center md:text-left mt-8 md:mt-0">
           <motion.div 
             initial={{ opacity: 0, x: -20 }} 
             animate={{ opacity: 1, x: 0 }} 
@@ -277,14 +277,14 @@ export default function App() {
                 <span className="text-cinnabar tracking-[0.2em] md:tracking-[0.4em] text-xs md:text-sm font-bold">语文教育中心 · 锦水微澜</span>
               </div>
               
-              <h1 className="text-3xl sm:text-5xl md:text-8xl font-serif text-ink tracking-tight md:whitespace-nowrap leading-[1.2] md:leading-normal">
-                专注<span className="text-cinnabar font-calligraphy mx-1 md:mx-2">语文</span>学习<br />
-                深耕教研三十载
+              <h1 className="text-2xl sm:text-5xl md:text-8xl font-serif text-ink tracking-tight leading-[1.4] md:leading-normal">
+                <span className="inline-block whitespace-nowrap">专注<span className="text-cinnabar font-calligraphy mx-1 md:mx-2 text-3xl sm:text-6xl md:text-9xl">语文</span>学习</span><br className="md:hidden" />
+                <span className="inline-block whitespace-nowrap">深耕教研三十载</span>
               </h1>
             </div>
 
-            <p className="text-ink/80 text-base md:text-xl leading-relaxed md:leading-loose tracking-[0.15em] md:tracking-[0.3em] font-medium border-l-2 border-gold/30 pl-4 md:pl-6 max-w-lg italic mx-auto md:mx-0">
-              名著导读 · 汉字听写 · 读书会<br />
+            <p className="text-ink/80 text-sm md:text-xl leading-relaxed md:leading-loose tracking-[0.1em] md:tracking-[0.3em] font-medium border-l-2 border-gold/30 pl-4 md:pl-6 max-w-full md:max-w-lg italic mx-auto md:mx-0">
+              <span className="whitespace-nowrap">名著导读</span> · <span className="whitespace-nowrap">汉字听写</span> · <span className="whitespace-nowrap">读书会</span><br />
               让学习看得见，让文化润心田
             </p>
           </motion.div>
@@ -311,7 +311,7 @@ export default function App() {
             
             <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
               <div className="md:col-span-4 md:sticky top-24">
-                <div className="gold-border p-6 md:p-8 bg-white/60">
+                <div className="gold-border p-6 md:p-8 bg-white/20">
                   <div className="w-20 h-20 md:w-24 md:h-24 bg-ink text-paper rounded-full flex items-center justify-center text-3xl md:text-4xl font-bold mb-4 md:mb-6 mx-auto">黄</div>
                   <h3 className="text-xl md:text-2xl font-bold text-center mb-1 md:mb-2 text-ink">黄国荣</h3>
                   <p className="text-base md:text-lg text-center text-gray-900 leading-relaxed font-bold">中学语文高级教师<br />江西省省优秀课题主持人<br />上高县名师工作室主理人</p>
@@ -361,19 +361,19 @@ export default function App() {
           <div className="ornament-line" />
           <h2 className="text-3xl md:text-5xl font-calligraphy mb-8 md:mb-12">近期动态 · <span className="text-cinnabar">最新成果</span></h2>
           <div className="space-y-4 md:space-y-6">
-            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-green-800 bg-white/60">
+            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-green-800 bg-white/20">
               <h4 className="text-lg md:text-2xl font-bold text-ink mb-2 md:mb-4">🏅 省优秀课题结题</h4>
               <p className="text-sm md:text-lg text-ink leading-relaxed md:leading-loose font-medium">
                 《汉字词语听写训练工具的多场景运用研究》于2025年12月正式结题，被评为省优秀课题。
               </p>
             </div>
-            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-gold bg-white/60">
+            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-gold bg-white/20">
               <h4 className="text-lg md:text-2xl font-bold text-ink mb-2 md:mb-4">📱 智能教育应用</h4>
               <p className="text-sm md:text-lg text-ink leading-relaxed md:leading-loose font-medium">
                 运用AI编程技术开发大量教学辅助APP，并利用抖音平台（黄老师家庭教育）推广汉字听写训练工具。
               </p>
             </div>
-            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-blue-800 bg-white/60">
+            <div className="gold-border p-6 md:p-10 border-l-[4px] border-l-blue-800 bg-white/20">
               <h4 className="text-lg md:text-2xl font-bold text-ink mb-2 md:mb-4">🤝 家庭教育与心理辅导</h4>
               <p className="text-sm md:text-lg text-ink leading-relaxed md:leading-loose font-medium">
                 与县家庭教育指导中心深度合作，开展专题讲座及心理咨询服务，助力学生健康成长。
@@ -423,7 +423,7 @@ function ResourceNavigator() {
     if (filteredItems.length === 0) return null;
 
     return (
-      <div key={id} id={id} className="gold-border bg-white overflow-hidden flex flex-col group transition-all hover:shadow-2xl animate-in fade-in zoom-in duration-500">
+      <div key={id} id={id} className="gold-border bg-white/70 overflow-hidden flex flex-col group transition-all hover:shadow-2xl animate-in fade-in zoom-in duration-500">
         <div className="px-6 md:px-8 py-4 md:py-5 border-b border-border-gold/20 flex items-center justify-between bg-paper-dark/10">
           <span className="text-xl md:text-2xl font-bold text-ink tracking-[0.1em]">{title}</span>
         </div>
@@ -1309,7 +1309,7 @@ function ResourceCard({ id, icon, title, desc, color, action }: { id: string, ic
   return (
     <div 
       onClick={action ? action : () => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
-      className={`gold-border p-4 md:p-8 border-l-[3px] md:border-l-[4px] ${color} bg-white/60 hover:bg-white/80 group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl no-print flex flex-col h-full`}
+      className={`gold-border p-4 md:p-8 border-l-[3px] md:border-l-[4px] ${color} bg-white/20 hover:bg-white/40 group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl no-print flex flex-col h-full`}
     >
       <div className="text-gold mb-3 md:mb-6 group-hover:text-cinnabar transition-colors scale-90 md:scale-125 origin-left">
         {icon}

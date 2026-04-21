@@ -11,8 +11,8 @@
   --color-ink: #1a1a1a;
   --color-cinnabar: #8a0000;
   --color-gold: #b6a17b;
-  --color-paper: #fffefb;
-  --color-paper-dark: #fbfaf5;
+  --color-paper: #faf9f6;
+  --color-paper-dark: #f5f4ef;
   --color-border-gold: rgba(182, 161, 123, 0.25);
 }
 
@@ -25,6 +25,8 @@
     @apply bg-paper text-ink font-serif antialiased text-[20px] leading-[1.8] font-medium;
     background-image: var(--bg-paper-texture);
     background-size: 500px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
