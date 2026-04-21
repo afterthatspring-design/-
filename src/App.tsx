@@ -82,8 +82,8 @@ export default function App() {
             </button>
             <span className="font-bold tracking-widest text-ink text-base hidden md:inline">教学资源 · 联考/校本资源导航</span>
           </div>
-          <div className="flex gap-4">
-            <button onClick={() => setView('main')} className="text-sm font-bold text-ink hover:text-cinnabar">工作室首页</button>
+          <div className="flex items-center gap-4">
+            <button onClick={() => setView('main')} className="text-base font-bold text-ink hover:text-cinnabar transition-colors">工作室首页</button>
           </div>
         </nav>
 
@@ -113,8 +113,8 @@ export default function App() {
             </button>
             <span className="font-bold tracking-widest text-ink text-base hidden md:inline">《钢铁是怎样炼成的》题库专研</span>
           </div>
-          <div className="flex gap-4">
-            <button onClick={() => setView('main')} className="text-sm font-bold text-ink hover:text-cinnabar">工作室首页</button>
+          <div className="flex items-center gap-4">
+            <button onClick={() => setView('main')} className="text-base font-bold text-ink hover:text-cinnabar transition-colors">工作室首页</button>
           </div>
         </nav>
 
@@ -145,8 +145,8 @@ export default function App() {
             </button>
             <span className="font-bold tracking-widest text-ink text-base hidden md:inline">名著导读 · 经典书目库</span>
           </div>
-          <div className="flex gap-4">
-            <button onClick={() => setView('main')} className="text-sm font-bold text-ink hover:text-cinnabar">工作室首页</button>
+          <div className="flex items-center gap-4">
+            <button onClick={() => setView('main')} className="text-base font-bold text-ink hover:text-cinnabar transition-colors">工作室首页</button>
           </div>
         </nav>
         
@@ -196,14 +196,14 @@ export default function App() {
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        <div className="hidden md:flex gap-12 text-base uppercase tracking-[0.4em] font-bold text-ink">
+        <div className="hidden md:flex items-center gap-12 text-base uppercase tracking-[0.4em] font-bold text-ink">
           {menuItems.map(item => (
             <button 
               key={item.name}
               onClick={() => item.action ? item.action() : document.getElementById(item.id!)?.scrollIntoView({ behavior: 'smooth' })}
-              className="relative group hover:text-cinnabar transition-colors cursor-pointer py-2 px-1"
+              className="relative group hover:text-cinnabar transition-colors cursor-pointer py-2 px-1 flex items-center h-full"
             >
-              <span>{item.name}</span>
+              <span className="leading-none">{item.name}</span>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-cinnabar transition-all duration-300 group-hover:w-full" />
             </button>
           ))}
@@ -423,7 +423,7 @@ function ResourceNavigator() {
     if (filteredItems.length === 0) return null;
 
     return (
-      <div key={id} id={id} className="gold-border bg-white/70 overflow-hidden flex flex-col group transition-all hover:shadow-2xl animate-in fade-in zoom-in duration-500">
+      <div key={id} id={id} className="gold-border bg-white overflow-hidden flex flex-col group transition-all hover:shadow-2xl animate-in fade-in zoom-in duration-500 shadow-md">
         <div className="px-6 md:px-8 py-4 md:py-5 border-b border-border-gold/20 flex items-center justify-between bg-paper-dark/10">
           <span className="text-xl md:text-2xl font-bold text-ink tracking-[0.1em]">{title}</span>
         </div>
@@ -477,7 +477,7 @@ function ResourceNavigator() {
   const NavButton = ({ item }: NavButtonProps) => (
     <button 
       onClick={() => { setActiveTab(item.id); setFilter(""); }}
-      className={`px-4 md:px-8 py-2.5 md:py-3.5 rounded-full text-sm md:text-base font-bold tracking-[0.1em] md:tracking-[0.2em] transition-all border ${activeTab === item.id ? 'bg-ink border-ink text-white shadow-xl scale-105' : 'bg-white border-border-gold/30 text-ink hover:border-cinnabar hover:text-cinnabar'}`}
+      className={`px-4 md:px-8 py-2.5 md:py-3.5 rounded-full text-sm md:text-base font-bold tracking-[0.1em] md:tracking-[0.2em] transition-all border shadow-sm ${activeTab === item.id ? 'bg-ink border-ink text-white shadow-xl scale-105' : 'bg-white border-gold/50 text-ink shadow-sm hover:border-cinnabar hover:text-cinnabar hover:shadow-md'}`}
     >
       {item.label}
     </button>
@@ -508,7 +508,7 @@ function ResourceNavigator() {
 
       {/* Grade Selection Row */}
       <div className="max-w-5xl mx-auto px-4">
-        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 bg-paper-dark/20 p-2 rounded-2xl border border-border-gold/10 shadow-inner">
+        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 bg-gold/10 p-2 rounded-2xl border border-border-gold shadow-inner">
           {grades.map(g => (
             <button
               key={g.id}
@@ -516,7 +516,7 @@ function ResourceNavigator() {
               className={`flex-1 min-w-[100px] md:min-w-[120px] px-4 md:px-6 py-3 md:py-4 rounded-xl text-base md:text-lg font-bold tracking-[0.2em] md:tracking-[0.4em] transition-all ${
                 selectedGrade === g.id 
                   ? 'bg-cinnabar text-white shadow-lg scale-105' 
-                  : 'text-ink/40 hover:text-cinnabar hover:bg-white/50'
+                  : 'text-ink/60 hover:text-cinnabar bg-white/40 hover:bg-white shadow-sm'
               }`}
             >
               {g.label}
