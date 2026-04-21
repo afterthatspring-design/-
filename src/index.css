@@ -1,0 +1,426 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=Zeyada&display=swap');
+
+@theme {
+  --font-serif: "Noto Serif SC", serif;
+  --font-calligraphy: "Ma Shan Zheng", cursive;
+  --font-cursive: "Zhi Mang Xing", cursive;
+  --font-signature: "Zeyada", cursive;
+  
+  --color-ink: #1a1a1a;
+  --color-cinnabar: #8a0000;
+  --color-gold: #b6a17b;
+  --color-paper: #faf9f6;
+  --color-border-gold: rgba(182, 161, 123, 0.25);
+}
+
+:root {
+  --bg-paper-texture: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-serif antialiased text-[20px] leading-[1.8] font-medium;
+    background-image: var(--bg-paper-texture);
+    background-size: 500px;
+    opacity: 0.98;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .scrolling-page {
+    @apply w-full min-h-screen relative overflow-x-hidden;
+    /* Remove the fixed grid from theme-container for this mode */
+  }
+
+  .content-frame {
+    @apply max-w-7xl mx-auto px-4 py-12 md:px-6 relative z-10;
+  }
+
+  .nav-header {
+    @apply sticky top-0 z-50 bg-paper/95 backdrop-blur-lg border-b-2 border-border-gold/30 px-6 md:px-12 py-5 flex justify-between items-center shadow-sm;
+  }
+
+  .section-container {
+    @apply py-16 md:py-24 border-b border-border-gold/30 last:border-b-0;
+  }
+
+  .ornament-line {
+    @apply w-12 h-px bg-gold mb-4;
+  }
+
+  .vertical-label {
+    writing-mode: vertical-rl;
+    @apply absolute -left-10 top-0 text-xs uppercase tracking-[0.5em] text-gold/80 hidden lg:block font-bold;
+  }
+
+  .feature-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8;
+  }
+
+  .gold-border {
+    @apply border border-border-gold relative bg-white/80 shadow-sm transition-all;
+  }
+  
+  .gold-border::after {
+    content: '';
+    @apply absolute inset-0 border border-gold opacity-5 pointer-events-none translate-x-1 translate-y-1;
+  }
+
+  /* Prestige Academic Palette Extensions */
+  .border-prestige-sage { border-color: #7d8c7d !important; }
+  .border-prestige-slate { border-color: #6d7a8c !important; }
+  .border-prestige-rose { border-color: #8c6d6d !important; }
+  .border-prestige-gold { border-color: #b6a17b !important; }
+  .border-prestige-ink { border-color: #333333 !important; }
+  .border-prestige-purple { border-color: #7c6d8c !important; }
+
+  /* Keep previous components but adjust for non-grid use */
+  .vertical-title {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    @apply flex flex-col justify-between h-full border-r border-border-gold pr-4;
+  }
+  
+  /* ... previous components preserved below ... */
+  .main-content {
+    @apply border border-border-gold p-6 md:p-10 flex flex-col justify-center relative;
+  }
+
+  .main-content::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    border: 1px solid var(--color-border-gold);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    @apply text-cinnabar border border-cinnabar px-3 py-1 inline-block text-xs mb-6 self-start;
+  }
+
+  .course-card {
+    @apply border-b border-border-gold py-5 transition-all duration-300 bg-transparent;
+  }
+
+  .course-card:hover {
+    @apply border-b-cinnabar;
+  }
+
+  .seal-fixed {
+    @apply w-[60px] h-[60px] bg-cinnabar text-white flex items-center justify-center text-[10px] font-bold select-none;
+    writing-mode: vertical-rl;
+    border-radius: 2px;
+    box-shadow: 2px 2px 0 var(--color-gold);
+  }
+
+  .bottom-nav {
+    @apply flex gap-8 text-sm border-t border-border-gold pt-4 transition-colors;
+  }
+
+  .bottom-nav a {
+    @apply opacity-70 hover:opacity-100 hover:text-cinnabar transition-all;
+  }
+}
+
+@layer utilities {
+  .writing-vertical {
+    writing-mode: vertical-rl;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+  
+  body {
+    background: white !important;
+    background-image: none !important;
+    font-size: 12pt !important;
+    color: black !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+  }
+
+  .print-header {
+    margin-bottom: 20pt;
+    border-bottom: 2pt solid #9d7c2d !important;
+    padding-bottom: 10pt;
+    text-align: center;
+  }
+
+  .print-content {
+    column-count: 1;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .print-break-after {
+    page-break-after: always;
+  }
+
+  .print-avoid-break {
+    break-inside: avoid;
+  }
+}
+
+/* Original School Style CSS - Strictly Retained */
+.legacy-paper {
+  max-width: 1200px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  margin: 20px auto;
+  padding: 0.6rem 0.8rem;
+  font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+}
+
+.legacy-page {
+  background: white;
+}
+
+.legacy-print-break-after {
+  page-break-after: always;
+  break-after: page;
+}
+
+.legacy-main-title {
+  text-align: center !important;
+  margin-bottom: 0.35rem !important;
+  border-bottom: 2px solid #c0a36b !important;
+  padding-bottom: 0.1rem !important;
+}
+
+.legacy-main-title h1 {
+  font-size: 1.45rem !important;
+  letter-spacing: 2px !important;
+  color: #8a0000 !important; /* Changed from green to cinnabar red */
+  font-weight: 700 !important;
+  margin-bottom: 0.05rem !important;
+  display: block;
+}
+
+.legacy-subhead {
+  text-align: center !important;
+  font-size: 0.62rem !important;
+  color: #6a5c47 !important;
+  margin-top: 0.03rem !important;
+  line-height: 1.15 !important;
+}
+
+.legacy-author-line {
+  text-align: center !important;
+  font-size: 0.58rem !important;
+  color: #7a5a4a !important;
+  border-top: 1px dashed #e2d8c6 !important;
+  padding-top: 0.12rem !important;
+  margin-top: 0.12rem !important;
+  margin-bottom: 0.45rem !important;
+}
+
+.legacy-section {
+  margin: 0.45rem 0 0.35rem !important;
+}
+
+.legacy-section-title {
+  font-size: 0.95rem !important;
+  font-weight: bold !important;
+  color: #5c4a37 !important;
+  background: #f0ebe0 !important;
+  padding: 0.12rem 0.6rem !important;
+  border-left: 5px solid #b6a17b !important;
+  margin-bottom: 0.28rem !important;
+}
+
+.legacy-ans-section-title {
+  background: #f0ebe0 !important;
+  padding: 0.2rem 0.6rem !important;
+  font-size: 1.05rem !important;
+  font-weight: bold !important;
+  border-left: 5px solid #8a0000 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.legacy-subsection {
+  margin: 0.28rem 0 0.22rem 0.5rem !important;
+}
+
+.legacy-subsection-title {
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: #6d5b4a !important;
+  margin-bottom: 0.14rem !important;
+  border-left: 3px solid #b6a17b !important;
+  padding-left: 0.4rem !important;
+}
+
+.legacy-compact-p {
+  font-size: 0.75rem !important;
+  line-height: 1.28 !important;
+  margin-bottom: 0.24rem !important;
+  text-align: justify !important;
+  color: #2c2a28 !important;
+}
+
+.legacy-highlight-box, .legacy-book-list-compact {
+  background: #faf9f4 !important;
+  padding: 0.28rem 0.5rem !important;
+  border-radius: 6px !important;
+  margin: 0.32rem 0 !important;
+  border: 1px solid #eee6db !important;
+}
+
+.legacy-quote {
+  font-style: italic !important;
+  color: #5c4a37 !important;
+  background: #fafafa !important;
+  padding: 0.22rem 0.5rem !important;
+  border-left: 4px solid #b6a17b !important;
+  margin: 0.32rem 0 !important;
+  font-size: 0.74rem !important;
+  line-height: 1.26 !important;
+}
+
+.legacy-print-footer {
+  text-align: center !important;
+  font-size: 0.52rem !important;
+  margin-top: 0.35rem !important;
+  color: #bbaa8a !important;
+  border-top: 1px solid #ece1d1 !important;
+  padding-top: 0.14rem !important;
+}
+
+.legacy-page-number {
+  text-align: center !important;
+  font-size: 0.52rem !important;
+  color: #9b8a74 !important;
+  margin-top: 0.18rem !important;
+}
+
+.legacy-strong {
+  color: #8a0000 !important; /* Changed to match cinnabar motif */
+  font-weight: bold !important;
+}
+
+/* Grid Answers */
+.legacy-grid-answers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.3rem 0.8rem;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .legacy-grid-answers {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.legacy-grid-item {
+  font-size: 0.85rem !important;
+  line-height: 1.4 !important;
+  padding: 0.1rem 0 !important;
+}
+
+/* Vertical Answers */
+.legacy-vertical-answer {
+  margin-bottom: 0.7rem !important;
+  line-height: 1.45 !important;
+  font-size: 0.88rem !important;
+}
+.legacy-vertical-answer .q-num {
+  font-weight: 700 !important;
+  color: #4a3728 !important; /* Changed from red to deep harmonious brown */
+  margin-right: 6px !important;
+}
+
+.legacy-small-note {
+  font-size: 0.7rem !important;
+  color: #8b7a62 !important;
+  text-align: right !important;
+  margin-top: 0.3rem !important;
+}
+
+/* Questions Container */
+.legacy-questions-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+.legacy-q-title {
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  color: #333333 !important; /* Changed from red to soft black/ink for titles */
+  margin-bottom: 0.1rem !important;
+  line-height: 1.32 !important;
+}
+
+.legacy-answer-lines {
+  margin-top: 0.03rem !important;
+}
+
+.legacy-line {
+  border-bottom: 1px solid #9e8b6e !important;
+  margin-bottom: 0.52rem !important;
+  height: 1.05rem !important;
+}
+
+.legacy-shift-down {
+  margin-top: 0.9rem !important;
+}
+
+/* Fill Blank / Choice Specific */
+.legacy-questions-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.55rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.legacy-q-item {
+  background: #fefcf8 !important;
+  border-bottom: 0.5px solid #e2d9cc !important;
+  padding: 0.12rem 0.2rem 0.12rem 0.6rem !important;
+  line-height: 1.5 !important;
+  font-size: 0.85rem !important;
+}
+
+.legacy-blank {
+  display: inline-block !important;
+  min-width: 70px !important;
+  border-bottom: 1.2px dotted #a5682c !important;
+  margin: 0 3px !important;
+  font-weight: 600 !important;
+}
+
+@media print {
+  .legacy-paper {
+    box-shadow: none !important;
+    padding: 0.5cm 0.6cm !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+}
