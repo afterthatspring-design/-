@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《钢铁是怎样炼成的》简答题集 - 学生版</title>
+    <style>
+        body { font-family: 'PingFang SC', serif; background: #faf9f6; padding: 20px; line-height: 1.8; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 50px; border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid #8a0000; }
+        h1 { color: #8a0000; text-align: center; border-bottom: 2px solid #8a0000; padding-bottom: 20px; margin-bottom: 40px; font-size: 2em; letter-spacing: 4px; }
+        .qa-pair { margin-bottom: 45px; }
+        .question { font-weight: bold; color: #1a1a1a; margin-bottom: 15px; display: block; font-size: 1.1em; }
+        .answer-lines { margin-top: 10px; }
+        .line { border-bottom: 1px solid #ccc; height: 32px; margin-bottom: 10px; width: 100%; opacity: 0.6; }
+        .no-print { display: inline-block; margin-bottom: 25px; padding: 10px 25px; background: #8a0000; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 14px; }
+        .info-strip { display: flex; justify-content: space-between; margin-bottom: 30px; font-size: 0.9em; color: #b6a17b; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        
+        @page { size: A4; margin: 1.5cm 1.2cm; }
+        @media print { 
+            .no-print { display: none; } 
+            body { padding: 0; background: white; font-size: 11pt; } 
+            .container { border: none; box-shadow: none; width: 100%; padding: 0; margin: 0; } 
+            h1 { font-size: 20pt; margin-bottom: 20pt; }
+            .info-strip { margin-bottom: 20pt; }
+            .qa-pair { margin-bottom: 25pt; break-inside: avoid; }
+            .line { height: 28px; margin-bottom: 8px; } 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="no-print">&larr; 返回目录</a>
+        <div class="info-strip">
+            <span>科目：语文名著精读与鉴赏</span>
+            <span>范围：保尔·柯察金成长史</span>
+            <span>全卷共25题，本页为选摘</span>
+        </div>
+        <h1>《钢铁是怎样炼成的》探究性简答题</h1>
+        
+        <script>
+            const coreQuestions = [
+                "1. 简述《钢铁是怎样炼成的》的主要故事情节。",
+                "2. 保尔·柯察金在发电厂认识了谁？这个人对他产生了怎样的影响？",
+                "3. 分析保尔·柯察金这一人物形象及其性格特点。",
+                "4. 冬妮亚是一个怎样的人物形象？她与保尔的感情为何破裂？",
+                "5. 朱赫来在保尔的成长过程中起到了什么作用？",
+                "6. 丽达与保尔之间是怎样的关系？她代表什么样的女性形象？",
+                "7. 保尔在修建铁路时遇到了哪些困难？这段经历表现了他怎样的精神？",
+                "8. 保尔是如何失明的？失明后他选择了怎样的人生道路？",
+                "9. 小说标题“钢铁是怎样炼成的”有什么象征意义？",
+                "10. 保尔在烈士公墓前的一段独白表达了怎样的思想感情？"
+            ];
+
+            coreQuestions.forEach(q => {
+                document.write(`
+                    <div class="qa-pair">
+                        <span class="question">${q}</span>
+                        <div class="answer-lines">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
+
+        <div style="text-align: center; margin-top: 50px; color: #b6a17b; font-size: 0.85em; border-top: 1px solid #eee; padding-top: 20px;">
+            锦水微澜名师工作室 · 数字化教学资源 (学生版精选集)
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《朝花夕拾》精选选择题 - 学生版</title>
+    <style>
+        body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #faf9f6; padding: 20px; color: #333; line-height: 1.6; }
+        .container { max-width: 850px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ddd; border-top: 6px solid #8a0000; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        h1 { color: #8a0000; text-align: center; border-bottom: 2px solid #8a0000; padding-bottom: 15px; margin-bottom: 30px; font-size: 1.8em; letter-spacing: 2px; }
+        .question { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px dashed #eee; display: flex; flex-direction: column; }
+        .q-text { font-weight: bold; margin-bottom: 8px; }
+        .options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px; }
+        .no-print { display: inline-block; margin-bottom: 20px; padding: 8px 20px; border: 1px solid #8a0000; color: #8a0000; text-decoration: none; border-radius: 20px; font-weight: bold; font-size: 14px; transition: 0.3s; }
+        .no-print:hover { background: #8a0000; color: white; }
+        .info-bar { text-align: center; margin-bottom: 30px; font-size: 0.9em; color: #666; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
+        @page { size: A4; margin: 1.5cm 1.2cm; }
+        @media print { 
+            body { padding: 0; background: white; font-size: 10.5pt; }
+            .no-print { display: none; } 
+            .container { border: none; box-shadow: none; width: 100%; max-width: 100%; padding: 0; margin: 0; } 
+            h1 { font-size: 18pt; margin-bottom: 15pt; padding-bottom: 10pt; }
+            .info-bar { margin-bottom: 15pt; }
+            .question { margin-bottom: 12pt; padding-bottom: 8pt; break-inside: avoid; }
+            .q-title { margin-bottom: 4pt; }
+            .options { gap: 4pt; font-size: 9.5pt; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="no-print">&larr; 返回目录</a>
+        <h1>《朝花夕拾》名著导读精选选择题</h1>
+        <div class="info-bar">
+            <span>科目：初中语文名著导读</span> | <span>范围：全书精选</span> | <span>题量：50道</span>
+        </div>
+        
+        <div id="questions-container"></div>
+
+        <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; color: #b6a17b; font-size: 0.85em;">
+            锦水微澜名师工作室 · 数字化教学资源 (学生端打印件)
+        </div>
+    </div>
+
+    <script>
+        const rawData = [
+            "1. 《朝花夕拾》的作者是（ ） A.郭沫若 B.鲁迅 C.茅盾 D.老舍",
+            "2. 《朝花夕拾》原名是（ ） A.《旧事重提》 B.《呐喊》 C.《彷徨》 D.《野草》",
+            "3. 书名“朝花夕拾”中，“朝”和“夕”分别代表（ ） A.早晨和傍晚 B.童年和成年 C.过去和现在 D.开始和结束",
+            "4. 鲁迅在《阿长与〈山海经〉》中提到的阿长，原本叫什么？ A.长妈妈 B.阿长 C.长生 D.不知其姓名",
+            "5. 阿长买给鲁迅的一套有插图的书是（ ） A.《资治通鉴》 B.《尔雅》 C.《山海经》 D.《天演论》",
+            "6. 在《从百草园到三味书屋》中，提到的美女蛇故事的主要意义是（ ） A.教人防备小人 B.展现乡村生活 C.宣扬迷信 D.满足孩子好奇心",
+            "7. 三味书屋的老师是（ ） A.寿镜吾 B.章太炎 C.蔡元培 D.胡适",
+            "8. 鲁迅在《藤野先生》中提到的藤野先生教哪门课？ A.解剖学 B.病理学 C.生物学 D.化学",
+            "9. 鲁迅离开仙台医专的根本原因是（ ） A.考试不及格 B.弃医从文 C.藤野先生离职 D.同学排挤",
+            "10. 鲁迅在看到“幻灯片事件”后选择弃医从文，是因为他意识到（ ） A.医术不能救国 B.中国人身体太差 C.救治国民精神更重要 D.老师水平不行",
+            "11. 《二十四孝图》中，鲁迅最反感的两个故事是（ ） A.卧冰求鲤、闻雷泣墓 B.老莱娱亲、郭巨埋儿 C.彩衣娱亲、扇枕温衾 D.哭竹生笋、扼虎救父",
+            "12. 《五昌》描述的是什么地方的迎神赛会？ A.绍兴 B.南京 C.北京 D.上海",
+            "13. 鲁迅在《五昌》中记叙了父亲强迫他背诵哪本书？ A.《鉴略》 B.《三字经》 C.《百家姓》 D.《论语》",
+            "14. 《狗·猫·鼠》一文中，作者仇猫的原因不包括（ ） A.猫吃掉他的隐鼠 B.猫的性情和行为 C.猫是资产阶级的宠物 D.隐鼠的遭遇",
+            "15. 《父之病》中，所谓的“名医”最终开出的药引是（ ） A.蟋蟀 B.经霜三年的甘蔗 C.原配蟋蟀一对 D.无根水",
+            "16. 鲁迅在《范爱农》中记叙的范爱农是他在哪里结识的朋友？ A.绍兴 B.日本留学期间 C.南京 D.北京",
+            "17. 范爱农最后的结局是（ ） A.病故 B.自杀 C.溺水身亡 D.不知所踪",
+            "18. 《朝花夕拾》共收录散文（ ） A.8篇 B.10篇 C.12篇 D.15篇",
+            "19. 鲁迅在《琐记》中提到的“雷峰塔倒掉”与哪所学校有关？ A.南京水师学堂 B.矿路学堂 C.仙台医专 D.北京大学",
+            "20. 《无常》一文中，对“无常”的主要描写是（ ） A.阴森恐怖 B.公正且带人情味 C.冷酷无情 D.迷信害人",
+            "21. 鲁迅在三味书屋读书时，最喜欢的课外消遣是（ ） A.捉蟋蟀 B.描绣像 C.去百草园 D.练书法",
+            "22. 鲁迅笔下的“隐鼠”最终被谁杀死的（根据《狗·猫·鼠》） A.猫 B.长妈妈 C.鲁迅自己 D.老鼠药",
+            "23. 鲁迅去日本留学的第一站是（ ） A.东京 B.仙台 C.弘文学院 D.京都",
+            "24. 鲁迅称赞哪位朋友有“狂人”气质？ A.范爱农 B.柔石 C.瞿秋白 D.郁达夫",
+            "25. 《朝花夕拾》最早是在哪本杂志上连载的？ A.《新青年》 B.《语丝》 C.《莽原》 D.《小说月报》",
+            "26. 在《二十四孝图》中，鲁迅认为“郭巨埋儿”的行为本质是（ ） A.虚伪、残忍 B.真正的孝顺 C.无可奈何 D.教育反面教材",
+            "27. 《朝花夕拾》的散文多写于（ ） A.广东中山大学期间 B.北京女子师范大学期间 C.厦门大学期间 D.上海工部局时期",
+            "28. 鲁迅在《父之病》中对中国传统中医的态度是（ ） A.全盘否定 B.推崇备至 C.辛辣讽刺虚伪误人的庸医 D.仅是儿时的回忆",
+            "29. “这回才算到了。这里的教室、实验室，都还很新，不过离宿舍很远……”这段话出自（ ） A.《琐记》 B.《藤野先生》 C.《范爱农》 D.《百草园》",
+            "30. 范爱农与鲁迅在报馆中的争端是因为（ ） A.经费问题 B.政治理念 C.范爱农对鲁迅的误解 D.由于他人挑拨",
+            "31. 《无常》一文中提到无常鬼也有家属，他的妻子叫（ ） A.孟婆 B.无常嫂 C.鬼妻 D.不知名",
+            "32. 鲁迅在《朝花夕拾》中对辛亥革命的态度是（ ） A.欢欣鼓舞 B.冷淡无视 C.揭示其不彻底性和失败根源 D.赞美其伟大胜利",
+            "33. 阿长在吃年糕时，总是叫作者说些什么话？ A.吉利话 B.过年好 C.我要吃饭 D.谢谢",
+            "34. 鲁迅在《狗·猫·鼠》中，用了什么修辞手法讽刺当时的“正人君子”？ A.比喻 B.象征/寓言 C.夸张 D.对比",
+            "35. 藤野先生曾纠正过鲁迅笔记中的什么错误？ A.语法 B.解剖图的线条位置 C.医学概念 D.历史日期",
+            "36. “一个人只要没有被世俗磨平棱角，总是值得尊敬的”，这可以用来概括《朝花夕拾》中的（ ） A.长妈妈 B.藤野先生 C.范爱农 D.寿镜吾",
+            "37. 《琐记》一文中提到的“衍太太”是（ ） A.慈爱的长辈 B.心术不正、教唆孩子的邻居 C.严厉的教师 D.勤奋的仆人",
+            "38. 鲁迅对“百草园”的描写体现了（ ） A.孩子对大自然的热爱 B.对童年艰苦生活的控诉 C.对封建教育的赞美 D.对故乡景色的怀念",
+            "39. 鲁迅离开仙台时，藤野先生送给他一件什么东西？ A.书籍 B.钢笔 C.照片（背面写着“惜别”） D.医疗手札",
+            "40. 《朝花夕拾》整体呈现的风格是（ ） A.单纯的叙事 B.谐趣与辛辣刺人、深情与反省的结合 C.纯粹的抒情 D.严肃的政论",
+            "41. 在《无常》一文中，作者写到民间戏中的无常，主要是为了（ ） A.宣传迷信 B.表达对社会不公的反抗与期待 C.描写家乡风俗 D.追求恐怖感",
+            "42. 下列哪篇散文不属于《朝花夕拾》？ A.《少年闰土》 B.《阿长与山海经》 C.《琐记》 D.《无常》",
+            "43. 鲁迅在《藤野先生》中写到了哪场战争？ A.甲午中日战争 B.日俄战争 C.抗日战争 D.一战",
+            "44. 鲁迅在离开绍兴去南京求学时，进的第一所学校是（ ） A.江南水师学堂 B.矿路学堂 C.路矿学堂 D.南京大学",
+            "45. “其道大光”是鲁迅在描写哪位人物时引用的（寓意革命） A.藤野先生 B.范爱农 C.秋瑾 D.无常",
+            "46. 《狗·猫·鼠》中，作者认为隐鼠（ ） A.极其厌恶 B.是他唯一的朋友 C.活泼可爱但被猫杀害 D.毫无意义",
+            "47. 鲁迅童年时的保姆“长妈妈”的结局如何？ A.在鲁迅家干了一辈子 B.因年老辞职回乡 C.病故 D.不知去向",
+            "48. 书中表现了鲁迅对什么制度的强烈批判？ A.科举制 B.封建礼教 C.殖民制度 D.社会等级制",
+            "49. 鲁迅在日本仙台留学时，日本学生对他（ ） A.非常友好 B.歧视并怀疑其考试作弊 C.漠不关心 D.十分崇拜",
+            "50. 《朝花夕拾》中展现的鲁迅内心最柔软、最富有温情的情感主要寄托于（ ） A.藤野先生 B.范爱农 C.长妈妈和童年的自然野趣 D.寿镜吾"
+        ];
+
+        const container = document.getElementById('questions-container');
+        rawData.forEach(item => {
+            // Split by A. B. C. D. to format options
+            const parts = item.split(/\s+([A-D]\.)/);
+            const questionText = parts[0];
+            const options = [];
+            for(let i=1; i<parts.length; i+=2) {
+                options.push(parts[i] + parts[i+1]);
+            }
+
+            const qDiv = document.createElement('div');
+            qDiv.className = 'question';
+            qDiv.innerHTML = `
+                <span class="q-text">${questionText}</span>
+                <div class="options">
+                    ${options.map(opt => `<span>${opt}</span>`).join('')}
+                </div>
+            `;
+            container.appendChild(qDiv);
+        });
+    </script>
+</body>
+</html>

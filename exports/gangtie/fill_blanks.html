@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《钢铁是怎样炼成的》填空题集 - 学生版</title>
+    <style>
+        body { font-family: 'PingFang SC', sans-serif; background: #faf9f6; padding: 20px; line-height: 2; }
+        .container { max-width: 850px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ddd; border-top: 6px solid #8a0000; }
+        h1 { color: #8a0000; text-align: center; margin-bottom: 30px; font-size: 1.8em; letter-spacing: 3px; }
+        .item { margin-bottom: 25px; font-size: 1.1em; color: #1a1a1a; word-break: break-all; }
+        .blank { display: inline-block; min-width: 120px; border-bottom: 1px solid #333; text-align: center; margin: 0 8px; height: 24px; vertical-align: bottom; }
+        .info-header { text-align: right; color: #b6a17b; font-size: 0.9em; margin-bottom: 20px; font-style: italic; }
+        .no-print { display: inline-block; margin-bottom: 25px; padding: 10px 25px; background: #8a0000; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; }
+        
+        @page { size: A4; margin: 1.5cm 1.2cm; }
+        @media print { 
+            .no-print { display: none; } 
+            body { padding: 0; background: white; font-size: 10pt; } 
+            .container { border: none; width: 100%; max-width: 100%; padding: 0; margin: 0; }
+            h1 { font-size: 18pt; margin-bottom: 15pt; }
+            .info-header { margin-bottom: 10pt; font-size: 9pt; }
+            .item-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt 20pt; }
+            .item { margin-bottom: 0; font-size: 10pt; line-height: 1.5; break-inside: avoid; }
+            .blank { min-width: 80px; height: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="no-print">返回目录</a>
+        <div class="info-header">班级：_________ 姓名：_________ 学号：_________</div>
+        <h1>名著精选：填空题专项训练</h1>
+        
+        <div class="item-container">
+        <script>
+            const questions = [
+                "1. 《钢铁是怎样炼成的》的作者是（ <span class='blank'></span> ）。",
+                "2. 小说的主人公是（ <span class='blank'></span> ）。",
+                "3. 保尔的革命引路人是（ <span class='blank'></span> ）。",
+                "4. 保尔的初恋情人是（ <span class='blank'></span> ）。",
+                "5. 保尔为了救朱赫来，偷了（ <span class='blank'></span> ）的手枪。",
+                "6. 保尔的童年好友，后也参加红军并牺牲的是（ <span class='blank'></span> ）。",
+                "7. 保尔在革命工作中结识的理想革命伴侣是（ <span class='blank'></span> ）。",
+                "8. 小说中体现保尔钢铁意志的经典劳动场面是（ <span class='blank'></span> ）。",
+                "9. 保尔在筑路时患上了严重的（ <span class='blank'></span> ），险些丧命。",
+                "10. 保尔最终因为伤病导致（ <span class='blank'></span> ），身体完全瘫痪。",
+                "11. 保尔在病榻上完成的第一部长篇小说是（ <span class='blank'></span> ）。",
+                "12. 保尔最后的妻子，并支持他完成创作的人是（ <span class='blank'></span> ）。",
+                "13. 保尔的哥哥，一名正直的铁路工人是（ <span class='blank'></span> ）。",
+                "14. 保尔对生命进行深刻思考的地方是（ <span class='blank'></span> ）。",
+                "15. 谁教给保尔拳击，让他学会反抗（ <span class='blank'></span> ）。",
+                "16. 那个出卖保尔，带有小资产阶级恶习的是（ <span class='blank'></span> ）。",
+                "17. 修建铁路时与保尔产生矛盾的官僚主义者是（ <span class='blank'></span> ）。",
+                "18. 在修路营地中，带头闹事的腐败分子是（ <span class='blank'></span> ）。",
+                "19. 故事中，保尔和战友们修建的是通往林区的（ <span class='blank'></span> ）。",
+                "20. 修建铁路的主要目的是为了运送过冬的（ <span class='blank'></span> ）。",
+                "21. 那个双目失明但精神永存的战士是（ <span class='blank'></span> ）。",
+                "22. 保尔曾经救出的那个地下工作者是（ <span class='blank'></span> ）。",
+                "23. 保尔曾因误会而错过的恋人是（ <span class='blank'></span> ）。",
+                "24. 那个陪保尔走到生命最后的高尚女性是（ <span class='blank'></span> ）。",
+                "25. 谢廖沙的未婚妻，同样是红军战士的是（ <span class='blank'></span> ）。",
+                "26. 保尔工作过的车站食堂里，那个善良的洗衣女工是（ <span class='blank'></span> ）。",
+                "27. 伟大的无产阶级革命导师是（ <span class='blank'></span> ）。",
+                "28. 那个在极度痛苦中仍坚持“生命不息，奋斗不止”的是（ <span class='blank'></span> ）。",
+                "29. 那个让保尔加入共青团的人是（ <span class='blank'></span> ）。",
+                "30. 那个写下“人最宝贵的是生命”名言的是（ <span class='blank'></span> ）。",
+                "31. 保尔在（ <span class='blank'></span> ）战场上患上的伤寒。",
+                "32. 那个经历了烈火淬炼的“钢铁”象征是（ <span class='blank'></span> ）。",
+                "33. 保尔在（ <span class='blank'></span> ）时期身体完全瘫痪。",
+                "34. 保尔最后选择的“新的战斗方式”是（ <span class='blank'></span> ）。",
+                "35. 达雅在保尔引导下成了（ <span class='blank'></span> ）。",
+                "36. “钢是在烈火和重压中炼成的”形容的是（ <span class='blank'></span> ）。",
+                "37. 保尔一生追求的事业是（ <span class='blank'></span> ）。",
+                "38. 小说的核心关键词是（ <span class='blank'></span> ）。",
+                "39. 谁指引保尔走上革命道路（ <span class='blank'></span> ）。",
+                "40. 保尔是以（ <span class='blank'></span> ）为原型创作的。",
+                "41. 小说中，保尔向（ <span class='blank'></span> ）阶层的人宣战。",
+                "42. 保尔的钢铁意志是在（ <span class='blank'></span> ）中磨炼的。",
+                "43. 那个代表独立、民主、革命女性的是（ <span class='blank'></span> ）。",
+                "44. 谁在全身瘫痪后仍握着笔（ <span class='blank'></span> ）。",
+                "45. 保尔的家庭成员中，支持他革命的哥哥是（ <span class='blank'></span> ）。",
+                "46. 保尔在（ <span class='blank'></span> ）（事件/背景）中伤及右眼。",
+                "47. 谢廖沙代表了革命青年的（ <span class='blank'></span> ）。",
+                "48. 保尔用自己的行动诠释了（ <span class='blank'></span> ）。",
+                "49. 本书的真实作者是（ <span class='blank'></span> ）。",
+                "50. 我们通常把保尔代表的精神称为（ <span class='blank'></span>精神 ）。"
+            ];
+
+            questions.forEach((text) => {
+                document.write(`<div class="item">${text}</div>`);
+            });
+        </script>
+        </div>
+
+        <div style="margin-top: 50px; text-align: center; color: #b6a17b; font-size: 0.85em; border-top: 1px solid #eee; padding-top: 20px;">
+            锦水微澜名师工作室 · 特制教学资源 (学生版)
+        </div>
+    </div>
+</body>
+</html>

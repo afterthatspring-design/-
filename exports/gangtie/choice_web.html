@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《钢铁是怎样炼成的》选择题专练 - 数字化研习版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap');
+        
+        body {
+            background-color: #faf9f6;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .legacy-paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 0 auto;
+            padding: 0.6rem 0.8rem;
+        }
+
+        .legacy-page {
+            background: white;
+            padding: 2rem;
+        }
+
+        .legacy-main-title {
+            text-align: center !important;
+            margin-bottom: 0.35rem !important;
+            border-bottom: 2px solid #c0a36b !important;
+            padding-bottom: 0.1rem !important;
+        }
+
+        .legacy-main-title h1 {
+            font-size: 1.45rem !important;
+            letter-spacing: 2px !important;
+            color: #8a0000 !important;
+            font-weight: 700 !important;
+            margin-bottom: 0.05rem !important;
+            display: block;
+        }
+
+        .legacy-subhead {
+            text-align: center !important;
+            font-size: 0.62rem !important;
+            color: #6a5c47 !important;
+            margin-top: 0.03rem !important;
+            line-height: 1.15 !important;
+        }
+
+        .legacy-ans-section-title {
+            background: #f0ebe0 !important;
+            padding: 0.2rem 0.6rem !important;
+            font-size: 1.05rem !important;
+            font-weight: bold !important;
+            border-left: 5px solid #8a0000 !important;
+            margin-bottom: 0.5rem !important;
+            margin-top: 1rem;
+        }
+
+        .legacy-questions-list {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.55rem !important;
+            margin-bottom: 0.3rem !important;
+        }
+
+        .legacy-q-item {
+            background: #fefcf8 !important;
+            border-bottom: 0.5px solid #e2d9cc !important;
+            padding: 0.12rem 0.2rem 0.12rem 0.6rem !important;
+            line-height: 1.5 !important;
+            font-size: 0.85rem !important;
+        }
+
+        .legacy-print-footer {
+            text-align: center !important;
+            font-size: 0.52rem !important;
+            margin-top: 2rem !important;
+            color: #bbaa8a !important;
+            border-top: 1px solid #ece1d1 !important;
+            padding-top: 0.14rem !important;
+        }
+
+        .legacy-page-number {
+            text-align: center !important;
+            font-size: 0.52rem !important;
+            color: #9b8a74 !important;
+            margin-top: 0.18rem !important;
+        }
+
+        .no-print { display: block; }
+        @media print { .no-print { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="legacy-paper">
+        <div class="legacy-page">
+            <div class="legacy-main-title">
+                <h1>《钢铁是怎样炼成的》选择题专练</h1>
+                <div class="legacy-subhead">奥斯特洛夫斯基 | 锦水微澜教育工作室 黄国荣 编制</div>
+            </div>
+
+            <div class="legacy-ans-section-title">🔘 选择题（共50题）</div>
+            <div id="questions-container" class="legacy-questions-list">
+                <!-- Questions injected here -->
+            </div>
+            <div class="legacy-print-footer">锦水微澜名师工作室 · 数字化教研专递</div>
+            <div class="legacy-page-number">—— 第1页 / 共1页 ——</div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            "1. 《钢铁是怎样炼成的》的作者是？ A.高尔基 B.奥斯特洛夫斯基 C.托尔斯泰 D.契诃夫",
+            "2. 小说的主人公是？ A.朱赫来 B.阿尔焦姆 C.保尔·柯察金 D.谢廖沙",
+            "3. 保尔因什么事被学校开除？ A.打架 B.偷东西 C.不满神父虐待 D.考试不及格",
+            "4. 保尔被开除后去了哪里工作？ A.工厂 B.车站食堂 C.矿山 D.农场",
+            "5. 谁是保尔的革命引路人？ A.阿尔焦姆 B.朱赫来 C.谢廖沙 D.托卡列夫",
+            "6. 保尔参加红军后在哪个战场上头部中弹？ A.波兰战场 B.德国战场 C.国内战场 D.芬兰战场",
+            "7. 小说中集中体现保尔钢铁意志的经典篇章是？ A.战斗 B.筑路 C.恋爱 D.写作",
+            "8. 保尔在修筑铁路时遇到了什么困难？ A.缺粮 B.严寒 C.疾病 D.以上都是",
+            "9. 保尔因什么导致双目失明、全身瘫痪？ A.战争重伤 B.伤寒 C.高强度工作 D.交通事故",
+            "10. 保尔在病重后选择了什么新的战斗方式？ A.演讲 B.教学 C.文学创作 D.从政",
+            "11. 保尔在妻子和母亲的帮助下完成了哪部小说？ A.《钢铁是怎样炼成的》 B.《暴风雨所诞生的》 C.《战争与和平》 D.《母亲》",
+            "12. 保尔的初恋是谁？ A.丽达 B.冬妮亚 C.达雅 D.赫里斯季娜",
+            "13. 冬妮亚是什么身份？ A.工人女儿 B.农民女儿 C.林务官女儿 D.军官女儿",
+            "14. 保尔与冬妮亚分手的原因是什么？ A.家庭反对 B.阶级立场不同 C.性格不合 D.误会",
+            "15. 谁是保尔理想的革命伴侣？ A.冬妮亚 B.达雅 C.丽达 D.赫里斯季娜",
+            "16. 丽达是什么身份？ A.教师 B.医生 C.共青团干部 D.工人",
+            "17. 保尔与丽达未能走到一起的原因是什么？ A.家庭反对 B.阶级不同 C.误会 D.保尔牺牲",
+            "18. 保尔的妻子是谁？ A.冬妮亚 B.丽达 C.达雅 D.赫里斯季娜",
+            "19. 达雅在保尔的帮助下成为了什么？ A.教师 B.医生 C.共产党员 D.作家",
+            "20. 保尔的哥哥是谁？ A.朱赫来 B.阿尔焦姆 C.谢廖沙 D.托卡列夫",
+            "21. 阿尔焦姆是什么身份？ A.红军战士 B.工人 C.农民 D.教师",
+            "22. 保尔在战斗中什么地方受伤？ A.手臂 B.大腿 C.头部 D.胸部",
+            "23. 保尔在战斗中头部中弹后，以什么战胜死亡？ A.医疗条件 B.顽强意志 C.家人照顾 D.运气",
+            "24. 保尔参加红军后成长为一名优秀的？ A.骑兵 B.步兵 C.炮兵 D.侦察兵",
+            "25. 小说以什么为背景？ A.一战 B.十月革命前后 C.二战 D.国内战争",
+            "26. 保尔在车站食堂当杂役时受尽了什么？ A.饥饿 B.寒冷 C.压迫和剥削 D.疾病",
+            "27. 朱赫来教保尔什么？ A.射击 B.拳击 C.骑马 D.游泳",
+            "28. 保尔因什么病险些丧命？ A.伤寒 B.肺炎 C.疟疾 D.痢疾",
+            "29. 保尔在病重后完成了哪部小说？ A.《钢铁是怎样炼成的》 B.《暴风雨所诞生的》 C.《母亲》 D.《童年》",
+            "30. “钢是在烈火和______中炼成的”横线应填？ A.急冷 B.重压 C.锤打 D.淬火",
+            "31. 保尔说“任何一个傻瓜在任何时候都能结束自己”这句话体现了他的什么？ A.软弱 B.坚强 C.悲观 D.乐观",
+            "32. 小说的书名寓意是什么？ A.钢铁的制造过程 B.革命意志在艰苦斗争中磨炼 C.工人阶级的力量 D.战争的残酷",
+            "33. 小说具有强烈的什么色彩？ A.浪漫主义 B.现实主义 C.自传体 D.象征主义",
+            "34. 保尔的原型是谁？ A.朱赫来 B.作者本人 C.托卡列夫 D.谢廖沙",
+            "35. 小说深入刻画了保尔的什么？ A.战斗经历 B.内心世界 C.爱情故事 D.家庭生活",
+            "36. 小说将现实主义的真实描写与什么主义的理想抒发相结合？ A.浪漫主义 B.古典主义 C.现代主义 D.象征主义",
+            "37. 保尔在瘫痪后产生什么念头？ A.逃跑 B.自杀 C.放弃 D.抱怨",
+            "38. 保尔在修筑铁路时展现出惊人的什么？ A.体力 B.毅力 C.智慧 D.勇气",
+            "39. 保尔说“我已把自己整个的生命和全部的精力献给了世界上最壮丽的事业——为人类的______而奋斗”，横线应填？ A.解放 B.幸福 C.和平 D.发展",
+            "40. 奥斯特洛夫斯基在病榻上历时几年创作了《钢铁是怎样炼成的》？ A.一年 B.两年 C.三年 D.四年",
+            "41. 奥斯特洛夫斯基23岁时双目失明，身体怎样？ A.瘫痪 B.残疾 C.虚弱 D.健康",
+            "42. 奥斯特洛夫斯基完成《钢铁是怎样炼成的》后又开始创作哪部作品？ A.《母亲》 B.《童年》 C.《暴风雨所诞生的》 D.《在人间》",
+            "43. 奥斯特洛夫斯基于哪一年病逝？ A.1934年 B.1935年 C.1936年 D.1937年",
+            "44. 奥斯特洛夫斯基病逝时年仅多少岁？ A.30岁 B.31岁 C.32岁 D.33岁",
+            "45. 保尔在车站食堂当杂役时认识了谁？ A.丽达 B.冬妮亚 C.达雅 D.赫里斯季娜",
+            "46. 保尔与冬妮亚因什么不同而分手？ A.家庭背景 B.阶级立场 C.性格 D.爱好",
+            "47. 丽达是什么干部？ A.党委 B.共青团 C.工会 D.妇女会",
+            "48. 达雅是保尔的什么人？ A.初恋 B.战友 C.妻子 D.妹妹",
+            "49. 阿尔焦姆代表了工人阶级的什么？ A.力量 B.智慧 C.质朴与力量 D.勇敢",
+            "50. 《钢铁是怎样炼成的》是一部闪烁着什么光芒的长篇小说？ A.现实主义 B.浪漫主义 C.理想主义 D.英雄主义"
+        ];
+
+        const container = document.getElementById('questions-container');
+        questions.forEach(q => {
+            const div = document.createElement('div');
+            div.className = 'legacy-q-item';
+            div.textContent = q;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>

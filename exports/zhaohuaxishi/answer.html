@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《朝花夕拾》题库标准答案详解</title>
+    <style>
+        body { font-family: 'PingFang SC', sans-serif; background: #fdfdfd; padding: 40px 20px; line-height: 1.8; color: #333; }
+        .master-key { max-width: 900px; margin: 0 auto; background: white; padding: 50px; border: 2px solid #8a0000; position: relative; }
+        .master-key::before { content: "教师专用 - 内部资料"; position: absolute; top: 10px; right: 10px; font-size: 12px; color: #8a0000; opacity: 0.5; border: 1px solid #8a0000; padding: 2px 5px; }
+        h1 { color: #8a0000; text-align: center; border-bottom: 3px double #8a0000; padding-bottom: 20px; margin-bottom: 40px; font-size: 2.2em; }
+        h2 { background: #8a0000; color: white; padding: 8px 20px; display: inline-block; margin-top: 40px; font-size: 1.2em; clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%); }
+        .section { margin-bottom: 10px; }
+        .ans-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px; }
+        .ans-item { border: 1px solid #eee; padding: 5px; text-align: center; font-family: monospace; }
+        .ans-item b { color: #8a0000; }
+        .qa-box { background: #fffaf5; border-left: 4px solid #8a0000; padding: 15px; margin-bottom: 15px; margin-top: 10px; }
+        .q-bold { font-weight: bold; color: #1a1a1a; }
+        .no-print { display: block; text-align: center; margin-bottom: 30px; }
+        .back-btn { display: inline-block; padding: 8px 25px; border: 1px solid #8a0000; color: #8a0000; text-decoration: none; border-radius: 20px; font-weight: bold; }
+        
+        @page { size: A4; margin: 1.5cm 1.2cm; }
+        @media print { 
+            .no-print { display: none; } 
+            body { padding: 0; background: white; font-size: 10pt; } 
+            .master-key { border-width: 1px; padding: 0; margin: 0; width: 100%; max-width: 100%; }
+            h1 { font-size: 18pt; margin-bottom: 20pt; }
+            h2 { margin-top: 20pt; font-size: 11pt; padding: 4pt 12pt; }
+            .section { margin-bottom: 15pt; }
+            .ans-grid { gap: 5pt; margin-top: 10pt; }
+            .ans-item { padding: 2pt; font-size: 9pt; }
+            .qa-box { padding: 10pt; font-size: 9.5pt; }
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print">
+        <a href="index.html" class="back-btn">&larr; 返回导读主目录</a>
+    </div>
+
+    <div class="master-key">
+        <h1>《朝花夕拾》数字化教学资源 · 标准答案</h1>
+
+        <div class="section">
+            <h2>一、选择题答案 (1-50)</h2>
+            <div class="ans-grid">
+                <script>
+                    const choices = ["B", "A", "B", "D", "C", "A", "A", "A", "B", "C", "B", "A", "A", "C", "C", "B", "C", "B", "A", "B", "B", "B", "C", "A", "C", "A", "C", "C", "B", "C", "B", "C", "A", "B", "B", "C", "B", "A", "C", "B", "B", "A", "B", "A", "B", "C", "C", "B", "B", "C"];
+                    choices.forEach((ans, i) => {
+                        document.write(`<div class="ans-item">${i+1}. <b>${ans}</b></div>`);
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>二、填空题答案详解</h2>
+            <div class="qa-box">
+                <p>1-10：周树人；10, 回忆；无常；寿镜吾；仙台；从百草园到三味书屋；郭巨埋儿, 老莱娱亲；幻灯片（看电影）；善良保姆；异路（救国路）</p>
+                <p>11-20：流亡（厦门大学）；骗子；愤正（落魄）；从百草园到三味书屋；新知识；衍；自然童趣, 封建束缚；夹叙夹议/批判；《山海经》；早</p>
+                <p>21-30：名义上的正人君子；浙江绍兴；与藤野的交往, 爱国心路；佐藤屋；早年, 晚年/现实；迎神赛会；严厉；冷淡, 高傲；狂人；万事大吉</p>
+                <p>31-40：狗·猫·鼠；水师学堂；1902；《朝花夕拾》；绍兴政界；《狂人日记》；质铺, 药店；清末学童, 文学战士；摇头晃脑；绍兴</p>
+                <p>41-50：教诲；琐碎的记忆；红橘；无常；绣像；溺水；范爱农；怀念童年, 批判旧弊；福井；厚重/仪式</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>三、简答题参考要点</h2>
+            <div class="qa-box">
+                <p><span class="q-bold">1. 书名含义：</span>‘朝’指童年，‘夕’指成年；‘花’喻往事。意为在成年后捡拾起童年的记忆花瓣，蕴含着深沉的回顾与反思。</p>
+                <p><span class="q-bold">2. 阿长与山海经：</span>内容记叙长妈妈帮忙买珍贵的《山海经》；体现了对善良底层的感激，表达了对平凡之爱的至高礼赞。</p>
+                <p><span class="q-bold">3. 百草园描写：</span>运用“不必说...单是...”句式，从声、色、味多角度展现自由欢乐，与三味书屋的枯燥形成对比，批判封建教育。</p>
+                <p><span class="q-bold">4. 藤野影响：</span>以医学之严谨、待人之平等塑造了鲁迅的求实精神；幻灯片事件促使鲁迅由医入文，藤野是其灵魂导师。</p>
+                <p><span class="q-bold">5. 猫的喻指：</span>鲁迅借猫折磨弱者且虚伪的习性，讽刺社会上那些表面公允实则阴险、镇压进步的“正人君子”。</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px; color: #b6a17b; font-size: 0.9em; border-top: 1px dotted #8a0000; padding-top: 20px;">
+            锦水微澜名师工作室 · 数字化教学内部参考件
+        </div>
+    </div>
+</body>
+</html>

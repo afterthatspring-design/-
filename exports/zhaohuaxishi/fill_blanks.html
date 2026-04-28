@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《朝花夕拾》填空题专项训练 - 学生版</title>
+    <style>
+        body { font-family: 'PingFang SC', sans-serif; background: #faf9f6; padding: 20px; line-height: 2; }
+        .container { max-width: 850px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ddd; border-top: 6px solid #8a0000; }
+        h1 { color: #8a0000; text-align: center; margin-bottom: 30px; font-size: 1.8em; letter-spacing: 3px; }
+        .item { margin-bottom: 25px; font-size: 1.1em; color: #1a1a1a; word-break: break-all; }
+        .blank { display: inline-block; min-width: 100px; border-bottom: 1px solid #333; text-align: center; margin: 0 5px; height: 24px; vertical-align: bottom; }
+        .no-print { display: inline-block; margin-bottom: 25px; padding: 10px 25px; background: #8a0000; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; }
+        .no-print:hover { opacity: 0.9; }
+        .info-header { text-align: right; color: #b6a17b; font-size: 0.9em; margin-bottom: 20px; font-style: italic; }
+        
+        @page { size: A4; margin: 1.5cm 1.2cm; }
+        @media print { 
+            .no-print { display: none; } 
+            body { padding: 0; background: white; font-size: 10pt; } 
+            .container { border: none; width: 100%; max-width: 100%; padding: 0; margin: 0; }
+            h1 { font-size: 18pt; margin-bottom: 15pt; }
+            .info-header { margin-bottom: 10pt; font-size: 9pt; }
+            .item-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt 20pt; }
+            .item { margin-bottom: 0; font-size: 10pt; line-height: 1.5; break-inside: avoid; }
+            .blank { min-width: 70px; height: 18px; margin: 0 4px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="no-print">返回目录</a>
+        <div class="info-header">班级：_________ 姓名：_________ 学号：_________</div>
+        <h1>名著精选：填空题专项训练</h1>
+        
+        <div class="item-container">
+        <script>
+            const fillInBlanks = [
+                "鲁迅原名（ <span class='blank'></span> ），《朝花夕拾》是他的散文集。",
+                "《朝花夕拾》全书共（ <span class='blank'></span> ）篇，是鲁迅的一部（ <span class='blank'></span> ）体散文集。",
+                "在《无常》中，那被称为“（ <span class='blank'></span> ）”的鬼，既可爱又可怕。",
+                "鲁迅在三味书屋的老师（ <span class='blank'></span> ）先生是一位方正、质朴、博学的人。",
+                "《藤野先生》中，藤野严九郎是鲁迅在日本（ <span class='blank'></span> ）医科专门学校的老师。",
+                "鲁迅在《（ <span class='blank'></span> ）》一文中提到了“百草园”和“三味书屋”。",
+                "《二十四孝图》中，鲁迅对“（ <span class='blank'></span> ）”和“（ <span class='blank'></span> ）”这类残忍的伪孝深恶痛绝。",
+                "鲁迅弃医从文的直接诱因是他在日本期间看到的（ <span class='blank'></span> ）事件。",
+                "鲁迅在《阿长与〈山海经〉》中表达了对这位（ <span class='blank'></span> ）的深切怀念。",
+                "鲁迅在《琐记》中写的是他寻找（ <span class='blank'></span> ）的经历。",
+                "《朝花夕拾》写于鲁迅一生中最严酷的时期之一，是在（ <span class='blank'></span> ）期间创作调的。",
+                "《父之病》中，两位“神医”其实是草菅人命的（ <span class='blank'></span> ）。",
+                "鲁迅在《范爱农》中追忆的是一位（ <span class='blank'></span> ）知识分子的悲剧人生。",
+                "鲁迅笔下的“美女蛇”是他在《（ <span class='blank'></span> ）》中听到的传说。",
+                "鲁迅去日本留学是因为他渴望（ <span class='blank'></span> ）。",
+                "鲁迅在《琐记》中提到的（ <span class='blank'></span> ）太太是一个很会背后指点、心术不正的人。",
+                "《从百草园到三味书屋》体现了（ <span class='blank'></span> ）和（ <span class='blank'></span> ）两个阶段的巨大反差。",
+                "《朝花夕拾》中，鲁迅用（ <span class='blank'></span> ）的笔法对旧文化进行反思。",
+                "阿长虽然有很多毛病，但他为鲁迅买来了（ <span class='blank'></span> ），让其一辈子难忘。",
+                "在三味书屋，鲁迅曾在课桌上刻下一个“（ <span class='blank'></span> ）”字激励自己不迟到。",
+                "《狗·猫·鼠》中，作者把猫比作清末民初那一类（ <span class='blank'></span> ）。",
+                "鲁迅的故乡是（ <span class='blank'></span> ）。",
+                "《藤野先生》一文采用了（ <span class='blank'></span> ）和（ <span class='blank'></span> ）两条线索。",
+                "鲁迅在仙台时的住处之一叫“（ <span class='blank'></span> ）”。",
+                "“朝”表示（ <span class='blank'></span> ），“夕”表示（ <span class='blank'></span> ）。",
+                "《五发昌》中记叙的是家乡（ <span class='blank'></span> ）盛景。",
+                "在鲁迅看来，寿镜吾老师（ <span class='blank'></span> ）而不迂腐。",
+                "范爱农在日本留学时给鲁迅留下的第一印象是（ <span class='blank'></span> ）和（ <span class='blank'></span> ）。",
+                "鲁迅认为（ <span class='blank'></span> ）精神是支持一个人在黑暗中走下去的力量。",
+                "阿长常说的“吉利话”中，有一个是在吃年糕时要说的“（ <span class='blank'></span> ）”。",
+                "《（ <span class='blank'></span> ）》一文是《朝花夕拾》的开篇之作。",
+                "《琐记》中提到的那个骗鲁迅去南京的学校是（ <span class='blank'></span> ）。",
+                "鲁迅离开南京去日本留学是（ <span class='blank'></span> ）年。",
+                "鲁迅在书中发表了（ <span class='blank'></span> ）这篇批判伪孝的文章。",
+                "鲁迅在《范爱农》中讽刺了辛亥革命后的（ <span class='blank'></span> ）并未改变旧面貌。",
+                "“鲁迅”这个笔名第一次出现在（ <span class='blank'></span> ）中。",
+                "书中多次提到了鲁迅少年时家道中落，出入（ <span class='blank'></span> ）和（ <span class='blank'></span> ）的辛酸。",
+                "《朝花夕拾》展现了鲁迅从一个（ <span class='blank'></span> ）成长为（ <span class='blank'></span> ）的心路。",
+                "寿镜吾老师在堂上读书时总是（ <span class='blank'></span> ）。",
+                "《朝花夕拾》的最后三篇集中写了鲁迅离开（ <span class='blank'></span> ）后的生活。",
+                "藤野先生曾说对鲁迅的这种（ <span class='blank'></span> ）是他一生中最大的光荣。",
+                "《琐记》这一篇题名的意思是（ <span class='blank'></span> ）。",
+                "阿长在新年里给鲁迅送的是（ <span class='blank'></span> ）。",
+                "鲁迅笔下的“蛇神牛鬼”在《（ <span class='blank'></span> ）》中得到了生动体现。",
+                "鲁迅在三味书屋画了许多画，这些画大多来自（ <span class='blank'></span> ）。",
+                "《范爱农》中的范爱农是（ <span class='blank'></span> ）死去的。",
+                "鲁迅对（ <span class='blank'></span> ）的死感到非常痛惜，甚至对他产生过误解。",
+                "《朝花夕拾》的思想内容概括为（ <span class='blank'></span> ）和（ <span class='blank'></span> ）。",
+                "藤野先生是日本（ <span class='blank'></span> ）县人。",
+                "“朝花夕拾”这个名字富有温情和（ <span class='blank'></span> ）感。"
+            ];
+
+            fillInBlanks.forEach((text, i) => {
+                document.write(`<div class="item">${i + 1}. ${text}</div>`);
+            });
+        </script>
+        </div>
+
+        <div style="margin-top: 50px; text-align: center; color: #b6a17b; font-size: 0.85em; border-top: 1px solid #eee; padding-top: 20px;">
+            锦水微澜名师工作室 · 鲁迅研究专属辅导资料 (学生版)
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《钢铁是怎样炼成的》名著导读 - 数字化入口</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=Zeyada&display=swap');
+
+        :root {
+            --color-ink: #1a1a1a;
+            --color-cinnabar: #8a0000;
+            --color-gold: #b6a17b;
+            --color-paper: #faf9f6;
+            --color-border-gold: rgba(182, 161, 123, 0.25);
+            --bg-paper-texture: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+        }
+
+        body {
+            font-family: "Noto Serif SC", serif;
+            background-color: var(--color-paper);
+            background-image: var(--bg-paper-texture);
+            background-size: 500px;
+            color: var(--color-ink);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gold-border {
+            border: 1px solid var(--color-border-gold);
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+        
+        .gold-border::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: -4px;
+            bottom: -4px;
+            border: 1px solid var(--color-gold);
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .gold-border:hover {
+            background-color: white;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .bg-paper-texture {
+            background-image: var(--bg-paper-texture);
+        }
+
+        .text-cinnabar { color: #8a0000; }
+        .bg-cinnabar { background-color: #8a0000; }
+        .bg-gold { background-color: #b6a17b; }
+        .text-gold { color: #b6a17b; }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+    <div class="max-w-5xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <!-- Header Section -->
+        <div class="overflow-hidden relative rounded-xl p-8 md:p-12 text-center text-white shadow-2xl bg-green-900">
+            <div class="absolute top-4 right-8 text-6xl md:text-8xl font-serif opacity-10">钢</div>
+            <div class="w-16 h-24 md:w-20 md:h-28 bg-white/20 border border-white/30 rounded flex items-center justify-center text-3xl md:text-4xl mb-4 md:mb-6 mx-auto shadow-inner shadow-white/20">📗</div>
+            <h1 class="text-2xl md:text-5xl font-bold tracking-widest mb-4">《钢铁是怎样炼成的》</h1>
+            <p class="text-white/60 text-xs md:text-sm tracking-widest">奥斯特洛夫斯基 著 · 八年级下册必读名著</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-6 md:mt-8">
+                <span class="text-[10px] md:text-xs px-3 md:px-4 py-1 md:py-1.5 bg-white/10 rounded-full border border-white/10">填空题 50空</span>
+                <span class="text-[10px] md:text-xs px-3 md:px-4 py-1 md:py-1.5 bg-white/10 rounded-full border border-white/10">选择题 50题</span>
+                <span class="text-[10px] md:text-xs px-3 md:px-4 py-1 md:py-1.5 bg-white/10 rounded-full border border-white/10">简答题 25题</span>
+                <span class="text-[10px] md:text-xs px-3 md:px-4 py-1 md:py-1.5 bg-white/10 rounded-full border border-white/10">分析题 5题</span>
+                <span class="text-[10px] md:text-xs px-3 md:px-4 py-1 md:py-1.5 bg-white/10 rounded-full border border-white/10">深度解读</span>
+                <span class="text-[10px] md:text-xs px-3 md:px-4 py-1 md:py-1.5 bg-white/10 rounded-full border border-white/10">答案详解</span>
+                <span class="text-[10px] md:text-xs px-3 md:px-4 py-1 md:py-1.5 bg-white/10 rounded-full border border-white/10">一键全印</span>
+            </div>
+        </div>
+
+        <!-- Navigation Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <a href="choice_web.html" class="group gold-border p-6 md:p-8 text-left transition-all block">
+                <div class="w-10 md:w-12 h-1 bg-cinnabar mb-3 md:mb-4" />
+                <h3 class="text-xl md:text-2xl font-bold mb-2 group-hover:text-cinnabar">选择题</h3>
+                <p class="text-gray-600 text-xs md:text-sm">共50题 · 自动留白 · 适合单面打印</p>
+            </a>
+            <a href="fill_blank_web.html" class="group gold-border p-6 md:p-8 text-left transition-all block">
+                <div class="w-10 md:w-12 h-1 bg-teal-600 mb-3 md:mb-4" />
+                <h3 class="text-xl md:text-2xl font-bold mb-2 group-hover:text-teal-600">填空题</h3>
+                <p class="text-gray-600 text-xs md:text-sm">共50题 · 基础巩固 · 考点直击</p>
+            </a>
+            <a href="short_answer_web.html" class="group gold-border p-6 md:p-8 text-left transition-all block">
+                <div class="w-10 md:w-12 h-1 bg-gold mb-3 md:mb-4" />
+                <h3 class="text-xl md:text-2xl font-bold mb-2 group-hover:text-gold">简答与分析</h3>
+                <p class="text-gray-600 text-xs md:text-sm">主观题专项 · 预设书写位 · 深度考察</p>
+            </a>
+            <a href="interpretation_web.html" class="group gold-border p-6 md:p-8 text-left transition-all block">
+                <div class="w-10 md:w-12 h-1 bg-blue-800 mb-3 md:mb-4" />
+                <h3 class="text-xl md:text-2xl font-bold mb-2 group-hover:text-blue-800">深度文化导读</h3>
+                <p class="text-gray-600 text-xs md:text-sm">作者背景 · 主题梳理 · 中考考点归纳</p>
+            </a>
+            <a href="answer_web.html" class="group gold-border p-6 md:p-8 text-left transition-all block">
+                <div class="w-10 md:w-12 h-1 bg-green-800 mb-3 md:mb-4" />
+                <h3 class="text-xl md:text-2xl font-bold mb-2 group-hover:text-green-800">参考答案</h3>
+                <p class="text-gray-600 text-xs md:text-sm">完整版解析 · 选择、填空、主观题汇总</p>
+            </a>
+            <a href="print_full_web.html" class="group gold-border p-6 md:p-8 text-left transition-all md:col-span-2 border-cinnabar/30 bg-cinnabar/5 block">
+                <div class="w-12 h-1 bg-gray-900 opacity-30 mb-3 md:mb-4" />
+                <h3 class="text-xl md:text-2xl font-bold mb-2 group-hover:text-cinnabar">一键生成全书打印版</h3>
+                <p class="text-gray-600 text-xs md:text-sm">集合所有练习、解析与答案 · 自动分页排版 · 考试/资料自制神器</p>
+            </a>
+        </div>
+
+        <!-- Instructions Section -->
+        <div class="gold-border p-8 bg-paper-texture border-l-4 border-l-gold">
+            <h4 class="text-xl font-bold mb-4 flex items-center gap-2">📜 使用说明</h4>
+            <div class="space-y-4 text-gray-800 text-sm">
+                <p>📱 <strong>在线研习：</strong>直接点击上方模块即可在当前页面深入学习。</p>
+                <p>🖨️ <strong>打印支持：</strong>页面已针对 A4 纸张进行排版优化，点击右下角“打印”按钮即可。</p>
+                <p>🌟 <strong>教研共享：</strong>本资源由锦水微澜名师工作室黄国荣老师倾力编制。</p>
+            </div>
+        </div>
+
+        <footer class="text-center text-gray-400 text-xs pb-12">
+            锦水微澜名师工作室 · 数字化教研成果专递
+        </footer>
+    </div>
+</body>
+</html>

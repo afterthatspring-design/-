@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《钢铁是怎样炼成的》填空题专练 - 数字化研习版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap');
+        
+        body {
+            background-color: #faf9f6;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .legacy-paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 0 auto;
+            padding: 0.6rem 0.8rem;
+        }
+
+        .legacy-page {
+            background: white;
+            padding: 2rem;
+        }
+
+        .legacy-main-title {
+            text-align: center !important;
+            margin-bottom: 0.35rem !important;
+            border-bottom: 2px solid #c0a36b !important;
+            padding-bottom: 0.1rem !important;
+        }
+
+        .legacy-main-title h1 {
+            font-size: 1.45rem !important;
+            letter-spacing: 2px !important;
+            color: #8a0000 !important;
+            font-weight: 700 !important;
+            margin-bottom: 0.05rem !important;
+            display: block;
+        }
+
+        .legacy-subhead {
+            text-align: center !important;
+            font-size: 0.62rem !important;
+            color: #6a5c47 !important;
+            margin-top: 0.03rem !important;
+            line-height: 1.15 !important;
+        }
+
+        .legacy-ans-section-title {
+            background: #f0ebe0 !important;
+            padding: 0.2rem 0.6rem !important;
+            font-size: 1.05rem !important;
+            font-weight: bold !important;
+            border-left: 5px solid #8a0000 !important;
+            margin-bottom: 0.5rem !important;
+            margin-top: 1rem;
+        }
+
+        .legacy-questions-list {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.55rem !important;
+            margin-bottom: 0.3rem !important;
+        }
+
+        .legacy-q-item {
+            background: #fefcf8 !important;
+            border-bottom: 0.5px solid #e2d9cc !important;
+            padding: 0.12rem 0.2rem 0.12rem 0.6rem !important;
+            line-height: 1.5 !important;
+            font-size: 0.85rem !important;
+        }
+
+        .legacy-blank {
+            display: inline-block !important;
+            min-width: 70px !important;
+            border-bottom: 1.2px dotted #a5682c !important;
+            margin: 0 3px !important;
+            font-weight: 600 !important;
+        }
+
+        .legacy-print-footer {
+            text-align: center !important;
+            font-size: 0.52rem !important;
+            margin-top: 2rem !important;
+            color: #bbaa8a !important;
+            border-top: 1px solid #ece1d1 !important;
+            padding-top: 0.14rem !important;
+        }
+
+        .legacy-page-number {
+            text-align: center !important;
+            font-size: 0.52rem !important;
+            color: #9b8a74 !important;
+            margin-top: 0.18rem !important;
+        }
+
+        .no-print { display: block; }
+        @media print { .no-print { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="legacy-paper">
+        <div class="legacy-page">
+            <div class="legacy-main-title">
+                <h1>《钢铁是怎样炼成的》填空题专练</h1>
+                <div class="legacy-subhead">奥斯特洛夫斯基 | 锦水微澜教育工作室 黄国荣 编制</div>
+            </div>
+
+            <div class="legacy-ans-section-title">📝 填空题（共50空）</div>
+            <div id="questions-container" class="legacy-questions-list">
+                <!-- Questions injected here -->
+            </div>
+            <div class="legacy-print-footer">锦水微澜名师工作室 · 数字化教研专递</div>
+            <div class="legacy-page-number">—— 第1页 / 共1页 ——</div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            "1. 《钢铁是怎样炼成的》的作者是（ ）。",
+            "2. 小说的主人公是（ ）。",
+            "3. 保尔的革命引路人是（ ）。",
+            "4. 保尔的初恋情人是（ ）。",
+            "5. 保尔为了救朱赫来，偷了（ ）的手枪。",
+            "6. 保尔的童年好友，后也参加红军并牺牲的是（ ）。",
+            "7. 保尔在革命工作中结识的理想革命伴侣是（ ）。",
+            "8. 小说中体现保尔钢铁意志的经典劳动场面是（ ）。",
+            "9. 保尔在筑路时患上了严重的（ ），险些丧命。",
+            "10. 保尔最终因为伤病导致（ ），身体完全瘫痪。",
+            "11. 保尔在病榻上完成的第一部长篇小说是（ ）。",
+            "12. 保尔最后的妻子，并支持他完成创作的人是（ ）。",
+            "13. 保尔的哥哥，一名正直的铁路工人是（ ）。",
+            "14. 保尔对生命进行深刻思考的地方是（ ）。",
+            "15. 谁教给保尔拳击，让他学会反抗（ ）。",
+            "16. 那个出卖保尔，带有小资产阶级恶习的是（ ）。",
+            "17. 修建铁路时与保尔产生矛盾的官僚主义者是（ ）。",
+            "18. 在修路营地中，带头闹事的腐败分子是（ ）。",
+            "19. 故事中，保尔和战友们修建的是通往林区的（ ）。",
+            "20. 修建铁路的主要目的是为了运送过冬的（ ）。",
+            "21. 那个双目失明但精神永存的战士是（ ）。",
+            "22. 保尔曾经救出的那个地下工作者是（ ）。",
+            "23. 保尔曾因误会而错过的恋人是（ ）。",
+            "24. 那个陪保尔走到生命最后的高尚女性是（ ）。",
+            "25. 谢廖沙的未婚妻，同样是红军战士的是（ ）。",
+            "26. 保尔工作过的车站食堂里，那个善良的洗衣女工是（ ）。",
+            "27. 伟大的无产阶级革命导师是（ ）。",
+            "28. 那个在极度痛苦中仍坚持“生命不息，奋斗不止”的是（ ）。",
+            "29. 那个让保尔加入共青团的人是（ ）。",
+            "30. 那个写下“人最宝贵的是生命”名言的是（ ）。",
+            "31. 保尔在哪场战争中患上的伤寒（ ）。",
+            "32. 那个经历了烈火淬炼的“钢铁”象征是（ ）。",
+            "33. 保尔在什么时候身体完全瘫痪（ ）。",
+            "34. 保尔最后选择的“新的战斗方式”是（ ）。",
+            "35. 达雅在保尔引导下成了（ ）。",
+            "36. “钢是在烈火和重压中炼成的”形容的是（ ）。",
+            "37. 保尔一生追求的事业是（ ）。",
+            "38. 小说的核心关键词是（ ）。",
+            "39. 谁指引保尔走上革命道路（ ）。",
+            "40. 保尔是以谁为原型创作的（ ）。",
+            "41. 小说中，保尔向那个阶层的人宣战（ ）。",
+            "42. 保尔的钢铁意志是在什么中磨炼的（ ）。",
+            "43. 那个代表独立、民主、革命女性的是（ ）。",
+            "44. 谁在全身瘫痪后仍握着笔（ ）。",
+            "45. 保尔的家庭成员中，支持他革命的哥哥是（ ）。",
+            "46. 保尔在哪次车祸中伤及右眼（ ）。",
+            "47. 谢廖沙代表了革命青年的（ ）。",
+            "48. 保尔用自己的行动诠释了（ ）。",
+            "49. 本书的真实作者是（ ）。",
+            "50. 我们通常把保尔代表的精神称为（ ）。"
+        ];
+
+        const container = document.getElementById('questions-container');
+        questions.forEach(q => {
+            const div = document.createElement('div');
+            div.className = 'legacy-q-item';
+            const parts = q.split('（ ）');
+            div.innerHTML = `${parts[0]}<span class="legacy-blank">__________</span>${parts[1] || ''}`;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>

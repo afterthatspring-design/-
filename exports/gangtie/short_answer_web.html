@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《钢铁是怎样炼成的》简答题 - 数字化研习版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap');
+        
+        body {
+            background-color: #faf9f6;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .legacy-paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 0 auto;
+            padding: 0.6rem 0.8rem;
+        }
+
+        .legacy-page {
+            background: white;
+            padding: 2.5rem;
+        }
+
+        .legacy-main-title {
+            text-align: center !important;
+            margin-bottom: 0.35rem !important;
+            border-bottom: 2px solid #c0a36b !important;
+            padding-bottom: 0.1rem !important;
+        }
+
+        .legacy-main-title h1 {
+            font-size: 1.45rem !important;
+            letter-spacing: 2px !important;
+            color: #8a0000 !important;
+            font-weight: 700 !important;
+            margin-bottom: 0.05rem !important;
+            display: block;
+        }
+
+        .legacy-subhead {
+            text-align: center !important;
+            font-size: 0.62rem !important;
+            color: #6a5c47 !important;
+            margin-top: 0.03rem !important;
+            line-height: 1.15 !important;
+        }
+
+        .legacy-section-title {
+            font-size: 0.95rem !important;
+            font-weight: bold !important;
+            color: #5c4a37 !important;
+            background: #f0ebe0 !important;
+            padding: 0.12rem 0.6rem !important;
+            border-left: 5px solid #b6a17b !important;
+            margin-bottom: 0.28rem !important;
+            margin-top: 1.5rem;
+        }
+
+        .legacy-q-title {
+            font-size: 0.85rem !important;
+            font-weight: 700 !important;
+            color: #333333 !important;
+            margin-bottom: 0.3rem !important;
+            line-height: 1.5 !important;
+        }
+
+        .legacy-line {
+            border-bottom: 1px solid #9e8b6e !important;
+            margin-bottom: 0.52rem !important;
+            height: 1.2rem !important;
+            opacity: 0.6;
+        }
+
+        .legacy-print-footer {
+            text-align: center !important;
+            font-size: 0.52rem !important;
+            margin-top: 2rem !important;
+            color: #bbaa8a !important;
+            border-top: 1px solid #ece1d1 !important;
+            padding-top: 0.14rem !important;
+        }
+
+        .legacy-page-number {
+            text-align: center !important;
+            font-size: 0.52rem !important;
+            color: #9b8a74 !important;
+            margin-top: 0.18rem !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="legacy-paper">
+        <div class="legacy-page">
+            <div class="legacy-main-title">
+                <h1>《钢铁是怎样炼成的》简答与分析</h1>
+                <div class="legacy-subhead">奥斯特洛夫斯基 | 锦水微澜教育工作室 黄国荣 编制</div>
+            </div>
+
+            <div class="legacy-section-title">🖋️ 简答与分析（全25题·带答题线）</div>
+            <div id="questions-container" class="space-y-10 mt-6 px-4">
+                <!-- Questions injected here -->
+            </div>
+            <div class="legacy-print-footer">锦水微澜名师工作室 · 数字化教研专递</div>
+            <div class="legacy-page-number">—— 第1页 / 共1页 ——</div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            "1. 简述《钢铁是怎样炼成的》的主要故事情节。",
+            "2. 保尔·柯察金在发电厂认识了谁？这个人对他产生了怎样的影响？",
+            "3. 分析保尔·柯察金这一人物形象及其性格特点。",
+            "4. 冬妮亚是一个怎样的人物形象？她与保尔的感情为何破裂？",
+            "5. 朱赫来在保尔的成长过程中起到了什么作用？",
+            "6. 丽达与保尔之间是怎样的关系？她代表什么样的女性形象？",
+            "7. 保尔在修建铁路时遇到了哪些困难？这段经历表现了他怎样的精神？",
+            "8. 保尔是如何失明的？失明后他选择了怎样的人生道路？",
+            "9. 小说标题“钢铁是怎样炼成的”有什么象征意义？",
+            "10. 保尔在烈士公墓前的一段独白表达了怎样的思想感情？",
+            "11. 谢廖沙这个人物在小说中的作用是什么？他的牺牲有何意义？",
+            "12. 保尔与茨维塔耶夫、屠弗塔等人的矛盾反映了什么问题？",
+            "13. 保尔的哥哥阿尔焦姆是怎样的一个人？他对保尔有何影响？",
+            "14. 小说中多次描写保尔的身体状况恶化，这样写有何作用？",
+            "15. 保尔与法伊洛的冲突体现了保尔什么样的原则立场？",
+            "16. 《钢铁是怎样炼成的》的艺术特色是什么？",
+            "17. 小说中保尔与“公社战士”们的关系如何？体现了怎样的集体主义精神？",
+            "18. 保尔最终选择文学创作作为新的战斗武器，这一转变有何意义？",
+            "19. 如何理解《钢铁是怎样炼成的》的革命英雄主义精神？",
+            "20. 小说结尾保尔拿到达雅的支持开始创作，这一情节的深刻含义是什么？",
+            "21. 结合小说情节，分析保尔从一个顽皮少年成长为钢铁战士的心路历程，并说明这一成长过程中哪些因素起到了关键作用。",
+            "22. 保尔与冬妮亚、丽达、达雅三段感情经历分别反映了保尔不同阶段的性格特点 and 价值观变化，请进行分析。",
+            "23. 小说中的“筑路”情节是全书的经典篇章，请分析这一情节在塑造人物形象、深化主题方面的作用。",
+            "24. 保尔在全身瘫痪、双目失明后仍坚持创作，最终写出《暴风雨里诞生的》。这一情节体现了怎样的人生观？有何启示？",
+            "25. 有人说“保尔精神在当今社会已经过时”，有人说“永不过时”。请结合小说内容与现实生活，谈谈你的理解。"
+        ];
+
+        const container = document.getElementById('questions-container');
+        questions.forEach(q => {
+            const div = document.createElement('div');
+            div.className = 'space-y-4';
+            div.innerHTML = `
+                <div class="legacy-q-title">${q}</div>
+                <div class="legacy-answer-lines">
+                    <div class="legacy-line"></div>
+                    <div class="legacy-line"></div>
+                    <div class="legacy-line"></div>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>

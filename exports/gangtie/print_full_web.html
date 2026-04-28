@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名著导读深度练习汇编 · 《钢铁是怎样炼成的》全集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap');
+        
+        body {
+            background-color: #faf9f6;
+            margin: 0;
+            padding: 40px;
+            font-family: "Noto Serif SC", serif;
+            -webkit-font-smoothing: antialiased;
+            color: #1a1a1a;
+            font-size: 18px;
+            line-height: 1.8;
+            background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+            background-size: 500px;
+        }
+
+        .legacy-paper {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 0 auto;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .legacy-main-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #b6a17b;
+            padding-bottom: 0.5rem;
+        }
+
+        .legacy-main-title h1 {
+            font-size: 2rem;
+            letter-spacing: 2px;
+            color: #8a0000;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .legacy-subhead {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6a5c47;
+            margin-bottom: 1.5rem;
+        }
+
+        .legacy-author-line {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .legacy-section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #5c4a37;
+            background: #f0ebe0;
+            padding: 0.4rem 1rem;
+            border-left: 6px solid #b6a17b;
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .legacy-ans-section-title {
+            background: #f0ebe0;
+            padding: 0.4rem 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-left: 6px solid #8a0000;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .legacy-subsection-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #6d5b4a;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid #b6a17b;
+            padding-left: 0.8rem;
+        }
+
+        .legacy-compact-p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .legacy-q-item {
+            background: #fefcf8;
+            border-bottom: 0.5px solid #e2d9cc;
+            padding: 1rem;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .legacy-blank {
+            display: inline-block;
+            min-width: 80px;
+            border-bottom: 1.5px dotted #a5682c;
+            margin: 0 5px;
+        }
+
+        .legacy-q-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .legacy-line {
+            border-bottom: 1px solid #9e8b6e;
+            margin-bottom: 0.8rem;
+            height: 1.8rem;
+            opacity: 0.5;
+        }
+
+        .legacy-grid-answers {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .legacy-vertical-answer {
+            margin-bottom: 2rem;
+            padding: 1.2rem;
+            background: #fdfaf5;
+            border-left: 4px solid #eee;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .legacy-quote {
+            font-style: italic;
+            color: #5c4a37;
+            background: #fafafa;
+            padding: 1rem 1.5rem;
+            border-left: 5px solid #b6a17b;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .legacy-highlight-box {
+            background: #fcfaf7;
+            border: 1px solid #e2d9cc;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .legacy-strong { color: #8a0000; font-weight: bold; }
+
+        @media print {
+            body { padding: 0; background: white; }
+            .legacy-paper { box-shadow: none; max-width: none; border: none; padding: 1.5cm; }
+            .print-break-before { page-break-before: always; }
+            .no-print { display: none; }
+        }
+
+        .all-header {
+            text-align: center;
+            border-bottom: 4px double #1a1a1a;
+            padding-bottom: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .module-banner {
+            font-size: 2.2rem;
+            font-weight: bold;
+            border-bottom: 4px solid #1a1a1a;
+            padding-bottom: 0.8rem;
+            margin: 5rem 0 3rem;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="legacy-paper">
+        <!-- 总标题 -->
+        <div class="all-header">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tighter">名著导读深度练习汇编 · 《钢铁是怎样炼成的》</h1>
+            <p class="text-2xl font-serif italic text-gray-700">锦水微澜名师工作室 黄国荣老师 精编系列</p>
+        </div>
+
+        <!-- 壹 · 深度文化解读 (全量) -->
+        <section>
+            <h2 class="module-banner">壹 · 深度文化解读</h2>
+            <div class="legacy-page">
+                <div class="legacy-main-title">
+                    <h1>钢铁是怎样炼成的</h1>
+                    <div class="legacy-subhead">奥斯特洛夫斯基 · 红色经典 · 生命的意义</div>
+                    <div class="legacy-author-line">尼古拉·奥斯特洛夫斯基 著 | 八年级下册语文必读名著 · 深度解读 | 锦水微澜教育工作室 黄国荣 编制</div>
+                </div>
+
+                <div class="legacy-quote">
+                    <span class="legacy-strong">📖 编撰说明</span><br />
+                    《钢铁是怎样炼成的》是苏联作家奥斯特洛夫斯基的代表作，是一部闪烁着崇高理想主义光芒的长篇小说。小说以作者自身经历为蓝本，塑造了保尔·柯察金这一无产阶级英雄形象。本文根据原著及权威资料整理，系统梳理故事梗概、人物形象、主题思想、艺术特色及中考考点，便于读者研习或打印装订。
+                </div>
+
+                <div class="legacy-section">
+                    <div class="legacy-section-title">✍️ 一、作者简介</div>
+                    <div class="legacy-compact-p"><span class="legacy-strong">尼古拉·阿列克谢耶维奇·奥斯特洛夫斯基</span>（1904—1936），苏联著名无产阶级作家。他出生于乌克兰一个贫困的工人家庭，11岁开始当童工，1919年加入共青团，参加国内战争。1920年在战斗中重伤，23岁时双目失明，身体瘫痪。但他以惊人的毅力，在病榻上历时三年创作了《钢铁是怎样炼成的》。</div>
+                </div>
+
+                <div class="legacy-section">
+                    <div class="legacy-section-title">📖 二、故事梗概 · 保尔的成长之路</div>
+                    
+                    <div class="legacy-subsection">
+                        <div class="legacy-subsection-title">🔨 童年时期 · 反抗的种子</div>
+                        <div class="legacy-compact-p">保尔因不满神父的虐待被学校开除，12岁到车站食堂当杂役，受尽压迫和剥削。在哥哥阿尔焦姆的帮助下，他逐渐认识到社会的黑暗。十月革命爆发后，老布尔什维克朱赫来来到小镇，向保尔传授革命思想，保尔从此走上革命道路。</div>
+                    </div>
+                    
+                    <div class="legacy-subsection">
+                        <div class="legacy-subsection-title">⚔️ 革命时期 · 钢铁的淬炼</div>
+                        <div class="legacy-compact-p">保尔加入红军，在战场上英勇作战，大腿受伤、头部中弹，但他以顽强意志战胜死亡。在修筑铁路的艰苦劳动中，在严寒和饥饿下，他展现出惊人的毅力。“筑路”一节是书中最为经典的篇章。</div>
+                    </div>
+                    
+                    <div class="legacy-subsection">
+                        <div class="legacy-subsection-title">💔 病重时期 · 精神的升华</div>
+                        <div class="legacy-compact-p">保尔因超负荷工作导致身体恶化，双目失明、全身瘫痪。在极端困难的情况下，他依靠文学创作开始了新的战斗，完成了小说《暴风雨所诞生的》。</div>
+                    </div>
+                    
+                    <div class="legacy-subsection">
+                        <div class="legacy-subsection-title">✨ 生命的意义 · 不朽的名言</div>
+                        <div class="legacy-compact-p">保尔在烈士公墓前的一段独白成为全书最著名的段落：“人最宝贵的是生命，生命对人来说只有一次。人的一生应当这样度过：当他回首往事时，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚...”</div>
+                    </div>
+                </div>
+
+                <div class="legacy-section">
+                    <div class="legacy-section-title">👥 三、人物形象分析</div>
+                    <div class="legacy-subsection-title">保尔·柯察金 · 钢铁战士的化身</div>
+                    <div class="legacy-compact-p">保尔形象集中体现了无产阶级革命战士的崇高品质：顽强勇敢、意志坚定、对党忠诚、无私奉献。他不是天生英雄，而是在斗争中不断成长。</div>
+                    
+                    <div class="legacy-subsection">
+                        <div class="legacy-subsection-title">朱赫来 · 革命引路人</div>
+                        <div class="legacy-compact-p">老布尔什维克，保尔革命道路的引路人。他沉着冷静、经验丰富，是保尔精神上的导师。</div>
+                    </div>
+                    
+                    <div class="legacy-subsection">
+                        <div class="legacy-subsection-title">冬妮亚 · 初恋的幻灭</div>
+                        <div class="legacy-compact-p">林务官的女儿，因阶级立场不同最终与保尔分手，体现了保尔对信仰的坚守。</div>
+                    </div>
+
+                    <div class="legacy-subsection">
+                        <div class="legacy-subsection-title">丽达/达雅</div>
+                        <div class="legacy-compact-p">丽达是志同道合的战友，达雅是相互扶持的妻子，她们在保尔的不同阶段提供了重要的精神支撑。</div>
+                    </div>
+                </div>
+
+                <div class="legacy-section">
+                    <div class="legacy-section-title">💡 四、主题思想</div>
+                    <div class="legacy-highlight-box">
+                        <div class="legacy-compact-p"><span class="legacy-strong">钢铁意志的赞歌</span>：钢铁是在烈火和急冷中炼成的，比喻坚强的革命意志是在艰苦斗争中磨炼出来的。</div>
+                        <div class="legacy-compact-p"><span class="legacy-strong">生命价值的追问</span>：回答了“人应该怎样活着”这一根本问题。</div>
+                    </div>
+                </div>
+
+                <div class="legacy-section">
+                    <div class="legacy-section-title">📚 七、中考考点归纳</div>
+                    <div class="legacy-highlight-box">
+                        <ul class="list-disc ml-6 space-y-2 text-sm">
+                            <li><strong>作者</strong>：奥斯特洛夫斯基（苏联），自传体小说。</li>
+                            <li><strong>主人公</strong>：保尔·柯察金，钢铁战士。</li>
+                            <li><strong>核心事件</strong>：童年苦难、投身革命、筑路斗争、瘫痪写作。</li>
+                            <li><strong>艺术特色</strong>：革命浪漫主义、细腻心理描写、激越的语言。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 贰 · 填空练习模块 (全量) -->
+        <section class="print-break-before">
+            <h2 class="module-banner">贰 · 填空练习模块 (50题)</h2>
+            <div id="fill-blanks-mount" class="space-y-0"></div>
+        </section>
+
+        <!-- 叁 · 选择练习模块 (全量) -->
+        <section class="print-break-before">
+            <h2 class="module-banner">叁 · 选择练习模块 (50题)</h2>
+            <div id="choices-mount" class="space-y-0"></div>
+        </section>
+
+        <!-- 肆 · 主观探究与综合分析 (全量) -->
+        <section class="print-break-before">
+            <h2 class="module-banner">肆 · 主观探究与综合分析 (25题)</h2>
+            <div id="short-answer-mount" class="space-y-6"></div>
+        </section>
+
+        <!-- 附件 · 参考答案大全 (全量) -->
+        <section class="print-break-before">
+            <h2 class="module-banner">附件 · 参考答案大全</h2>
+            <div class="legacy-page">
+                <div class="legacy-ans-section-title">一、选择题答案</div>
+                <div id="ans-choices-grid" class="legacy-grid-answers text-sm"></div>
+
+                <div class="legacy-ans-section-title">二、填空题答案</div>
+                <div id="ans-fill-grid" class="legacy-grid-answers text-sm"></div>
+
+                <div class="legacy-ans-section-title">三、简答与分析题详解 (25题全量)</div>
+                <div id="ans-short-list" class="space-y-4"></div>
+            </div>
+        </section>
+
+        <footer class="mt-20 pt-10 text-center text-gray-400 text-xs border-t border-gray-100 no-print">
+            © 2026 锦水微澜名师工作室 · 黄国荣老师版权所有
+        </footer>
+    </div>
+
+    <script>
+        const gangtieData = {
+            choices: ["1. 《钢铁是怎样炼成的》的作者是？ A.高尔基 B.奥斯特洛夫斯基 C.托尔斯泰 D.契诃夫","2. 小说的主人公是？ A.朱赫来 B.阿尔焦姆 C.保尔·柯察金 D.谢廖沙","3. 保尔因什么事被学校开除？ A.打架 B.偷东西 C.不满神父虐待 D.考试不及格","4. 保尔被开除后去了哪里工作？ A.工厂 B.车站食堂 C.矿山 D.农场","5. 谁是保尔的革命引路人？ A.阿尔焦姆 B.朱赫来 C.谢廖沙 D.托卡列夫","6. 保尔参加红军后在哪个战场上头部中弹？ A.波兰战场 B.德国战场 C.国内战场 D.芬兰战场","7. 小说中集中体现保尔钢铁意志的经典篇章是？ A.战斗 B.筑路 C.恋爱 D.写作","8. 保尔在修筑铁路时遇到了什么困难？ A.缺粮 B.严寒 C.疾病 D.以上都是","9. 保尔因什么导致双目失明、全身瘫痪？ A.战争重伤 B.伤寒 C.高强度工作 D.交通事故","10. 保尔在病重后选择了什么新的战斗方式？ A.演讲 B.教学 C.文学创作 D.从政","11. 保尔在妻子和母亲的帮助下完成了哪部小说？ A.《钢铁是怎样炼成的》 B.《暴风雨所诞生的》 C.《战争与和平》 D.《母亲》","12. 保尔的初恋是谁？ A.丽达 B.冬妮亚 C.达雅 D.赫里斯季娜","13. 冬妮亚是什么身份？ A.工人女儿 B.农民女儿 C.林务官女儿 D.军官女儿","14. 保尔与冬妮亚分手的原因是什么？ A.家庭反对 B.阶级立场不同 C.性格不合 D.误会","15. 谁是保尔理想的革命伴侣？ A.冬妮亚 B.达雅 C.丽达 D.赫里斯季娜","16. 丽达是什么身份？ A.教师 B.医生 C.共青团干部 D.工人","17. 保尔与丽达未能走到一起的原因是什么？ A.家庭反对 B.阶级不同 C.误会 D.保尔牺牲","18. 保尔的妻子是谁？ A.冬妮亚 B.丽达 C.达雅 D.赫里斯季娜","19. 达雅在保尔的帮助下成为了什么？ A.教师 B.医生 C.共产党员 D.作家","20. 保尔的哥哥是谁？ A.朱赫来 B.阿尔焦姆 C.谢廖沙 D.托卡列夫","21. 阿尔焦姆是什么身份？ A.红军战士 B.工人 C.农民 D.教师","22. 保尔在战斗中什么地方受伤？ A.手臂 B.大腿 C.头部 D.胸部","23. 保尔在战斗中头部中弹后，以什么战胜死亡？ A.医疗条件 B.顽强意志 C.家人照顾 D.运气","24. 保尔参加红军后成长为一名优秀的？ A.骑兵 B.步兵 C.炮兵 D.侦察兵","25. 小说以什么为背景？ A.一战 B.十月革命前后 C.二战 D.国内战争","26. 保尔在车站食堂当杂役时受尽了什么？ A.饥饿 B.寒冷 C.压迫和剥削 D.疾病","27. 朱赫来教保尔什么？ A.射击 B.拳击 C.骑马 D.游泳","28. 保尔因什么病险些丧命？ A.伤寒 B.肺炎 C.疟疾 D.痢疾","29. 保尔在病重后完成了哪部小说？ A.《钢铁是怎样炼成的》 B.《暴风雨所诞生的》 C.《母亲》 D.《童年》","30. “钢是在烈火和______中炼成的”横线应填？ A.急冷 B.重压 C.锤打 D.淬火","31. 保尔说“任何一个傻瓜在任何时候都能结束自己”这句话体现了他的什么？ A.软弱 B.坚强 C.悲观 D.乐观","32. 小说的书名寓意是什么？ A.钢铁的制造过程 B.革命意志在艰苦斗争中磨炼 C.工人阶级的力量 D.战争的残酷","33. 小说具有强烈的什么色彩？ A.浪漫主义 B.现实主义 C.自传体 D.象征主义","34. 保尔的原型是谁？ A.朱赫来 B.作者本人 C.托卡列夫 D.谢廖沙","35. 小说深入刻画了保尔的什么？ A.战斗经历 B.内心世界 C.爱情故事 D.家庭生活","36. 小说将现实主义的真实描写与什么主义的理想抒发相结合？ A.浪漫主义 B.古典主义 C.现代主义 D.象征主义","37. 保尔在瘫痪后产生什么念头？ A.逃跑 B.自杀 C.放弃 D.抱怨","38. 保尔在修筑铁路时展现出惊人的什么？ A.体力 B.毅力 C.智慧 D.勇气","39. 保尔说“我已把自己整个的生命 and 全部的精力献给了世界上最壮丽的事业——为人类的______而奋斗”，横线应填？ A.解放 B.幸福 C.和平 D.发展","40. 奥斯特洛夫斯基在病榻上历时几年创作了《钢铁是怎样炼成的》？ A.一年 B.两年 C.三年 D.四年","41. 奥斯特洛夫斯基23岁时双目失明，身体怎样？ A.瘫痪 B.残疾 C.虚弱 D.健康","42. 奥斯特洛夫斯基完成《钢铁是怎样炼成的》后又开始创作哪部作品？ A.《母亲》 B.《童年》 C.《暴风雨所诞生的》 D.《在人间》","43. 奥斯特洛夫斯基于哪一年病逝？ A.1934年 B.1935年 C.1936年 D.1937年","44. 奥斯特洛夫斯基病逝时年仅多少岁？ A.30岁 B.31岁 C.32岁 D.33岁","45. 保尔在车站食堂当杂役时认识了谁？ A.丽达 B.冬妮亚 C.达雅 D.赫里斯季娜","46. 保尔与冬妮亚因什么不同而分手？ A.家庭背景 B.阶级立场 C.性格 D.爱好","47. 丽达是什么干部？ A.党委 B.共青团 C.工会 D.妇女会","48. 达雅是保尔的什么人？ A.初恋 B.战友 C.妻子 D.妹妹","49. 阿尔焦姆代表了工人阶级的什么？ A.力量 B.智慧 C.质朴与力量 D.勇敢","50. 《钢铁是怎样炼成的》是一部闪烁着什么光芒的长篇小说？ A.现实主义 B.浪漫主义 C.理想主义 D.英雄主义"],
+            fillQs: ["1. 《钢铁是怎样炼成的》的作者是（ ）。","2. 小说的主人公是（ ）。","3. 保尔的革命引路人是（ ）。","4. 保尔的初恋情人是（ ）。","5. 保尔为了救朱赫来，偷了（ ）的手枪。","6. 保尔的童年好友，后也参加红军并牺牲的是（ ）。","7. 保尔在革命工作中结识的理想革命伴侣是（ ）。","8. 小说中体现保尔钢铁意志的经典劳动场面是（ ）。","9. 保尔在筑路时患上了严重的（ ），险些丧命。","10. 保尔最终因为伤病导致（ ），身体完全瘫痪。","11. 保尔在病榻上完成的第一部长篇小说是（ ）。","12. 保尔最后的妻子，并支持他完成创作的人是（ ）。","13. 保尔的哥哥，一名正直的铁路工人是（ ）。","14. 保尔对生命进行深刻思考的地方是（ ）。","15. 谁教给保尔拳击，让你学会反抗（ ）。","16. 那个出卖保尔，带有小资产阶级恶习的是（ ）。","17. 修建铁路时与保尔产生矛盾的官僚主义者是（ ）。","18. 在修路营地中，带头闹事的腐败分子是（ ）。","19. 故事中，保尔和战友们修建的是通往林区的（ ）。","20. 修建铁路的主要目的是为了运送过冬的（ ）。","21. 那个双目失明但精神永存的战士是（ ）。","22. 保尔曾经救出的那个地下工作者是（ ）。","23. 保尔曾因误会而错过的恋人是（ ）。","24. 那个陪保尔走到生命最后的高尚女性是（ ）。","25. 谢廖沙的未婚妻，同样是红军战士的是（ ）。","26. 保尔工作过的车站食堂里，那个善良的洗衣女工是（ ）。","27. 伟大的无产阶级革命导师是（ ）。","28. 那个在极度痛苦中仍坚持“生命不息，奋斗不止”的是（ ）。","29. 那个让保尔加入共青团的人是（ ）。","30. 那个写下“人最宝贵的是生命”名言的是（ ）。","31. 保尔在哪场战争中患上的伤寒（ ）。","32. 那个经历了烈火淬炼的“钢铁”象征是（ ）。","33. 保尔在什么时候身体完全瘫痪（ ）。","34. 保尔最后选择的“新的战斗方式”是（ ）。","35. 达雅在保尔引导下成了（ ）。","36. “钢是在烈火和重压中炼成的”形容的是（ ）。","37. 保尔一生追求的事业是（ ）。","38. 小说的核心关键词是（ ）。","39. 谁指引保尔走上革命道路（ ）。","40. 保尔是以谁为原型创作的（ ）。","41. 小说中，保尔向那个阶层的人宣战（ ）。","42. 保尔的钢铁意志是在什么中磨炼的（ ）。","43. 那个代表独立、民主、革命女性的是（ ）。","44. 谁在全身瘫痪后仍握着笔（ ）。","45. 保尔的家庭成员中，支持他革命的哥哥是（ ）。","46. 保尔在哪次车祸中伤及右眼（ ）。","47. 谢廖沙代表了革命青年的（ ）。","48. 保尔用自己的行动诠释了（ ）。","49. 本书的真实作者是（ ）。","50. 我们通常把保尔代表的精神称为（ ）。"],
+            shortQs: ["1. 简述《钢铁是怎样炼成的》的主要故事情节。","2. 保尔·柯察金在发电厂认识了谁？这个人对他产生了怎样的影响？","3. 分析保尔·柯察金这一人物形象及其性格特点。","4. 冬妮亚是一个怎样的人物形象？她与保尔的感情为何破裂？","5. 朱赫来在保尔的成长过程中起到了什么作用？","6. 丽达与保尔之间是怎样的关系？她代表什么样的女性形象？","7. 保尔在修建铁路时遇到了哪些困难？这段经历表现了他怎样的精神？","8. 保尔是如何失明的？失明后他选择了怎样的人生道路？","9. 小说标题“钢铁是怎样炼成的”有什么象征意义？","10. 保尔在烈士公墓前的一段独白表达了怎样的思想感情？","11. 谢廖沙这个人物在小说中的作用是什么？他的牺牲有何意义？","12. 保尔与茨维塔耶夫、屠弗塔等人的矛盾反映了什么问题？","13. 保尔的哥哥阿尔焦姆是怎样的一个人？他对保尔有何影响？","14. 小说中多次描写保尔的身体状况恶化，这样写有何作用？","15. 保尔与法伊洛的冲突体现了保尔什么样的原则立场？","16. 《钢铁是怎样炼成的》的艺术特色是什么？","17. 小说中保尔与“公社战士”们的关系如何？体现了怎样的集体主义精神？","18. 保尔最终选择文学创作作为新的战斗武器，这一转变有何意义？","19. 如何理解《钢铁是怎样炼成的》的革命英雄主义精神？","20. 小说结尾保尔拿到达雅的支持开始创作，这一情节的深刻含义是什么？","21. 结合小说情节，分析保尔从一个顽皮少年成长为钢铁战士的心路历程。","22. 保尔与三段感情经历分别反映了其不同阶段的价值观变化，请分析。","23. 分析“筑路”情节在塑造人物形象、深化主题方面的作用。","24. 保尔在病残后坚持创作体现了怎样的人生观？对青少年有何启示？","25. 结合现实生活谈谈对“保尔精神永不过时”的理解。"],
+            ansChoice: ["B", "C", "C", "B", "B", "A", "B", "D", "B", "C", "B", "B", "C", "B", "C", "C", "C", "C", "C", "B", "B", "C", "B", "A", "B", "C", "B", "A", "B", "A", "B", "B", "C", "B", "B", "A", "B", "B", "A", "C", "A", "C", "C", "C", "D", "B", "B", "C", "C", "C"],
+            ansFill: ["奥斯特洛夫斯基", "保尔·柯察金", "朱赫来", "冬妮亚", "德国中尉", "谢廖沙", "丽达", "筑路", "伤寒", "双目失明", "《暴风雨所诞生的》", "达雅", "阿尔焦姆", "烈士公墓", "朱赫来", "维克托", "茨维塔耶夫", "法伊洛", "铁路", "木材", "保尔", "朱赫来", "丽达", "达雅", "瓦莉亚", "赫里斯季娜", "列宁", "保尔", "朱赫来", "保尔", "修筑铁路/筑路", "保尔", "伤病严重/失明", "文学创作", "共产党员", "保尔", "共产主义/革命", "钢铁", "朱赫来", "作者本人", "资产阶级", "艰苦斗争/烈火", "丽达", "保尔", "阿尔焦姆", "筑路/修建铁路", "革命气概/牺牲精神", "钢铁意志", "尼古拉·奥斯特洛夫斯基", "保尔精神"],
+            ansShortDetailed: [
+                { q: "1. 简述《钢铁是怎样炼成的》的主要故事情节。", a: "答：小说讲述保尔·柯察金从顽皮少年成长为钢铁战士的一生。他参加革命、修建铁路、与病魔斗争，最终全身瘫痪、双目失明后仍坚持文学创作，用笔作为新的武器继续战斗。" },
+                { q: "2. 保尔·柯察金在发电厂认识了谁？这个人对他产生了怎样的影响？", a: "答：认识了朱赫来。朱赫来是地下党员，教会保尔拳击、革命道理，引导他参军，是保尔人生最重要的引路人。" },
+                { q: "3. 分析保尔·柯察金这一人物形象及其性格特点。", a: "答：保尔是钢铁意志的化身。他勇敢顽强、忠诚无私。在极度困难中展现出惊人的毅力，追求生命的真谛。" },
+                { q: "4. 冬妮亚形象及其破裂原因？", a: "答：冬妮亚是林务官女儿，善良但追求小资产阶级安逸。因阶级观念差异与保尔分手，反映了保尔信仰高于个人感情。" },
+                { q: "5. 朱赫来的作用？", a: "答：革命引路人，塑造了保尔坚定的革命信念。" },
+                { q: "6. 丽达的形象？", a: "答：代表独立坚强、觉悟高的红军干部形象。" },
+                { q: "7. 筑路困难及其精神？", a: "答：严寒、饥饿、疾病。体现了不畏艰险、忘我奉献的钢铁精神。" },
+                { q: "8. 失明后的选择？", a: "答：双目失明后选择文学创作，继续用笔进行战斗。" },
+                { q: "9. 标题象征意义？", a: "答：象征革命意志在烈火和急冷（艰苦斗争）中百炼成钢。" },
+                { q: "10. 独白的思想感情？", a: "答：反映了对生命价值的追问，确立了为全人类解放奋斗的人生目标。" },
+                { q: "11. 谢廖沙的作用？", a: "答：代表英勇牺牲的革命青年，增强了作品的真实悲壮。" },
+                { q: "12. 矛盾反映的问题？", a: "答：反映保尔坚持原则，反对官僚主义的立场。" },
+                { q: "13. 阿尔焦姆的影响？", a: "答：工人的质朴与保护，是保尔亲情与阶级意识的萌芽。" },
+                { q: "14. 身体恶化的作用？", a: "答：以此衬托保尔精神的日益强大，英雄主义的升华。" },
+                { q: "15. 冲突体现的原则？", a: "答：坚持纪律与原则，不徇私情。" },
+                { q: "16. 艺术特色？", a: "答：自传色彩、心理描写、革命浪漫主义风格。" },
+                { q: "17. 集体主义精神？", a: "答：并肩战斗，将个人命运融入革命事业。" },
+                { q: "18. 文学创作转变的意义？", a: "答：生命的延续，用另一种形式为革命做出不朽贡献。" },
+                { q: "19. 如何理解革命英雄主义？", a: "答：将有限生命投入无限的为人类解放事业中。" },
+                { q: "20. 结尾情节含义？", a: "答：预示保尔在文学战线取得了新的成功，战斗不息。" },
+                { q: "21. 成长心路分析？", a: "答：关键在外部革命导师指引与内部钢铁意志的自觉萌发。" },
+                { q: "22. 三段感情与价值观？", a: "答：从懵懂初恋到革命志向的契合，体现了阶级觉悟的提高。" },
+                { q: "23. 筑路情节作用？", a: "答：塑造群像，深化意志淬炼的主题。" },
+                { q: "24. 人生观与启示？", a: "答：启示当代青少年应在逆境中寻找转机，服务社会。" },
+                { q: "25. 保尔精神永不过时？", a: "答：奋斗与理想是人类文明进步的永恒动力。" }
+            ]
+        };
+
+        // Mount components
+        const fillMount = document.getElementById('fill-blanks-mount');
+        gangtieData.fillQs.forEach(q => {
+            const div = document.createElement('div');
+            div.className = 'legacy-q-item';
+            div.innerHTML = q.replace('（ ）', '<span class="legacy-blank">__________</span>');
+            fillMount.appendChild(div);
+        });
+
+        const choiceMount = document.getElementById('choices-mount');
+        gangtieData.choiceQs.forEach(q => {
+            const div = document.createElement('div');
+            div.className = 'legacy-q-item';
+            div.innerText = q;
+            choiceMount.appendChild(div);
+        });
+
+        const shortMount = document.getElementById('short-answer-mount');
+        gangtieData.shortQs.forEach((q, i) => {
+            const div = document.createElement('div');
+            div.className = 'print-avoid-break';
+            div.innerHTML = `
+                <div class="legacy-q-title">${q}</div>
+                <div class="legacy-line"></div>
+                <div class="legacy-line"></div>
+                ${i >= 20 ? '<div class="legacy-line"></div>' : ''}
+            `;
+            shortMount.appendChild(div);
+        });
+
+        const ansChoiceGrid = document.getElementById('ans-choices-grid');
+        gangtieData.ansChoice.forEach((ans, i) => {
+            const div = document.createElement('div');
+            div.innerHTML = `<span class="legacy-strong">${i+1}.</span> ${ans}`;
+            ansChoiceGrid.appendChild(div);
+        });
+
+        const ansFillGrid = document.getElementById('ans-fill-grid');
+        gangtieData.ansFill.forEach((ans, i) => {
+            const div = document.createElement('div');
+            div.innerHTML = `<span class="legacy-strong">${i+1}.</span> ${ans}`;
+            ansFillGrid.appendChild(div);
+        });
+
+        const ansShortList = document.getElementById('ans-short-list');
+        gangtieData.ansShortDetailed.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'legacy-vertical-answer';
+            div.innerHTML = `
+                <div class="legacy-strong mb-1">${item.q}</div>
+                <div class="legacy-compact-p">${item.a}</div>
+            `;
+            ansShortList.appendChild(div);
+        });
+    </script>
+</body>
+</html>

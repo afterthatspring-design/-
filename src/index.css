@@ -322,6 +322,30 @@
   margin-top: 0.18rem !important;
 }
 
+.legacy-divider {
+  @apply border-t border-dashed border-gray-200 my-8 opacity-40;
+}
+
+.markdown-content strong {
+  @apply text-ink font-bold;
+}
+
+.markdown-content p {
+  @apply mb-2;
+}
+
+.markdown-content ul {
+  @apply list-disc pl-5 my-2;
+}
+
+.markdown-content li {
+  @apply mb-1;
+}
+
+.markdown-content blockquote {
+  @apply italic border-l-4 border-gold pl-4 my-3 text-gold/80;
+}
+
 .legacy-strong {
   color: #8a0000 !important; /* Changed to match cinnabar motif */
   font-weight: bold !important;

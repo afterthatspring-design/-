@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《钢铁是怎样炼成的》精选选择题 - 学生版</title>
+    <style>
+        body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #faf9f6; padding: 20px; color: #333; line-height: 1.6; }
+        .container { max-width: 850px; margin: 0 auto; background: white; padding: 40px; border: 1px solid #ddd; border-top: 6px solid #8a0000; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        h1 { color: #8a0000; text-align: center; border-bottom: 2px solid #8a0000; padding-bottom: 15px; margin-bottom: 30px; font-size: 1.8em; letter-spacing: 2px; }
+        .question { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px dashed #eee; display: flex; flex-direction: column; }
+        .q-title { font-weight: bold; margin-bottom: 8px; }
+        .options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px; }
+        .no-print { display: inline-block; margin-bottom: 20px; padding: 8px 20px; border: 1px solid #8a0000; color: #8a0000; text-decoration: none; border-radius: 20px; font-weight: bold; font-size: 14px; transition: 0.3s; }
+        .no-print:hover { background: #8a0000; color: white; }
+        .info-bar { text-align: center; margin-bottom: 30px; font-size: 0.9em; color: #666; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
+        @page { size: A4; margin: 1.5cm 1.2cm; }
+        @media print { 
+            body { padding: 0; background: white; font-size: 10.5pt; }
+            .no-print { display: none; } 
+            .container { border: none; box-shadow: none; width: 100%; max-width: 100%; padding: 0; margin: 0; } 
+            h1 { font-size: 18pt; margin-bottom: 15pt; padding-bottom: 10pt; }
+            .info-bar { margin-bottom: 15pt; }
+            .question { margin-bottom: 12pt; padding-bottom: 8pt; break-inside: avoid; }
+            .q-title { margin-bottom: 4pt; }
+            .options { gap: 4pt; font-size: 9.5pt; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="no-print">&larr; 返回目录</a>
+        <h1>《钢铁是怎样炼成的》名著精选选择题</h1>
+        <div class="info-bar">
+            <span>科目：初中语文名著导读</span> | <span>类型：单项选择题</span> | <span>题量：50道</span>
+        </div>
+        
+        <script>
+            const questions = [
+                "1. 《钢铁是怎样炼成的》的作者是（ ） A.高尔基 B.奥斯特洛夫斯基 C.托尔斯泰 D.契诃夫",
+                "2. 小说的主人公是（ ） A.朱赫来 B.阿尔焦姆 C.保尔·柯察金 D.谢廖沙",
+                "3. 保尔因什么事被学校开除？（ ） A.打架 B.偷东西 C.不满神父虐待 D.考试不及格",
+                "4. 保尔被开除后去了哪里工作？（ ） A.工厂 B.车站食堂 C.矿山 D.农场",
+                "5. 谁是保尔的革命引路人？（ ） A.阿尔焦姆 B.朱赫来 C.谢廖沙 D.托卡列夫",
+                "6. 保尔参加红军后在哪个战场上头部中弹？（ ） A.波兰战场 B.德国战场 C.国内战场 D.芬兰战场",
+                "7. 小说中集中体现保尔钢铁意志的经典篇章是？（ ） A.战斗 B.筑路 C.恋爱 D.写作",
+                "8. 保尔在修筑铁路时遇到了什么困难？（ ） A.缺粮 B.严寒 C.疾病 D.以上都是",
+                "9. 保尔因什么导致双目失明、全身瘫痪？（ ） A.战争重伤 B.伤寒 C.高强度工作 D.交通事故",
+                "10. 保尔在病重后选择了什么新的战斗方式？（ ） A.演讲 B.教学 C.文学创作 D.从政",
+                "11. 保尔在妻子和母亲的帮助下完成了哪部小说？（ ） A.《钢铁是怎样炼成的》 B.《暴风雨所诞生的》 C.《战争与和平》 D.《母亲》",
+                "12. 保尔的初恋是谁？（ ） A.丽达 B.冬妮亚 C.达雅 D.赫里斯季娜",
+                "13. 冬妮亚是什么身份？（ ） A.工人女儿 B.农民女儿 C.林务官女儿 D.军官女儿",
+                "14. 保尔与冬妮亚分手的原因是什么？（ ） A.家庭反对 B.阶级立场不同 C.性格不合 D.误会",
+                "15. 谁是保尔理想的革命伴侣？（ ） A.冬妮亚 B.达雅 C.丽达 D.赫里斯季娜",
+                "16. 丽达是什么身份？（ ） A.教师 B.医生 C.共青团干部 D.工人",
+                "17. 保尔与丽达未能走到一起的原因是什么？（ ） A.家庭反对 B.阶级不同 C.误会 D.保尔牺牲",
+                "18. 保尔的妻子是谁？（ ） A.冬妮亚 B.丽达 C.达雅 D.赫里斯季娜",
+                "19. 达雅在保尔的帮助下成为了什么？（ ） A.教师 B.医生 C.共产党员 D.作家",
+                "20. 保尔的哥哥是谁？（ ） A.朱赫来 B.阿尔焦姆 C.谢廖沙 D.托卡列夫",
+                "21. 阿尔焦姆是什么身份？（ ） A.红军战士 B.工人 C.农民 D.教师",
+                "22. 保尔在战斗中什么地方受伤？（ ） A.手臂 B.大腿 C.头部 D.胸部",
+                "23. 保尔在战斗中头部中弹后，以什么战胜死亡？（ ） A.医疗条件 B.顽强意志 C.家人照顾 D.运气",
+                "24. 保尔参加红军后成长为一名优秀的？（ ） A.骑兵 B.步兵 C.炮兵 D.侦察兵",
+                "25. 小说以什么为背景？（ ） A.一战 B.十月革命前后 C.二战 D.国内战争",
+                "26. 保尔在车站食堂当杂役时受尽了什么？（ ） A.饥饿 B.寒冷 C.压迫和剥削 D.疾病",
+                "27. 朱赫来教保尔什么？（ ） A.射击 B.拳击 C.骑马 D.游泳",
+                "28. 保尔因什么病险些丧命？（ ） A.伤寒 B.肺炎 C.疟疾 D.痢疾",
+                "29. 保尔在病重后完成了哪部小说？（ ） A.《钢铁是怎样炼成的》 B.《暴风雨所诞生的》 C.《母亲》 D.《童年》",
+                "30. “钢是在烈火和______中炼成的”横线应填？（ ） A.急冷 B.重压 C.锤打 D.淬火",
+                "31. 保尔说“任何一个傻瓜在任何时候都能结束自己”这句话体现了他的什么？（ ） A.软弱 B.坚强 C.悲观 D.乐观",
+                "32. 小说的书名寓意是什么？（ ） A.钢铁的制造过程 B.革命意志在艰苦斗争中磨炼 C.工人阶级的力量 D.战争的残酷",
+                "33. 小说具有强烈的什么色彩？（ ） A.浪漫主义 B.现实主义 C.自传体 D.象征主义",
+                "34. 保尔的原型是谁？（ ） A.朱赫来 B.作者本人 C.托卡列夫 D.谢廖沙",
+                "35. 小说深入刻画了保尔的什么？（ ） A.战斗经历 B.内心世界 C.爱情故事 D.家庭生活",
+                "36. 小说将现实主义的真实描写与什么主义的理想抒发相结合？（ ） A.浪漫主义 B.古典主义 C.现代主义 D.象征主义",
+                "37. 保尔在瘫痪后产生什么念头？（ ） A.逃跑 B.自杀 C.放弃 D.抱怨",
+                "38. 保尔在修筑铁路时展现出惊人的什么？（ ） A.体力 B.毅力 C.智慧 D.勇气",
+                "39. 保尔说“我已把自己整个的生命和全部的精力献给了世界上最壮丽的事业——为人类的______而奋斗”，横线应填？（ ） A.解放 B.幸福 C.和平 D.发展",
+                "40. 奥斯特洛夫斯基在病榻上历时几年创作了《钢铁是怎样炼成的》？（ ） A.一年 B.两年 C.三年 D.四年",
+                "41. 奥斯特洛夫斯基23岁时双目失明，身体怎样？（ ） A.瘫痪 B.残疾 C.虚弱 D.健康",
+                "42. 奥斯特洛夫斯基完成《钢铁是怎样炼成的》后又开始创作哪部作品？（ ） A.《母亲》 B.《童年》 C.《暴风雨所诞生的》 D.《在人间》",
+                "43. 奥斯特洛夫斯基于哪一年病逝？（ ） A.1934年 B.1935年 C.1936年 D.1937年",
+                "44. 奥斯特洛夫斯基病逝时年仅多少岁？（ ） A.30岁 B.31岁 C.32岁 D.33岁",
+                "45. 保尔在车站食堂当杂役时认识了谁？（ ） A.丽达 B.冬妮亚 C.达雅 D.赫里斯季娜",
+                "46. 保尔与冬妮亚因什么不同而分手？（ ） A.家庭背景 B.阶级立场 C.性格 D.爱好",
+                "47. 丽达是什么干部？（ ） A.党委 B.共青团 C.工会 D.妇女会",
+                "48. 达雅是保尔的什么人？（ ） A.初恋 B.战友 C.妻子 D.妹妹",
+                "49. 阿尔焦姆代表了工人阶级的什么？（ ） A.力量 B.智慧 C.质朴与力量 D.勇敢",
+                "50. 《钢铁是怎样炼成的》是一部闪烁着什么光芒的长篇小说？（ ） A.现实主义 B.浪漫主义 C.理想主义 D.英雄主义"
+            ];
+
+            questions.forEach(item => {
+                const parts = item.split(/\s+([A-D]\.)/);
+                const questionText = parts[0];
+                const options = [];
+                for(let i=1; i<parts.length; i+=2) {
+                    options.push(parts[i] + parts[i+1]);
+                }
+
+                document.write(`
+                    <div class="question">
+                        <span class="q-title">${questionText}</span>
+                        <div class="options">
+                            ${options.map(opt => `<span>${opt}</span>`).join('')}
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
+
+        <div style="text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; color: #b6a17b; font-size: 0.85em;">
+            锦水微澜名师工作室 · 数字化教学资源 (学生版)
+        </div>
+    </div>
+</body>
+</html>

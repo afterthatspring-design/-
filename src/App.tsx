@@ -7,7 +7,9 @@ import React, { ReactNode, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight, Scroll, BookOpen, PenTool, Image as ImageIcon, ArrowLeft, Book, Trophy, GraduationCap, Users, Waves, Printer, Search, FileText, Layout, Filter, Menu, X } from 'lucide-react';
 import { GANGTIE_DATA } from './data/gangtie';
+import { ZHAOHUAXISHI_DATA } from './data/zhaohuaxishi';
 import { RESOURCES_DATA, UNIT_NAMES } from './data/resources';
+import ReactMarkdown from 'react-markdown';
 
 const Logo = ({ className = "" }: { className?: string }) => (
   <div className={`relative flex items-center justify-center shrink-0 ${className}`}>
@@ -88,7 +90,7 @@ export default function App() {
         </nav>
 
         <div className="max-w-[1400px] mx-auto px-4 py-8 relative z-10">
-          <ResourceNavigator />
+          <ResourceNavigator onBookSelect={(id) => { setSelectedBook(id); setView('book-detail'); setSubView('index'); }} />
         </div>
 
         <footer className="py-12 text-center text-sm text-gold font-bold opacity-60 border-t border-border-gold/20 no-print">
@@ -111,7 +113,9 @@ export default function App() {
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
-            <span className="font-bold tracking-widest text-ink text-base hidden md:inline">《钢铁是怎样炼成的》题库专研</span>
+            <span className="font-bold tracking-widest text-ink text-base hidden md:inline">
+              {selectedBook === 'zhaohua' ? '《朝花夕拾》' : '《钢铁是怎样炼成的》'}题库专研
+            </span>
           </div>
           <div className="flex items-center gap-4">
             <button onClick={() => setView('main')} className="text-base font-bold text-ink hover:text-cinnabar transition-colors">工作室首页</button>
@@ -167,6 +171,13 @@ export default function App() {
                 type="理想信念" 
                 desc="一部鼓舞了数代人的红色经典，探索生命的意义。" 
                 onSelect={() => { setSelectedBook('gangtie'); setView('book-detail'); setSubView('index'); }}
+              />
+              <BookRow 
+                title="《朝花夕拾》" 
+                author="鲁迅" 
+                type="温情回忆" 
+                desc="在成年后的傍晚，重新拾起少年时代美好的花瓣。" 
+                onSelect={() => { setSelectedBook('zhaohua'); setView('book-detail'); setSubView('index'); }}
               />
               <BookRow title="《西游记》" author="吴承恩" type="古典精粹" desc="奇幻浪漫的史诗，中国古典神魔小说的巅峰。" />
               <BookRow title="《骆驼祥子》" author="老舍" type="现实主义" desc="旧北京的人力车夫，个人奋斗与社会悲剧的交织。" />
@@ -393,7 +404,7 @@ export default function App() {
   );
 }
 
-function ResourceNavigator() {
+function ResourceNavigator({ onBookSelect }: { onBookSelect?: (id: string) => void }) {
   const [filter, setFilter] = useState("");
   const [activeTab, setActiveTab] = useState<string>("all");
   const [selectedGrade, setSelectedGrade] = useState<string>("7-down");
@@ -428,22 +439,43 @@ function ResourceNavigator() {
           <span className="text-xl md:text-2xl font-bold text-ink tracking-[0.1em]">{title}</span>
         </div>
         <div className="divide-y divide-border-gold/5 py-3 md:py-4">
-          {filteredItems.map((item, idx) => (
-            <a 
-              key={idx} 
-              href={item.file} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center justify-between px-6 md:px-8 py-3 md:py-4 hover:bg-gold/5 transition-colors group/item"
-            >
-              <span className="text-lg md:text-xl font-medium text-ink/80 group-hover/item:text-cinnabar transition-colors truncate">
-                {item.title || item.displayName}
-              </span>
-              <span className="text-xs md:text-sm font-bold text-gold/60 group-hover/item:text-cinnabar transition-colors flex items-center shrink-0 tracking-[0.1em] md:tracking-[0.2em] ml-4 md:ml-6">
-                打开 <ChevronRight className="w-4 h-4 md:w-5 md:h-5 ml-1" />
-              </span>
-            </a>
-          ))}
+          {filteredItems.map((item, idx) => {
+            const isInteractiveBook = !!item.bookId;
+            
+            if (isInteractiveBook) {
+              return (
+                <button 
+                  key={idx} 
+                  onClick={() => onBookSelect?.(item.bookId)}
+                  className="w-full flex items-center justify-between px-6 md:px-8 py-3 md:py-4 hover:bg-gold/5 transition-colors group/item text-left border-none bg-transparent"
+                >
+                  <span className="text-lg md:text-xl font-medium text-ink/80 group-hover/item:text-cinnabar transition-colors truncate">
+                    {item.title || item.displayName}
+                  </span>
+                  <span className="text-xs md:text-sm font-bold text-gold/60 group-hover/item:text-cinnabar transition-colors flex items-center shrink-0 tracking-[0.1em] md:tracking-[0.2em] ml-4 md:ml-6">
+                    进入导读 <ChevronRight className="w-4 h-4 md:w-5 md:h-5 ml-1" />
+                  </span>
+                </button>
+              );
+            }
+
+            return (
+              <a 
+                key={idx} 
+                href={item.file} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-between px-6 md:px-8 py-3 md:py-4 hover:bg-gold/5 transition-colors group/item"
+              >
+                <span className="text-lg md:text-xl font-medium text-ink/80 group-hover/item:text-cinnabar transition-colors truncate">
+                  {item.title || item.displayName}
+                </span>
+                <span className="text-xs md:text-sm font-bold text-gold/60 group-hover/item:text-cinnabar transition-colors flex items-center shrink-0 tracking-[0.1em] md:tracking-[0.2em] ml-4 md:ml-6">
+                  打开 <ChevronRight className="w-4 h-4 md:w-5 md:h-5 ml-1" />
+                </span>
+              </a>
+            );
+          })}
         </div>
       </div>
     );
@@ -632,9 +664,31 @@ function BookRow({ title, author, type, desc, onSelect }: { title: string, autho
 }
 
 function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: string, subView: BookSubView, onSubViewChange: (v: BookSubView) => void }) {
-  if (bookId !== 'gangtie') return <div className="text-center py-20">暂无内容</div>;
+  const booksMap: Record<string, any> = {
+    'gangtie': {
+      data: GANGTIE_DATA,
+      title: "钢铁是怎样炼成的",
+      author: "奥斯特洛夫斯基 著 · 八年级下册必读名著",
+      bg: "bg-green-900",
+      icon: "📗",
+      symbol: "钢",
+      accent: "text-green-800"
+    },
+    'zhaohua': {
+      data: ZHAOHUAXISHI_DATA,
+      title: "朝花夕拾",
+      author: "鲁迅 著 · 七年级上册必读名著",
+      bg: "bg-amber-900",
+      icon: "🌸",
+      symbol: "花",
+      accent: "text-amber-800"
+    }
+  };
 
-  const data = GANGTIE_DATA;
+  const currentBook = booksMap[bookId];
+  if (!currentBook) return <div className="text-center py-20">暂无内容</div>;
+
+  const data = currentBook.data;
 
   const PrintButton = () => (
     <button 
@@ -653,11 +707,11 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
     return (
       <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <PrintButton />
-        <div className="bg-green-900 overflow-hidden relative rounded-xl p-8 md:p-12 text-center text-white shadow-2xl">
-          <div className="absolute top-4 right-8 text-6xl md:text-8xl font-serif opacity-10">钢</div>
-          <div className="w-16 h-24 md:w-20 md:h-28 bg-white/20 border border-white/30 rounded flex items-center justify-center text-3xl md:text-4xl mb-4 md:mb-6 mx-auto shadow-inner shadow-green-400/20">📗</div>
-          <h1 className="text-2xl md:text-5xl font-bold tracking-widest mb-4">《钢铁是怎样炼成的》</h1>
-          <p className="text-white/60 text-xs md:text-sm tracking-widest">奥斯特洛夫斯基 著 · 八年级下册必读名著</p>
+        <div className={`overflow-hidden relative rounded-xl p-8 md:p-12 text-center text-white shadow-2xl ${currentBook.bg}`}>
+          <div className="absolute top-4 right-8 text-6xl md:text-8xl font-serif opacity-10">{currentBook.symbol}</div>
+          <div className="w-16 h-24 md:w-20 md:h-28 bg-white/20 border border-white/30 rounded flex items-center justify-center text-3xl md:text-4xl mb-4 md:mb-6 mx-auto shadow-inner shadow-white/20">{currentBook.icon}</div>
+          <h1 className="text-2xl md:text-5xl font-bold tracking-widest mb-4">{currentBook.title}</h1>
+          <p className="text-white/60 text-xs md:text-sm tracking-widest">{currentBook.author}</p>
           <div className="flex flex-wrap justify-center gap-2 mt-6 md:mt-8">
             {['填空题 50空', '选择题 50题', '简答题 25题', '分析题 5题', '深度解读', '答案详解', '一键全印'].map(tag => (
               <span key={tag} className="text-[10px] md:text-xs px-3 md:px-4 py-1 md:py-1.5 bg-white/10 rounded-full border border-white/10">{tag}</span>
@@ -668,28 +722,28 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <button onClick={() => onSubViewChange('choice')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
             <div className="w-10 md:w-12 h-1 bg-cinnabar mb-3 md:mb-4" />
-            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-cinnabar">选择题专练</h3>
-            <p className="text-gray-600 text-xs md:text-sm">共{data.choiceQuestions.length}题 · 四选一 · 自动分页优化</p>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-cinnabar">选择题</h3>
+            <p className="text-gray-600 text-xs md:text-sm">共{data.choiceQuestions.length}题 · 自动留白 · 适合单面打印</p>
           </button>
           <button onClick={() => onSubViewChange('fill-blank')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
             <div className="w-10 md:w-12 h-1 bg-teal-600 mb-3 md:mb-4" />
-            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-teal-600">填空题挑战</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-teal-600">填空题</h3>
             <p className="text-gray-600 text-xs md:text-sm">共{data.fillInBlanksQuestions?.length || 50}题 · 基础巩固 · 考点直击</p>
           </button>
           <button onClick={() => onSubViewChange('short-answer')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
             <div className="w-10 md:w-12 h-1 bg-gold mb-3 md:mb-4" />
-            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-gold">简答与分析题</h3>
-            <p className="text-gray-600 text-xs md:text-sm">共{data.shortAnswerQuestions.length}题 · 深度考察 · 附答题线设计</p>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-gold">简答与分析</h3>
+            <p className="text-gray-600 text-xs md:text-sm">主观题专项 · 预设书写位 · 深度考察</p>
           </button>
           <button onClick={() => onSubViewChange('interpretation')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
             <div className="w-10 md:w-12 h-1 bg-blue-800 mb-3 md:mb-4" />
-            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-blue-800">深度文化解读</h3>
-            <p className="text-gray-600 text-xs md:text-sm">人物分析 · 主题梳理 · 中考考点归纳</p>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-blue-800">深度文化导读</h3>
+            <p className="text-gray-600 text-xs md:text-sm">作者背景 · 主题梳理 · 中考考点归纳</p>
           </button>
           <button onClick={() => onSubViewChange('answer')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl">
             <div className="w-10 md:w-12 h-1 bg-green-800 mb-3 md:mb-4" />
-            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-green-800">标准答案详解</h3>
-            <p className="text-gray-600 text-xs md:text-sm">完整版答案 · 选择、填空、主观题汇总</p>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-green-800">参考答案</h3>
+            <p className="text-gray-600 text-xs md:text-sm">完整版解析 · 选择、填空、主观题汇总</p>
           </button>
           <button onClick={() => onSubViewChange('all')} className="group gold-border p-6 md:p-8 text-left hover:bg-white transition-all shadow-md hover:shadow-xl md:col-span-2 border-cinnabar/30 bg-cinnabar/5">
             <div className="w-12 h-1 bg-ink opacity-30 mb-3 md:mb-4" />
@@ -715,42 +769,33 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
       <div className="animate-in fade-in slide-in-from-right-4 duration-500 overflow-x-auto pb-20">
         <PrintButton />
         <div className="legacy-paper">
-          {/* ================= 第一面：选择题 第1-23题 ================= */}
           <div className="legacy-page">
             <div className="legacy-main-title">
-              <h1>《钢铁是怎样炼成的》选择题专练</h1>
-              <div className="legacy-subhead">奥斯特洛夫斯基 · 红色经典 · 八年级下册必读名著 | 锦水微澜教育工作室 黄国荣 编制</div>
+              <h1>《{currentBook.title}》选择题专练</h1>
+              <div className="legacy-subhead">{currentBook.author} | 锦水微澜教育工作室 黄国荣 编制</div>
             </div>
-
-            <div className="legacy-ans-section-title">🔘 二、选择题（共50题）</div>
+            <div className="legacy-ans-section-title">🔘 选择题（共50题）</div>
             <div className="legacy-questions-list">
-              {data.choiceQuestions.slice(0, 23).map((q, idx) => (
-                <div key={idx} className="legacy-q-item">
-                  {q}
-                </div>
+              {data.choiceQuestions?.slice(0, 23).map((q, idx) => (
+                <div key={idx} className="legacy-q-item">{q}</div>
               ))}
             </div>
-            <div className="legacy-print-footer">本页为第1-23题 | 背面为第24-50题</div>
-            <div className="legacy-page-number">—— 第1页 / 共2页（正面）——</div>
+            <div className="legacy-print-footer">第1-23题 | 依据原著命题</div>
+            <div className="legacy-page-number">—— 第1页 / 共2页 ——</div>
           </div>
-
           <div className="border-t-2 border-dashed border-gray-200 my-8 no-print" />
-
-          {/* ================= 第二面：选择题 第24-50题 ================= */}
           <div className="legacy-page">
             <div className="legacy-questions-list" style={{ marginTop: 0 }}>
-              {data.choiceQuestions.slice(23).map((q, idx) => (
-                <div key={idx} className="legacy-q-item">
-                  {q}
-                </div>
+              {data.choiceQuestions?.slice(23).map((q, idx) => (
+                <div key={idx} className="legacy-q-item">{q}</div>
               ))}
             </div>
-            <div className="legacy-print-footer">本页为第24-50题 | 选择题共50题</div>
-            <div className="legacy-page-number">—— 第2页 / 共2页（背面）——</div>
+            <div className="legacy-print-footer">第24-50题 | 自动分页排版</div>
+            <div className="legacy-page-number">—— 第2页 / 共2页 ——</div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   if (subView === 'fill-blank') {
@@ -758,42 +803,35 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
       <div className="animate-in fade-in slide-in-from-right-4 duration-500 overflow-x-auto pb-20">
         <PrintButton />
         <div className="legacy-paper">
-          {/* ================= 第一面：填空题 第1-23题 ================= */}
           <div className="legacy-page">
             <div className="legacy-main-title">
-              <h1>《钢铁是怎样炼成的》填空题专练</h1>
-              <div className="legacy-subhead">奥斯特洛夫斯基 · 红色经典 · 八年级下册必读名著 | 锦水微澜教育工作室 黄国荣 编制</div>
+              <h1>《{currentBook.title}》填空题专练</h1>
+              <div className="legacy-subhead">{currentBook.author} | 考点直击 · 基础提升</div>
             </div>
-
-            <div className="legacy-ans-section-title">📝 一、填空题（共50空）</div>
+            <div className="legacy-ans-section-title">📝 填空题（共50空）</div>
             <div className="legacy-questions-list">
               {data.fillInBlanksQuestions?.slice(0, 23).map((q, idx) => (
                 <div key={idx} className="legacy-q-item">
-                  {q.split('（ ）')[0]}<span className="legacy-blank">__________</span>{q.split('（ ）')[1]}
+                  {q}
                 </div>
               ))}
             </div>
-            <div className="legacy-print-footer">本页为第1-23题 | 背面为第24-50题</div>
-            <div className="legacy-page-number">—— 第1页 / 共2页（正面）——</div>
+            <div className="legacy-page-number">—— 第1页 ——</div>
           </div>
-
           <div className="border-t-2 border-dashed border-gray-200 my-8 no-print" />
-
-          {/* ================= 第二面：填空题 第24-50题 ================= */}
           <div className="legacy-page">
             <div className="legacy-questions-list" style={{ marginTop: 0 }}>
               {data.fillInBlanksQuestions?.slice(23).map((q, idx) => (
                 <div key={idx} className="legacy-q-item">
-                  {q.split('（ ）')[0]}<span className="legacy-blank">__________</span>{q.split('（ ）')[1]}
+                  {q}
                 </div>
               ))}
             </div>
-            <div className="legacy-print-footer">本页为第24-50题 | 填空题共50空</div>
-            <div className="legacy-page-number">—— 第2页 / 共2页（背面）——</div>
+            <div className="legacy-page-number">—— 第2页 ——</div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   if (subView === 'interpretation') {
@@ -801,161 +839,31 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
       <div className="animate-in fade-in slide-in-from-right-4 duration-500 overflow-x-auto pb-20">
         <PrintButton />
         <div className="legacy-paper">
-          {/* ================= 正面（第1页） ================= */}
           <div className="legacy-page">
             <div className="legacy-main-title">
-              <h1>钢铁是怎样炼成的</h1>
-              <div className="legacy-subhead">奥斯特洛夫斯基 · 红色经典 · 生命的意义</div>
-              <div className="legacy-author-line">尼古拉·奥斯特洛夫斯基 著 | 八年级下册语文必读名著 · 深度解读 | 锦水微澜教育工作室 黄国荣 编制</div>
+              <h1>《{currentBook.title}》深度文化解读</h1>
+              <div className="legacy-subhead">{currentBook.author} · 考点精粹</div>
             </div>
-
-            <div className="legacy-quote">
-              <span className="legacy-strong">📖 编撰说明</span><br />
-              《钢铁是怎样炼成的》是苏联作家奥斯特洛夫斯基的代表作，是一部闪烁着崇高理想主义光芒的长篇小说。小说以作者自身经历为蓝本，塑造了保尔·柯察金这一无产阶级英雄形象。本文根据原著及权威资料整理，系统梳理故事梗概、人物形象、主题思想、艺术特色及中考考点，便于读者研习或打印装订。
+            <div className="space-y-10 mt-8">
+              {data.interpretationDetailed?.map((item, idx) => (
+                <div key={idx} className="relative">
+                  <div className="legacy-section">
+                    <div className="legacy-section-title">{item.title}</div>
+                    <div className="legacy-compact-p markdown-content px-2">
+                      <ReactMarkdown>{item.content}</ReactMarkdown>
+                    </div>
+                  </div>
+                  {idx < data.interpretationDetailed.length - 1 && (
+                    <div className="border-t border-dashed border-gray-100 my-8 opacity-50 no-print" />
+                  )}
+                </div>
+              ))}
             </div>
-
-            {/* 作者简介 */}
-            <div className="legacy-section">
-              <div className="legacy-section-title">✍️ 一、作者简介</div>
-              <div className="legacy-compact-p"><span className="legacy-strong">尼古拉·阿列克谢耶维奇·奥斯特洛夫斯基</span>（1904—1936），苏联著名无产阶级作家。他出生于乌克兰一个贫困的工人家庭，11岁开始当童工，1919年加入共青团，参加国内战争。1920年在战斗中重伤，23岁时双目失明，身体瘫痪。但他以惊人的毅力，在病榻上历时三年创作了《钢铁是怎样炼成的》。小说完成后，他又开始创作《暴风雨所诞生的》，但未完成便因病逝世，年仅32岁。</div>
-            </div>
-
-            {/* 故事梗概 */}
-            <div className="legacy-section">
-              <div className="legacy-section-title">📖 二、故事梗概 · 保尔的成长之路</div>
-              <div className="legacy-compact-p">小说以十月革命前后的俄国为背景，讲述了主人公保尔·柯察金的成长历程。</div>
-              
-              <div className="legacy-subsection">
-                <div className="legacy-subsection-title">🔨 童年时期 · 反抗的种子</div>
-                <div className="legacy-compact-p">保尔因不满神父的虐待被学校开除，12岁到车站食堂当杂役，受尽压迫和剥削。在哥哥阿尔焦姆的帮助下，他逐渐认识到社会的黑暗。十月革命爆发后，老布尔什维克朱赫来来到小镇，向保尔传授革命思想，保尔从此走上革命道路。</div>
-              </div>
-              
-              <div className="legacy-subsection">
-                <div className="legacy-subsection-title">⚔️ 革命时期 · 钢铁的淬炼</div>
-                <div className="legacy-compact-p">保尔加入红军，在战场上英勇作战，大腿受伤、头部中弹，但他以顽强意志战胜死亡。在战争间隙，他坚持学习，成长为一名优秀的骑兵。后因伤转入后方工作，参加修筑铁路的艰苦劳动，在严寒和饥饿中，他展现出惊人的毅力。小说中“筑路”一节是最为经典的篇章，集中体现了保尔的钢铁意志。</div>
-              </div>
-              
-              <div className="legacy-subsection">
-                <div className="legacy-subsection-title">💔 病重时期 · 精神的升华</div>
-                <div className="legacy-compact-p">保尔因伤寒和斑疹伤寒险些丧命，后又因高强度工作导致身体恶化，双目失明、全身瘫痪。在极端困难的情况下，他一度产生自杀念头，但很快战胜了软弱。他拿起笔，开始了新的战斗——文学创作。在妻子达雅和母亲的帮助下，他完成了小说《暴风雨所诞生的》，用另一种方式继续为革命事业奋斗。</div>
-              </div>
-              
-              <div className="legacy-subsection">
-                <div className="legacy-subsection-title">✨ 生命的意义 · 不朽的名言</div>
-                <div className="legacy-compact-p">保尔在烈士公墓前的一段独白成为全书最著名的段落：“人最宝贵的是生命，生命对人来说只有一次。人的一生应当这样度过：当他回首往事时，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。这样，在临死的时候，他就能够说：‘我已把自己整个的生命和全部的精力献给了世界上最壮丽的事业——为人类的解放而奋斗。’”</div>
-              </div>
-            </div>
-
-            {/* 三、人物形象分析 */}
-            <div className="legacy-section">
-              <div className="legacy-section-title">👥 三、人物形象分析</div>
-              
-              <div className="legacy-subsection">
-                <div className="legacy-subsection-title">保尔·柯察金 · 钢铁战士的化身</div>
-                <div className="legacy-compact-p">保尔是小说主人公，他的形象集中体现了无产阶级革命战士的崇高品质：顽强勇敢、意志坚定、对党忠诚、无私奉献。他具有强烈的反抗精神，从童年反抗神父，到青年时期投身革命，再到病重后拿起笔战斗，他的一生都在为理想而奋斗。保尔不是天生的英雄，他在斗争中不断成长，身上既有英雄主义的光辉，也有普通人的软弱与挣扎，但每一次他都能战胜自我，实现精神升华。</div>
-              </div>
-              
-              <div className="legacy-subsection">
-                <div className="legacy-subsection-title">朱赫来 · 革命引路人</div>
-                <div className="legacy-compact-p">朱赫来是老布尔什维克，是保尔革命道路的引路人。他沉着冷静、经验丰富、善于引导青年。他教保尔拳击、讲革命道理，在保尔迷茫时给予指引，是保尔精神上的父亲。</div>
-              </div>
-              
-              <div className="legacy-subsection">
-                <div className="legacy-subsection-title">冬妮亚 · 初恋的幻灭</div>
-                <div className="legacy-compact-p">冬妮亚是林务官的女儿，保尔的初恋。她天真、善良，但带有资产阶级小姐的习气。保尔与她因阶级立场不同而分手，体现了保尔对革命信仰的坚守。</div>
-              </div>
-              
-              <div className="legacy-subsection">
-                <div className="legacy-subsection-title">丽达 · 革命的战友</div>
-                <div className="legacy-compact-p">丽达是共青团干部，与保尔志同道合。她干练、热情、有政治觉悟，是保尔理想的革命伴侣。但因误会两人未能走到一起，成为保尔一生的遗憾。</div>
-              </div>
-              
-              <div className="legacy-subsection">
-                <div className="legacy-subsection-title">达雅 · 生活的伴侣</div>
-                <div className="legacy-compact-p">达雅是保尔的妻子，在保尔病重后给予他无微不至的照顾。她淳朴、善良、坚韧，在保尔的帮助下成长为共产党员，是保尔晚年生活的精神支柱。</div>
-              </div>
-              
-              <div className="legacy-subsection">
-                <div className="legacy-subsection-title">阿尔焦姆 · 亲情的力量</div>
-                <div className="legacy-compact-p">阿尔焦姆是保尔的哥哥，一个朴实的工人。他爱护弟弟，在保尔成长过程中给予物质和精神上的支持，代表了工人阶级的质朴与力量。</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t-2 border-dashed border-gray-200 my-8 no-print" />
-
-          {/* ================= 背面（第2页） ================= */}
-          <div className="legacy-page">
-            {/* 四、主题思想 */}
-            <div className="legacy-section">
-              <div className="legacy-section-title">💡 四、主题思想</div>
-              <div className="legacy-highlight-box">
-                <div className="legacy-compact-p"><span className="legacy-strong">钢铁意志的赞歌</span>：小说通过保尔的成长历程，歌颂了无产阶级革命者钢铁般的意志。保尔在战争中负伤、在建设中牺牲健康、在病重后坚持创作，每一次困境都是对意志的淬炼，正如书名所喻：“钢铁是在烈火和急冷中炼成的。”</div>
-                <div className="legacy-compact-p"><span className="legacy-strong">生命价值的追问</span>：保尔关于“人最宝贵的是生命”的独白，引发了无数读者对生命意义的思考。小说回答了“人应该怎样活着”这一根本问题——为崇高理想而奋斗，生命才有价值。</div>
-                <div className="legacy-compact-p"><span className="legacy-strong">革命英雄主义</span>：小说展现了个人利益服从革命利益、个人命运融入时代洪流的英雄主义精神。保尔放弃爱情、牺牲健康，始终把党 and 人民的事业放在首位。</div>
-                <div className="legacy-compact-p"><span className="legacy-strong">理想主义的丰碑</span>：小说超越了个人命运，表达了对共产主义理想的坚定信念。保尔的奋斗历程证明：崇高的理想可以战胜一切困难。</div>
-              </div>
-            </div>
-
-            {/* 五、艺术特色 */}
-            <div className="legacy-section">
-              <div className="legacy-section-title">🎨 五、艺术特色</div>
-              <div className="legacy-subsection">
-                <div className="legacy-subsection-title">自传体小说的真实力量</div>
-                <div className="legacy-compact-p">小说以作者自身经历为蓝本，具有强烈的自传色彩。保尔的原型就是奥斯特洛夫斯基本人，这种源于真实经历的创作使小说具有震撼人心的力量。书中许多情节，如保尔参加修路、双目失明后写作等，都是作者亲身经历的写照。</div>
-                
-                <div className="legacy-subsection-title">心理描写的深度</div>
-                <div className="legacy-compact-p">小说深入刻画了保尔的内心世界，展现了他的思想斗争和精神成长。特别是保尔在瘫痪后产生自杀念头的心理描写，真实展现了英雄人物内心的脆弱与挣扎，使人物形象更加立体丰满。</div>
-                
-                <div className="legacy-subsection-title">革命浪漫主义风格</div>
-                <div className="legacy-compact-p">小说将现实主义的真实描写与浪漫主义的理想抒发相结合，在严酷的斗争现实中展现出崇高的理想光辉。语言充满激情，富有感染力，激励了一代又一代读者。</div>
-                
-                <div className="legacy-subsection-title">跌宕起伏的叙事结构</div>
-                <div className="legacy-compact-p">小说以保尔的成长历程为主线，从童年到革命、从建设到病重、从绝望到新生，情节跌宕起伏，层层递进，有力地表现了“钢铁是怎样炼成的”这一主题。</div>
-              </div>
-            </div>
-
-            {/* 六、经典名言 */}
-            <div className="legacy-section">
-              <div className="legacy-section-title">📜 六、经典名言</div>
-              <div className="legacy-quote">
-                <p>“人最宝贵的是生命，生命对人来说只有一次。人的一生应当这样度过：当他回首往事时，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。这样，在临终的时候，他就能够说：‘我已把自己整个的生命和全部的精力献给了世界上最壮丽的事业——为人类的解放而奋斗。’”</p>
-                <p style={{ marginTop: '0.15rem' }}>—— 保尔·柯察金</p>
-              </div>
-              <div className="legacy-compact-p"><span className="legacy-strong">其他名句</span>：“钢是在烈火和急冷中炼成的，意志也是在苦难和斗争中磨炼出来的。”“任何一个傻瓜在任何时候都能结束自己！这是最怯弱也是最容易的出路。”</div>
-            </div>
-
-            {/* 七、中考考点归纳 */}
-            <div className="legacy-section">
-              <div className="legacy-section-title">📚 七、中考考点归纳</div>
-              <div className="legacy-highlight-box">
-                <ul className="list-disc ml-4 space-y-1">
-                  <li className="legacy-compact-p"><strong>作者</strong>：奥斯特洛夫斯基（苏联），自传体小说。</li>
-                  <li className="legacy-compact-p"><strong>主人公</strong>：保尔·柯察金，钢铁战士的象征。</li>
-                  <li className="legacy-compact-p"><strong>核心事件</strong>：被学校开除→遇朱赫来→参加红军→头部受伤→参加筑路→全身瘫痪→双目失明→文学创作。</li>
-                  <li className="legacy-compact-p"><strong>关键人物</strong>：朱赫来（革命引路人）、冬妮亚（初恋）、丽达（战友）、达雅（妻子）、阿尔焦姆（哥哥）。</li>
-                  <li className="legacy-compact-p"><strong>经典名言</strong>：“人最宝贵的是生命……”（常考填空题/简答题）。</li>
-                  <li className="legacy-compact-p"><strong>主题</strong>：歌颂钢铁意志、追问生命价值、弘扬革命英雄主义。</li>
-                  <li className="legacy-compact-p"><strong>书名寓意</strong>：钢铁在烈火与急冷中炼成，比喻坚强的革命意志是在艰苦斗争中磨炼出来的。</li>
-                  <li className="legacy-compact-p"><strong>艺术特色</strong>：自传体、心理描写、革命浪漫主义、语言激情澎湃。</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* 八、深度思考 · 经典的意义 */}
-            <div className="legacy-section">
-              <div className="legacy-section-title">💭 八、深度思考 · 经典的意义</div>
-              <div className="legacy-compact-p">《钢铁是怎样炼成的》不仅是一部文学名著，更是一部人生教科书。保尔·柯察金用他的一生诠释了什么是真正的英雄主义——在认清生活的真相后依然热爱生活，在遭受命运的打击后依然为理想奋斗。</div>
-              <div className="legacy-compact-p">今天，我们生活在和平年代，不再需要像保尔那样浴血奋战，但他那种永不放弃、为理想而奋斗的精神依然具有现实意义。面对学习中的困难、生活中的挫折，保尔的精神告诉我们：只要心中有信念，就没有克服不了的困难。</div>
-              <div className="legacy-compact-p">正如保尔所说：“钢是在烈火和急冷中炼成的。”每一个人的成长，都需要经历风雨的洗礼。愿我们都能在生活的熔炉中，炼就属于自己的“钢铁”。</div>
-            </div>
-
-            <div className="legacy-print-footer">依据奥斯特洛夫斯基《钢铁是怎样炼成的》原著及权威资料整理 · 涵盖中考全部考点 · 适宜装订成册</div>
-            <div className="legacy-page-number">—— 共2页，双面打印 ——</div>
+            <div className="legacy-print-footer mt-10">锦水微澜教育工作室 · 学术研究版</div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   if (subView === 'short-answer') {
@@ -963,30 +871,26 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
       <div className="animate-in fade-in slide-in-from-right-4 duration-500 overflow-x-auto pb-20">
         <PrintButton />
         <div className="legacy-paper">
-          <div className="legacy-main-title">
-            <h1>《钢铁是怎样炼成的》简答题+分析题专练</h1>
-            <div className="legacy-subhead">奥斯特洛夫斯基 · 红色经典 · 八年级下册必读名著 | 名著阅读专项训练</div>
-          </div>
-
-          <div className="legacy-questions-container">
-            {data.shortAnswerQuestions.map((q, idx) => (
-              <div key={idx} className="legacy-question-item">
-                <div className="legacy-q-title">{q}</div>
-                <div className="legacy-answer-lines">
-                  <div className="legacy-line"></div>
-                  <div className="legacy-line"></div>
-                  {idx >= 20 && <div className="legacy-line"></div>}
+          <div className="legacy-page">
+            <div className="legacy-main-title">
+              <h1>《{currentBook.title}》简答与分析专项</h1>
+            </div>
+            <div className="legacy-questions-container">
+              {data.shortAnswerDetailed?.map((item, idx) => (
+                <div key={idx} className="legacy-question-item">
+                  <div className="legacy-q-title">{item.q}</div>
+                  <div className="legacy-answer-lines">
+                    <div className="legacy-line"></div>
+                    <div className="legacy-line"></div>
+                    {idx >= 20 && <div className="legacy-line"></div>}
+                  </div>
                 </div>
-                {idx === 22 && <div className="legacy-shift-down"></div>}
-              </div>
-            ))}
-          </div>
-          <div className="legacy-small-note !text-center">
-            共25题（第1-20题为简答题，第21-25题为分析题）| 根据奥斯特洛夫斯基《钢铁是怎样炼成的》原著命题
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   if (subView === 'answer') {
@@ -994,50 +898,43 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
       <div className="animate-in fade-in slide-in-from-right-4 duration-500 overflow-x-auto pb-20">
         <PrintButton />
         <div className="legacy-paper">
-          <h1>《钢铁是怎样炼成的》参考答案</h1>
-          <div className="legacy-subhead">选择题+填空题（横排）&nbsp;&nbsp;|&nbsp;&nbsp;简答题+分析题（竖排，自然接续）</div>
-
-          {/* ================= 一、选择题（横排，50题） ================= */}
-          <div className="legacy-section">
-            <div className="legacy-ans-section-title">一、选择题答案 (共50题)</div>
-            <div className="legacy-grid-answers">
-              {data.answers.choices.map((ans, idx) => (
-                <div key={idx} className="legacy-grid-item">
-                  <span className="legacy-strong">{idx + 1}.</span> {ans}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ================= 二、填空题（横排，50空） ================= */}
-          <div className="legacy-section">
-            <div className="legacy-ans-section-title">二、填空题答案 (共50空)</div>
-            <div className="legacy-grid-answers">
-              {data.answers.fillInBlanks.map((ans, idx) => (
-                <div key={idx} className="legacy-grid-item">
-                  <span className="legacy-strong">{idx + 1}.</span> {ans}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ================= 三、简答题（竖排，25题） ================= */}
-          <div className="legacy-section">
-            <div className="legacy-ans-section-title">三、简答与分析题答案</div>
-            {data.shortAnswerDetailed.map((item, idx) => (
-              <div key={idx} className="legacy-vertical-answer">
-                <span className="answer-text">
-                  {item.q}<br />
-                  {item.a}
-                </span>
+          <div className="legacy-page">
+            <h1>《{currentBook.title}》参考答案汇编</h1>
+            <div className="legacy-section">
+              <div className="legacy-ans-section-title">一、选择题答案</div>
+              <div className="legacy-grid-answers">
+                {data.answers?.choices?.map((ans, idx) => (
+                  <div key={idx} className="legacy-grid-item">
+                    <span className="legacy-strong">{idx + 1}.</span> {ans}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="legacy-section">
+              <div className="legacy-ans-section-title">二、填空题答案</div>
+              <div className="legacy-grid-answers">
+                {data.answers?.fillInBlanks?.map((ans, idx) => (
+                  <div key={idx} className="legacy-grid-item">
+                    <span className="legacy-strong">{idx + 1}.</span> {ans}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="legacy-section">
+              <div className="legacy-ans-section-title">三、简答与分析详解</div>
+              {data.shortAnswerDetailed?.map((item, idx) => (
+                <div key={idx} className="legacy-vertical-answer">
+                  <div className="font-bold mb-1">{item.q}</div>
+                  <div className="markdown-content">
+                    <ReactMarkdown>{item.a}</ReactMarkdown>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-
-          <div className="legacy-small-note">✅ 选择题+填空题横排节省空间 | 简答题+分析题竖排自然接续 | 共50选择+50填空+25分析详解</div>
         </div>
       </div>
-    )
+    );
   }
 
   if (subView === 'all') {
@@ -1045,186 +942,38 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
       <div className="animate-in fade-in zoom-in-95 duration-500">
         <PrintButton />
         <div className="bg-white p-12 space-y-16 print-page">
-          {/* Header */}
           <div className="text-center border-b-4 border-double border-ink pb-8 mb-12">
-            <h1 className="text-5xl font-bold mb-2 tracking-tighter">名著导读深度练习汇编 · 《钢铁是怎样炼成的》</h1>
-            <p className="text-lg font-serif italic text-gray-700">锦水微澜名师工作室 黄国荣老师 精编系列</p>
+            <h1 className="text-5xl font-bold mb-2">名著导读深度练习汇编 · 《{currentBook.title}》</h1>
+            <p className="text-lg italic">锦水微澜教育工作室制作</p>
           </div>
-
-          {/* Section: Interpretation */}
           <section className="print-avoid-break">
-            <h2 className="text-3xl font-bold border-b border-ink/20 pb-2 mb-6">壹 · 深度文化解读</h2>
+            <h2 className="text-3xl font-bold border-b pb-2 mb-6">壹 · 深度文化解读</h2>
             <div className="legacy-paper !shadow-none !p-0 !m-0">
-              {/* ================= 正面（第1页） ================= */}
               <div className="legacy-page">
-                <div className="legacy-main-title">
-                  <h1>钢铁是怎样炼成的</h1>
-                  <div className="legacy-subhead">奥斯特洛夫斯基 · 红色经典 · 生命的意义</div>
-                  <div className="legacy-author-line">尼古拉·奥斯特洛夫斯基 著 | 八年级下册语文必读名著 · 深度解读 | 锦水微澜教育工作室 黄国荣 编制</div>
-                </div>
-
-                <div className="legacy-quote">
-                  <span className="legacy-strong">📖 编撰说明</span><br />
-                  《钢铁是怎样炼成的》是苏联作家奥斯特洛夫斯基的代表作，是一部闪烁着崇高理想主义光芒的长篇小说。小说以作者自身经历为蓝本，塑造了保尔·柯察金这一无产阶级英雄形象。本文根据原著及权威资料整理，系统梳理故事梗概、人物形象、主题思想、艺术特色及中考考点，便于读者研习或打印装订。
-                </div>
-
-                {/* 作者简介 */}
-                <div className="legacy-section">
-                  <div className="legacy-section-title">✍️ 一、作者简介</div>
-                  <div className="legacy-compact-p"><span className="legacy-strong">尼古拉·阿列克谢耶维奇·奥斯特洛夫斯基</span>（1904—1936），苏联著名无产阶级作家。他出生于乌克兰一个贫困的工人家庭，11岁开始当童工，1919年加入共青团，参加国内战争。1920年在战斗中重伤，23岁时双目失明，身体瘫痪。但他以惊人的毅力，在病榻上历时三年创作了《钢铁是怎样炼成的》。小说完成后，他又开始创作《暴风雨所诞生的》，但未完成便因病逝世，年仅32岁。</div>
-                </div>
-
-                {/* 故事梗概 */}
-                <div className="legacy-section">
-                  <div className="legacy-section-title">📖 二、故事梗概 · 保尔的成长之路</div>
-                  <div className="legacy-compact-p">小说以十月革命前后的俄国为背景，讲述了主人公保尔·柯察金的成长历程。</div>
-                  
-                  <div className="legacy-subsection">
-                    <div className="legacy-subsection-title">🔨 童年时期 · 反抗的种子</div>
-                    <div className="legacy-compact-p">保尔因不满神父的虐待被学校开除，12岁到车站食堂当杂役，受尽压迫和剥削。在哥哥阿尔焦姆的帮助下，他逐渐认识到社会的黑暗。十月革命爆发后，老布尔什维克朱赫来来到小镇，向保尔传授革命思想，保尔从此走上革命道路。</div>
-                  </div>
-                  
-                  <div className="legacy-subsection">
-                    <div className="legacy-subsection-title">⚔️ 革命时期 · 钢铁的淬炼</div>
-                    <div className="legacy-compact-p">保尔加入红军，在战场上英勇作战，大腿受伤、头部中弹，但他以顽强意志战胜死亡。在战争间隙，他坚持学习，成长为一名优秀的骑兵。后因伤转入后方工作，参加修筑铁路的艰苦劳动，在严寒和饥饿中，他展现出惊人的毅力。小说中“筑路”一节是最为经典的篇章，集中体现了保尔的钢铁意志。</div>
-                  </div>
-                  
-                  <div className="legacy-subsection">
-                    <div className="legacy-subsection-title">💔 病重时期 · 精神的升华</div>
-                    <div className="legacy-compact-p">保尔因伤寒和斑疹伤寒险些丧命，后又因高强度工作导致身体恶化，双目失明、全身瘫痪。在极端困难的情况下，他一度产生自杀念头，但很快战胜了软弱。他拿起笔，开始了新的战斗——文学创作。在妻子达雅和母亲的帮助下，他完成了小说《暴风雨所诞生的》，用另一种方式继续为革命事业奋斗。</div>
-                  </div>
-                  
-                  <div className="legacy-subsection">
-                    <div className="legacy-subsection-title">✨ 生命的意义 · 不朽的名言</div>
-                    <div className="legacy-compact-p">保尔在烈士公墓前的一段独白成为全书最著名的段落：“人最宝贵的是生命，生命对人来说只有一次。人的一生应当这样度过：当他回首往事时，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。这样，在临死的时候，他就能够说：‘我已把自己整个的生命和全部的精力献给了世界上最壮丽的事业——为人类的解放而奋斗。’”</div>
-                  </div>
-                </div>
-
-                {/* 三、人物形象分析 */}
-                <div className="legacy-section">
-                  <div className="legacy-section-title">👥 三、人物形象分析</div>
-                  
-                  <div className="legacy-subsection">
-                    <div className="legacy-subsection-title">保尔·柯察金 · 钢铁战士的化身</div>
-                    <div className="legacy-compact-p">保尔是小说主人公，他的形象集中体现了无产阶级革命战士的崇高品质：顽强勇敢、意志坚定、对党忠诚、无私奉献。他具有强烈的反抗精神，从童年反抗神父，到青年时期投身革命，再到病重后拿起笔战斗，他的一生都在为理想而奋斗。保尔不是天生英雄，他在斗争中不断成长，身上既有英雄主义的光辉，也有普通人的软弱与挣扎，但每一次他都能战胜自我，实现精神升华。</div>
-                  </div>
-                  
-                  <div className="legacy-subsection">
-                    <div className="legacy-subsection-title">朱赫来 · 革命引路人</div>
-                    <div className="legacy-compact-p">朱赫来是老布尔什维克，是保尔革命道路的引路人。他沉着冷静、经验丰富、善于引导青年。他教保尔拳击、讲革命道理，在保尔迷茫时给予指引，是保尔精神上的父亲。</div>
-                  </div>
-                  
-                  <div className="legacy-subsection">
-                    <div className="legacy-subsection-title">冬妮亚 · 初恋的幻灭</div>
-                    <div className="legacy-compact-p">冬妮亚是林务官的女儿，保尔的初恋。她天真、善良，但带有资产阶级小姐的习气。保尔与她因阶级立场不同而分手，体现了保尔对革命信仰的坚守。</div>
-                  </div>
-                  
-                  <div className="legacy-subsection">
-                    <div className="legacy-subsection-title">丽达 · 革命的战友</div>
-                    <div className="legacy-compact-p">丽达是共青团干部，与保尔志同道合。她干练、热情、有政治觉悟，是保尔理想的革命伴侣。但因误会两人未能走到一起，成为保尔一生的遗憾。</div>
-                  </div>
-                  
-                  <div className="legacy-subsection">
-                    <div className="legacy-subsection-title">达雅 · 生活的伴侣</div>
-                    <div className="legacy-compact-p">达雅是保尔的妻子，在保尔病重后给予他无微不至的照顾。她淳朴、善良、坚韧，在保尔的帮助下成长为共产党员，是保尔晚年生活的精神支柱。</div>
-                  </div>
-                  
-                  <div className="legacy-subsection">
-                    <div className="legacy-subsection-title">阿尔焦姆 · 亲情的力量</div>
-                    <div className="legacy-compact-p">阿尔焦姆是保尔的哥哥，一个朴实的工人。他爱护弟弟，在保尔成长过程中给予物质和精神上的支持，代表了工人阶级的质朴与力量。</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* ================= 背面（第2页） ================= */}
-              <div className="legacy-page">
-                {/* 四、主题思想 */}
-                <div className="legacy-section">
-                  <div className="legacy-section-title">💡 四、主题思想</div>
-                  <div className="legacy-highlight-box">
-                    <div className="legacy-compact-p"><span className="legacy-strong">钢铁意志的赞歌</span>：小说通过保尔的成长历程，歌颂了无产阶级革命者钢铁般的意志。保尔在战争中负伤、在建设中牺牲健康、在病重后坚持创作，每一次困境都是对意志的淬炼，正如书名所喻：“钢铁是在烈火和急冷中炼成的。”</div>
-                    <div className="legacy-compact-p"><span className="legacy-strong">生命价值的追问</span>：保尔关于“人最宝贵的是生命”的独白，引发了无数读者对生命意义的思考。小说回答了“人应该怎样活着”这一根本问题——为崇高理想而奋斗，生命才有价值。</div>
-                    <div className="legacy-compact-p"><span className="legacy-strong">革命英雄主义</span>：小说展现了个人利益服从革命利益、个人命运融入时代洪流的英雄主义精神。保尔放弃爱情、牺牲健康，始终把党 and 人民的事业放在首位。</div>
-                    <div className="legacy-compact-p"><span className="legacy-strong">理想主义的丰碑</span>：小说超越了个人命运，表达了对共产主义理想的坚定信念。保尔的奋斗历程证明：崇高的理想可以战胜一切困难。</div>
-                  </div>
-                </div>
-
-                {/* 五、艺术特色 */}
-                <div className="legacy-section">
-                  <div className="legacy-section-title">🎨 五、艺术特色</div>
-                  <div className="legacy-subsection">
-                    <div className="legacy-subsection-title">自传体小说的真实力量</div>
-                    <div className="legacy-compact-p">小说以作者自身经历为蓝本，具有强烈的自传色彩。保尔的原型就是奥斯特洛夫斯基于本人，这种源于真实经历的创作使小说具有震撼人心的力量。书中许多情节，如保尔参加修路、双目失明后写作等，都是作者亲身经历的写照。</div>
-                    
-                    <div className="legacy-subsection-title">心理描写的深度</div>
-                    <div className="legacy-compact-p">小说深入刻画了保尔的内心世界，展现了他的思想斗争和精神成长。特别是保尔在瘫痪后产生自杀念头的心理描写，真实展现了英雄人物内心的脆弱与挣扎，使人物形象更加立体丰满。</div>
-                    
-                    <div className="legacy-subsection-title">革命浪漫主义风格</div>
-                    <div className="legacy-compact-p">小说将现实主义的真实描写与浪漫主义的理想抒发相结合，在严酷的斗争反应中展现出崇高的理想光辉。语言充满激情，富有感染力，激励了一代又一代读者。</div>
-                    
-                    <div className="legacy-subsection-title">跌宕起伏的叙事结构</div>
-                    <div className="legacy-compact-p">小说以保尔的成长历程为主线，从童年到革命、从建设到病重、从绝望到新生，情节跌宕起伏，层层递进，有力地表现了“钢铁是怎样炼成的”这一主题。</div>
-                  </div>
-                </div>
-
-                {/* 六、经典名言 */}
-                <div className="legacy-section">
-                  <div className="legacy-section-title">📜 六、经典名言</div>
-                  <div className="legacy-quote">
-                    <p>“人最宝贵的是生命，生命对人来说只有一次。人的一生应当这样度过：当他回首往事时，不会因为碌碌无为、虚度年华而悔恨，也不会因为为人卑劣、生活庸俗而愧疚。这样，在临终的时候，他就能够说：‘我已把自己整个的生命和全部的精力献给了世界上最壮丽的事业——为人类的解放而奋斗。’”</p>
-                    <p style={{ marginTop: '0.15rem' }}>—— 保尔·柯察金</p>
-                  </div>
-                  <div className="legacy-compact-p"><span className="legacy-strong">其他名句</span>：“钢是在烈火和急冷中炼成的，意志也是在苦难和斗争中磨炼出来的。”“任何一个傻瓜在任何时候都能结束自己！这是最怯弱也是最容易的出路。”</div>
-                </div>
-
-                {/* 七、中考考点归纳 */}
-                <div className="legacy-section">
-                  <div className="legacy-section-title">📚 七、中考考点归纳</div>
-                  <div className="legacy-highlight-box">
-                    <ul className="list-disc ml-4 space-y-1">
-                      <li className="legacy-compact-p"><strong>作者</strong>：奥斯特洛夫斯基（苏联），自传体小说。</li>
-                      <li className="legacy-compact-p"><strong>主人公</strong>：保尔·柯察金，钢铁战士的象征。</li>
-                      <li className="legacy-compact-p"><strong>核心事件</strong>：被学校开除→遇朱赫来→参加红军→头部受伤→参加筑路→全身瘫痪→双目失明→文学创作。</li>
-                      <li className="legacy-compact-p"><strong>关键人物</strong>：朱赫来（革命引路人）、冬妮亚（初恋）、丽达（战友）、达雅（妻子）、阿尔焦姆（哥哥）。</li>
-                      <li className="legacy-compact-p"><strong>经典名言</strong>：“人最宝贵的是生命……”（常考填空题/简答题）。</li>
-                      <li className="legacy-compact-p"><strong>主题</strong>：歌颂钢铁意志、追问生命价值、弘扬革命英雄主义。</li>
-                      <li className="legacy-compact-p"><strong>书名寓意</strong>：钢铁在烈火与急冷中炼成，比喻坚强的革命意志是在艰苦斗争中磨炼出来的。</li>
-                      <li className="legacy-compact-p"><strong>艺术特色</strong>：自传体、心理描写、革命浪漫主义、语言激情澎湃。</li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* 八、深度思考 · 经典的意义 */}
-                <div className="legacy-section">
-                  <div className="legacy-section-title">💭 八、深度思考 · 经典的意义</div>
-                  <div className="legacy-compact-p">《钢铁是怎样炼成的》不仅是一部文学名著，更是一部人生教科书。保尔·柯察金用他的一生诠释了什么是真正的英雄主义——在认清生活的真相后依然热爱生活，在遭受命运的打击后依然为理想奋斗。</div>
-                  <div className="legacy-compact-p">今天，我们生活在和平年代，不再需要像保尔那样浴血奋战，但他那种永不放弃、为理想而奋斗的精神依然具有现实意义。面对学习中的困难、生活中的挫折，保尔的精神告诉我们：只要心中有信念，就没有克服不了的困难。</div>
-                  <div className="legacy-compact-p">正如保尔所说：“钢是在烈火和急冷中炼成的。”每一个人的成长，都需要经历风雨的洗礼。愿我们都能在生活的熔炉中，炼就属于自己的“钢铁”。</div>
+                <div className="space-y-10">
+                  {data.interpretationDetailed?.map((item, idx) => (
+                    <div key={idx} className="relative">
+                      <div className="legacy-section">
+                        <div className="legacy-section-title">{item.title}</div>
+                        <div className="legacy-compact-p markdown-content px-2">
+                          <ReactMarkdown>{item.content}</ReactMarkdown>
+                        </div>
+                      </div>
+                      {idx < data.interpretationDetailed.length - 1 && (
+                        <div className="legacy-divider no-print" />
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Section: Fill in Blanks */}
           <section className="print-break-before">
-            <h2 className="text-3xl font-bold border-b border-ink/20 pb-2 mb-6">贰 · 填空练习模块</h2>
+            <h2 className="text-3xl font-bold border-b pb-2 mb-6">贰 · 填空练习模块</h2>
             <div className="legacy-paper !shadow-none !p-0 !m-0">
               <div className="legacy-questions-list">
                 {data.fillInBlanksQuestions?.map((q, idx) => (
-                  <div key={idx} className="legacy-q-item">
-                    {q.split('（ ）')[0]}<span className="legacy-blank">__________</span>{q.split('（ ）')[1]}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Section: Choice Questions */}
-          <section className="print-break-before">
-            <h2 className="text-3xl font-bold border-b border-ink/20 pb-2 mb-6">叁 · 选择练习模块</h2>
-            <div className="legacy-paper !shadow-none !p-0 !m-0">
-              <div className="legacy-questions-list">
-                {data.choiceQuestions.map((q, idx) => (
                   <div key={idx} className="legacy-q-item">
                     {q}
                   </div>
@@ -1233,18 +982,28 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
             </div>
           </section>
 
-          {/* Section: Short Answer */}
           <section className="print-break-before">
-            <h2 className="text-3xl font-bold border-b border-ink/20 pb-2 mb-6">肆 · 主观探究与综合分析</h2>
+            <h2 className="text-3xl font-bold border-b pb-2 mb-6">叁 · 选择练习模块</h2>
+            <div className="legacy-paper !shadow-none !p-0 !m-0">
+              <div className="legacy-questions-list">
+                {data.choiceQuestions?.map((q, idx) => (
+                  <div key={idx} className="legacy-q-item">{q}</div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="print-break-before">
+            <h2 className="text-3xl font-bold border-b pb-2 mb-6">肆 · 简答与分析专练</h2>
             <div className="legacy-paper !shadow-none !p-0 !m-0">
               <div className="legacy-questions-container">
-                {data.shortAnswerQuestions.map((q, idx) => (
+                {data.shortAnswerDetailed?.map((item, idx) => (
                   <div key={idx} className="legacy-question-item">
-                    <div className="legacy-q-title">{q}</div>
+                    <div className="legacy-q-title">{item.q}</div>
                     <div className="legacy-answer-lines">
                       <div className="legacy-line"></div>
                       <div className="legacy-line"></div>
-                      {idx >= 20 && <div className="legacy-line"></div>}
+                      <div className="legacy-line"></div>
                     </div>
                   </div>
                 ))}
@@ -1252,17 +1011,13 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
             </div>
           </section>
 
-          {/* Section: Answers */}
           <section className="print-break-before">
-            <h2 className="text-3xl font-bold border-b border-ink/20 pb-2 mb-6">附件 · 参考答案大全</h2>
+            <h2 className="text-3xl font-bold border-b pb-2 mb-6">伍 · 参考答案（教师存档版）</h2>
             <div className="legacy-paper !shadow-none !p-0 !m-0">
-              <h1>《钢铁是怎样炼成的》参考答案</h1>
-              <div className="legacy-subhead">选择题+填空题（横排）&nbsp;&nbsp;|&nbsp;&nbsp;简答题+分析题（竖排，自然接续）</div>
-
               <div className="legacy-section">
-                <div className="legacy-ans-section-title">一、选择题答案 (共50题)</div>
+                <div className="legacy-ans-section-title">一、选择题答案</div>
                 <div className="legacy-grid-answers">
-                  {data.answers.choices.map((ans, idx) => (
+                  {data.answers?.choices?.map((ans, idx) => (
                     <div key={idx} className="legacy-grid-item">
                       <span className="legacy-strong">{idx + 1}.</span> {ans}
                     </div>
@@ -1271,9 +1026,9 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
               </div>
 
               <div className="legacy-section">
-                <div className="legacy-ans-section-title">二、填空题答案 (共50空)</div>
+                <div className="legacy-ans-section-title">二、填空题答案</div>
                 <div className="legacy-grid-answers">
-                  {data.answers.fillInBlanks.map((ans, idx) => (
+                  {data.answers?.fillInBlanks?.map((ans, idx) => (
                     <div key={idx} className="legacy-grid-item">
                       <span className="legacy-strong">{idx + 1}.</span> {ans}
                     </div>
@@ -1283,21 +1038,17 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
 
               <div className="legacy-section">
                 <div className="legacy-ans-section-title">三、简答与分析题详解</div>
-                {data.shortAnswerDetailed.map((item, idx) => (
+                {data.shortAnswerDetailed?.map((item, idx) => (
                   <div key={idx} className="legacy-vertical-answer">
-                    <span className="answer-text">
-                      {item.q}<br />
-                      {item.a}
-                    </span>
+                    <div className="font-bold mb-1">{item.q}</div>
+                    <div className="markdown-content">
+                      <ReactMarkdown>{item.a}</ReactMarkdown>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </section>
-
-          <div className="pt-12 text-center text-xs text-gray-400 border-t border-gray-100 no-print">
-            © 2026 锦水微澜名师工作室 · 黄国荣老师版权所有 · 仅供校内教研使用
-          </div>
         </div>
       </div>
     );
