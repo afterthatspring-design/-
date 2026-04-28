@@ -35,6 +35,7 @@ export const RESOURCES_DATA = {
   classics: [
     { title: "钢铁是怎样炼成的", tags: ["奥斯特洛夫斯基", "保尔·柯察金", "励志经典"], bookId: "gangtie", icon: "⚙️", desc: "钢铁意志与革命青春" },
     { title: "朝花夕拾", tags: ["鲁迅", "散文集", "童年回忆"], bookId: "zhaohua", icon: "🌸", desc: "温暖深沉的回忆与批判" },
+    { title: "海底两万里", tags: ["儒勒·凡尔纳", "科幻小说", "海洋三部曲"], bookId: "haidi", icon: "🌊", desc: "科学预见与海底探险的巅峰" },
     { title: "西游记", tags: ["吴承恩", "神魔小说", "中国古典"], file: "xiyouji.html", icon: "🐵", desc: "追求真经与自由的浪漫主义巨著" },
     { title: "骆驼祥子", tags: ["老舍", "京味小说", "现实主义"], file: "luotuoxiangzi.html", icon: "🐫", desc: "旧社会底层车夫的悲剧" },
     { title: "红岩", tags: ["革命文学", "红岩精神"], file: "hongyan.html", icon: "🛡️", desc: "不朽的烈士丰碑" },

@@ -8,8 +8,58 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight, Scroll, BookOpen, PenTool, Image as ImageIcon, ArrowLeft, Book, Trophy, GraduationCap, Users, Waves, Printer, Search, FileText, Layout, Filter, Menu, X } from 'lucide-react';
 import { GANGTIE_DATA } from './data/gangtie';
 import { ZHAOHUAXISHI_DATA } from './data/zhaohuaxishi';
+import { HAIDI_DATA } from './data/haidi';
 import { RESOURCES_DATA, UNIT_NAMES } from './data/resources';
 import ReactMarkdown from 'react-markdown';
+
+const BOOKS_MAP: Record<string, any> = {
+  'gangtie': {
+    data: GANGTIE_DATA,
+    title: "钢铁是怎样炼成的",
+    author: "奥斯特洛夫斯基 著 · 八年级下册必读名著",
+    bg: "bg-green-900",
+    icon: "📗",
+    symbol: "钢",
+    accent: "text-green-800"
+  },
+  'zhaohua': {
+    data: ZHAOHUAXISHI_DATA,
+    title: "朝花夕拾",
+    author: "鲁迅 著 · 七年级上册必读名著",
+    bg: "bg-amber-900",
+    icon: "🌸",
+    symbol: "花",
+    accent: "text-amber-800"
+  },
+  'haidi': {
+    data: HAIDI_DATA,
+    title: "海底两万里",
+    author: "儒勒·凡尔纳 著 · 七年级下册必读名著",
+    bg: "bg-blue-900",
+    icon: "🌊",
+    symbol: "海",
+    accent: "text-blue-800"
+  }
+};
+
+function renderQuestion(q: string) {
+  const parts = q.split(/（\s*）|_{3,}/);
+  if (parts.length > 1) {
+    return (
+      <>
+        {parts.map((part, i) => (
+          <React.Fragment key={i}>
+            {part}
+            {i < parts.length - 1 && (
+              <span className="inline-block border-b border-ink min-w-[7rem] translate-y-1 mx-1"></span>
+            )}
+          </React.Fragment>
+        ))}
+      </>
+    );
+  }
+  return q;
+}
 
 const Logo = ({ className = "" }: { className?: string }) => (
   <div className={`relative flex items-center justify-center shrink-0 ${className}`}>
@@ -114,7 +164,7 @@ export default function App() {
               <ArrowLeft className="w-5 h-5" />
             </button>
             <span className="font-bold tracking-widest text-ink text-base hidden md:inline">
-              {selectedBook === 'zhaohua' ? '《朝花夕拾》' : '《钢铁是怎样炼成的》'}题库专研
+              《{BOOKS_MAP[selectedBook]?.title}》题库专研
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -178,6 +228,13 @@ export default function App() {
                 type="温情回忆" 
                 desc="在成年后的傍晚，重新拾起少年时代美好的花瓣。" 
                 onSelect={() => { setSelectedBook('zhaohua'); setView('book-detail'); setSubView('index'); }}
+              />
+              <BookRow 
+                title="《海底两万里》" 
+                author="儒勒·凡尔纳" 
+                type="科学幻想" 
+                desc="在深邃的海底，开启一场跨越两万公里的奇幻探险。" 
+                onSelect={() => { setSelectedBook('haidi'); setView('book-detail'); setSubView('index'); }}
               />
               <BookRow title="《西游记》" author="吴承恩" type="古典精粹" desc="奇幻浪漫的史诗，中国古典神魔小说的巅峰。" />
               <BookRow title="《骆驼祥子》" author="老舍" type="现实主义" desc="旧北京的人力车夫，个人奋斗与社会悲剧的交织。" />
@@ -664,28 +721,7 @@ function BookRow({ title, author, type, desc, onSelect }: { title: string, autho
 }
 
 function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: string, subView: BookSubView, onSubViewChange: (v: BookSubView) => void }) {
-  const booksMap: Record<string, any> = {
-    'gangtie': {
-      data: GANGTIE_DATA,
-      title: "钢铁是怎样炼成的",
-      author: "奥斯特洛夫斯基 著 · 八年级下册必读名著",
-      bg: "bg-green-900",
-      icon: "📗",
-      symbol: "钢",
-      accent: "text-green-800"
-    },
-    'zhaohua': {
-      data: ZHAOHUAXISHI_DATA,
-      title: "朝花夕拾",
-      author: "鲁迅 著 · 七年级上册必读名著",
-      bg: "bg-amber-900",
-      icon: "🌸",
-      symbol: "花",
-      accent: "text-amber-800"
-    }
-  };
-
-  const currentBook = booksMap[bookId];
+  const currentBook = BOOKS_MAP[bookId];
   if (!currentBook) return <div className="text-center py-20">暂无内容</div>;
 
   const data = currentBook.data;
@@ -812,7 +848,7 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
             <div className="legacy-questions-list">
               {data.fillInBlanksQuestions?.slice(0, 23).map((q, idx) => (
                 <div key={idx} className="legacy-q-item">
-                  {q}
+                  {renderQuestion(q)}
                 </div>
               ))}
             </div>
@@ -823,7 +859,7 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
             <div className="legacy-questions-list" style={{ marginTop: 0 }}>
               {data.fillInBlanksQuestions?.slice(23).map((q, idx) => (
                 <div key={idx} className="legacy-q-item">
-                  {q}
+                  {renderQuestion(q)}
                 </div>
               ))}
             </div>
@@ -844,7 +880,7 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
               <h1>《{currentBook.title}》深度文化解读</h1>
               <div className="legacy-subhead">{currentBook.author} · 考点精粹</div>
             </div>
-            <div className="space-y-10 mt-8">
+            <div className="space-y-2 mt-4">
               {data.interpretationDetailed?.map((item, idx) => (
                 <div key={idx} className="relative">
                   <div className="legacy-section">
@@ -854,7 +890,7 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
                     </div>
                   </div>
                   {idx < data.interpretationDetailed.length - 1 && (
-                    <div className="border-t border-dashed border-gray-100 my-8 opacity-50 no-print" />
+                    <div className="border-t border-dashed border-gray-100 my-2 opacity-50 no-print" />
                   )}
                 </div>
               ))}
@@ -950,7 +986,7 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
             <h2 className="text-3xl font-bold border-b pb-2 mb-6">壹 · 深度文化解读</h2>
             <div className="legacy-paper !shadow-none !p-0 !m-0">
               <div className="legacy-page">
-                <div className="space-y-10">
+                <div className="space-y-2">
                   {data.interpretationDetailed?.map((item, idx) => (
                     <div key={idx} className="relative">
                       <div className="legacy-section">
@@ -975,7 +1011,7 @@ function MasterpieceViewer({ bookId, subView, onSubViewChange }: { bookId: strin
               <div className="legacy-questions-list">
                 {data.fillInBlanksQuestions?.map((q, idx) => (
                   <div key={idx} className="legacy-q-item">
-                    {q}
+                    {renderQuestion(q)}
                   </div>
                 ))}
               </div>
