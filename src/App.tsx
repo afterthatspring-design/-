@@ -127,7 +127,7 @@ export default function App() {
     setView(newView);
   };
 
-  // 内置多文件导航预览 (父亲的精调版专用)
+  // 内置多文件导航预览 (专用于打印预览)
   if (view === 'book-file-navigator' && selectedBookMeta) {
     return (
       <div className="min-h-screen bg-paper font-serif relative">
@@ -142,7 +142,7 @@ export default function App() {
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
-            <span className="font-bold tracking-widest text-ink text-base hidden md:inline">《{selectedBookMeta.title}》父亲精调预览页</span>
+            <span className="font-bold tracking-widest text-ink text-base hidden md:inline">《{selectedBookMeta.title}》打印预览页</span>
           </div>
           <div className="flex items-center gap-4">
             <button onClick={() => setView('main')} className="text-base font-bold text-ink hover:text-cinnabar transition-colors">工作室首页</button>
@@ -186,7 +186,7 @@ export default function App() {
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
-            <span className="font-bold text-ink tracking-widest uppercase text-sm md:text-base">精调打印预览版</span>
+            <span className="font-bold text-ink tracking-widest uppercase text-sm md:text-base">打印预览版</span>
           </div>
           <button 
             onClick={() => window.print()} 
