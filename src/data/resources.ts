@@ -25,21 +25,160 @@ export const RESOURCES_DATA = {
     { unit: 5, title: "井冈翠竹", tags: ["散文"], file: "jinggangcuizhu.html", icon: "🎋" },
     { unit: 5, title: "外国诗二首", tags: ["诗歌"], file: "waiguoshiershou.html", icon: "🌍" },
     { unit: 5, title: "古代诗歌五首", tags: ["古诗"], file: "gudaishigewushou.html", icon: "🏯" },
-    { unit: 5, title: "第五单元复习", tags: ["单元复习"], file: "diwudanyuanfuxi.html", icon: "📚" },
-    { unit: 6, title: "太空一日", tags: ["通讯"], file: "taikongyiri.html", icon: "🛸" },
-    { unit: 6, title: "“蛟龙”探海", tags: ["说明文"], file: "jiaolongtanhai.html", icon: "🐉" },
-    { unit: 6, title: "带上她的眼睛", tags: ["科幻"], file: "daishangtadeyanjing.html", icon: "👁️" },
-    { unit: 6, title: "活板", tags: ["文言文"], file: "huoban.html", icon: "🖨️" },
-    { unit: 6, title: "第六单元复习", tags: ["单元复习"], file: "diliudanyuanfuxi.html", icon: "📚" }
+    { unit: 5, title: "第五单元复习", tags: ["单元复习"], file: "diwudanyuanfuxi.html", icon: "📚" }
   ],
   classics: [
-    { title: "钢铁是怎样炼成的", tags: ["奥斯特洛夫斯基", "保尔·柯察金", "励志经典"], bookId: "gangtie", icon: "⚙️", desc: "钢铁意志与革命青春" },
-    { title: "朝花夕拾", tags: ["鲁迅", "散文集", "童年回忆"], bookId: "zhaohua", icon: "🌸", desc: "温暖深沉的回忆与批判" },
-    { title: "海底两万里", tags: ["儒勒·凡尔纳", "科幻小说", "海洋三部曲"], bookId: "haidi", icon: "🌊", desc: "科学预见与海底探险的巅峰" },
-    { title: "西游记", tags: ["吴承恩", "神魔小说", "中国古典"], file: "xiyouji.html", icon: "🐵", desc: "追求真经与自由的浪漫主义巨著" },
-    { title: "骆驼祥子", tags: ["老舍", "京味小说", "现实主义"], file: "luotuoxiangzi.html", icon: "🐫", desc: "旧社会底层车夫的悲剧" },
-    { title: "红岩", tags: ["革命文学", "红岩精神"], file: "hongyan.html", icon: "🛡️", desc: "不朽的烈士丰碑" },
-    { title: "水浒传", tags: ["英雄传奇", "章回体"], file: "shuihu.html", icon: "⚔️", desc: "替天行道，梁山好汉英雄本色" }
+    { 
+      title: "朝花夕拾", 
+      grade: "七年级下",
+      tags: ["鲁迅", "散文集", "童年回忆"], 
+      icon: "🌸", 
+      desc: "温暖深沉的回忆与批判",
+      files: {
+        interpretation: "《朝花夕拾》深度解读标准版.html",
+        choice: "《朝花夕拾》选择题.html",
+        fillBlank: "《朝花夕拾》填空题标准版.html",
+        shortAnswer: "《朝花夕拾》问答题.html"
+      }
+    },
+    { 
+      title: "钢铁是怎样炼成的", 
+      grade: "七年级下",
+      tags: ["奥斯特洛夫斯基", "保尔·柯察金", "励志经典"], 
+      icon: "⚙️", 
+      desc: "钢铁意志与革命青春",
+      files: {
+        interpretation: "《钢铁是怎样炼成的》深度解读标准版.html",
+        choice: "《钢铁是怎样炼成的》选择题.html",
+        fillBlank: "《钢铁是怎样炼成的》填空题标准版.html",
+        shortAnswer: "《钢铁是怎样炼成的》问答题.html"
+      }
+    },
+    { 
+      title: "骆驼祥子", 
+      grade: "七年级下",
+      tags: ["老舍", "京味文学经典", "底层人民的命运悲歌"], 
+      icon: "🐫", 
+      desc: "底层人民的命运悲歌",
+      files: {
+        interpretation: "《骆驼祥子》深度解读标准版.html",
+        choice: "《骆驼祥子》选择题.html",
+        fillBlank: "《骆驼祥子》填空题标准版.html",
+        shortAnswer: "《骆驼祥子》问答题.html"
+      }
+    },
+    { 
+      title: "红星照耀中国", 
+      grade: "八年级上",
+      tags: ["埃德加·斯诺", "纪实文学", "新闻报道"], 
+      icon: "⭐", 
+      desc: "真实报道红色中国、讴歌革命精神",
+      files: {
+        interpretation: "《红星照耀中国》深度解析标准版.html",
+        choice: "《红星照耀中国》选择题.html",
+        fillBlank: "《红星照耀中国》填空题标准版.html",
+        shortAnswer: "《红星照耀中国》问答题.html"
+      }
+    },
+    { 
+      title: "红岩", 
+      grade: "八年级上",
+      tags: ["罗广斌、杨益言","革命文学", "红岩精神"], 
+      icon: "🛡️", 
+      desc: "不朽的烈士丰碑",
+      files: {
+        interpretation: "《红岩》深度解读标准版.html",
+        choice: "《红岩》选择题.html",
+        fillBlank: "《红岩》填空题标准版.html",
+        shortAnswer: "《红岩》问答题.html"
+      }
+    },
+    { 
+      title: "经典常谈", 
+      grade: "八年级下",
+      tags: ["朱自清","十三篇", "经史子集"], 
+      icon: "📕", 
+      desc: "经史子集入门津梁",
+      files: {
+        interpretation: "《经典常谈》深度解读标准版.html",
+        choice: "《经典常谈》选择题.html",
+        fillBlank: "《经典常谈》填空题标准版.html",
+        shortAnswer: "《经典常谈》问答题.html"
+      }
+    },
+    { 
+      title: "昆虫记", 
+      grade: "八年级下",
+      tags: ["法布尔","科普作品", "文学杰作"], 
+      icon: "🐞", 
+      desc: "昆虫的史诗",
+      files: {
+        interpretation: "《昆虫记》深度解读标准版.html",
+        choice: "《昆虫记》选择题.html",
+        fillBlank: "《昆虫记》填空题标准版.html",
+        shortAnswer: "《昆虫记》问答题.html"
+      }
+    },
+    { 
+      title: "简·爱", 
+      grade: "九年级上",
+      tags: ["夏洛蒂·勃朗特","自传体", "长篇小说"], 
+      icon: "❤️", 
+      desc: "女性独立宣言",
+      files: {
+        interpretation: "《简·爱》深度解读标准版.html",
+        choice: "《简·爱》选择题.html",
+        fillBlank: "《简·爱》填空题标准版.html",
+        shortAnswer: "《简·爱》问答题.html"
+      }
+    },
+    { 
+      title: "唐诗三百首", 
+      grade: "九年级上",
+      tags: ["蘅塘退士","310首", "选集"], 
+      icon: "🖌️", 
+      desc: "中国流传最广、影响最大的唐诗读本",
+      files: {
+        interpretation: "《唐诗三百首》深度解读标准版.html",
+        choice: "《唐诗三百首》选择题.html",
+        fillBlank: "《唐诗三百首》填空题标准版.html",
+        shortAnswer: "《唐诗三百首》问答题.html"
+      }
+    },
+    { 
+      title: "儒林外史", 
+      grade: "九年级下",
+      tags: ["吴敬梓","讽刺小说", "长篇小说"], 
+      icon: "📜", 
+      desc: "深刻揭露了科举制度对知识分子精神的毒害",
+      files: {
+        interpretation: "《儒林外史》深度解读标准版.html",
+        choice: "《儒林外史》选择题.html",
+        fillBlank: "《儒林外史》填空题标准版.html",
+        shortAnswer: "《儒林外史》问答题.html"
+      }
+    },
+    { 
+      title: "水浒传", 
+      grade: "九年级下",
+      tags: ["施耐庵","英雄传奇", "章回体"], 
+      icon: "⚔️", 
+      desc: "替天行道，梁山好汉英雄本色",
+      files: {
+        interpretation: "《水浒传》深度解读标准版.html",
+        choice: "《水浒传》选择题.html",
+        fillBlank: "《水浒传》填空题标准版.html",
+        shortAnswer: "《水浒传》问答题.html"
+      }
+    },
+    { 
+      title: "西游记", 
+      grade: "七年级上",
+      tags: ["吴承恩", "神魔小说", "经典"], 
+      icon: "🐵", 
+      desc: "追求真经与自由的浪漫主义巨著",
+      file: "xiyouji.html" 
+    }
   ],
   examPapers: [
     { unitNum: 1, displayName: "第一单元 综合检测卷", file: "unit1_exam.html", icon: "📄" },

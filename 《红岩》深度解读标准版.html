@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《红岩》深度解读 | 罗广斌·杨益言·红色经典 | A4正反面打印版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.2cm 1cm;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 0.12rem;
+        }
+        h1 {
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.72rem;
+            color: #333;
+            margin-top: 0.05rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #555;
+            border-top: 1px dashed #ccc;
+            padding-top: 0.12rem;
+            margin-top: 0.12rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .section {
+            margin: 0.65rem 0 0.55rem;
+        }
+        .section-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            background: #eee;
+            padding: 0.14rem 0.7rem;
+            border-left: 5px solid #999;
+            margin-bottom: 0.42rem;
+        }
+        .subsection {
+            margin: 0.48rem 0 0.38rem 0.6rem;
+        }
+        .subsection-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 0.18rem;
+            border-left: 3px solid #aaa;
+            padding-left: 0.45rem;
+        }
+        .compact-p {
+            font-size: 0.84rem;
+            line-height: 1.52;
+            margin-bottom: 0.38rem;
+            text-align: justify;
+            color: #000;
+        }
+        .inline-item {
+            font-size: 0.84rem;
+            line-height: 1.52;
+            margin-bottom: 0.34rem;
+            text-align: justify;
+            color: #000;
+        }
+        .highlight-box {
+            background: #f9f9f9;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            margin: 0.55rem 0;
+            border: 1px solid #ddd;
+        }
+        .highlight-box .compact-p {
+            margin-bottom: 0.24rem;
+        }
+        .book-list-compact {
+            background: #f9f9f9;
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+        }
+        .quote {
+            font-style: italic;
+            color: #000;
+            background: #f5f5f5;
+            padding: 0.35rem 0.8rem;
+            border-left: 4px solid #aaa;
+            margin: 0.55rem 0;
+            font-size: 0.81rem;
+            line-height: 1.45;
+        }
+        .quote-line {
+            font-style: italic;
+            color: #000;
+            background: #f5f5f5;
+            padding: 0.2rem 0.8rem;
+            border-left: 4px solid #aaa;
+            margin: 0.2rem 0;
+            font-size: 0.81rem;
+            line-height: 1.38;
+        }
+        strong {
+            color: #000;
+            font-weight: 700;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        li {
+            font-size: 0.82rem;
+            line-height: 1.44;
+            margin-bottom: 0.18rem;
+            color: #000;
+        }
+
+        /* 考点两列布局 */
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none;
+            padding-left: 0;
+        }
+        .two-columns li {
+            width: 48%;
+            margin-bottom: 0.26rem;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 1rem;
+            color: #000;
+        }
+        .two-columns li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000;
+        }
+        .two-columns li strong {
+            display: inline-block;
+            color: #000;
+        }
+        @media (max-width: 800px) {
+            .two-columns li {
+                width: 48%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面 ================= -->
+    <div class="main-title">
+        <h1>红岩</h1>
+        <div class="subhead">罗广斌、杨益言 · 红色经典 · 七年级必读名著</div>
+        <div class="author-line">罗广斌、杨益言 著 | 七年级语文必读名著 · 深度解读 | 锦水微澜教育工作室 黄国荣 编制</div>
+    </div>
+
+    <div class="quote">
+        <strong>📖 编撰说明</strong><br>
+        《红岩》是现代作家罗广斌、杨益言创作的长篇小说，以解放前夕的重庆为背景，生动再现了国民党统治下狱中斗争和地下工作的壮烈场景。小说塑造了江姐、许云峰、小萝卜头等革命英雄形象，展现了共产党人坚贞不屈的崇高气节。本文根据原著及权威资料整理，系统梳理内容梗概、人物形象、主题思想、艺术特色及中考考点。
+    </div>
+
+    <!-- 一、作者简介 -->
+    <div class="section">
+        <div class="section-title">✍️ 一、作者简介</div>
+        <div class="compact-p"><strong>罗广斌</strong>（1924—1967），重庆人，1948年加入中国共产党，曾被关押在渣滓洞监狱，是“11·27”大屠杀的幸存者之一。<strong>杨益言</strong>（1925—2017），四川武胜人，1948年加入中国共产党，也曾被关押在白公馆和渣滓洞。两人根据亲身经历和狱中斗争的真实素材，历时十年创作完成《红岩》，成为新中国红色文学的经典之作。</div>
+    </div>
+
+    <!-- 二、内容梗概 · 黎明前的斗争 -->
+    <div class="section">
+        <div class="section-title">📖 二、内容梗概 · 黎明前的斗争</div>
+        <div class="compact-p">小说以1948年至1949年重庆解放前夕为背景，两条线索交织展开：</div>
+        <div class="subsection"><div class="subsection-title">🏭 地下工作线</div><div class="compact-p">以许云峰、江姐等为代表的地下党员在重庆开展工运、学运，组织《挺进报》，与敌特周旋。由于叛徒甫志高出卖，大批地下党员被捕。</div></div>
+        <div class="subsection"><div class="subsection-title">⛓️ 狱中斗争线</div><div class="compact-p">被捕同志被关押在渣滓洞、白公馆监狱，在极端恶劣的环境下坚持斗争，组织狱中党支部，迎接重庆解放。1949年11月27日，国民党特务在溃逃前对狱中革命者进行大屠杀，300多名烈士壮烈牺牲。几天后，重庆解放。</div></div>
+    </div>
+
+    <!-- 三、主要人物形象分析（详细展开） -->
+    <div class="section">
+        <div class="section-title">👥 三、主要人物形象</div>
+        <div class="compact-p"><strong>江姐（江竹筠）</strong>：最深入人心的英雄形象。她沉稳坚毅、忠诚无畏，得知丈夫牺牲后强忍悲痛继续战斗。被捕后受尽酷刑（竹签钉入十指），始终坚贞不屈，高呼“毒刑拷打是太小的考验”。临刑前从容告别战友，展现了共产党人的铮铮铁骨。</div>
+        <div class="compact-p"><strong>许云峰</strong>：重庆地下党领导者，成熟稳重、足智多谋。他在狱中挖通地道为战友开辟逃生通道，就义前大义凛然，是革命领袖的典范。他与徐鹏飞的正面交锋，是小说最精彩的章节之一。</div>
+        <div class="compact-p"><strong>齐晓轩</strong>：白公馆地下党负责人，沉着冷静、意志坚定。他在狱中秘密组织党员学习，鼓舞士气，最后为掩护战友牺牲。</div>
+        <div class="compact-p"><strong>小萝卜头（宋振中）</strong>：最小的革命烈士，八个月大便随父母入狱。他在狱中刻苦学习，为狱中党组织传递消息，遇害时年仅8岁。他象征着革命未来的希望。</div>
+        <div class="compact-p"><strong>华子良</strong>：原省委书记，为迷惑敌人长期装疯卖傻，十五年如一日在狱中“疯癫”度日，关键时刻带领战友突围。“疯老头”形象体现了革命者的大智大勇。</div>
+        <div class="compact-p"><strong>双枪老太婆</strong>：华蓥山游击纵队司令员，善使双枪，武艺高强，劫刑车救江姐，威震敌胆。她代表了人民群众的武装力量。</div>
+        <div class="compact-p"><strong>甫志高</strong>：叛徒形象的代表。原为地下党重庆办事处副主任，被捕后贪生怕死、背叛革命，出卖了许云峰、江姐等同志。他的名字已成为“叛徒”的代名词。</div>
+        <div class="compact-p"><strong>徐鹏飞</strong>：国民党特务头子，心狠手辣、阴险狡诈，象征着反动势力的残暴与末日疯狂。</div>
+    </div>
+
+    <!-- 手动分页确保：第四部分从第二面开始 -->
+    <div style="page-break-before: avoid; break-before: page;"></div>
+
+    <!-- ================= 第二面 ================= -->
+    <!-- 四、主题思想 -->
+    <div class="section">
+        <div class="section-title">💡 四、主题思想</div>
+        <div class="highlight-box">
+            <div class="compact-p"><strong>讴歌革命英雄主义</strong>：通过对江姐、许云峰等英雄形象的塑造，歌颂了共产党人坚贞不屈、视死如归的崇高气节和理想信念。</div>
+            <div class="compact-p"><strong>揭露反动派的残暴</strong>：真实再现了国民党特务对革命者的残酷迫害和“11·27”大屠杀的血腥暴行，控诉了旧社会的黑暗。</div>
+            <div class="compact-p"><strong>信仰的力量</strong>：小说深刻展现了革命者在极端困境中依靠信仰支撑的坚强意志——“红岩精神”的核心就是坚定信念、不畏牺牲。</div>
+            <div class="compact-p"><strong>“红岩”的象征意义</strong>：“红岩”象征着革命者在血与火的洗礼中铸就的坚不可摧的意志，也象征着黎明前最黑暗的时刻那永不熄灭的希望。</div>
+        </div>
+    </div>
+
+    <!-- 五、艺术特色 -->
+    <div class="section">
+        <div class="section-title">🎨 五、艺术特色</div>
+        <div class="inline-item"><strong>真人真事的纪实性</strong>：作者均为狱中亲历者，小说中许多人物和事件都有真实原型（如江姐、小萝卜头、11·27大屠杀），具有震撼人心的真实力量。</div>
+        <div class="inline-item"><strong>双线交织的结构</strong>：地下工作线（外部）与狱中斗争线（内部）并行发展，两条线索相互交织、层层推进，增强了故事的张力和感染力。</div>
+        <div class="inline-item"><strong>人物对比鲜明</strong>：英雄与叛徒、革命者与特务形成强烈对比，江姐的坚毅与甫志高的软弱、许云峰的从容与徐鹏飞的焦躁，凸显了主题。</div>
+        <div class="inline-item"><strong>语言质朴有力</strong>：语言朴实无华却充满力量，人物对话个性鲜明，如江姐“竹签是竹子做的，共产党员的意志是钢铁铸成的”等名言，极具感染力。</div>
+    </div>
+
+    <!-- 六、经典语句与重要事件（行距已压缩） -->
+    <div class="section">
+        <div class="section-title">📜 六、经典语句与重要事件</div>
+        <div class="quote-line">“毒刑拷打是太小的考验。竹签子是竹子做的，共产党员的意志是钢铁铸成的。” —— 江姐</div>
+        <div class="quote-line">“人生自古谁无死？可是一个人的生命和无产阶级永葆青春的共产主义事业联系在一起，那是无上的光荣！” —— 许云峰</div>
+        <div class="quote-line">“红岩上红梅开，千里冰霜脚下踩。” —— 小说主题曲（后改编为《红梅赞》）</div>
+        <div class="compact-p" style="margin-top:0.3rem;"><strong>重要事件：</strong>挺进报事件、江姐被捕、狱中绣红旗、狱中党支部成立、华子良“疯癫”示敌、11·27大屠杀、重庆解放等。其中“绣红旗”一节极为动人，狱中难友得知新中国成立消息后，在狱中用被面绣制想象中的五星红旗，表达了革命者对胜利的无限憧憬。</div>
+    </div>
+
+    <!-- 七、中考考点速记（两列布局） -->
+    <div class="section">
+        <div class="section-title">📚 七、中考考点速记</div>
+        <div class="book-list-compact">
+            <ul class="two-columns">
+                <li><strong>作者</strong>：罗广斌、杨益言</li>
+                <li><strong>体裁</strong>：革命历史小说/红色经典</li>
+                <li><strong>背景</strong>：1948-1949年重庆解放前夕</li>
+                <li><strong>主要场景</strong>：渣滓洞、白公馆</li>
+                <li><strong>人物</strong>：江姐、许云峰、小萝卜头、华子良、双枪老太婆、甫志高</li>
+                <li><strong>重要事件</strong>：挺进报、狱中斗争、绣红旗、11·27大屠杀</li>
+                <li><strong>主题</strong>：革命英雄主义、坚定信仰、红岩精神</li>
+                <li><strong>红岩精神</strong>：坚如磐石、不畏牺牲、矢志不渝</li>
+                <li><strong>艺术特色</strong>：纪实性、双线结构、对比手法</li>
+                <li><strong>历史意义</strong>：为“11·27”烈士立传，弘扬红岩精神</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 八、深度思考 · 经典的意义 -->
+    <div class="section">
+        <div class="section-title">💭 八、深度思考 · 经典的意义</div>
+        <div class="compact-p">《红岩》是一部用血与火写成的英雄史诗，它以真实的笔触记录了黎明前最黑暗的时刻，也记录了信仰最耀眼的光芒。江姐在狱中绣红旗的那一刻，她明知自己可能看不到胜利，却依然怀着必胜的信念。“红岩精神”——坚如磐石、不畏牺牲、矢志不渝，不仅是那个时代的丰碑，更是今天激励我们前行的力量。当我们在和平年代读《红岩》，读到江姐从容赴死、小萝卜头狱中苦读、许云峰挖通地道，那种震撼依然无法平息。读懂《红岩》，就读懂了什么是信仰，什么是脊梁。</div>
+    </div>
+
+</div>
+</body>

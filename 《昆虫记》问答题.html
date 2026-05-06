@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《昆虫记》问答题+分析题专练 | 填空式自测 | A4正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.7rem 1.1rem;
+        }
+
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.6cm 0.9cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.1cm 0.9cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .question-item, .analysis-item {
+                break-inside: avoid;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.4rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.1rem;
+        }
+        h1 {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.04rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #6a5c47;
+            margin-top: 0.03rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.64rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.08rem;
+            margin-top: 0.08rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.15rem 0.65rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.6rem;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .first-page-list {
+            gap: 0.85rem;
+        }
+        .second-page-list {
+            gap: 0.68rem;
+        }
+        .question-item {
+            break-inside: avoid;
+        }
+        .question-text {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #2c4b2f;
+            margin-bottom: 0.22rem;
+            line-height: 1.38;
+        }
+        .answer-line {
+            font-size: 0.82rem;
+            line-height: 1.45;
+            color: #2c2a28;
+            margin-left: 0.35rem;
+            padding-left: 0.3rem;
+            border-left: 2px solid #dac29c;
+        }
+        .answer-text {
+            font-size: 0.82rem;
+            color: #2c2a28;
+            font-weight: normal;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .blank-line {
+            display: inline-block;
+            border-bottom: 1.2px solid #a5682c;
+            min-width: 85px;
+            margin: 0 3px;
+        }
+        /* 分析题样式 — 进一步缩小行距（终版微调） */
+        .analysis-item {
+            break-inside: avoid;
+            margin-bottom: 0.72rem;
+        }
+        .analysis-question {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #2c4b2f;
+            margin-bottom: 0.15rem;
+            line-height: 1.3;
+        }
+        .analysis-answer-area {
+            font-size: 0.82rem;
+            line-height: 1.35;
+            color: #2c2a28;
+            margin-left: 0.35rem;
+            padding-left: 0.3rem;
+            border-left: 2px solid #dac29c;
+            min-height: 2.8rem;
+            background: #fefcf8;
+            border-bottom: 1px solid #e2d9cc;
+        }
+        .analysis-label {
+            font-size: 0.82rem;
+            color: #2c2a28;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面：第1-15题（填空式问答题） ================= -->
+    <div class="page">
+        <div class="main-title">
+            <h1>《昆虫记》问答题+分析题专练</h1>
+            <div class="subhead">法布尔 · 昆虫史诗 · 八年级上册必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">📝 一、填空式问答题（共25题）</div>
+        <div class="questions-list first-page-list">
+
+            <div class="question-item">
+                <div class="question-text">1. 《昆虫记》的作者是谁？他的国籍是什么？</div>
+                <div class="answer-line"><span class="answer-text">答：《昆虫记》的作者是</span><span class="blank-line"></span><span class="answer-text">，他是</span><span class="blank-line"></span><span class="answer-text">国人。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">2. 法布尔被誉为什么？哪位科学家赞誉他为“无与伦比的观察家”？</div>
+                <div class="answer-line"><span class="answer-text">答：法布尔被誉为“昆虫界的</span><span class="blank-line"></span><span class="answer-text">”，</span><span class="blank-line"></span><span class="answer-text">赞誉他为“无与伦比的观察家”。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">3. 《昆虫记》共多少卷？法布尔历时多少年完成？</div>
+                <div class="answer-line"><span class="answer-text">答：《昆虫记》共</span><span class="blank-line"></span><span class="answer-text">卷，法布尔历时</span><span class="blank-line"></span><span class="answer-text">余年完成。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">4. 法布尔观察昆虫的主要地点是什么？他称之为什么？</div>
+                <div class="answer-line"><span class="answer-text">答：法布尔在乡间买下一块荒地，取名“</span><span class="blank-line"></span><span class="answer-text">”，在此潜心观察昆虫。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">5. 《昆虫记》将哪两者完美结合？被雨果誉为什么？</div>
+                <div class="answer-line"><span class="answer-text">答：《昆虫记》将</span><span class="blank-line"></span><span class="answer-text">性与</span><span class="blank-line"></span><span class="answer-text">性完美结合，被雨果誉为“昆虫的</span><span class="blank-line"></span><span class="answer-text">”。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">6. 被称为“大自然的清洁工”的是哪种昆虫？它以什么为食？</div>
+                <div class="answer-line"><span class="answer-text">答：</span><span class="blank-line"></span><span class="answer-text">被称为“大自然的清洁工”，它以</span><span class="blank-line"></span><span class="answer-text">为食。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">7. 螳螂外表美丽但本性凶猛，它被称为什么？雌螳螂在交配后有什么特殊习性？</div>
+                <div class="answer-line"><span class="answer-text">答：螳螂被称为“</span><span class="blank-line"></span><span class="answer-text">”，雌螳螂在交配后常常吃掉雄螳螂，这一习性被称为“</span><span class="blank-line"></span><span class="answer-text">”。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">8. 蝉在地下蛰伏多少年？在地上歌唱多长时间？法布尔纠正了关于蝉的什么误解？</div>
+                <div class="answer-line"><span class="answer-text">答：蝉在地下蛰伏</span><span class="blank-line"></span><span class="answer-text">年，在地上歌唱</span><span class="blank-line"></span><span class="answer-text">周。法布尔纠正了“</span><span class="blank-line"></span><span class="answer-text">向蚂蚁乞食”的误解。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">9. 蟋蟀被誉为什么？它的歌声是由什么发出的？</div>
+                <div class="answer-line"><span class="answer-text">答：蟋蟀被誉为“田园中的</span><span class="blank-line"></span><span class="answer-text">”，它的歌声是由</span><span class="blank-line"></span><span class="answer-text">摩擦发出的。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">10. 法布尔通过什么实验证明蜜蜂具有辨认方向的能力？他还发现什么动物也有这个能力？</div>
+                <div class="answer-line"><span class="answer-text">答：法布尔通过</span><span class="blank-line"></span><span class="answer-text">实验证明蜜蜂具有辨认方向的能力，他还发现</span><span class="blank-line"></span><span class="answer-text">也有这个能力。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">11. 法布尔通过什么实验发现松毛虫具有什么习性？</div>
+                <div class="answer-line"><span class="answer-text">答：法布尔通过“</span><span class="blank-line"></span><span class="answer-text">实验”发现松毛虫具有</span><span class="blank-line"></span><span class="answer-text">的盲从习性。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">12. 蜂巢的巢室是什么形状？这种结构有什么优点？</div>
+                <div class="answer-line"><span class="answer-text">答：蜂巢的巢室是</span><span class="blank-line"></span><span class="answer-text">边形，这种结构用最少的材料获得最大的储存空间，体现了</span><span class="blank-line"></span><span class="answer-text">智慧。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">13. 法布尔说“你们是剖开昆虫的肚子，我却是让它们活着”，这句话体现了法布尔怎样的态度？</div>
+                <div class="answer-line"><span class="answer-text">答：这句话体现了法布尔对</span><span class="blank-line"></span><span class="answer-text">的敬畏与尊重，他坚持在</span><span class="blank-line"></span><span class="answer-text">中观察活体昆虫。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">14. 法布尔不盲从权威，亲自观察实验以验证传统观念，这体现了他怎样的精神？</div>
+                <div class="answer-line"><span class="answer-text">答：这体现了法布尔</span><span class="blank-line"></span><span class="answer-text">、独立思考的科学精神。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">15. 法布尔在荒石园中一待就是几十年，这体现了他怎样的治学态度？</div>
+                <div class="answer-line"><span class="answer-text">答：这体现了法布尔</span><span class="blank-line"></span><span class="answer-text">、长期坚持的治学态度。</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 第二面：第16-25题（填空式问答题）+ 5道分析题 ================= -->
+    <div class="page">
+        <div class="questions-list second-page-list">
+
+            <div class="question-item">
+                <div class="question-text">16. 法布尔在《蝉和蚂蚁的寓言》中指出，实际上是谁抢夺谁的树汁？</div>
+                <div class="answer-line"><span class="answer-text">答：实际上是</span><span class="blank-line"></span><span class="answer-text">抢夺</span><span class="blank-line"></span><span class="answer-text">的树汁。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">17. 《昆虫记》中记载了蜣螂、蜘蛛、螳螂、蝉、蜜蜂等昆虫的哪些方面？</div>
+                <div class="answer-line"><span class="answer-text">答：记录了它们的本能、习性、劳动、婚恋、</span><span class="blank-line"></span><span class="answer-text">和死亡等生命历程。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">18. 法布尔如何评价蜘蛛的织网技艺？</div>
+                <div class="answer-line"><span class="answer-text">答：法布尔赞叹蜘蛛的织网技艺“堪比人类最杰出的</span><span class="blank-line"></span><span class="answer-text">”。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">19. 法布尔赞美蝉的生命历程，强调其怎样的精神？</div>
+                <div class="answer-line"><span class="answer-text">答：法布尔赞美蝉</span><span class="blank-line"></span><span class="answer-text">的生命历程，强调其坚韧不拔的精神。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">20. 法布尔在《昆虫记》中常用的修辞手法是什么？请举例说明。</div>
+                <div class="answer-line"><span class="answer-text">答：法布尔常用</span><span class="blank-line"></span><span class="answer-text">的修辞手法，如“蝉的歌唱”“螳螂的爱情”“蜘蛛的</span><span class="blank-line"></span><span class="answer-text">”等。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">21. 法布尔说“你们探索死亡，我探索生命”，这句话在《昆虫记》中有什么深刻含义？</div>
+                <div class="answer-line"><span class="answer-text">答：这句话表明法布尔坚持在</span><span class="blank-line"></span><span class="answer-text">环境中观察</span><span class="blank-line"></span><span class="answer-text">昆虫，探索生命的意义。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">22. 法布尔凭借什么方式获得大学学位？这反映了他怎样的品质？</div>
+                <div class="answer-line"><span class="answer-text">答：法布尔通过</span><span class="blank-line"></span><span class="answer-text">获得大学学位，反映了他勤奋好学、</span><span class="blank-line"></span><span class="answer-text">的品质。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">23. 请写出《昆虫记》中关于蝉的经典名句。</div>
+                <div class="answer-line"><span class="answer-text">答：“四年黑暗中的苦工，一个月阳光下的享乐，这就是</span><span class="blank-line"></span><span class="answer-text">的生活。”</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">24. 《昆虫记》被称为“昆虫的史诗”，它的科学价值主要体现在哪些方面？</div>
+                <div class="answer-line"><span class="answer-text">答：它开创了</span><span class="blank-line"></span><span class="answer-text">观察法，纠正了诸多传统</span><span class="blank-line"></span><span class="answer-text">，启发了达尔文等科学家。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">25. 法布尔用人性观照虫性，将昆虫世界化作怎样的文字？这对我们有什么启示？</div>
+                <div class="answer-line"><span class="answer-text">答：将昆虫世界化作人类获得知识、趣味、美感和思想的文字，启示我们要</span><span class="blank-line"></span><span class="answer-text">。</span></div>
+            </div>
+        </div>
+
+        <!-- 分析题部分（5道）行距已缩小 -->
+        <div class="part-title" style="margin-top: 0.3rem;">💭 二、分析题（共5题）</div>
+        <div class="questions-list second-page-list">
+
+            <div class="analysis-item">
+                <div class="analysis-question">1. 结合《昆虫记》相关内容，分析法布尔作为科学家所体现出的可贵精神品质。</div>
+                <div class="analysis-answer-area"><span class="analysis-label">答：</span></div>
+            </div>
+            <div class="analysis-item">
+                <div class="analysis-question">2. 法布尔为什么说“你们探索死亡，我探索生命”？这句话体现了怎样的科学观？</div>
+                <div class="analysis-answer-area"><span class="analysis-label">答：</span></div>
+            </div>
+            <div class="analysis-item">
+                <div class="analysis-question">3. 请分析《昆虫记》中“荒石园”对法布尔的特殊意义，并谈谈你从中获得的启示。</div>
+                <div class="analysis-answer-area"><span class="analysis-label">答：</span></div>
+            </div>
+            <div class="analysis-item">
+                <div class="analysis-question">4. 结合《昆虫记》的具体内容，谈谈法布尔是如何通过拟人手法赋予昆虫人性的？请举例说明。</div>
+                <div class="analysis-answer-area"><span class="analysis-label">答：</span></div>
+            </div>
+            <div class="analysis-item">
+                <div class="analysis-question">5. 《昆虫记》既是一部科学著作，又是一部文学作品。请结合书中内容，谈谈你对“科学与文学完美融合”的理解。</div>
+                <div class="analysis-answer-area"><span class="analysis-label">答：</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

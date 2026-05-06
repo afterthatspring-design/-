@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《昆虫记》深度解读 | 法布尔·昆虫史诗 | A4正反面打印版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1rem 0.8rem;  /* 增加顶部边距，内容整体下移 */
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.9cm 0.9cm 0.8cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 0.8cm 0.9cm;
+            }
+            .section, .subsection {
+                break-inside: avoid;
+            }
+        }
+
+        /* 标题区域 */
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.45rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.12rem;
+        }
+        h1 {
+            font-size: 1.55rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.07rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.72rem;
+            color: #6a5c47;
+            margin-top: 0.03rem;
+            line-height: 1.2;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.64rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.1rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.45rem;
+        }
+
+        /* 第一面样式 */
+        .section {
+            margin: 0.55rem 0 0.4rem;
+        }
+        .section-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #8b5a2b;
+            background: #e8e0cf;
+            padding: 0.12rem 0.6rem;
+            border-left: 5px solid #b67b41;
+            margin-bottom: 0.32rem;
+        }
+        .subsection {
+            margin: 0.32rem 0 0.22rem 0.6rem;
+        }
+        .subsection-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #9b6a3c;
+            margin-bottom: 0.12rem;
+            border-left: 3px solid #d4a373;
+            padding-left: 0.4rem;
+        }
+        .compact-p {
+            font-size: 0.84rem;
+            line-height: 1.48;
+            margin-bottom: 0.34rem;
+            text-align: justify;
+            color: #2c2a28;
+        }
+        .highlight-box {
+            background: #fefaf2;
+            padding: 0.28rem 0.7rem;
+            border-radius: 8px;
+            margin: 0.4rem 0;
+            border: 1px solid #e7dac8;
+        }
+        .book-list-compact {
+            background: #fefaf2;
+            padding: 0.28rem 0.7rem;
+            border-radius: 8px;
+            margin: 0.38rem 0;
+            border: 1px solid #e7dac8;
+        }
+        .quote {
+            font-style: italic;
+            color: #8b5a2b;
+            background: #f9f5eb;
+            padding: 0.25rem 0.7rem;
+            border-left: 4px solid #b87c4f;
+            margin: 0.4rem 0;
+            font-size: 0.81rem;
+            line-height: 1.4;
+        }
+        .quote-author {
+            text-align: right;
+            margin-top: 0.1rem;
+        }
+        strong {
+            color: #b1622c;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        li {
+            font-size: 0.82rem;
+            line-height: 1.38;
+            margin-bottom: 0.14rem;
+        }
+
+        /* ========== 第二面样式 ========== */
+        .second-half {
+            margin-top: 0.3rem;
+        }
+        .second-half .section {
+            margin: 0.32rem 0 0.26rem;
+        }
+        .second-half .section-title {
+            margin-bottom: 0.22rem;
+            padding: 0.1rem 0.55rem;
+        }
+        .second-half .compact-p {
+            font-size: 0.83rem;
+            line-height: 1.42;
+            margin-bottom: 0.25rem;
+        }
+        .second-half .highlight-box {
+            margin: 0.28rem 0;
+            padding: 0.2rem 0.6rem;
+        }
+        .second-half .book-list-compact {
+            margin: 0.28rem 0;
+            padding: 0.2rem 0.6rem;
+        }
+        .second-half .quote {
+            margin: 0.28rem 0;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.81rem;
+        }
+        .second-half ul li {
+            margin-bottom: 0.12rem;
+            font-size: 0.81rem;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面 ================= -->
+    <div class="main-title">
+        <h1>昆虫记</h1>
+        <div class="subhead">法布尔 · 昆虫史诗 · 科学与文学的完美融合</div>
+        <div class="author-line">让-亨利·卡西米尔·法布尔 著 | 八年级上册语文必读名著 · 深度解读 | 锦水微澜教育工作室 黄国荣 编制</div>
+    </div>
+
+    <div class="quote">
+        <strong>📖 编撰说明</strong><br>
+        《昆虫记》是法国昆虫学家、文学家法布尔耗尽一生心血创作的十卷巨著，被誉为“昆虫的史诗”。它不仅是一部严谨的科学观察记录，更是一部充满诗意与哲思的文学杰作。法布尔用人性观照虫性，将昆虫世界化作人类获得知识、趣味、美感和思想的文字。本文根据原著及权威资料整理，系统梳理内容梗概、昆虫谱系、艺术特色、科学价值及中考考点。
+    </div>
+
+    <!-- 一、作者简介 -->
+    <div class="section">
+        <div class="section-title">✍️ 一、作者简介</div>
+        <div class="compact-p"><strong>让-亨利·卡西米尔·法布尔</strong>（1823—1915），法国博物学家、昆虫学家、科普作家。出生于法国南部贫困农家，自幼热爱大自然。他凭借自学获得大学学位，一生坚持在自然环境中观察昆虫，历时30余年完成十卷《昆虫记》。晚年被推荐为诺贝尔文学奖候选人。雨果称他为“昆虫界的荷马”，达尔文赞誉他为“无与伦比的观察家”。</div>
+    </div>
+
+    <!-- 二、内容概览 -->
+    <div class="section">
+        <div class="section-title">📖 二、内容概览 · 荒石园中的昆虫世界</div>
+        <div class="compact-p">法布尔在乡间买下一块荒石园，在此潜心观察昆虫，用生动的笔触记录下昆虫的本能、习性、劳动、婚恋、繁衍和死亡。</div>
+        <div class="subsection">
+            <div class="subsection-title">🕷️ 蜣螂 · 大自然的清洁工</div>
+            <div class="compact-p">法布尔详细观察了蜣螂（屎壳郎）滚粪球、储藏食物的全过程，赞美它们作为“大自然的清洁工”的奉献精神，并将其推粪球的行为比喻为“神圣的天职”。</div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title">🕸️ 蜘蛛 · 精妙的织网者</div>
+            <div class="compact-p">细致描写蜘蛛织网的结构与功能，分析其丝腺构造和捕猎策略，赞叹其建筑技艺之精湛，“堪比人类最杰出的工程师”。</div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title">🦗 螳螂 · 温柔的杀手</div>
+            <div class="compact-p">法布尔揭示了螳螂美丽外表下的凶猛本性——它那看似祈祷的前臂实则是致命的捕捉足，雌螳螂甚至会在交配后吃掉雄螳螂。</div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title">🐞 蝉 · 生命的歌唱家</div>
+            <div class="compact-p">纠正了“蝉是懒惰的借宿者”这一偏见，指出蝉并非向蚂蚁乞食，反而常被蚂蚁抢夺。法布尔赞美蝉在地下蛰伏数年只为破土高歌的生命历程。</div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title">🐝 蜜蜂 · 数学天才</div>
+            <div class="compact-p">通过实验证明蜜蜂具有辨认方向的能力，并惊叹于蜂巢六边形结构所蕴含的数学智慧——用最少的材料获得最大的储存空间。</div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title">🦋 蝴蝶 · 变态的奇迹</div>
+            <div class="compact-p">记录蝴蝶从卵到幼虫、蛹再到成虫的完全变态过程，赞美自然造化的神奇，引发读者对生命本质的思考。</div>
+        </div>
+    </div>
+
+    <!-- 三、主要昆虫谱系（高频考点） -->
+    <div class="section">
+        <div class="section-title">🔬 三、主要昆虫谱系（高频考点）</div>
+        <div class="book-list-compact">
+            <ul>
+                <li><strong>蝉</strong>：地下蛰伏4年，地上歌唱5周；《蝉和蚂蚁的寓言》纠正了蝉向蚂蚁乞食的误解。</li>
+                <li><strong>螳螂</strong>：外形美丽，“天生的杀人机器”；雌螳螂有“食夫”习性。</li>
+                <li><strong>蜣螂</strong>：滚粪球、储藏食物，被称为“大自然的清洁工”。</li>
+                <li><strong>蜘蛛</strong>：织网技艺精湛，捕猎策略高超（如蟹蛛捕蜜蜂）。</li>
+                <li><strong>蜜蜂/猫</strong>：法布尔通过实验证明它们具有辨认方向的能力。</li>
+                <li><strong>蟋蟀</strong>：建筑巢穴的能手，歌声悠扬，被誉为“田园中的提琴家”。</li>
+                <li><strong>松毛虫</strong>：法布尔通过“松毛虫实验”发现它们具有“跟随”的盲从习性。</li>
+                <li><strong>粪金龟</strong>：以粪便为食，是生态系统的分解者。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ================= 第二面 ================= -->
+    <div class="second-half">
+
+        <!-- 四、人物（法布尔）形象 -->
+        <div class="section">
+            <div class="section-title">👨‍🔬 四、法布尔形象分析</div>
+            <div class="compact-p"><strong>孜孜不倦的观察者：</strong>法布尔在荒石园中一待就是几十年，日复一日地观察昆虫，从不急于下结论。他设计各种实验来验证假说，体现了严谨求实的科学精神。</div>
+            <div class="compact-p"><strong>满怀敬畏的生命歌者：</strong>他将昆虫视为平等的生命，而非冷冰冰的标本。文中处处流露出对生命的敬畏与热爱，用温情的笔触记录昆虫的喜怒哀乐。</div>
+            <div class="compact-p"><strong>善于质疑的独立思考者：</strong>法布尔不盲从权威，亲自观察实验以验证传统观念。例如他通过实验推翻“蝉向蚂蚁乞食”的寓言，还原事实真相。</div>
+            <div class="compact-p"><strong>富有诗意的文学家：</strong>法布尔将科学观察与文学表达完美结合，文笔细腻优美，善用拟人、比喻等修辞，使枯燥的昆虫知识变得趣味盎然。</div>
+        </div>
+
+        <!-- 五、艺术特色 -->
+        <div class="section">
+            <div class="section-title">🎨 五、艺术特色</div>
+            <div class="compact-p"><strong>科学与文学的完美融合：</strong>《昆虫记》既是科学著作，又是文学作品。法布尔用文学家的笔法描述科学观察，使读者在获得知识的同时享受阅读之美。</div>
+            <div class="compact-p"><strong>生动传神的拟人手法：</strong>法布尔赋予昆虫人的情感与智慧，如“蝉的歌唱”“螳螂的爱情”“蜘蛛的谋略”，让读者对昆虫产生共情。</div>
+            <div class="compact-p"><strong>细致入微的观察描写：</strong>法布尔对昆虫的形态、习性、行为进行了极其细致准确的描写，使读者仿佛亲临其境。</div>
+            <div class="compact-p"><strong>实验验证的科学方法：</strong>法布尔不满足于观察，还设计实验验证假说，如“蜜蜂认路实验”“松毛虫跟随实验”等，体现了严谨的科学态度。</div>
+        </div>
+
+        <!-- 六、科学价值 -->
+        <div class="section">
+            <div class="section-title">🔬 六、科学价值</div>
+            <div class="highlight-box">
+                <div class="compact-p"><strong>开创性的野外观察方法：</strong>法布尔摒弃了当时流行的标本研究法，坚持在自然环境中观察活体昆虫，开创了昆虫行为学研究的新范式。</div>
+                <div class="compact-p"><strong>纠正了诸多误区：</strong>通过严谨观察纠正了“蝉向蚂蚁乞食”“蜣螂是为食物而滚粪球”等传统误解。</div>
+                <div class="compact-p"><strong>启发后世研究者：</strong>达尔文、弗洛伊德等科学家都曾受法布尔著作启发。</div>
+            </div>
+        </div>
+
+        <!-- 七、经典语句 -->
+        <div class="section">
+            <div class="section-title">📜 七、经典语句</div>
+            <div class="quote">
+                “你们是剖开昆虫的肚子，我却是让它们活着；你们是在刑房和屠宰场中研究，我是在蓝天下倾听蝉鸣；你们探索死亡，我探索生命。”
+                <div class="quote-author">—— 法布尔</div>
+            </div>
+            <div class="compact-p"><strong>其他名句：</strong>“四年黑暗中的苦工，一个月阳光下的享乐，这就是蝉的生活。”“螳螂是一种美丽的昆虫，但它也是最凶残的食肉动物。”</div>
+        </div>
+
+        <!-- 八、中考考点速记 -->
+        <div class="section">
+            <div class="section-title">📚 八、中考考点速记</div>
+            <div class="book-list-compact">
+                <ul>
+                    <li><strong>作者</strong>：法布尔（法国），被誉为“昆虫界的荷马”“昆虫界的维吉尔”。</li>
+                    <li><strong>体裁</strong>：科普作品，兼具科学性与文学性。</li>
+                    <li><strong>核心昆虫</strong>：蝉、螳螂、蜣螂、蜘蛛、蜜蜂、蟋蟀、松毛虫等。</li>
+                    <li><strong>经典实验</strong>：蜜蜂认路实验、松毛虫跟随实验。</li>
+                    <li><strong>修正的传统观念</strong>：蝉并非向蚂蚁乞食，反而是蚂蚁抢夺蝉的树汁。</li>
+                    <li><strong>艺术特色</strong>：拟人修辞、生动描写、科学性与文学性结合。</li>
+                    <li><strong>精神内核</strong>：对生命的敬畏与热爱、严谨求实的科学态度。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 九、深度思考 · 经典意义 -->
+        <div class="section">
+            <div class="section-title">💭 九、深度思考 · 经典的意义</div>
+            <div class="compact-p">法布尔用一生的时间告诉我们：每一种生命都值得被尊重，即使是看似卑微的昆虫也有其独特的存在意义。《昆虫记》的伟大在于它打破了人与自然的隔阂，让我们重新审视与万物的关系。</div>
+            <div class="compact-p">法布尔在荒石园中一待就是几十年，这种“板凳甘坐十年冷”的治学精神，对今天的我们具有深刻启示——无论是科学研究还是学习成长，都需要耐心、专注与热爱。</div>
+            <div class="compact-p">正如法布尔所说：“你们探索死亡，我探索生命。”他用温暖的笔触让冰冷的昆虫世界变得鲜活生动，让读者在阅读中收获知识、感动与敬畏。</div>
+        </div>
+
+    </div>
+</div>
+</body>

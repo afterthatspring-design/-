@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《红星照耀中国》深度解读 | 埃德加·斯诺·纪实经典 | A4正反面打印版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.2cm 1cm;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 0.12rem;
+        }
+        h1 {
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.72rem;
+            color: #333;
+            margin-top: 0.05rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #555;
+            border-top: 1px dashed #ccc;
+            padding-top: 0.12rem;
+            margin-top: 0.12rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .section {
+            margin: 0.65rem 0 0.55rem;
+        }
+        .section-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            background: #eee;
+            padding: 0.14rem 0.7rem;
+            border-left: 5px solid #999;
+            margin-bottom: 0.42rem;
+        }
+        .subsection {
+            margin: 0.48rem 0 0.38rem 0.6rem;
+        }
+        .subsection-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 0.18rem;
+            border-left: 3px solid #aaa;
+            padding-left: 0.45rem;
+        }
+        .compact-p {
+            font-size: 0.84rem;
+            line-height: 1.52;
+            margin-bottom: 0.38rem;
+            text-align: justify;
+            color: #000;
+        }
+        .inline-item {
+            font-size: 0.84rem;
+            line-height: 1.52;
+            margin-bottom: 0.34rem;
+            text-align: justify;
+            color: #000;
+        }
+        .highlight-box {
+            background: #f9f9f9;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            margin: 0.55rem 0;
+            border: 1px solid #ddd;
+        }
+        .highlight-box .compact-p {
+            margin-bottom: 0.24rem;
+        }
+        .book-list-compact {
+            background: #f9f9f9;
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+        }
+        .quote {
+            font-style: italic;
+            color: #000;
+            background: #f5f5f5;
+            padding: 0.35rem 0.8rem;
+            border-left: 4px solid #aaa;
+            margin: 0.55rem 0;
+            font-size: 0.81rem;
+            line-height: 1.45;
+        }
+        .quote-line {
+            font-style: italic;
+            color: #000;
+            background: #f5f5f5;
+            padding: 0.22rem 0.8rem;
+            border-left: 4px solid #aaa;
+            margin: 0.28rem 0;
+            font-size: 0.81rem;
+            line-height: 1.4;
+        }
+        strong {
+            color: #000;
+            font-weight: 700;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        li {
+            font-size: 0.82rem;
+            line-height: 1.44;
+            margin-bottom: 0.18rem;
+            color: #000;
+        }
+
+        /* 考点两列布局 */
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none;
+            padding-left: 0;
+        }
+        .two-columns li {
+            width: 48%;
+            margin-bottom: 0.26rem;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 1rem;
+            color: #000;
+        }
+        .two-columns li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000;
+        }
+        .two-columns li strong {
+            display: inline-block;
+            color: #000;
+        }
+        @media (max-width: 800px) {
+            .two-columns li {
+                width: 48%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面 ================= -->
+    <div class="main-title">
+        <h1>红星照耀中国</h1>
+        <div class="subhead">埃德加·斯诺 · 纪实文学经典 · 八年级上册必读名著</div>
+        <div class="author-line">埃德加·斯诺 著 | 八年级上册语文必读名著 · 深度解读 | 锦水微澜教育工作室 黄国荣 编制</div>
+    </div>
+
+    <div class="quote">
+        <strong>📖 编撰说明</strong><br>
+        《红星照耀中国》（原名《西行漫记》）是美国记者埃德加·斯诺的不朽经典，是第一部向世界介绍中国共产党和中国工农红军的纪实文学作品。1936年，斯诺冒着生命危险进入陕北苏区，经过四个月的采访，用客观真实的笔触记录了红色中国的真实面貌。本文根据原著及权威资料整理，系统梳理内容梗概、人物形象、主题思想、艺术特色及中考考点。
+    </div>
+
+    <!-- 一、作者简介 -->
+    <div class="section">
+        <div class="section-title">✍️ 一、作者简介</div>
+        <div class="compact-p"><strong>埃德加·斯诺</strong>（1905—1972），美国著名记者、作家。1928年来华，曾任《密勒氏评论报》助理编辑、燕京大学新闻系讲师。1936年6月，他冲破国民党封锁进入陕北苏区，成为第一个采访红区的西方记者。毛泽东曾评价：“斯诺是中国人民的老朋友。”《红星照耀中国》的出版，让全世界第一次真实了解了中国共产党和红军，在国际上产生了巨大影响。</div>
+    </div>
+
+    <!-- 二、内容梗概 · 西行见闻 -->
+    <div class="section">
+        <div class="section-title">📖 二、内容梗概 · 西行见闻</div>
+        <div class="compact-p">全书共十二章，记录了斯诺1936年6月至10月在陕北苏区的见闻。</div>
+        <div class="subsection"><div class="subsection-title">🚩 探寻红色中国</div><div class="compact-p">斯诺带着关于“红色中国的疑问”（共产党是什么样的人？红军是怎样的一支军队？），冒着生命危险进入苏区，途经西安、保安（今志丹县），见到了周恩来、毛泽东等领导人。</div></div>
+        <div class="subsection"><div class="subsection-title">⭐ 红军领袖群像</div><div class="compact-p">详细记述了毛泽东、周恩来、朱德、彭德怀、贺龙等红军领导人的生平事迹、性格特点，展现了一个个鲜活立体的革命者形象。</div></div>
+        <div class="subsection"><div class="subsection-title">🏃 长征纪实</div><div class="compact-p">真实记录了红军长征的艰苦历程——四渡赤水、巧渡金沙江、强渡大渡河、飞夺泸定桥、翻雪山、过草地，最终到达陕北。斯诺称长征为“现代史上无与伦比的一次远征”。</div></div>
+        <div class="subsection"><div class="subsection-title">🌾 苏区生活</div><div class="compact-p">描写了苏区的政治、经济、文化、教育等方面的情况，展现了红军战士和普通百姓的精神风貌。</div></div>
+    </div>
+
+    <!-- 三、主要人物形象分析（详细展开） -->
+    <div class="section">
+        <div class="section-title">👥 三、主要人物形象</div>
+        <div class="compact-p"><strong>毛泽东</strong>：斯诺笔下最核心的人物。他面容瘦削、个子高出一般人，有着中国农民的质朴纯真。他博览群书，对当前世界政治形势了如指掌，是一位“天才的军事和政治战略家”。他生活简朴，与普通战士同甘共苦，体现了共产党领导人的崇高品质。</div>
+        <div class="compact-p"><strong>周恩来</strong>：斯诺见到的第一位共产党领导人。他温文尔雅、举止从容，精通英语和法语，被称为“世家子弟”。他早年留学法国，领导过上海工人武装起义，组织过南昌起义。他待人诚恳、精力过人，在红军中享有极高威望。</div>
+        <div class="compact-p"><strong>朱德</strong>：红军总司令，被称为“红军之父”。他性格温和、平易近人，与战士们同吃同住。他领导了南昌起义，与毛泽东在井冈山会师，是红军的精神支柱。斯诺称赞他“是一个沉默谦虚、说话轻声、有点饱经沧桑的人”。</div>
+        <div class="compact-p"><strong>彭德怀</strong>：红一方面军司令员，性格直率、勇敢无畏。“他的谈话举止里有一种开门见山、直截了当、不转弯抹角的作风。”他出身贫苦，参加过北伐战争，领导了平江起义，是一位身经百战的将领。</div>
+        <div class="compact-p"><strong>贺龙</strong>：红二方面军司令员，出身贫苦，靠一把菜刀闹革命。他勇猛善战，在国民党中有着“南昌起义总指挥”的赫赫威名，在红军中威望极高。</div>
+        <div class="compact-p"><strong>红小鬼</strong>：书中最动人的群体形象。他们大多是十几岁的少年，却已是经验丰富的“老红军”。他们朝气蓬勃、乐观向上、忠于革命，是红军未来的希望。斯诺称他们是“红色中国最有希望的一代”。</div>
+    </div>
+
+    <!-- 手动分页确保：第四部分从第二面开始 -->
+    <div style="page-break-before: avoid; break-before: page;"></div>
+
+    <!-- ================= 第二面 ================= -->
+    <!-- 四、主题思想 -->
+    <div class="section">
+        <div class="section-title">💡 四、主题思想</div>
+        <div class="highlight-box">
+            <div class="compact-p"><strong>真实还原红色中国</strong>：斯诺以记者的客观视角，打破了国民党的新闻封锁，向全世界第一次真实报道了中国共产党的革命实践，还原了一个有血有肉的红色中国。</div>
+            <div class="compact-p"><strong>讴歌革命精神</strong>：通过对红军长征、苏区生活的描写，讴歌了中国共产党人和红军战士艰苦奋斗、不怕牺牲、乐观向上的革命精神。</div>
+            <div class="compact-p"><strong>揭示革命成功的根源</strong>：斯诺通过深入采访，揭示了共产党赢得民心的根本原因——官兵平等、土地革命、抗日救国，以及领袖与人民的血肉联系。</div>
+            <div class="compact-p"><strong>“红星必将照耀中国”的预言</strong>：斯诺在书的结尾预言：“中国共产党领导的革命事业必将取得最终胜利，红星必将照耀中国。”这一预言最终成为现实。</div>
+        </div>
+    </div>
+
+    <!-- 五、艺术特色 -->
+    <div class="section">
+        <div class="section-title">🎨 五、艺术特色</div>
+        <div class="inline-item"><strong>纪实性与文学性的统一</strong>：作为新闻报道，具有高度的真实性；作为文学作品，语言生动形象，人物刻画入木三分，情节引人入胜。</div>
+        <div class="inline-item"><strong>第一人称视角</strong>：斯诺以“我”的所见所闻所感展开叙述，增强了作品的真实感和代入感，让读者跟随他的脚步走进苏区。</div>
+        <div class="inline-item"><strong>人物刻画生动传神</strong>：斯诺善于通过细节描写展现人物性格，如毛泽东深夜工作的习惯、周恩来优雅的举止、彭德怀直率的谈吐，使领袖形象亲切可感。</div>
+        <div class="inline-item"><strong>夹叙夹议的写法</strong>：在叙述事实的同时穿插评论和思考，既有客观记录又有主观感受，深化了作品的思想内涵。</div>
+    </div>
+
+    <!-- 六、经典语句与重要事件 -->
+    <div class="section">
+        <div class="section-title">📜 六、经典语句与重要事件</div>
+        <div class="quote-line">“红星照耀中国，甚至照耀整个世界。” —— 埃德加·斯诺</div>
+        <div class="quote-line">“长征是宣言书，长征是宣传队，长征是播种机。” —— 毛泽东（书中引用）</div>
+        <div class="quote-line">“这是一个非凡的、令人难忘的场面。” —— 《红星照耀中国》</div>
+        <div class="compact-p" style="margin-top:0.45rem;"><strong>重要事件：</strong>斯诺进入苏区、毛泽东访谈、周恩来采访、红军长征（四渡赤水、飞夺泸定桥、翻越夹金山、过草地）、西安事变、苏区教育文化等。其中“长征”是全书最震撼的篇章，斯诺称其为“现代史上无与伦比的一次远征”。</div>
+    </div>
+
+    <!-- 七、中考考点速记（将“核心人物”改为“人物”，释放空间） -->
+    <div class="section">
+        <div class="section-title">📚 七、中考考点速记</div>
+        <div class="book-list-compact">
+            <ul class="two-columns">
+                <li><strong>作者</strong>：埃德加·斯诺（美国）</li>
+                <li><strong>体裁</strong>：纪实文学/新闻报道</li>
+                <li><strong>成书时间</strong>：1937年</li>
+                <li><strong>采访时间</strong>：1936年6月-10月</li>
+                <li><strong>人物</strong>：毛泽东、周恩来、朱德、彭德怀、贺龙</li>
+                <li><strong>重要事件</strong>：长征、西安事变、苏区见闻</li>
+                <li><strong>主题</strong>：真实报道红色中国、讴歌革命精神</li>
+                <li><strong>书名含义</strong>：预言革命必将胜利，红星照耀中国</li>
+                <li><strong>艺术特色</strong>：纪实性、文学性、夹叙夹议</li>
+                <li><strong>历史地位</strong>：第一部向世界介绍中共的西方著作</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 八、深度思考 · 经典的意义 -->
+    <div class="section">
+        <div class="section-title">💭 八、深度思考 · 经典的意义</div>
+        <div class="compact-p">《红星照耀中国》的伟大之处在于，它打破了当时国民党的新闻封锁，让全世界第一次看到了真实的中国共产党和红军。斯诺以一个西方记者的客观视角，向世界证明：中国共产党不是“赤匪”，而是一群有理想、有信念、有担当的革命者；红军不是“流寇”，而是一支纪律严明、深受人民爱戴的军队。这部作品不仅是新闻记者的典范，更是一座跨越时空的桥梁，让我们得以窥见那段波澜壮阔的历史，感受革命先辈的初心与信仰。正如斯诺所预言的那样，红星不仅照耀了中国，也照亮了世界。</div>
+    </div>
+
+</div>
+</body>

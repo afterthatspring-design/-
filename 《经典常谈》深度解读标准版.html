@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《经典常谈》深度解读 | 朱自清·国学指南 | A4正反面打印版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.3cm 1cm;
+            }
+        }
+
+        /* 标题区域 */
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.55rem;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 0.12rem;
+        }
+        h1 {
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.72rem;
+            color: #333;
+            margin-top: 0.05rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #555;
+            border-top: 1px dashed #ccc;
+            padding-top: 0.12rem;
+            margin-top: 0.12rem;
+            margin-bottom: 0.55rem;
+        }
+
+        .section {
+            margin: 0.55rem 0 0.45rem;
+        }
+        .section-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            background: #eee;
+            padding: 0.14rem 0.7rem;
+            border-left: 5px solid #999;
+            margin-bottom: 0.35rem;
+        }
+        .subsection {
+            margin: 0.4rem 0 0.3rem 0.6rem;
+        }
+        .subsection-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 0.15rem;
+            border-left: 3px solid #aaa;
+            padding-left: 0.45rem;
+        }
+        .compact-p {
+            font-size: 0.84rem;
+            line-height: 1.45;
+            margin-bottom: 0.32rem;
+            text-align: justify;
+            color: #000;
+        }
+        .inline-item {
+            font-size: 0.84rem;
+            line-height: 1.45;
+            margin-bottom: 0.28rem;
+            text-align: justify;
+            color: #000;
+        }
+        .highlight-box {
+            background: #f9f9f9;
+            padding: 0.35rem 0.8rem;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+        }
+        .highlight-box .compact-p {
+            margin-bottom: 0.2rem;
+        }
+        .theme-item {
+            font-size: 0.84rem;
+            line-height: 1.45;
+            margin-bottom: 0.28rem;
+            text-align: justify;
+            color: #000;
+        }
+        .theme-item strong {
+            color: #000;
+            font-weight: 700;
+        }
+        .book-list-compact {
+            background: #f9f9f9;
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+            margin: 0.4rem 0;
+            border: 1px solid #ddd;
+        }
+        .quote {
+            font-style: italic;
+            color: #000;
+            background: #f5f5f5;
+            padding: 0.3rem 0.8rem;
+            border-left: 4px solid #aaa;
+            margin: 0.5rem 0;
+            font-size: 0.81rem;
+            line-height: 1.38;
+        }
+        strong {
+            color: #000;
+            font-weight: 700;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        li {
+            font-size: 0.82rem;
+            line-height: 1.38;
+            margin-bottom: 0.14rem;
+            color: #000;
+        }
+
+        /* 考点两列布局 */
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none;
+            padding-left: 0;
+        }
+        .two-columns li {
+            width: 48%;
+            margin-bottom: 0.2rem;
+            font-size: 0.8rem;
+            line-height: 1.35;
+            position: relative;
+            padding-left: 1rem;
+            color: #000;
+        }
+        .two-columns li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000;
+        }
+        .two-columns li strong {
+            display: inline-block;
+            color: #000;
+        }
+        .core-books {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.15rem;
+        }
+        .core-books li {
+            font-size: 0.8rem;
+            line-height: 1.35;
+            position: relative;
+            padding-left: 1rem;
+            color: #000;
+        }
+        .core-books li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <div class="main-title">
+        <h1>经典常谈</h1>
+        <div class="subhead">朱自清 · 经史子集入门津梁 · 八年级下册必读名著</div>
+        <div class="author-line">朱自清 著 | 八年级下册语文必读名著 · 深度解读 | 锦水微澜教育工作室 黄国荣 编制</div>
+    </div>
+
+    <div class="quote">
+        <strong>📖 编撰说明</strong><br>
+        《经典常谈》是我国现代杰出散文家、学者朱自清先生的著作。全书共十三篇，依中国传统学术“经、史、子、集”四部分类法为骨架，拣选其中最重要且适于入门之典籍，系统介绍中国古代文学与学术的发展脉络。本书提纲挈领，深入浅出，是今日中学生及传统文化爱好者必读之导引。
+    </div>
+
+    <!-- 一、作者简介 -->
+    <div class="section">
+        <div class="section-title">✍️ 一、作者简介</div>
+        <div class="compact-p"><strong>朱自清</strong>（1898—1948），原名自华，号秋实，后改名自清，字佩弦。中国现代杰出的散文家、诗人、学者。原籍浙江绍兴，生于江苏东海。其散文以语言洗练、文笔清丽著称，代表作有《背影》《荷塘月色》《春》等。抗战期间，朱自清在西南联大任教，撰写《经典常谈》，以通俗晓畅之笔为青年学子开启国学之门。</div>
+    </div>
+
+    <!-- 二、全书概览 -->
+    <div class="section">
+        <div class="section-title">📖 二、全书概览 · 十三篇导读</div>
+        <div class="compact-p"><strong>经部（7篇）</strong>：《说文解字》《周易》《尚书》《诗经》《三礼》《春秋》《四书》——儒家经典的核心。</div>
+        <div class="compact-p"><strong>史部（3篇）</strong>：《战国策》《史记》《汉书》——史家之绝唱与纵横之风云。</div>
+        <div class="compact-p"><strong>子部（1篇）</strong>：《诸子》——先秦百家争鸣的思想盛宴。</div>
+        <div class="compact-p"><strong>集部（2篇）</strong>：《辞赋》《诗》《文》——中国文学流变之精粹。</div>
+    </div>
+
+    <!-- 三、经部详解 -->
+    <div class="section">
+        <div class="section-title">📚 三、经部 · 十三经根柢</div>
+        <div class="compact-p">经部收录儒家“十三经”，是传统文化核心。欲读经典，必先通“小学”（文字学）。</div>
+        
+        <div class="subsection"><div class="subsection-title">🔍 说文解字 · 字学津梁</div><div class="compact-p">东汉许慎著，我国第一部系统分析字形、考究字源的字典。分540部首，收字九千余，首创“六书”理论：象形、指事、会意、形声为造字法，转注、假借为用字法。秦以小篆统一文字，是读懂一切经典的工具书。</div></div>
+        
+        <div class="subsection"><div class="subsection-title">⚖️ 周易 · 群经之首</div><div class="compact-p">相传伏羲画八卦，周文王作卦辞，孔子作《易传》。从占卜之书演变为哲学经典，六十四卦象征万物变化，是中华思想的重要源头。</div></div>
+        
+        <div class="subsection"><div class="subsection-title">📜 尚书 · 记言史祖</div><div class="compact-p">中国最早记言史书。秦火后伏生传今文《尚书》29篇；后鲁恭王坏孔子宅得古文《尚书》。清初阎若璩证伪古文尚书，还学术真相。</div></div>
+        
+        <div class="subsection"><div class="subsection-title">🎵 诗经 · 歌谣成雅乐</div><div class="compact-p">《诗》三百，源起上古歌谣。孔子以“思无邪”概括诗教。“风雅颂”为体，“赋比兴”为法，奠定中国文学抒情传统。</div></div>
+        
+        <div class="subsection"><div class="subsection-title">🏛️ 三礼 · 礼制纲维</div><div class="compact-p">《周礼》记官制、《仪礼》载仪节、《礼记》释义理。儒家以礼为治乱根本，形成礼治主义，乐以辅礼，移风易俗。</div></div>
+        
+        <div class="subsection"><div class="subsection-title">📖 春秋三传 · 编年与褒贬</div><div class="compact-p">《春秋》是我国第一部编年史。三传即《左传》（叙事）、《公羊传》《穀梁传》（释义），传述春秋大义，尊王攘夷。</div></div>
+        
+        <div class="subsection"><div class="subsection-title">🎓 四书 · 入德之门</div><div class="compact-p">《大学》《中庸》《论语》《孟子》，朱熹集注后成为科举教科书。《大学》讲修齐治平；《孟子》倡性善、仁政；《中庸》阐中和之道。</div></div>
+    </div>
+
+    <!-- 四、史部详解 -->
+    <div class="section">
+        <div class="section-title">📜 四、史部 · 青史照古今</div>
+        <div class="subsection"><div class="subsection-title">⚔️ 战国策 · 纵横捭阖</div><div class="compact-p">三十三篇，记述纵横家的政治主张与策略。以苏秦合纵、张仪连横为代表，凭舌辩免战火，反映了列国外交风云。</div></div>
+        <div class="subsection"><div class="subsection-title">✍️ 史记 · 史家绝唱</div><div class="compact-p">司马迁著，上起黄帝下至汉武帝，130篇，开创纪传体通史。鲁迅誉之为“史家之绝唱，无韵之离骚”，以人物为中心，实录精神光照后世。</div></div>
+        <div class="subsection"><div class="subsection-title">📘 汉书 · 断代为史</div><div class="compact-p">班固撰，起汉高祖迄王莽之诛，为第一部断代史。体例精严，与《史记》并称“两史”，《艺文志》是我国最早的目录学文献。</div></div>
+    </div>
+
+    <!-- 五、子部 · 诸子争鸣 -->
+    <div class="section">
+        <div class="section-title">🧠 五、子部 · 诸子争鸣</div>
+        <div class="highlight-box">
+            <div class="compact-p"><strong>儒家</strong>：孔子主正名、仁礼；孟子倡性善、仁政；荀子主性恶、重礼法。</div>
+            <div class="compact-p"><strong>墨家</strong>：墨翟倡“非攻”“兼爱”，代表平民理想，组织严密。</div>
+            <div class="compact-p"><strong>道家</strong>：老子著《道德经》，主无为而治；庄子求绝对自由，齐生死。</div>
+            <div class="compact-p"><strong>法家</strong>：韩非集法、术、势之大成，后世政治深受影响。</div>
+            <div class="compact-p"><strong>阴阳家</strong>：邹衍倡“五德终始说”，以五行生克解释朝代更替。</div>
+            <div class="compact-p">战国末期吕不韦编《吕氏春秋》统合诸子；至汉武帝董仲舒“罢黜百家，独尊儒术”，新儒学吸收法家、阴阳家思想，形成大一统格局。</div>
+        </div>
+    </div>
+
+    <!-- 六、集部 · 辞赋诗文流韵 -->
+    <div class="section">
+        <div class="section-title">🌿 六、集部 · 辞赋诗文流韵</div>
+        <div class="subsection"><div class="subsection-title">🍃 楚辞与辞赋</div><div class="compact-p">屈原作《离骚》，以香草美人寄意，开楚辞一体。汉赋铺张扬厉，司马相如《子虚赋》为代表。宋欧阳修、苏轼作散体文赋。</div></div>
+        <div class="subsection"><div class="subsection-title">🎋 诗之演进</div><div class="compact-p">汉乐府叙事为主，孕育五言诗。陶渊明田园诗，谢灵运山水诗。唐代近体成熟，李白“诗仙”抒写自我，杜甫“诗圣”写实忧民。苏轼将禅学与散文化笔法引入诗。</div></div>
+        <div class="subsection"><div class="subsection-title">📝 古文运动与白话小说</div><div class="compact-p">唐韩愈、柳宗元倡古文，务去陈言。宋代欧阳修、苏轼继之，古文遂成正宗。宋代“话本”出现，为白话小说之祖，《三国演义》《水浒传》《西游记》《红楼梦》从话本演化而来。新文化运动提倡白话文，开启现代文学新篇。</div></div>
+    </div>
+
+    <!-- 七、中考考点速记 -->
+    <div class="section">
+        <div class="section-title">📚 七、中考考点速记</div>
+        <div class="book-list-compact">
+            <ul class="two-columns">
+                <li><strong>结构</strong>：十三篇，经史子集</li>
+                <li><strong>首篇</strong>：《说文解字》</li>
+                <li><strong>四书</strong>：《大学》《中庸》《论语》《孟子》</li>
+                <li><strong>春秋三传</strong>：《左传》《公羊传》《穀梁传》</li>
+                <li><strong>史记汉书</strong>：纪传体通史与断代史</li>
+                <li><strong>六书</strong>：象形、指事、会意、形声、转注、假借</li>
+            </ul>
+            <ul class="core-books">
+                <li><strong>核心典籍</strong>：说文、周易、尚书、诗经、三礼、春秋、四书、战国策、史记、汉书、诸子、辞赋、诗文</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 八、深度思考 · 经典的意义 -->
+    <div class="section">
+        <div class="section-title">💭 八、深度思考 · 经典的意义</div>
+        <div class="compact-p">朱自清于抗战时期撰写此书，以通俗晓畅之笔梳理国学四部要籍，用现代眼光激活传统。建议按“说文解字→四书→诸子→史记→诗文”顺序通读。正如朱自清所言：“经典训练的价值不在实用，而在文化。”</div>
+    </div>
+
+</div>
+</body>

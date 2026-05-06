@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《简·爱》深度解读 | 夏洛蒂·勃朗特·女性独立宣言 | 九年级下册必读名著</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.2cm 1cm;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 0.12rem;
+        }
+        h1 {
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.72rem;
+            color: #333;
+            margin-top: 0.05rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #555;
+            border-top: 1px dashed #ccc;
+            padding-top: 0.12rem;
+            margin-top: 0.12rem;
+            margin-bottom: 0.6rem;
+        }
+
+        /* 第一面进一步压缩行距，解决溢出 */
+        .first-half .section {
+            margin: 0.45rem 0 0.35rem;
+        }
+        .first-half .section-title {
+            margin-bottom: 0.28rem;
+            padding: 0.1rem 0.6rem;
+        }
+        .first-half .compact-p {
+            margin-bottom: 0.24rem;
+            line-height: 1.42;
+        }
+        .first-half .subsection {
+            margin: 0.32rem 0 0.22rem 0.5rem;
+        }
+        .first-half .subsection-title {
+            margin-bottom: 0.1rem;
+        }
+        .first-half .highlight-box {
+            margin: 0.4rem 0;
+            padding: 0.32rem 0.7rem;
+        }
+
+        /* 第二面保持正常行距 */
+        .second-half .section {
+            margin: 0.65rem 0 0.55rem;
+        }
+        .second-half .section-title {
+            margin-bottom: 0.42rem;
+        }
+        .second-half .compact-p {
+            margin-bottom: 0.38rem;
+            line-height: 1.52;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            background: #eee;
+            padding: 0.14rem 0.7rem;
+            border-left: 5px solid #999;
+        }
+        .subsection {
+            margin: 0.48rem 0 0.38rem 0.6rem;
+        }
+        .subsection-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 0.18rem;
+            border-left: 3px solid #aaa;
+            padding-left: 0.45rem;
+        }
+        .compact-p {
+            font-size: 0.84rem;
+            text-align: justify;
+            color: #000;
+        }
+        .inline-item {
+            font-size: 0.84rem;
+            line-height: 1.52;
+            margin-bottom: 0.34rem;
+            text-align: justify;
+            color: #000;
+        }
+        .highlight-box {
+            background: #f9f9f9;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            margin: 0.55rem 0;
+            border: 1px solid #ddd;
+        }
+        .highlight-box .compact-p {
+            margin-bottom: 0.24rem;
+        }
+        .book-list-compact {
+            background: #f9f9f9;
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+        }
+        .quote-line {
+            font-style: italic;
+            color: #000;
+            background: #f5f5f5;
+            padding: 0.2rem 0.8rem;
+            border-left: 4px solid #aaa;
+            margin: 0.2rem 0;
+            font-size: 0.81rem;
+            line-height: 1.38;
+        }
+        strong {
+            color: #000;
+            font-weight: 700;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        li {
+            font-size: 0.82rem;
+            line-height: 1.44;
+            margin-bottom: 0.18rem;
+            color: #000;
+        }
+
+        /* 考点两列布局 */
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none;
+            padding-left: 0;
+        }
+        .two-columns li {
+            width: 48%;
+            margin-bottom: 0.26rem;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 1rem;
+            color: #000;
+        }
+        .two-columns li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000;
+        }
+        .two-columns li strong {
+            display: inline-block;
+            color: #000;
+        }
+        @media (max-width: 800px) {
+            .two-columns li {
+                width: 48%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面（进一步压缩，解决溢出） ================= -->
+    <div class="first-half">
+        <div class="main-title">
+            <h1>简·爱</h1>
+            <div class="subhead">夏洛蒂·勃朗特 · 女性独立宣言 · 九年级下册必读名著</div>
+            <div class="author-line">夏洛蒂·勃朗特 著 | 九年级下册语文必读名著 · 深度解读 | 锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>📖 编撰说明</strong><br>
+            《简·爱》是英国女作家夏洛蒂·勃朗特的代表作，是一部具有自传色彩的长篇小说，被誉为“女性独立意识的宣言”。小说讲述了孤女简·爱历经磨难，始终坚守尊严与平等，最终获得幸福的故事。作品深刻探讨了女性独立、人格尊严、爱情婚姻等主题，是19世纪现实主义文学的经典。本文根据原著及权威资料整理，系统梳理内容梗概、人物形象、主题思想、艺术特色及中考考点。
+        </div>
+
+        <!-- 一、作者简介 -->
+        <div class="section">
+            <div class="section-title">✍️ 一、作者简介</div>
+            <div class="compact-p"><strong>夏洛蒂·勃朗特</strong>（1816—1855），英国女作家，“勃朗特三姐妹”之一。生于英国北部约克郡的牧师家庭，母亲早逝，生活清苦。曾与妹妹艾米莉·勃朗特（《呼啸山庄》作者）、安妮·勃朗特（《艾格妮丝·格雷》作者）一同出版诗集。《简·爱》发表于1847年，以强烈的自传色彩和深刻的社会批判引起轰动。夏洛蒂的作品关注女性命运、独立意识和社会不公，是19世纪女性主义文学的先驱。</div>
+        </div>
+
+        <!-- 二、内容梗概 · 独立之旅 -->
+        <div class="section">
+            <div class="section-title">📖 二、内容梗概 · 独立之旅</div>
+            <div class="compact-p">小说以第一人称视角，讲述简·爱的人生四阶段：</div>
+            <div class="subsection"><div class="subsection-title">🏚️ 盖茨黑德·反抗的萌芽</div><div class="compact-p">简·爱父母双亡，寄居在舅妈家，受尽表兄约翰的欺辱。一次反抗中被关进红房子，惊吓晕倒。她敢于反击，表现出不屈的个性。</div></div>
+            <div class="subsection"><div class="subsection-title">📚 洛伍德学校·磨炼与成长</div><div class="compact-p">被送往慈善学校，环境恶劣，好友海伦·彭斯因肺病去世。简在此度过八年（六年学生、两年教师），学会了忍耐与坚强。</div></div>
+            <div class="subsection"><div class="subsection-title">🏰 桑菲尔德庄园·爱情与尊严</div><div class="compact-p">应聘家庭教师，与主人罗切斯特相爱。婚礼上得知罗切斯特已有疯妻伯莎·梅森，简为维护尊严毅然离开。</div></div>
+            <div class="subsection"><div class="subsection-title">🏡 沼泽山庄·觉醒与重逢</div><div class="compact-p">流浪中被牧师圣约翰·里弗斯收留，发现他们是表兄妹，继承遗产。圣约翰求婚被拒。简回到桑菲尔德，发现庄园已毁、罗切斯特失明，两人最终幸福结合。</div></div>
+        </div>
+
+        <!-- 三、主要人物形象分析（行距压缩） -->
+        <div class="section">
+            <div class="section-title">👥 三、主要人物形象</div>
+            <div class="compact-p"><strong>简·爱</strong>：小说的灵魂人物。她出身卑微、相貌平凡，但精神独立、人格尊严高于一切。她敢于反抗不公（反击表兄、离开罗切斯特），坚守平等（“我们是平等的”），追求真爱。她的名言“你以为，因为我穷、低微、不美、矮小，我就没有灵魂，没有心吗？”成为女性独立宣言。简·爱从孤女到独立女性的成长历程，是19世纪女性意识觉醒的象征。</div>
+            <div class="compact-p"><strong>罗切斯特</strong>：桑菲尔德庄园主人，性格复杂。他富有、傲慢，但真诚、深情。因不幸婚姻而痛苦，被简·爱的纯真吸引。他的道德挣扎（藏匿疯妻、试图与简结婚）展现了人性的弱点与救赎。失明后与简重逢，两人在平等中获得真正的爱情。</div>
+            <div class="compact-p"><strong>海伦·彭斯</strong>：简在洛伍德学校的好友，虔诚、隐忍、博学。她信奉“忍让”哲学，以宽容对待不公，最终因肺病去世。她是简的精神启蒙者，代表着基督教徒的谦卑与仁爱。</div>
+            <div class="compact-p"><strong>圣约翰·里弗斯</strong>：沼泽山庄牧师，简的表兄。他冷静、理智、虔诚，以传教为己任。向简求婚并非出于爱情，而是认为她适合做传教士的妻子。简拒绝了他，因为“没有爱情的婚姻是罪恶的”。圣约翰代表了理性至上与奉献精神，与简的感性追求形成对比。</div>
+            <div class="compact-p"><strong>里德太太</strong>：简的舅妈，冷酷自私。她偏爱亲生子女，虐待简，临终前向简忏悔，简原谅了她。这一情节体现了简的宽容与成长。</div>
+            <div class="compact-p"><strong>伯莎·梅森</strong>：罗切斯特的疯妻，被囚禁在桑菲尔德庄园阁楼。她是男性霸权的受害者，也是罗切斯特“秘密”的具象化，最终放火身亡。</div>
+        </div>
+    </div>
+
+    <!-- 手动分页确保：第四部分从第二面开始 -->
+    <div style="page-break-before: avoid; break-before: page;"></div>
+
+    <!-- ================= 第二面 ================= -->
+    <div class="second-half">
+        <!-- 四、主题思想 -->
+        <div class="section">
+            <div class="section-title">💡 四、主题思想</div>
+            <div class="highlight-box">
+                <div class="compact-p"><strong>女性独立与人格尊严</strong>：全书最核心的主题。简·爱追求的不只是爱情，更是“作为平等者的爱情”。她拒绝无爱的婚姻，拒绝成为附属品，喊出“我们站在上帝脚下，是平等的”。</div>
+                <div class="compact-p"><strong>爱情观：精神平等高于物质</strong>：简·爱与罗切斯特的爱情建立于精神契合的基础上。她离开桑菲尔德不是因为不爱，而是因为“有条件的爱”会亵渎尊严；最终回归时两人已平等，爱情才完整。</div>
+                <div class="compact-p"><strong>宗教与道德的选择</strong>：对比海伦的隐忍、圣约翰的献身、简的独立选择，探讨了面对苦难的不同态度。简既不是盲从隐忍，也不是冷酷理性，而是以尊严为基石的精神独立。</div>
+                <div class="compact-p"><strong>反抗压迫与自我救赎</strong>：从盖茨黑德到洛伍德再到桑菲尔德，简始终与不公抗争。她原谅里德太太、回到失明的罗切斯特身边，完成了自我救赎。</div>
+            </div>
+        </div>
+
+        <!-- 五、艺术特色（已按要求修改语句） -->
+        <div class="section">
+            <div class="section-title">🎨 五、艺术特色</div>
+            <div class="inline-item"><strong>第一人称叙事</strong>：自传体视角，读者通过简的眼睛看世界，情感真挚强烈。直接对读者诉说内心，增强了代入感。</div>
+            <div class="inline-item"><strong>心理描写的深度</strong>：细腻刻画简的内心冲突——爱与尊严的抉择、去留的挣扎，使人物形象立体丰满。</div>
+            <div class="inline-item"><strong>象征与意象</strong>：红房子象征压抑，桑菲尔德的阁楼隐喻秘密与疯癫，大火象征毁灭与重生，荒原象征自由与考验。这些意象深化了主题。</div>
+            <div class="inline-item"><strong>哥特式氛围</strong>：神秘的笑声、半夜失火、阁楼疯女人等哥特元素增添悬念和戏剧张力，也象征了维多利亚时代被压抑的女性欲望。</div>
+            <div class="inline-item"><strong>语言风格</strong>：语言朴素有力，对话个性鲜明，简的独白气势磅礴，具有震撼力。</div>
+        </div>
+
+        <!-- 六、经典语句与重要事件 -->
+        <div class="section">
+            <div class="section-title">📜 六、经典语句与重要事件</div>
+            <div class="quote-line">“你以为，因为我穷、低微、不美、矮小，我就没有灵魂，没有心吗？你想错了！——我的灵魂跟你的一样，我的心也跟你的完全一样！” —— 简·爱</div>
+            <div class="quote-line">“我们站在上帝脚下，是平等的——因为我们是平等的！” —— 简·爱</div>
+            <div class="quote-line">“生命太短暂了，不应该用来记恨。” —— 简·爱</div>
+            <div class="compact-p" style="margin-top:0.3rem;"><strong>重要事件：</strong>简反击表兄被关红房子、海伦病死洛伍德、简与罗切斯特相识相爱、婚礼中断发现疯妻、简离开桑菲尔德、圣约翰求婚被拒、简继承遗产、重返桑菲尔德与罗切斯特重逢。其中“婚礼中断”是全书转折点，集中体现了简对尊严的坚守；“红房子事件”则奠定了简反抗压迫的基调。</div>
+        </div>
+
+        <!-- 七、中考考点速记（两列布局） -->
+        <div class="section">
+            <div class="section-title">📚 七、中考考点速记</div>
+            <div class="book-list-compact">
+                <ul class="two-columns">
+                    <li><strong>作者</strong>：夏洛蒂·勃朗特（英国）</li>
+                    <li><strong>体裁</strong>：自传体长篇小说</li>
+                    <li><strong>主人公</strong>：简·爱</li>
+                    <li><strong>核心主题</strong>：女性独立、人格尊严、平等爱情</li>
+                    <li><strong>经典地点</strong>：盖茨黑德、洛伍德、桑菲尔德、沼泽山庄</li>
+                    <li><strong>重要他人</strong>：罗切斯特、海伦·彭斯、圣约翰、里德太太</li>
+                    <li><strong>经典名句</strong>：我们是平等的（常考）</li>
+                    <li><strong>简的品格</strong>：自尊、独立、坚韧、宽容</li>
+                    <li><strong>艺术特色</strong>：第一人称、心理描写、哥特元素</li>
+                    <li><strong>勃朗特三姐妹</strong>：《简·爱》《呼啸山庄》《艾格妮丝·格雷》</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 八、深度思考 · 经典的意义 -->
+        <div class="section">
+            <div class="section-title">💭 八、深度思考 · 经典的意义</div>
+            <div class="compact-p">《简·爱》之所以穿越两百年依然动人心魄，是因为它触及了人类最根本的渴望——被尊重、被平等对待。简·爱没有美貌、没有财富、没有地位，但她有不可侵犯的灵魂。当她面对罗切斯特说“我们是平等的”时，她不只是为一个穷家庭教师发声，而是为所有被轻视的生命发声。今天，我们不必像简那样反抗一个压迫的舅妈、一个疯狂的阁楼，但我们依然需要在各种关系中坚守尊严——在爱情中不迷失自我，在困境中不放弃希望，在抉择中听从内心的声音。简·爱的故事告诉我们：真正的幸福，从来不是依附，而是成为一个独立的人。</div>
+        </div>
+    </div>
+
+</div>
+</body>

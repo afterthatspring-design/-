@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《朝花夕拾》问答题+分析题专练 | 填空式自测 | A4正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.7rem 1.1rem;
+        }
+
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.6cm 0.9cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.1cm 0.9cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .question-item, .analysis-item {
+                break-inside: avoid;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.4rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.1rem;
+        }
+        h1 {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.04rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #6a5c47;
+            margin-top: 0.03rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.64rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.08rem;
+            margin-top: 0.08rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.15rem 0.65rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.6rem;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .first-page-list {
+            gap: 0.85rem;
+        }
+        .second-page-list {
+            gap: 0.68rem;
+        }
+        .question-item {
+            break-inside: avoid;
+        }
+        .question-text {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #2c4b2f;
+            margin-bottom: 0.22rem;
+            line-height: 1.38;
+        }
+        .answer-line {
+            font-size: 0.82rem;
+            line-height: 1.45;
+            color: #2c2a28;
+            margin-left: 0.35rem;
+            padding-left: 0.3rem;
+            border-left: 2px solid #dac29c;
+        }
+        .answer-text {
+            font-size: 0.82rem;
+            color: #2c2a28;
+            font-weight: normal;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .blank-line {
+            display: inline-block;
+            border-bottom: 1.2px solid #a5682c;
+            min-width: 85px;
+            margin: 0 3px;
+        }
+        /* 分析题样式 — 进一步微调，确保不溢出（终版） */
+        .analysis-item {
+            break-inside: avoid;
+            margin-bottom: 0.85rem;
+        }
+        .analysis-question {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #2c4b2f;
+            margin-bottom: 0.18rem;
+            line-height: 1.32;
+        }
+        .analysis-answer-area {
+            font-size: 0.82rem;
+            line-height: 1.38;
+            color: #2c2a28;
+            margin-left: 0.35rem;
+            padding-left: 0.3rem;
+            border-left: 2px solid #dac29c;
+            min-height: 3rem;
+            background: #fefcf8;
+            border-bottom: 1px solid #e2d9cc;
+        }
+        .analysis-label {
+            font-size: 0.82rem;
+            color: #2c2a28;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面：第1-15题（填空式问答题） ================= -->
+    <div class="page">
+        <div class="main-title">
+            <h1>《朝花夕拾》问答题+分析题专练</h1>
+            <div class="subhead">鲁迅 · 散文回忆录 · 七年级上册必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">📝 一、填空式问答题（共25题）</div>
+        <div class="questions-list first-page-list">
+
+            <div class="question-item">
+                <div class="question-text">1. 《朝花夕拾》的作者是谁？他的原名是什么？</div>
+                <div class="answer-line"><span class="answer-text">答：《朝花夕拾》的作者是</span><span class="blank-line"></span><span class="answer-text">，原名</span><span class="blank-line"></span><span class="answer-text">。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">2. 《朝花夕拾》原名是什么？写于哪一年？共多少篇？</div>
+                <div class="answer-line"><span class="answer-text">答：原名《</span><span class="blank-line"></span><span class="answer-text">》，写于</span><span class="blank-line"></span><span class="answer-text">年，共</span><span class="blank-line"></span><span class="answer-text">篇。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">3. 《朝花夕拾》是什么体裁的文学作品？</div>
+                <div class="answer-line"><span class="answer-text">答：《朝花夕拾》是鲁迅唯一一部</span><span class="blank-line"></span><span class="answer-text">性散文集。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">4. 《从百草园到三味书屋》中，百草园和三味书屋各象征什么？</div>
+                <div class="answer-line"><span class="answer-text">答：百草园是鲁迅童年的</span><span class="blank-line"></span><span class="answer-text">，三味书屋是读书的</span><span class="blank-line"></span><span class="answer-text">。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">5. 三味书屋的先生叫什么名字？</div>
+                <div class="answer-line"><span class="answer-text">答：先生名叫</span><span class="blank-line"></span><span class="answer-text">。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">6. 《阿长与〈山海经〉》中，阿长是谁？她给鲁迅买来了什么书？</div>
+                <div class="answer-line"><span class="answer-text">答：阿长是鲁迅的</span><span class="blank-line"></span><span class="answer-text">，她给鲁迅买来了《</span><span class="blank-line"></span><span class="answer-text">》。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">7. 阿长踩死了鲁迅心爱的什么动物？</div>
+                <div class="answer-line"><span class="answer-text">答：阿长踩死了鲁迅心爱的</span><span class="blank-line"></span><span class="answer-text">。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">8. 《五猖会》中，父亲强迫鲁迅背诵什么书？</div>
+                <div class="answer-line"><span class="answer-text">答：背诵《</span><span class="blank-line"></span><span class="answer-text">》。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">9. 《二十四孝图》中，鲁迅最反感的两个孝道故事是哪两个？</div>
+                <div class="answer-line"><span class="answer-text">答：“</span><span class="blank-line"></span><span class="answer-text">”和“</span><span class="blank-line"></span><span class="answer-text">”。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">10. 《父亲的病》中，庸医开出“经霜三年的什么”做药引？</div>
+                <div class="answer-line"><span class="answer-text">答：“经霜三年的</span><span class="blank-line"></span><span class="answer-text">”。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">11. 《琐记》中，鲁迅离乡求学考入什么学堂？</div>
+                <div class="answer-line"><span class="answer-text">答：考入</span><span class="blank-line"></span><span class="answer-text">学堂。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">12. 《藤野先生》中，藤野先生是鲁迅在哪里学医时的教授？</div>
+                <div class="answer-line"><span class="answer-text">答：在</span><span class="blank-line"></span><span class="answer-text">学医时。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">13. 鲁迅在《藤野先生》中描写藤野先生的外貌：“黑瘦，八字须，戴着什么”？</div>
+                <div class="answer-line"><span class="answer-text">答：戴着</span><span class="blank-line"></span><span class="answer-text">。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">14. 《范爱农》中，范爱农是鲁迅的什么人？最终结局如何？</div>
+                <div class="answer-line"><span class="answer-text">答：范爱农是鲁迅的</span><span class="blank-line"></span><span class="answer-text">，最终</span><span class="blank-line"></span><span class="answer-text">身亡。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">15. 《无常》中，迎神赛会里的“活无常”是一个怎样的鬼魂？</div>
+                <div class="answer-line"><span class="answer-text">答：是一个</span><span class="blank-line"></span><span class="answer-text">、有人情味的鬼魂。</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 第二面：第16-25题（填空式问答题）+ 分析题 ================= -->
+    <div class="page">
+        <div class="questions-list second-page-list">
+
+            <div class="question-item">
+                <div class="question-text">16. 《狗·猫·鼠》中，鲁迅清算猫的“罪行”，实则是讽刺现实中的什么人？</div>
+                <div class="answer-line"><span class="answer-text">答：实则是讽刺现实中的“</span><span class="blank-line"></span><span class="answer-text">”型人物。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">17. 《朝花夕拾》中的十篇散文，按内容可分为哪三类？</div>
+                <div class="answer-line"><span class="answer-text">答：可分为童年生活、求学经历和</span><span class="blank-line"></span><span class="answer-text">三类。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">18. 鲁迅弃医从文的原因是什么？</div>
+                <div class="answer-line"><span class="answer-text">答：原因是在</span><span class="blank-line"></span><span class="answer-text">事件中受到刺激。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">19. 鲁迅在《朝花夕拾》中既写了温馨的回忆，也写了什么？</div>
+                <div class="answer-line"><span class="answer-text">答：也写了</span><span class="blank-line"></span><span class="answer-text">的批判。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">20. 《藤野先生》中，鲁迅离开仙台时，藤野先生送给他一张照片，背后写着什么字？</div>
+                <div class="answer-line"><span class="answer-text">答：背后写着“</span><span class="blank-line"></span><span class="answer-text">”二字。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">21. 《从百草园到三味书屋》中，百草园里有哪些动植物？</div>
+                <div class="answer-line"><span class="answer-text">答：有</span><span class="blank-line"></span><span class="answer-text">、鸣蝉、黄蜂等。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">22. 《阿长与〈山海经〉》中，阿长睡觉时是什么睡相？</div>
+                <div class="answer-line"><span class="answer-text">答：睡觉时摆成“</span><span class="blank-line"></span><span class="answer-text">”字。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">23. 《二十四孝图》中，鲁迅最害怕的是哪个故事？</div>
+                <div class="answer-line"><span class="answer-text">答：最害怕的是“</span><span class="blank-line"></span><span class="answer-text">”的故事。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">24. 鲁迅弃医从文后，将藤野先生的照片挂在什么位置？</div>
+                <div class="answer-line"><span class="answer-text">答：挂在书桌对面的</span><span class="blank-line"></span><span class="answer-text">上。</span></div>
+            </div>
+            <div class="question-item">
+                <div class="question-text">25. 《朝花夕拾》的书名寓意是什么？</div>
+                <div class="answer-line"><span class="answer-text">答：早晨的花到傍晚才</span><span class="blank-line"></span><span class="answer-text">，比喻晚年回忆童年往事。</span></div>
+            </div>
+        </div>
+
+        <!-- 分析题部分 — 终版微调，确保不溢出 -->
+        <div class="part-title" style="margin-top: 0.4rem;">💭 二、分析题（共5题）</div>
+        <div class="questions-list second-page-list">
+
+            <div class="analysis-item">
+                <div class="analysis-question">1. 结合《阿长与〈山海经〉》，分析鲁迅对阿长情感态度的变化过程及其深层原因。</div>
+                <div class="analysis-answer-area"><span class="analysis-label">答：</span></div>
+            </div>
+            <div class="analysis-item">
+                <div class="analysis-question">2. 《五猖会》中，父亲强迫鲁迅背诵《鉴略》这一情节有什么深刻含义？反映了怎样的社会问题？</div>
+                <div class="analysis-answer-area"><span class="analysis-label">答：</span></div>
+            </div>
+            <div class="analysis-item">
+                <div class="analysis-question">3. 请分析《藤野先生》中藤野先生这一人物形象，并说明鲁迅为何对他如此怀念和敬重。</div>
+                <div class="analysis-answer-area"><span class="analysis-label">答：</span></div>
+            </div>
+            <div class="analysis-item">
+                <div class="analysis-question">4. 《范爱农》中范爱农的悲剧命运反映了怎样的社会现实？结合文章内容进行分析。</div>
+                <div class="analysis-answer-area"><span class="analysis-label">答：</span></div>
+            </div>
+            <div class="analysis-item">
+                <div class="analysis-question">5. 结合《朝花夕拾》整部作品，谈谈鲁迅“温馨的回忆”与“理性的批判”是如何交织呈现的？</div>
+                <div class="analysis-answer-area"><span class="analysis-label">答：</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

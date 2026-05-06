@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《唐诗三百首》问答题+分析题专练 | 填空式自测 | A4正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.7rem 1.1rem;
+        }
+
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.6cm 0.9cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.1cm 0.9cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .question-item, .analysis-item {
+                break-inside: avoid;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.4rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.1rem;
+        }
+        h1 {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.04rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #6a5c47;
+            margin-top: 0.03rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.64rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.08rem;
+            margin-top: 0.08rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.15rem 0.65rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.6rem;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .first-page-list {
+            gap: 0.85rem;
+        }
+        .second-page-list {
+            gap: 0.68rem;
+        }
+        .question-item {
+            break-inside: avoid;
+        }
+        .question-text {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #2c4b2f;
+            margin-bottom: 0.22rem;
+            line-height: 1.38;
+        }
+        .answer-line {
+            font-size: 0.82rem;
+            line-height: 1.45;
+            color: #2c2a28;
+            margin-left: 0.35rem;
+            padding-left: 0.3rem;
+            border-left: 2px solid #dac29c;
+        }
+        .answer-text {
+            font-size: 0.82rem;
+            color: #2c2a28;
+            font-weight: normal;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .blank-line {
+            display: inline-block;
+            border-bottom: 1.2px solid #a5682c;
+            min-width: 85px;
+            margin: 0 3px;
+        }
+        .analysis-item {
+            break-inside: avoid;
+            margin-bottom: 0.72rem;
+        }
+        .analysis-question {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #2c4b2f;
+            margin-bottom: 0.15rem;
+            line-height: 1.3;
+        }
+        .analysis-answer-area {
+            font-size: 0.82rem;
+            line-height: 1.35;
+            color: #2c2a28;
+            margin-left: 0.35rem;
+            padding-left: 0.3rem;
+            border-left: 2px solid #dac29c;
+            min-height: 2.8rem;
+            background: #fefcf8;
+            border-bottom: 1px solid #e2d9cc;
+        }
+        .analysis-label {
+            font-size: 0.82rem;
+            color: #2c2a28;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <div class="page">
+        <div class="main-title">
+            <h1>《唐诗三百首》问答题+分析题专练</h1>
+            <div class="subhead">蘅塘退士 · 诗歌选集典范 · 九年级上册必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+        <div class="part-title">📝 一、填空式问答题（共25题）</div>
+        <div class="questions-list first-page-list">
+            <div class="question-item"><div class="question-text">1. 《唐诗三百首》的编选者是谁？他是哪个朝代的人？</div><div class="answer-line"><span class="answer-text">答：编选者是</span><span class="blank-line"></span><span class="answer-text">，他是</span><span class="blank-line"></span><span class="answer-text">代人。</span></div></div>
+            <div class="question-item"><div class="question-text">2. 《唐诗三百首》共选录了多少位诗人的多少首诗？</div><div class="answer-line"><span class="answer-text">答：</span><span class="blank-line"></span><span class="answer-text">位诗人，</span><span class="blank-line"></span><span class="answer-text">首诗。</span></div></div>
+            <div class="question-item"><div class="question-text">3. 李白被誉为“诗仙”，他的诗歌风格是什么？</div><div class="answer-line"><span class="answer-text">答：</span><span class="blank-line"></span><span class="answer-text">、</span><span class="blank-line"></span><span class="answer-text">。</span></div></div>
+            <div class="question-item"><div class="question-text">4. 杜甫被誉为“诗圣”，他的诗歌风格是什么？他的诗被称为“诗史”，为什么？</div><div class="answer-line"><span class="answer-text">答：风格</span><span class="blank-line"></span><span class="answer-text">，因为</span><span class="blank-line"></span><span class="answer-text">。</span></div></div>
+            <div class="question-item"><div class="question-text">5. 王维被称为“诗佛”，苏轼如何评价他的诗歌？</div><div class="answer-line"><span class="answer-text">答：苏轼评价“</span><span class="blank-line"></span><span class="answer-text">”。</span></div></div>
+            <div class="question-item"><div class="question-text">6. 孟浩然是什么诗歌流派的代表诗人？他的代表作《春晓》中名句是什么？</div><div class="answer-line"><span class="answer-text">答：</span><span class="blank-line"></span><span class="answer-text">派代表，名句“</span><span class="blank-line"></span><span class="answer-text">”。</span></div></div>
+            <div class="question-item"><div class="question-text">7. 王昌龄被称为“七绝圣手”，他的边塞诗代表作是什么？</div><div class="answer-line"><span class="answer-text">答：代表作《</span><span class="blank-line"></span><span class="answer-text">》。</span></div></div>
+            <div class="question-item"><div class="question-text">8. 白居易倡导了什么诗歌运动？他的语言风格有什么特点？</div><div class="answer-line"><span class="answer-text">答：倡导</span><span class="blank-line"></span><span class="answer-text">运动，语言</span><span class="blank-line"></span><span class="answer-text">。</span></div></div>
+            <div class="question-item"><div class="question-text">9. “小李杜”指的是哪两位诗人？</div><div class="answer-line"><span class="answer-text">答：</span><span class="blank-line"></span><span class="answer-text">和</span><span class="blank-line"></span><span class="answer-text">。</span></div></div>
+            <div class="question-item"><div class="question-text">10. 唐诗按体裁主要分为哪几类？</div><div class="answer-line"><span class="answer-text">答：</span><span class="blank-line"></span><span class="answer-text">、</span><span class="blank-line"></span><span class="answer-text">、</span><span class="blank-line"></span><span class="answer-text">、</span><span class="blank-line"></span><span class="answer-text">。</span></div></div>
+            <div class="question-item"><div class="question-text">11. 五言律诗和七言律诗各有几句？律诗通常讲究什么？</div><div class="answer-line"><span class="answer-text">答：五律</span><span class="blank-line"></span><span class="answer-text">句，七律</span><span class="blank-line"></span><span class="answer-text">句，讲究</span><span class="blank-line"></span><span class="answer-text">和对仗。</span></div></div>
+            <div class="question-item"><div class="question-text">12. 王之涣的《登鹳雀楼》中哪两句富有哲理？</div><div class="answer-line"><span class="answer-text">答：“</span><span class="blank-line"></span><span class="answer-text">，</span><span class="blank-line"></span><span class="answer-text">。”</span></div></div>
+            <div class="question-item"><div class="question-text">13. 杜甫的《春望》中写战乱中思念亲人的名句是什么？</div><div class="answer-line"><span class="answer-text">答：“</span><span class="blank-line"></span><span class="answer-text">，</span><span class="blank-line"></span><span class="answer-text">。”</span></div></div>
+            <div class="question-item"><div class="question-text">14. 王维的《使至塞上》中描写大漠壮丽景色的名句是什么？</div><div class="answer-line"><span class="answer-text">答：“</span><span class="blank-line"></span><span class="answer-text">，</span><span class="blank-line"></span><span class="answer-text">。”</span></div></div>
+            <div class="question-item"><div class="question-text">15. 李白的《行路难》中表达乐观积极心态的名句是什么？</div><div class="answer-line"><span class="answer-text">答：“</span><span class="blank-line"></span><span class="answer-text">，</span><span class="blank-line"></span><span class="answer-text">。”</span></div></div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="questions-list second-page-list">
+            <div class="question-item"><div class="question-text">16. 杜甫的《茅屋为秋风所破歌》中表达忧国忧民情怀的名句是什么？</div><div class="answer-line"><span class="answer-text">答：“</span><span class="blank-line"></span><span class="answer-text">，</span><span class="blank-line"></span><span class="answer-text">。”</span></div></div>
+            <div class="question-item"><div class="question-text">17. 白居易《赋得古原草送别》中赞美小草顽强生命力的名句是什么？</div><div class="answer-line"><span class="answer-text">答：“</span><span class="blank-line"></span><span class="answer-text">，</span><span class="blank-line"></span><span class="answer-text">。”</span></div></div>
+            <div class="question-item"><div class="question-text">18. 李商隐《无题》中表达坚贞爱情的名句是什么？</div><div class="answer-line"><span class="answer-text">答：“</span><span class="blank-line"></span><span class="answer-text">，</span><span class="blank-line"></span><span class="answer-text">。”</span></div></div>
+            <div class="question-item"><div class="question-text">19. 王勃的《送杜少府之任蜀州》中表达豁达送别之情的名句是什么？</div><div class="answer-line"><span class="answer-text">答：“</span><span class="blank-line"></span><span class="answer-text">，</span><span class="blank-line"></span><span class="answer-text">。”</span></div></div>
+            <div class="question-item"><div class="question-text">20. 唐诗中“游子思乡”主题的代表作有哪些？请举出一例。</div><div class="answer-line"><span class="answer-text">答：如</span><span class="blank-line"></span><span class="answer-text">的《</span><span class="blank-line"></span><span class="answer-text">》。</span></div></div>
+            <div class="question-item"><div class="question-text">21. 唐代诗歌的题材主要有哪些？</div><div class="answer-line"><span class="answer-text">答：</span><span class="blank-line"></span><span class="answer-text">、</span><span class="blank-line"></span><span class="answer-text">、</span><span class="blank-line"></span><span class="answer-text">、</span><span class="blank-line"></span><span class="answer-text">等。</span></div></div>
+            <div class="question-item"><div class="question-text">22. 唐诗在中国文学史上的地位是什么？</div><div class="answer-line"><span class="answer-text">答：唐诗是中国古典诗歌的</span><span class="blank-line"></span><span class="answer-text">。</span></div></div>
+            <div class="question-item"><div class="question-text">23. 《唐诗三百首》的编选宗旨是什么？</div><div class="answer-line"><span class="answer-text">答：“</span><span class="blank-line"></span><span class="answer-text">”。</span></div></div>
+            <div class="question-item"><div class="question-text">24. 唐诗的语言特点有哪些？</div><div class="answer-line"><span class="answer-text">答：</span><span class="blank-line"></span><span class="answer-text">、</span><span class="blank-line"></span><span class="answer-text">、</span><span class="blank-line"></span><span class="answer-text">。</span></div></div>
+            <div class="question-item"><div class="question-text">25. 为什么要熟读《唐诗三百首》？</div><div class="answer-line"><span class="answer-text">答：“</span><span class="blank-line"></span><span class="answer-text">”。</span></div></div>
+        </div>
+        <div class="part-title" style="margin-top: 0.3rem;">💭 二、分析题（共5题）</div>
+        <div class="questions-list second-page-list">
+            <div class="analysis-item"><div class="analysis-question">1. 请从李白和杜甫的诗歌中各选一首代表作，分析他们诗歌风格的不同。</div><div class="analysis-answer-area"><span class="analysis-label">答：</span></div></div>
+            <div class="analysis-item"><div class="analysis-question">2. 王维的山水诗“诗中有画”的特点体现在哪些方面？请结合具体诗句分析。</div><div class="analysis-answer-area"><span class="analysis-label">答：</span></div></div>
+            <div class="analysis-item"><div class="analysis-question">3. 边塞诗在唐诗中占有重要地位，请分析边塞诗常见的情感主题和艺术手法。</div><div class="analysis-answer-area"><span class="analysis-label">答：</span></div></div>
+            <div class="analysis-item"><div class="analysis-question">4. 《唐诗三百首》作为诗歌选本，为什么能流传至今并影响深远？</div><div class="analysis-answer-area"><span class="analysis-label">答：</span></div></div>
+            <div class="analysis-item"><div class="analysis-question">5. 请选择一首你最喜欢的唐诗，谈谈它给你的人生启示。</div><div class="analysis-answer-area"><span class="analysis-label">答：</span></div></div>
+        </div>
+    </div>
+</div>
+</body>

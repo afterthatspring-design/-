@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《唐诗三百首》选择题专练 | 50题 三面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.85rem 1.2rem;
+        }
+
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.7cm 1.1cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.3cm 1.1cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .q-item {
+                break-inside: avoid;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.15rem;
+        }
+        h1 {
+            font-size: 1.55rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.04rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #6a5c47;
+            margin-top: 0.05rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.66rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.1rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.18rem 0.65rem;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.6rem;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 0.2rem;
+        }
+        .q-item {
+            background: #fefcf8;
+            border-bottom: 0.5px solid #e2d9cc;
+            padding: 0.08rem 0.2rem 0.08rem 0.6rem;
+            line-height: 1.42;
+            font-size: 0.84rem;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- 第一面：第1-23题 -->
+    <div class="page">
+        <div class="main-title">
+            <h1>《唐诗三百首》选择题专练</h1>
+            <div class="subhead">蘅塘退士 · 诗歌选集典范 · 九年级上册必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">🔘 一、选择题（共50题 · 第一面 第1-23题）</div>
+        <div class="questions-list">
+            <div class="q-item">1. 《唐诗三百首》的编选者是谁？ A.蘅塘退士 B.沈德潜 C.王士禛 D.纪昀</div>
+            <div class="q-item">2. 蘅塘退士的原名是什么？ A.孙洙 B.孙星衍 C.孙诒让 D.孙殿起</div>
+            <div class="q-item">3. 《唐诗三百首》共选录了多少首诗？ A.约200首 B.约310首 C.约400首 D.约500首</div>
+            <div class="q-item">4. “诗仙”指的是谁？ A.李白 B.杜甫 C.王维 D.白居易</div>
+            <div class="q-item">5. “诗圣”指的是谁？ A.李白 B.杜甫 C.王维 D.李商隐</div>
+            <div class="q-item">6. “诗佛”指的是谁？ A.李白 B.杜甫 C.王维 D.孟浩然</div>
+            <div class="q-item">7. “七绝圣手”指的是谁？ A.王昌龄 B.王之涣 C.李白 D.杜牧</div>
+            <div class="q-item">8. “小李杜”指的是哪两位诗人？ A.李商隐、杜牧 B.李白、杜甫 C.李贺、杜牧 D.李商隐、杜甫</div>
+            <div class="q-item">9. 李白的诗歌风格是什么？ A.豪放飘逸 B.沉郁顿挫 C.平淡自然 D.含蓄朦胧</div>
+            <div class="q-item">10. 杜甫的诗歌风格是什么？ A.豪放飘逸 B.沉郁顿挫 C.平淡自然 D.含蓄朦胧</div>
+            <div class="q-item">11. 王维的诗歌风格是什么？ A.豪放飘逸 B.沉郁顿挫 C.诗中有画 D.通俗易懂</div>
+            <div class="q-item">12. 白居易的诗歌特点是什么？ A.语言通俗 B.深奥晦涩 C.华丽辞藻 D.格律严谨</div>
+            <div class="q-item">13. 李商隐的诗歌特点是什么？ A.含蓄朦胧 B.豪放飘逸 C.沉郁顿挫 D.平淡自然</div>
+            <div class="q-item">14. 孟浩然是什么诗派的代表？ A.山水田园诗派 B.边塞诗派 C.浪漫主义诗派 D.现实主义诗派</div>
+            <div class="q-item">15. 王昌龄以什么诗著称？ A.边塞诗 B.山水诗 C.田园诗 D.爱情诗</div>
+            <div class="q-item">16. 李白《行路难》中表达乐观自信、坚信理想终会实现的名句是？ A.长风破浪会有时，直挂云帆济沧海 B.安得广厦千万间，大庇天下寒士俱欢颜 C.独在异乡为异客，每逢佳节倍思亲 D.同是天涯沦落人，相逢何必曾相识</div>
+            <div class="q-item">17. 杜甫《春望》中写战乱中思念亲人、盼望家书的名句是？ A.烽火连三月，家书抵万金 B.无边落木萧萧下，不尽长江滚滚来 C.随风潜入夜，润物细无声 D.野火烧不尽，春风吹又生</div>
+            <div class="q-item">18. 王维《使至塞上》中描绘大漠壮丽景色的名句是？ A.大漠孤烟直，长河落日圆 B.明月松间照，清泉石上流 C.行到水穷处，坐看云起时 D.劝君更尽一杯酒，西出阳关无故人</div>
+            <div class="q-item">19. 白居易《赋得古原草送别》中赞美野草顽强生命力的名句是？ A.野火烧不尽，春风吹又生 B.离离原上草，一岁一枯荣 C.远芳侵古道，晴翠接荒城 D.又送王孙去，萋萋满别情</div>
+            <div class="q-item">20. 王勃《送杜少府之任蜀州》中表达深厚友情、天涯若比邻的名句是？ A.海内存知己，天涯若比邻 B.无为在歧路，儿女共沾巾 C.城阙辅三秦，风烟望五津 D.与君离别意，同是宦游人</div>
+            <div class="q-item">21. 崔颢《黄鹤楼》中写日暮时分乡愁涌上心头的名句是？ A.日暮乡关何处是，烟波江上使人愁 B.晴川历历汉阳树，芳草萋萋鹦鹉洲 C.昔人已乘黄鹤去，此地空余黄鹤楼 D.黄鹤一去不复返，白云千载空悠悠</div>
+            <div class="q-item">22. 王维《九月九日忆山东兄弟》中表达游子思乡怀亲的名句是？ A.独在异乡为异客，每逢佳节倍思亲 B.遥知兄弟登高处，遍插茱萸少一人 C.红豆生南国，春来发几枝 D.愿君多采撷，此物最相思</div>
+            <div class="q-item">23. 李白《将进酒》中表达人生得意须尽欢、莫使金樽空对月的名句是？ A.人生得意须尽欢，莫使金樽空对月 B.天生我材必有用，千金散尽还复来 C.君不见黄河之水天上来，奔流到海不复回 D.钟鼓馔玉不足贵，但愿长醉不愿醒</div>
+        </div>
+    </div>
+
+    <!-- 第二面：第24-43题 -->
+    <div class="page">
+        <div class="questions-list">
+            <div class="q-item">24. 杜甫《登高》中写秋天萧瑟、感慨身世飘零的名句是？ A.无边落木萧萧下，不尽长江滚滚来 B.风急天高猿啸哀，渚清沙白鸟飞回 C.万里悲秋常作客，百年多病独登台 D.艰难苦恨繁霜鬓，潦倒新停浊酒杯</div>
+            <div class="q-item">25. 王之涣《登鹳雀楼》中表达只有站得高才能看得远、积极进取的名句是？ A.欲穷千里目，更上一层楼 B.白日依山尽，黄河入海流 C.黄河远上白云间，一片孤城万仞山 D.羌笛何须怨杨柳，春风不度玉门关</div>
+            <div class="q-item">26. 张若虚《春江花月夜》被誉为什么？ A.孤篇横绝 B.绝句之冠 C.律诗之祖 D.乐府之冠</div>
+            <div class="q-item">27. 李商隐《无题》中表达对爱情坚贞不渝、至死方休的名句是？ A.春蚕到死丝方尽，蜡炬成灰泪始干 B.相见时难别亦难，东风无力百花残 C.昨夜星辰昨夜风，画楼西畔桂堂东 D.身无彩凤双飞翼，心有灵犀一点通</div>
+            <div class="q-item">28. 杜牧《泊秦淮》中借古讽今、讽刺晚唐统治者醉生梦死的名句是？ A.商女不知亡国恨，隔江犹唱后庭花 B.烟笼寒水月笼沙，夜泊秦淮近酒家 C.停车坐爱枫林晚，霜叶红于二月花 D.折戟沉沙铁未销，自将磨洗认前朝</div>
+            <div class="q-item">29. 陈子昂《登幽州台歌》中表达怀才不遇、孤独悲怆的名句是？ A.前不见古人，后不见来者 B.念天地之悠悠，独怆然而涕下 C.岁华尽摇落，芳意竟何成 D.迟迟白日晚，袅袅秋风生</div>
+            <div class="q-item">30. 杜甫《茅屋为秋风所破歌》中表现诗人忧国忧民情怀的名句是？ A.安得广厦千万间，大庇天下寒士俱欢颜 B.何时眼前突兀见此屋，吾庐独破受冻死亦足 C.八月秋高风怒号，卷我屋上三重茅 D.南村群童欺我老无力，忍能对面为盗贼</div>
+            <div class="q-item">31. 白居易《长恨歌》中表达对爱情永恒追求的名句是？ A.在天愿作比翼鸟，在地愿为连理枝 B.天长地久有时尽，此恨绵绵无绝期 C.回眸一笑百媚生，六宫粉黛无颜色 D.七月七日长生殿，夜半无人私语时</div>
+            <div class="q-item">32. 王维《山居秋暝》中描写雨后山间清幽景色的名句是？ A.明月松间照，清泉石上流 B.竹喧归浣女，莲动下渔舟 C.空山新雨后，天气晚来秋 D.随意春芳歇，王孙自可留</div>
+            <div class="q-item">33. 孟浩然《过故人庄》中描写田园风光的名句是？ A.绿树村边合，青山郭外斜 B.开轩面场圃，把酒话桑麻 C.故人具鸡黍，邀我至田家 D.待到重阳日，还来就菊花</div>
+            <div class="q-item">34. 王昌龄《出塞》中表达对名将的怀念、渴望边疆安定的名句是？ A.但使龙城飞将在，不教胡马度阴山 B.秦时明月汉时关，万里长征人未还 C.黄沙百战穿金甲，不破楼兰终不还 D.青海长云暗雪山，孤城遥望玉门关</div>
+            <div class="q-item">35. 岑参《白雪歌送武判官归京》中描写雪景奇丽的名句是？ A.忽如一夜春风来，千树万树梨花开 B.山回路转不见君，雪上空留马行处 C.北风卷地白草折，胡天八月即飞雪 D.瀚海阑干百丈冰，愁云惨淡万里凝</div>
+            <div class="q-item">36. 高适《别董大》中安慰友人、激励前行的名句是？ A.莫愁前路无知己，天下谁人不识君 B.千里黄云白日曛，北风吹雁雪纷纷 C.丈夫贫贱应未足，今日相逢无酒钱 D.六翮飘飖私自怜，一离京洛十余年</div>
+            <div class="q-item">37. 柳宗元《江雪》中刻画孤寂、高洁的渔翁形象的名句是？ A.孤舟蓑笠翁，独钓寒江雪 B.千山鸟飞绝，万径人踪灭 C.烟销日出不见人，欸乃一声山水绿 D.渔翁夜傍西岩宿，晓汲清湘燃楚竹</div>
+            <div class="q-item">38. 贾岛《寻隐者不遇》中表现隐者高深莫测的名句是？ A.只在此山中，云深不知处 B.松下问童子，言师采药去 C.鸟宿池边树，僧敲月下门 D.两句三年得，一吟双泪流</div>
+            <div class="q-item">39. 贺知章《回乡偶书》中表现久别回乡、感慨沧桑的名句是？ A.少小离家老大回，乡音无改鬓毛衰 B.儿童相见不相识，笑问客从何处来 C.离别家乡岁月多，近来人事半消磨 D.唯有门前镜湖水，春风不改旧时波</div>
+            <div class="q-item">40. 张继《枫桥夜泊》中描写夜泊愁绪的名句是？ A.姑苏城外寒山寺，夜半钟声到客船 B.月落乌啼霜满天，江枫渔火对愁眠 C.月落星稀天欲明，孤灯未灭梦难成 D.夜桥灯火连星汉，水郭帆樯近斗牛</div>
+            <div class="q-item">41. 杜牧《山行》中描写深秋山林景色的名句是？ A.停车坐爱枫林晚，霜叶红于二月花 B.远上寒山石径斜，白云生处有人家 C.千里莺啼绿映红，水村山郭酒旗风 D.南朝四百八十寺，多少楼台烟雨中</div>
+            <div class="q-item">42. 李贺《雁门太守行》中描写战争紧张气氛的名句是？ A.黑云压城城欲摧，甲光向日金鳞开 B.角声满天秋色里，半卷红旗临易水 C.报君黄金台上意，提携玉龙为君死 D.大漠沙如雪，燕山月似钩</div>
+            <div class="q-item">43. 孟郊《游子吟》中歌颂母爱伟大的名句是？ A.谁言寸草心，报得三春晖 B.慈母手中线，游子身上衣 C.临行密密缝，意恐迟迟归 D.萱草生堂阶，游子行天涯</div>
+        </div>
+    </div>
+
+    <!-- 第三面：第44-50题（第44题与第45-50题放在同一面） -->
+    <div class="page">
+        <div class="questions-list">
+            <div class="q-item">44. 杜甫被称为“诗史”，是因为？ A.他的诗记录了安史之乱的社会现实 B.他写过很多历史题材的诗 C.他研究历史 D.他精通历史</div>
+            <div class="q-item">45. 唐诗按体裁主要分为哪几类？ A.古诗、律诗、绝句、乐府 B.五言、七言、杂言 C.叙事诗、抒情诗、哲理诗 D.山水诗、边塞诗、咏史诗</div>
+            <div class="q-item">46. 五言律诗共有多少句？ A.4句 B.8句 C.10句 D.12句</div>
+            <div class="q-item">47. 七言绝句共有多少句？ A.4句 B.8句 C.10句 D.12句</div>
+            <div class="q-item">48. 律诗通常讲究什么？ A.平仄和对仗 B.押韵和意境 C.意象和情感 D.修辞和用典</div>
+            <div class="q-item">49. “熟读唐诗三百首，不会作诗也会吟”这句话说明了什么？ A.诵读的重要性 B.写诗很难 C.唐诗难懂 D.唐诗过时</div>
+            <div class="q-item">50. 《唐诗三百首》选诗的标准是什么？ A.脍炙人口、择其尤要者 B.高雅深奥 C.长篇巨制 D.格律严谨</div>
+        </div>
+    </div>
+</div>
+</body>

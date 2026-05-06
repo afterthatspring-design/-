@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《经典常谈》选择题专练 | 50题 正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1.2cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.5cm 1.2cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .q-item {
+                break-inside: avoid;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.2rem;
+        }
+        h1 {
+            font-size: 1.65rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.72rem;
+            color: #6a5c47;
+            margin-top: 0.08rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.15rem;
+            margin-top: 0.15rem;
+            margin-bottom: 0.55rem;
+        }
+
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.22rem 0.7rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.7rem;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.42rem;
+            margin-bottom: 0.3rem;
+        }
+        .q-item {
+            background: #fefcf8;
+            border-bottom: 0.5px solid #e2d9cc;
+            padding: 0.08rem 0.2rem 0.08rem 0.6rem;
+            line-height: 1.42;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <div class="page">
+        <div class="main-title">
+            <h1>《经典常谈》选择题专练</h1>
+            <div class="subhead">朱自清 · 经史子集入门津梁 · 八年级下册必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">🔘 一、选择题（共50题 · 第一面 第1-25题）</div>
+        <div class="questions-list">
+            <div class="q-item">1. 《经典常谈》的作者是谁？ A.朱自清 B.叶圣陶 C.胡适 D.梁启超</div>
+            <div class="q-item">2. 全书共多少篇？ A.10篇 B.13篇 C.15篇 D.8篇</div>
+            <div class="q-item">3. 全书按什么分类法分为四部分？ A.经史子集 B.甲乙丙丁 C.天地玄黄 D.礼乐射御</div>
+            <div class="q-item">4. 《经典常谈》介绍的第一部典籍是什么？ A.《周易》 B.《尚书》 C.《说文解字》 D.《诗经》</div>
+            <div class="q-item">5. 《说文解字》的作者是谁？ A.许慎 B.郑玄 C.孔颖达 D.段玉裁</div>
+            <div class="q-item">6. “六书”中属于造字法的是？ A.象形、指事 B.转注、假借 C.象形、指事、会意、形声 D.转注、假借、象形</div>
+            <div class="q-item">7. “六书”中属于用字法的是？ A.象形、指事 B.会意、形声 C.转注、假借 D.象形、转注</div>
+            <div class="q-item">8. 秦始皇统一文字的标准字体是？ A.隶书 B.甲骨文 C.小篆 D.楷书</div>
+            <div class="q-item">9. 相传八卦是谁画的？ A.周文王 B.孔子 C.伏羲 D.周公</div>
+            <div class="q-item">10. 《周易》又称为什么？ A.易经 B.书经 C.诗经 D.礼经</div>
+            <div class="q-item">11. “群经之首”指的是哪部书？ A.《诗经》 B.《尚书》 C.《周易》 D.《礼记》</div>
+            <div class="q-item">12. 《尚书》是什么体裁的史书？ A.编年体 B.纪传体 C.记言体 D.国别体</div>
+            <div class="q-item">13. 汉初传《尚书》29篇的是谁？ A.孔安国 B.伏生 C.司马迁 D.班固</div>
+            <div class="q-item">14. 清初辨伪《古文尚书》的学者是谁？ A.顾炎武 B.黄宗羲 C.阎若璩 D.王夫之</div>
+            <div class="q-item">15. 孔子用哪三个字概括《诗经》？ A.温柔敦厚 B.思无邪 C.兴观群怨 D.诗言志</div>
+            <div class="q-item">16. 《诗经》“六义”指？ A.风雅颂 B.赋比兴 C.风雅颂赋比兴 D.风雅颂比兴赋</div>
+            <div class="q-item">17. “三礼”不包括哪一部？ A.《周礼》 B.《仪礼》 C.《礼记》 D.《孝经》</div>
+            <div class="q-item">18. 《春秋》是什么体裁？ A.编年体 B.纪传体 C.国别体 D.记言体</div>
+            <div class="q-item">19. “春秋三传”中文学性最强的是？ A.《左传》 B.《公羊传》 C.《穀梁传》 D.《春秋繁露》</div>
+            <div class="q-item">20. “四书”不包括哪一部？ A.《大学》 B.《中庸》 C.《论语》 D.《孟子》 E.《孝经》</div>
+            <div class="q-item">21. 《大学》提出的修养次第最后一步是？ A.修身 B.齐家 C.治国 D.平天下</div>
+            <div class="q-item">22. 朱自清在史部重点介绍了哪三部书？ A.《史记》《汉书》《后汉书》 B.《战国策》《史记》《汉书》 C.《左传》《史记》《汉书》 D.《战国策》《左传》《史记》</div>
+            <div class="q-item">23. 《战国策》主要记述哪一家的主张？ A.儒家 B.纵横家 C.法家 D.道家</div>
+            <div class="q-item">24. 合纵派的代表人物是？ A.张仪 B.苏秦 C.孙膑 D.庞涓</div>
+            <div class="q-item">25. 连横派的代表人物是？ A.苏秦 B.张仪 C.公孙衍 D.甘茂</div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="questions-list">
+            <div class="q-item">26. 《史记》的作者是谁？ A.班固 B.司马迁 C.司马光 D.陈寿</div>
+            <div class="q-item">27. 《史记》是什么体史书？ A.编年体 B.纪传体通史 C.断代史 D.国别体</div>
+            <div class="q-item">28. 《史记》记载从什么时期到什么时期？ A.黄帝到汉武帝 B.尧舜到汉高祖 C.夏朝到汉朝 D.商朝到汉朝</div>
+            <div class="q-item">29. 《汉书》的作者是谁？ A.司马迁 B.班固 C.班昭 D.司马光</div>
+            <div class="q-item">30. 《汉书》是什么体史书？ A.纪传体通史 B.编年体 C.断代史 D.国别体</div>
+            <div class="q-item">31. 诸子百家争鸣主要发生在什么时期？ A.春秋 B.战国 C.秦汉 D.魏晋</div>
+            <div class="q-item">32. 孔子主张什么主义？ A.仁政 B.兼爱 C.正名 D.无为</div>
+            <div class="q-item">33. 孟子认为人性怎样？ A.善 B.恶 C.无善恶 D.有善有恶</div>
+            <div class="q-item">34. 荀子认为人性怎样？ A.善 B.恶 C.无善恶 D.有善有恶</div>
+            <div class="q-item">35. 墨家创始人主张什么？ A.仁政 B.非攻、兼爱 C.无为 D.法治</div>
+            <div class="q-item">36. 道家的创始人是？ A.孔子 B.孟子 C.老子 D.庄子</div>
+            <div class="q-item">37. 法家集大成者是谁？ A.商鞅 B.申不害 C.韩非 D.李斯</div>
+            <div class="q-item">38. 阴阳家邹衍提出什么学说？ A.五行相生 B.五德终始 C.阴阳平衡 D.天人合一</div>
+            <div class="q-item">39. 汉武帝时期谁提出“罢黜百家，独尊儒术”？ A.主父偃 B.公孙弘 C.董仲舒 D.司马迁</div>
+            <div class="q-item">40. 屈原的代表作是什么？ A.《九歌》 B.《离骚》 C.《天问》 D.《九章》</div>
+            <div class="q-item">41. 《离骚》开创了什么诗歌体裁？ A.楚辞 B.汉赋 C.乐府 D.律诗</div>
+            <div class="q-item">42. 汉乐府诗以什么为主？ A.抒情 B.叙事 C.写景 D.议论</div>
+            <div class="q-item">43. 五言诗奠定于哪个时代？ A.汉代 B.魏代 C.晋代 D.唐代</div>
+            <div class="q-item">44. 陶渊明开创了什么诗派？ A.山水诗 B.田园诗 C.边塞诗 D.咏史诗</div>
+            <div class="q-item">45. 唐代古文运动的倡导者是谁？ A.韩愈、柳宗元 B.欧阳修、苏轼 C.白居易、元稹 D.李白、杜甫</div>
+            <div class="q-item">46. 古文运动反对什么文体？ A.楚辞 B.骈文 C.乐府 D.律诗</div>
+            <div class="q-item">47. 宋代话本是什么小说的老祖宗？ A.文言小说 B.白话小说 C.章回小说 D.笔记小说</div>
+            <div class="q-item">48. 明代开始用什么文体取士？ A.策论 B.八股文 C.试帖诗 D.经义</div>
+            <div class="q-item">49. 新文化运动中胡适等人提倡什么？ A.文言文 B.白话文 C.桐城派 D.阳湖派</div>
+            <div class="q-item">50. 《经典常谈》的阅读顺序建议是？ A.四书→说文解字→诸子→史记→诗文 B.说文解字→四书→诸子→史记→诗文 C.诸子→说文解字→四书→史记→诗文 D.史记→说文解字→诸子→四书→诗文</div>
+        </div>
+    </div>
+</div>
+</body>

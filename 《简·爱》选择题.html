@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《简·爱》选择题专练 | 50题 正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1.2cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.5cm 1.2cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .q-item {
+                break-inside: avoid;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.2rem;
+        }
+        h1 {
+            font-size: 1.65rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.72rem;
+            color: #6a5c47;
+            margin-top: 0.08rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.15rem;
+            margin-top: 0.15rem;
+            margin-bottom: 0.55rem;
+        }
+
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.22rem 0.7rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.7rem;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.42rem;
+            margin-bottom: 0.3rem;
+        }
+        .q-item {
+            background: #fefcf8;
+            border-bottom: 0.5px solid #e2d9cc;
+            padding: 0.08rem 0.2rem 0.08rem 0.6rem;
+            line-height: 1.42;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <div class="page">
+        <div class="main-title">
+            <h1>《简·爱》选择题专练</h1>
+            <div class="subhead">夏洛蒂·勃朗特 · 女性独立宣言 · 九年级下册必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">🔘 一、选择题（共50题 · 第一面 第1-25题）</div>
+        <div class="questions-list">
+            <div class="q-item">1. 《简·爱》的作者是谁？ A.夏洛蒂·勃朗特 B.艾米莉·勃朗特 C.安妮·勃朗特 D.简·奥斯汀</div>
+            <div class="q-item">2. 作者是哪国人？ A.英国 B.法国 C.德国 D.美国</div>
+            <div class="q-item">3. 《简·爱》是一部什么体裁的小说？ A.自传体 B.书信体 C.日记体 D.游记体</div>
+            <div class="q-item">4. 简·爱父母双亡后被寄养在谁家？ A.舅舅家 B.舅妈家 C.姨妈家 D.姑妈家</div>
+            <div class="q-item">5. 简·爱在盖茨黑德府受谁欺辱？ A.表兄约翰 B.表姐乔治娜 C.舅妈里德太太 D.以上都是</div>
+            <div class="q-item">6. 简·爱被送往哪所学校？ A.洛伍德学校 B.桑菲尔德学校 C.沼泽山庄学校 D.盖茨黑德学校</div>
+            <div class="q-item">7. 简·爱在洛伍德学校的好友是谁？ A.海伦·彭斯 B.玛丽亚 C.特蕾莎 D.伊丽莎</div>
+            <div class="q-item">8. 海伦·彭斯因什么病去世？ A.伤寒 B.肺病 C.疟疾 D.痢疾</div>
+            <div class="q-item">9. 简·爱在洛伍德学校度过了多少年？ A.六年 B.七年 C.八年 D.九年</div>
+            <div class="q-item">10. 简·爱毕业后去了哪里担任家庭教师？ A.桑菲尔德庄园 B.盖茨黑德府 C.沼泽山庄 D.洛伍德学校</div>
+            <div class="q-item">11. 桑菲尔德庄园的主人是谁？ A.罗切斯特 B.圣约翰 C.布兰奇 D.梅森</div>
+            <div class="q-item">12. 罗切斯特的性格特点是什么？ A.傲慢却真诚 B.懦弱无能 C.冷酷无情 D.自私自利</div>
+            <div class="q-item">13. 简·爱与罗切斯特的爱情建立在什么基础上？ A.金钱 B.地位 C.精神契合 D.外貌</div>
+            <div class="q-item">14. 简·爱与罗切斯特婚礼上谁揭露了罗切斯特已有妻子？ A.梅森 B.布兰奇 C.圣约翰 D.里德太太</div>
+            <div class="q-item">15. 罗切斯特的妻子叫什么名字？ A.伯莎·梅森 B.布兰奇·英格拉姆 C.乔治娜·里德 D.伊丽莎·里德</div>
+            <div class="q-item">16. 伯莎·梅森是一个怎样的人？ A.疯女人 B.善良的女人 C.聪明的女人 D.美丽的女人</div>
+            <div class="q-item">17. 简·爱得知真相后为什么离开桑菲尔德？ A.为了维护尊严 B.不爱罗切斯特 C.害怕 D.追求财富</div>
+            <div class="q-item">18. 简·爱离开桑菲尔德后流落到哪里？ A.沼泽山庄 B.盖茨黑德 C.洛伍德 D.伦敦</div>
+            <div class="q-item">19. 谁收留了流浪的简·爱？ A.圣约翰·里弗斯 B.罗切斯特 C.里德太太 D.布兰奇</div>
+            <div class="q-item">20. 圣约翰是什么职业？ A.牧师 B.教师 C.律师 D.医生</div>
+            <div class="q-item">21. 圣约翰向简·爱提出了什么请求？ A.嫁给他去印度传教 B.做他的管家 C.做他的秘书 D.做他的学生</div>
+            <div class="q-item">22. 简·爱为什么拒绝圣约翰的求婚？ A.没有爱情 B.不爱他 C.不喜欢传教 D.家人反对</div>
+            <div class="q-item">23. 简·爱后来发现自己与圣约翰是什么关系？ A.表兄妹 B.亲兄妹 C.堂兄妹 D.无血缘关系</div>
+            <div class="q-item">24. 简·爱继承了多少遗产？ A.五千英镑 B.一万英镑 C.两万英镑 D.三万英镑</div>
+            <div class="q-item">25. 简·爱回到桑菲尔德时发现庄园发生了什么？ A.被烧毁 B.被扩建 C.被卖掉 D.依旧如故</div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="questions-list">
+            <div class="q-item">26. 罗切斯特在火灾中怎么了？ A.失明、残废 B.死亡 C.失踪 D.安然无恙</div>
+            <div class="q-item">27. 伯莎·梅森最后怎样了？ A.放火后身亡 B.被救出 C.逃走了 D.病死了</div>
+            <div class="q-item">28. 简·爱和罗切斯特重逢后，两人怎么了？ A.幸福地在一起 B.分开了 C.成为朋友 D.成为陌生人</div>
+            <div class="q-item">29. 简·爱最著名的宣言是什么？ A.“我们是平等的” B.“我爱他” C.“我恨你” D.“我要自由”</div>
+            <div class="q-item">30. “红房子”事件有什么象征意义？ A.压抑和恐惧 B.幸福和快乐 C.自由和希望 D.爱情和梦想</div>
+            <div class="q-item">31. 海伦·彭斯对简·爱产生了什么影响？ A.教会她忍耐和宽容 B.教会她反抗 C.教会她仇恨 D.教会她逃避</div>
+            <div class="q-item">32. 简·爱的人生经历了哪几个重要地点？ A.盖茨黑德、洛伍德、桑菲尔德、沼泽山庄 B.伦敦、巴黎、纽约、罗马 C.盖茨黑德、伦敦、巴黎、罗马 D.洛伍德、桑菲尔德、伦敦、巴黎</div>
+            <div class="q-item">33. 《简·爱》采用了什么叙事视角？ A.第一人称 B.第二人称 C.第三人称 D.上帝视角</div>
+            <div class="q-item">34. 小说中哥特式元素包括什么？ A.神秘笑声、火灾、阁楼疯女人 B.鬼魂、诅咒、魔法 C.巫术、预言、幻象 D.怪兽、精灵、仙女</div>
+            <div class="q-item">35. 简·爱这个人物形象有什么时代意义？ A.女性独立意识的象征 B.贵族小姐的典范 C.家庭主妇的代表 D.社会名流的榜样</div>
+            <div class="q-item">36. 罗切斯特假装与谁结婚来试探简·爱？ A.布兰奇·英格拉姆 B.乔治娜·里德 C.伊丽莎·里德 D.玛丽亚</div>
+            <div class="q-item">37. 简·爱在盖茨黑德府第一次反抗时被关在哪里？ A.红房子 B.地下室 C.阁楼 D.花园</div>
+            <div class="q-item">38. 洛伍德学校的校长是谁？ A.布罗克赫斯特 B.里德先生 C.罗切斯特 D.圣约翰</div>
+            <div class="q-item">39. 布罗克赫斯特是个怎样的人？ A.伪君子 B.善良的人 C.正直的人 D.慷慨的人</div>
+            <div class="q-item">40. 简·爱在桑菲尔德庄园听见的神秘笑声是谁发出的？ A.伯莎·梅森 B.格蕾丝·普尔 C.罗切斯特 D.布兰奇</div>
+            <div class="q-item">41. 罗切斯特的疯妻被关在庄园的什么地方？ A.阁楼 B.地下室 C.花园 D.马厩</div>
+            <div class="q-item">42. 谁在半夜放火烧了罗切斯特的床？ A.伯莎·梅森 B.简·爱 C.格蕾丝·普尔 D.罗切斯特自己</div>
+            <div class="q-item">43. 简·爱回到桑菲尔德后，罗切斯特的眼睛怎么样了？ A.一只眼睛复明 B.完全复明 C.仍然失明 D.更加严重</div>
+            <div class="q-item">44. 简·爱和罗切斯特有几个孩子？ A.一个儿子 B.一个女儿 C.两个孩子 D.没有孩子</div>
+            <div class="q-item">45. 简·爱的舅妈临终前做了什么？ A.向简·爱忏悔 B.把财产留给简·爱 C.诅咒简·爱 D.原谅简·爱</div>
+            <div class="q-item">46. 简·爱原谅了谁？ A.里德太太 B.布罗克赫斯特 C.圣约翰 D.罗切斯特</div>
+            <div class="q-item">47. 圣约翰最后去了哪里？ A.印度传教 B.非洲传教 C.美洲传教 D.欧洲传教</div>
+            <div class="q-item">48. 《简·爱》的艺术特色是什么？ A.第一人称叙事、心理描写、哥特元素 B.多视角叙事、象征主义、现实主义 C.意识流、荒诞派、黑色幽默 D.史诗风格、寓言体、神话色彩</div>
+            <div class="q-item">49. 勃朗特三姐妹的作品还包括？ A.《呼啸山庄》《艾格妮丝·格雷》 B.《傲慢与偏见》《理智与情感》 C.《德伯家的苔丝》《无名的裘德》 D.《蝴蝶梦》《牙买加客栈》</div>
+            <div class="q-item">50. 《简·爱》最后的结局是什么？ A.简·爱与罗切斯特幸福地生活在一起 B.简·爱与圣约翰结婚 C.简·爱孤独终老 D.简·爱回到洛伍德</div>
+        </div>
+    </div>
+</div>
+</body>

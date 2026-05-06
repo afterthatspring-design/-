@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《水浒传》深度解读 | 施耐庵·英雄传奇 | 九年级上册必读名著</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.2cm 1cm;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 0.12rem;
+        }
+        h1 {
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.72rem;
+            color: #333;
+            margin-top: 0.05rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #555;
+            border-top: 1px dashed #ccc;
+            padding-top: 0.12rem;
+            margin-top: 0.12rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .section {
+            margin: 0.65rem 0 0.55rem;
+        }
+        .section-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            background: #eee;
+            padding: 0.14rem 0.7rem;
+            border-left: 5px solid #999;
+            margin-bottom: 0.42rem;
+        }
+        .subsection {
+            margin: 0.48rem 0 0.38rem 0.6rem;
+        }
+        .subsection-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 0.18rem;
+            border-left: 3px solid #aaa;
+            padding-left: 0.45rem;
+        }
+        .compact-p {
+            font-size: 0.84rem;
+            line-height: 1.52;
+            margin-bottom: 0.38rem;
+            text-align: justify;
+            color: #000;
+        }
+        .inline-item {
+            font-size: 0.84rem;
+            line-height: 1.52;
+            margin-bottom: 0.34rem;
+            text-align: justify;
+            color: #000;
+        }
+        .highlight-box {
+            background: #f9f9f9;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            margin: 0.55rem 0;
+            border: 1px solid #ddd;
+        }
+        .highlight-box .compact-p {
+            margin-bottom: 0.24rem;
+        }
+        .book-list-compact {
+            background: #f9f9f9;
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+        }
+        .quote-line {
+            font-style: italic;
+            color: #000;
+            background: #f5f5f5;
+            padding: 0.2rem 0.8rem;
+            border-left: 4px solid #aaa;
+            margin: 0.2rem 0;
+            font-size: 0.81rem;
+            line-height: 1.38;
+        }
+        strong {
+            color: #000;
+            font-weight: 700;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        li {
+            font-size: 0.82rem;
+            line-height: 1.44;
+            margin-bottom: 0.18rem;
+            color: #000;
+        }
+
+        /* 考点两列布局 */
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none;
+            padding-left: 0;
+        }
+        .two-columns li {
+            width: 48%;
+            margin-bottom: 0.26rem;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 1rem;
+            color: #000;
+        }
+        .two-columns li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000;
+        }
+        .two-columns li strong {
+            display: inline-block;
+            color: #000;
+        }
+        @media (max-width: 800px) {
+            .two-columns li {
+                width: 48%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面 ================= -->
+    <div class="main-title">
+        <h1>水浒传</h1>
+        <div class="subhead">施耐庵 · 英雄传奇 · 九年级上册必读名著</div>
+        <div class="author-line">施耐庵 著 | 九年级上册语文必读名著 · 深度解读 | 锦水微澜教育工作室 黄国荣 编制</div>
+    </div>
+
+    <div class="highlight-box">
+        <strong>📖 编撰说明</strong><br>
+        《水浒传》是中国古典四大名著之一，元末明初施耐庵创作的长篇章回体英雄传奇小说。全书以“官逼民反”为主题，描写了108位好汉因不堪压迫聚义梁山、替天行道的故事，塑造了宋江、武松、林冲、鲁智深等经典形象。本文根据原著及权威资料整理，系统梳理内容梗概、人物谱系、主题思想、艺术特色及中考考点。
+    </div>
+
+    <!-- 一、作者简介 -->
+    <div class="section">
+        <div class="section-title">✍️ 一、作者简介</div>
+        <div class="compact-p"><strong>施耐庵</strong>（约1296—1370），元末明初小说家，兴化（今江苏泰州）人。传说其为元至顺年间进士，曾参与张士诚起义，后隐居著书。《水浒传》是其代表作，一说与罗贯中合著。小说以北宋末年宋江起义为蓝本，结合民间话本、戏曲创作而成，是中国古典长篇小说的里程碑。</div>
+    </div>
+
+    <!-- 二、内容梗概 · 官逼民反 -->
+    <div class="section">
+        <div class="section-title">📖 二、内容梗概 · 官逼民反</div>
+        <div class="compact-p">全书可分三大部分：</div>
+        <div class="subsection"><div class="subsection-title">⚔️ 众好汉被逼上梁山（第1-71回）</div><div class="compact-p">林冲因妻被高衙内调戏，误入白虎堂刺配沧州，风雪山神庙后逼上梁山；武松景阳冈打虎后为兄报仇血溅鸳鸯楼；鲁智深拳打镇关西后落发为僧。各路英雄因不同原因聚义梁山，“替天行道”。</div></div>
+        <div class="subsection"><div class="subsection-title">🏮 梁山聚义排座次（第72-82回）</div><div class="compact-p">宋江继任梁山寨主，一百单八将排定座次，打出“替天行道”大旗，两赢童贯、三败高俅，梁山事业达到顶峰。</div></div>
+        <div class="subsection"><div class="subsection-title">📜 招安与悲剧结局（第83-100回）</div><div class="compact-p">宋江力主招安，率梁山好汉奉命征讨方腊，死伤大半。最终宋江、卢俊义被奸臣毒死，吴用、花荣自缢，梁山事业烟消云散。</div></div>
+    </div>
+
+    <!-- 三、核心人物谱系（详细展开） -->
+    <div class="section">
+        <div class="section-title">👥 三、核心人物谱系</div>
+        <div class="compact-p"><strong>宋江</strong>：梁山首领，绰号“及时雨”“呼保义”。他仗义疏财、礼贤下士，被众好汉推崇。但他性格中“忠君”思想根深蒂固，最终力主招安，导致梁山悲剧。其形象既有领袖魅力，也有封建思想的局限。</div>
+        <div class="compact-p"><strong>武松</strong>：梁山第十四位好汉，绰号“行者”。景阳冈打虎威震天下，斗杀西门庆、血溅鸳鸯楼、醉打蒋门神，是全书最富传奇色彩的好汉。他武艺高强、有勇有谋、快意恩仇，是“勇”与“义”的化身。</div>
+        <div class="compact-p"><strong>林冲</strong>：梁山第六位好汉，绰号“豹子头”。原是八十万禁军教头，因妻子被高衙内调戏，一再忍让，最终被逼上梁山。他代表“官逼民反”中最具典型性的受害者形象，从逆来顺受到奋起反抗，性格发展鲜明。</div>
+        <div class="compact-p"><strong>鲁智深</strong>：梁山第十三位好汉，绰号“花和尚”。拳打镇关西、倒拔垂杨柳、大闹野猪林，他粗中有细、豪爽仗义，是梁山好汉中“路见不平一声吼”的典型代表，最终在六和寺圆寂，是唯一得到善终的主要人物。</div>
+        <div class="compact-p"><strong>李逵</strong>：梁山第二十二位好汉，绰号“黑旋风”。他率真莽撞、忠诚勇猛，对宋江忠心耿耿，是梁山“快意恩仇”精神的极端体现。他反对招安，得知宋江被毒死后宁愿同死，令人唏嘘。</div>
+        <div class="compact-p"><strong>吴用</strong>：梁山第三位好汉，绰号“智多星”。足智多谋，是梁山的军师，智取生辰纲、计赚卢俊义等皆出其谋，代表了梁山好汉的智慧力量。</div>
+        <div class="compact-p"><strong>燕青</strong>：梁山第三十六位好汉，绰号“浪子”。忠心救主、智扑擎天柱，文武双全，最后功成身退，是梁山结局中少有的清醒者。</div>
+    </div>
+
+    <!-- 手动分页确保：第四部分从第二面开始 -->
+    <div style="page-break-before: avoid; break-before: page;"></div>
+
+    <!-- ================= 第二面 ================= -->
+    <!-- 四、主题思想 -->
+    <div class="section">
+        <div class="section-title">💡 四、主题思想</div>
+        <div class="highlight-box">
+            <div class="compact-p"><strong>“官逼民反”的社会批判</strong>：小说深刻揭示了封建统治阶级的腐败和黑暗——高俅、蔡京等奸臣当道，林冲、武松等好汉被迫反抗，表达了“官逼民反，民不得不反”的必然逻辑。</div>
+            <div class="compact-p"><strong>“替天行道”的正义理想</strong>：梁山好汉打出“替天行道”的旗帜，劫富济贫、铲除奸恶，反映了人民群众对公平正义的渴望。</div>
+            <div class="compact-p"><strong>招安悲剧与忠义困境</strong>：宋江的招安选择导致梁山事业覆灭，深刻揭示了“忠”与“义”的内在矛盾——对君主的忠与对兄弟的义难以两全，是封建时代英雄的宿命悲剧。</div>
+            <div class="compact-p"><strong>英雄主义的颂歌与反思</strong>：小说歌颂了草莽英雄的反抗精神和手足情谊，同时也反思了暴力、招安等复杂问题，给读者留下深刻思考。</div>
+        </div>
+    </div>
+
+    <!-- 五、艺术特色 -->
+    <div class="section">
+        <div class="section-title">🎨 五、艺术特色</div>
+        <div class="inline-item"><strong>人物塑造的个性化</strong>：一百单八将各有绰号、出身、性格，鲁智深的豪爽、林冲的隐忍、李逵的莽撞、武松的刚烈，同中有异，异中有同，开创了英雄群像塑造的典范。</div>
+        <div class="inline-item"><strong>章回体结构与连环叙事</strong>：采用“分—合—分”的大结构——好汉各自被逼上山（分），梁山聚义（合），招安后分散凋零（分）。以人物传记式开篇（如“武松十回”“林冲十回”）串联全篇。</div>
+        <div class="inline-item"><strong>白话文学的语言高峰</strong>：小说语言通俗生动，人物对话个性化，如李逵的粗直、吴用的机巧，达到了古代白话小说的成熟阶段。</div>
+        <div class="inline-item"><strong>对比与烘托手法</strong>：通过不同人物的对比（如林冲的忍与鲁智深的烈）塑造性格，通过细节描写烘托气氛（如“林教头风雪山神庙”的环境描写）。</div>
+    </div>
+
+    <!-- 六、经典情节与名句 -->
+    <div class="section">
+        <div class="section-title">📜 六、经典情节与名句</div>
+        <div class="quote-line">“赤日炎炎似火烧，野田禾稻半枯焦。” —— 智取生辰纲（白胜）</div>
+        <div class="quote-line">“杀人须见血，救人须救彻。” —— 鲁智深</div>
+        <div class="quote-line">“身在山东心在吴，飘蓬江海漫嗟吁。” —— 宋江</div>
+        <div class="compact-p" style="margin-top:0.3rem;"><strong>经典情节：</strong>鲁提辖拳打镇关西、林教头风雪山神庙、吴用智取生辰纲、景阳冈武松打虎、潘金莲药鸩武大郎、醉打蒋门神、血溅鸳鸯楼、大闹野猪林、三打祝家庄等。“风雪山神庙”集中表现了林冲从忍辱到反抗的心理转变，是必考重点；“智取生辰纲”体现了梁山好汉的集体智慧。</div>
+    </div>
+
+    <!-- 七、中考考点速记（两列布局） -->
+    <div class="section">
+        <div class="section-title">📚 七、中考考点速记</div>
+        <div class="book-list-compact">
+            <ul class="two-columns">
+                <li><strong>作者</strong>：施耐庵（元末明初）</li>
+                <li><strong>体裁</strong>：英雄传奇/章回体长篇小说</li>
+                <li><strong>主线</strong>：官逼民反，梁山聚义</li>
+                <li><strong>核心人物</strong>：宋江、武松、林冲、鲁智深、李逵</li>
+                <li><strong>人物绰号</strong>：及时雨宋江、智多星吴用、豹子头林冲等</li>
+                <li><strong>经典情节</strong>：武松打虎、林冲风雪山神庙、智取生辰纲</li>
+                <li><strong>主题</strong>：官逼民反、替天行道、招安悲剧</li>
+                <li><strong>招安结局</strong>：宋江力主招安，征方腊死伤大半</li>
+                <li><strong>艺术特色</strong>：人物个性化、白话语言、连环叙事</li>
+                <li><strong>地位</strong>：四大名著之一，英雄传奇代表作</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 八、深度思考 · 经典的意义 -->
+    <div class="section">
+        <div class="section-title">💭 八、深度思考 · 经典的意义</div>
+        <div class="compact-p">《水浒传》的魅力在于它塑造了一群有血有肉的草莽英雄。他们不是完人——武松血溅鸳鸯楼时滥杀无辜，李逵动辄砍人，宋江的招安选择也备受争议。但正是这些“不完美”，让他们更加真实。鲁迅曾说：“一部《水浒》，说得很分明：因为不反对天子，所以大军一到，便受招安，替国家打别的强盗——不‘替天行道’的强盗去了。终于是奴才。”这深刻揭示了梁山悲剧的根源。今天我们读《水浒传》，既要感受“路见不平一声吼”的英雄气概，也要思考：什么是真正的正义？反抗与妥协的边界在哪里？这也许才是这部古典名著留给现代读者最珍贵的精神财富。</div>
+    </div>
+
+</div>
+</body>

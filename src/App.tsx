@@ -85,13 +85,17 @@ const Logo = ({ className = "" }: { className?: string }) => (
   </div>
 );
 
-type ViewState = 'main' | 'books' | 'book-detail' | 'resource-navigator';
+type ViewState = 'main' | 'books' | 'book-detail' | 'resource-navigator' | 'file-viewer' | 'book-file-navigator';
 type BookSubView = 'index' | 'choice' | 'fill-blank' | 'short-answer' | 'interpretation' | 'answer' | 'all';
 
 export default function App() {
   const [view, setView] = useState<ViewState>('main');
   const [subView, setSubView] = useState<BookSubView>('index');
   const [selectedBook, setSelectedBook] = useState<string>('');
+  const [selectedFile, setSelectedFile] = useState<string | null>(null);
+  const [previousView, setPreviousView] = useState<ViewState | null>(null);
+  const [selectedBookFiles, setSelectedBookFiles] = useState<any>(null);
+  const [selectedBookMeta, setSelectedBookMeta] = useState<any>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Handle scroll to top on view change
@@ -118,6 +122,93 @@ export default function App() {
     { name: '课题研究', id: 'research' },
   ];
 
+  const navigateTo = (newView: ViewState) => {
+    setPreviousView(view);
+    setView(newView);
+  };
+
+  // 内置多文件导航预览 (父亲的精调版专用)
+  if (view === 'book-file-navigator' && selectedBookMeta) {
+    return (
+      <div className="min-h-screen bg-paper font-serif relative">
+        <div className="absolute inset-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/soft-wallpaper.png')] opacity-10 mix-blend-multiply" />
+        
+        {/* Navigator Nav */}
+        <nav className="sticky top-0 z-50 bg-paper/95 backdrop-blur-md border-b border-gold/20 px-6 py-4 flex justify-between items-center shadow-lg no-print">
+          <div className="flex items-center gap-6">
+            <button 
+              onClick={() => setView('resource-navigator')}
+              className="text-gold hover:text-cinnabar transition-all p-2 border border-gold hover:border-cinnabar rounded-full"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <span className="font-bold tracking-widest text-ink text-base hidden md:inline">《{selectedBookMeta.title}》父亲精调预览页</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <button onClick={() => setView('main')} className="text-base font-bold text-ink hover:text-cinnabar transition-colors">工作室首页</button>
+          </div>
+        </nav>
+
+        <div className="max-w-5xl mx-auto px-6 py-12 relative z-10">
+          <BookFileNavigator 
+            meta={selectedBookMeta} 
+            files={selectedBookFiles} 
+            onFileSelect={(file) => {
+              setSelectedFile(file);
+              setView('file-viewer');
+            }} 
+          />
+        </div>
+
+        <footer className="py-12 text-center text-sm text-gold font-bold opacity-60 border-t border-border-gold/20 no-print">
+          锦水微澜名师工作室 · 特供版资源
+        </footer>
+      </div>
+    );
+  }
+
+  // 内置文件阅读器处理
+  if (view === 'file-viewer' && selectedFile) {
+    return (
+      <div className="fixed inset-0 bg-white z-[100] flex flex-col font-sans">
+        <header className="h-16 border-b flex items-center justify-between px-6 bg-slate-50 shrink-0 shadow-sm z-10">
+          <div className="flex items-center gap-3">
+            <button 
+              onClick={() => {
+                if (selectedBookFiles) {
+                  setView('book-file-navigator');
+                } else {
+                  setView('resource-navigator');
+                }
+                setSelectedFile(null);
+              }} 
+              className="p-2 hover:bg-slate-200 rounded-full transition-colors text-ink"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <span className="font-bold text-ink tracking-widest uppercase text-sm md:text-base">精调打印预览版</span>
+          </div>
+          <button 
+            onClick={() => window.print()} 
+            className="flex items-center gap-2 bg-ink text-white px-4 py-2 rounded-lg hover:bg-cinnabar transition-all font-bold text-sm shadow-md"
+          >
+            <Printer className="w-4 h-4" />
+            立即打印
+          </button>
+        </header>
+        <div className="flex-1 w-full overflow-hidden bg-paper-dark p-2 md:p-8 flex justify-center">
+          <div className="w-full max-w-5xl h-full shadow-2xl bg-white rounded-lg overflow-hidden border border-border-gold/30">
+            <iframe 
+              src={`/${selectedFile}`} 
+              className="w-full h-full border-0"
+              title="Print Preview"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (view === 'resource-navigator') {
     return (
       <div className="min-h-screen bg-paper font-serif relative">
@@ -140,7 +231,19 @@ export default function App() {
         </nav>
 
         <div className="max-w-[1400px] mx-auto px-4 py-8 relative z-10">
-          <ResourceNavigator onBookSelect={(id) => { setSelectedBook(id); setView('book-detail'); setSubView('index'); }} />
+          <ResourceNavigator 
+            onBookSelect={(id) => { setSelectedBook(id); setView('book-detail'); setSubView('index'); }} 
+            onFileSelect={(file) => { 
+                setSelectedBookFiles(null); // 清空多文件状态，确保返回资源列表
+                setSelectedFile(file); 
+                setView('file-viewer'); 
+            }}
+            onMultiFileSelect={(meta, files) => { 
+              setSelectedBookMeta(meta); 
+              setSelectedBookFiles(files); 
+              setView('book-file-navigator'); 
+            }}
+          />
         </div>
 
         <footer className="py-12 text-center text-sm text-gold font-bold opacity-60 border-t border-border-gold/20 no-print">
@@ -215,31 +318,31 @@ export default function App() {
             </motion.div>
             
             <motion.div variants={itemVariants} className="divide-y divide-border-gold/20 bg-white/40 backdrop-blur-md p-4 md:p-10 border border-border-gold shadow-2xl">
-              <BookRow 
-                title="《钢铁是怎样炼成的》" 
-                author="奥斯特洛夫斯基" 
-                type="理想信念" 
-                desc="一部鼓舞了数代人的红色经典，探索生命的意义。" 
-                onSelect={() => { setSelectedBook('gangtie'); setView('book-detail'); setSubView('index'); }}
-              />
-              <BookRow 
-                title="《朝花夕拾》" 
-                author="鲁迅" 
-                type="温情回忆" 
-                desc="在成年后的傍晚，重新拾起少年时代美好的花瓣。" 
-                onSelect={() => { setSelectedBook('zhaohua'); setView('book-detail'); setSubView('index'); }}
-              />
-              <BookRow 
-                title="《海底两万里》" 
-                author="儒勒·凡尔纳" 
-                type="科学幻想" 
-                desc="在深邃的海底，开启一场跨越两万公里的奇幻探险。" 
-                onSelect={() => { setSelectedBook('haidi'); setView('book-detail'); setSubView('index'); }}
-              />
-              <BookRow title="《西游记》" author="吴承恩" type="古典精粹" desc="奇幻浪漫的史诗，中国古典神魔小说的巅峰。" />
-              <BookRow title="《骆驼祥子》" author="老舍" type="现实主义" desc="旧北京的人力车夫，个人奋斗与社会悲剧的交织。" />
-              <BookRow title="《红岩》" author="罗广斌 / 杨益言" type="革命豪情" desc="不朽的烈士丰碑，江姐、许云峰的英勇壮举。" />
-              <BookRow title="《水浒传》" author="施耐庵" type="英雄传奇" desc="替天行道，一百零八位草莽英雄的聚散离合。" />
+              {RESOURCES_DATA.classics.map((item, idx) => (
+                <BookRow 
+                  key={idx}
+                  title={`《${item.title}》`}
+                  author={Array.isArray(item.tags) ? item.tags[0] : ""}
+                  type={item.tags?.[1] || "经典"}
+                  desc={item.desc}
+                  onSelect={() => {
+                    const classicItem = item as any;
+                    if (classicItem.files) {
+                      setSelectedBookMeta(classicItem);
+                      setSelectedBookFiles(classicItem.files);
+                      setView('book-file-navigator');
+                    } else if (classicItem.file) {
+                      setSelectedBookFiles(null);
+                      setSelectedFile(classicItem.file);
+                      setView('file-viewer');
+                    } else if (classicItem.bookId) {
+                      setSelectedBook(classicItem.bookId);
+                      setView('book-detail');
+                      setSubView('index');
+                    }
+                  }}
+                />
+              ))}
             </motion.div>
           </motion.div>
         </div>
@@ -461,7 +564,91 @@ export default function App() {
   );
 }
 
-function ResourceNavigator({ onBookSelect }: { onBookSelect?: (id: string) => void }) {
+function BookFileNavigator({ meta, files, onFileSelect }: { meta: any, files: any, onFileSelect: (file: string) => void }) {
+  const sections = [
+    { key: 'choice', title: '选择题', sub: '自动留白 · 适合单面打印', color: 'bg-red-700', icon: <FileText className="w-6 h-6" /> },
+    { key: 'fillBlank', title: '填空题', sub: '基础巩固 · 考点直击', color: 'bg-teal-600', icon: <PenTool className="w-6 h-6" /> },
+    { key: 'shortAnswer', title: '简答与分析', sub: '主观题专项 · 预设书写位', color: 'bg-amber-600', icon: <GraduationCap className="w-6 h-6" /> },
+    { key: 'interpretation', title: '深度文化导读', sub: '作者背景 · 主题梳理', color: 'bg-blue-700', icon: <BookOpen className="w-6 h-6" /> },
+  ];
+
+  return (
+    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      {/* Header Section from Screenshot */}
+      <div className="overflow-hidden relative rounded-xl p-8 md:p-16 text-center text-white shadow-2xl bg-[#1e3a8a]">
+        <div className="absolute top-4 right-8 text-6xl md:text-9xl font-serif opacity-10 select-none">
+          {meta.title.slice(0, 1)}
+        </div>
+        <div className="relative z-10">
+          <div className="w-20 h-28 md:w-28 md:h-36 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center text-4xl md:text-5xl mb-6 md:mb-10 mx-auto shadow-2xl shadow-black/20">
+            {meta.icon}
+          </div>
+          <h1 className="text-3xl md:text-6xl font-bold tracking-[0.2em] md:tracking-[0.4em] mb-6 md:mb-8 font-serif">{meta.title}</h1>
+          <p className="text-white/70 text-sm md:text-lg tracking-widest mb-10 md:mb-12">
+            {Array.isArray(meta.tags) ? meta.tags.join(' · ') : meta.tags} · 必读名著
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-4xl mx-auto">
+            {Object.keys(files).map((key) => {
+              const labels: Record<string, string> = {
+                interpretation: '深度解读',
+                choice: '选择题 50题',
+                fillBlank: '填空题 50空',
+                shortAnswer: '简答题 25题',
+                answer: '答案详解',
+                all: '一键全印'
+              };
+              if (!labels[key]) return null;
+              return (
+                <button 
+                  key={key}
+                  onClick={() => onFileSelect(files[key])}
+                  className={`text-[10px] md:text-sm font-bold px-4 md:px-6 py-2 md:py-3 rounded-full border transition-all ${
+                    key === 'all' 
+                      ? 'bg-white/20 border-white/40 hover:bg-white hover:text-blue-900 border-dashed' 
+                      : 'bg-white/10 border-white/20 hover:bg-white/30'
+                  }`}
+                >
+                  {labels[key]}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Grid Menu Section */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {sections.map((section) => (
+          <button 
+            key={section.key}
+            onClick={() => files[section.key] && onFileSelect(files[section.key])}
+            disabled={!files[section.key]}
+            className={`group text-left p-8 md:p-12 transition-all shadow-md hover:shadow-2xl border border-border-gold/20 flex flex-col bg-white relative overflow-hidden ${!files[section.key] ? 'opacity-50 grayscale' : 'hover:-translate-y-1'}`}
+          >
+            <div className={`w-12 md:w-16 h-1.5 mb-6 md:mb-8 ${section.color}`} />
+            <h3 className="text-2xl md:text-4xl font-bold mb-3 text-ink group-hover:text-cinnabar transition-colors">{section.title}</h3>
+            <p className="text-gold font-bold text-sm md:text-base opacity-70 mb-8">{section.sub}</p>
+            
+            <div className="mt-auto flex items-center justify-between">
+              <div className={`p-3 rounded-xl bg-paper-dark text-ink group-hover:bg-cinnabar group-hover:text-white transition-all`}>
+                {section.icon}
+              </div>
+              <ChevronRight className="w-6 h-6 text-gold group-hover:text-cinnabar transition-all group-hover:translate-x-2" />
+            </div>
+
+            {/* Subtle background decoration */}
+            <div className="absolute -bottom-4 -right-4 opacity-[0.03] text-8xl group-hover:opacity-[0.05] transition-all">
+              {section.icon}
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ResourceNavigator({ onBookSelect, onFileSelect, onMultiFileSelect }: { onBookSelect?: (id: string) => void, onFileSelect?: (file: string) => void, onMultiFileSelect?: (meta: any, files: any) => void }) {
   const [filter, setFilter] = useState("");
   const [activeTab, setActiveTab] = useState<string>("all");
   const [selectedGrade, setSelectedGrade] = useState<string>("7-down");
@@ -510,28 +697,32 @@ function ResourceNavigator({ onBookSelect }: { onBookSelect?: (id: string) => vo
                     {item.title || item.displayName}
                   </span>
                   <span className="text-xs md:text-sm font-bold text-gold/60 group-hover/item:text-cinnabar transition-colors flex items-center shrink-0 tracking-[0.1em] md:tracking-[0.2em] ml-4 md:ml-6">
-                    进入导读 <ChevronRight className="w-4 h-4 md:w-5 md:h-5 ml-1" />
-                  </span>
-                </button>
-              );
-            }
-
-            return (
-              <a 
-                key={idx} 
-                href={item.file} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-between px-6 md:px-8 py-3 md:py-4 hover:bg-gold/5 transition-colors group/item"
-              >
-                <span className="text-lg md:text-xl font-medium text-ink/80 group-hover/item:text-cinnabar transition-colors truncate">
-                  {item.title || item.displayName}
+                  {item.files ? '进入全系列预览' : '进入导读'} <ChevronRight className="w-4 h-4 md:w-5 md:h-5 ml-1" />
                 </span>
-                <span className="text-xs md:text-sm font-bold text-gold/60 group-hover/item:text-cinnabar transition-colors flex items-center shrink-0 tracking-[0.1em] md:tracking-[0.2em] ml-4 md:ml-6">
-                  打开 <ChevronRight className="w-4 h-4 md:w-5 md:h-5 ml-1" />
-                </span>
-              </a>
+              </button>
             );
+          }
+
+          return (
+            <button 
+              key={idx} 
+              onClick={() => {
+                if (item.files) {
+                  onMultiFileSelect?.(item, item.files);
+                } else {
+                  onFileSelect?.(item.file);
+                }
+              }}
+              className="w-full flex items-center justify-between px-6 md:px-8 py-3 md:py-4 hover:bg-gold/5 transition-colors group/item text-left border-none bg-transparent"
+            >
+              <span className="text-lg md:text-xl font-medium text-ink/80 group-hover/item:text-cinnabar transition-colors truncate">
+                {item.title || item.displayName}
+              </span>
+              <span className="text-xs md:text-sm font-bold text-gold/60 group-hover/item:text-cinnabar transition-colors flex items-center shrink-0 tracking-[0.1em] md:tracking-[0.2em] ml-4 md:ml-6">
+                查看打印预览版 <ChevronRight className="w-4 h-4 md:w-5 md:h-5 ml-1" />
+              </span>
+            </button>
+          );
           })}
         </div>
       </div>
@@ -661,24 +852,31 @@ function ResourceNavigator({ onBookSelect }: { onBookSelect?: (id: string) => vo
 
       {/* Main Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {selectedGrade === '7-down' ? (
-          <>
-            {/* Textbook Units */}
-            {([1, 2, 3, 4, 5, 6]).map(u => {
-              const tabId = `unit-${u}`;
-              if (activeTab !== 'all' && activeTab !== tabId) return null;
-              return renderCard((UNIT_NAMES as any)[u], data.textbook.filter(i => i.unit === u), `card-unit-${u}`);
-            })}
+        {/* Textbook Units - Currently anchored to 7-down in this version */}
+        {selectedGrade === '7-down' && ([1, 2, 3, 4, 5, 6]).map(u => {
+          const tabId = `unit-${u}`;
+          if (activeTab !== 'all' && activeTab !== tabId) return null;
+          return renderCard((UNIT_NAMES as any)[u], data.textbook.filter(i => i.unit === u), `card-unit-${u}`);
+        })}
 
-            {/* Special Categories */}
-            {(activeTab === 'all' || activeTab === 'classic') && renderCard("名著导读", data.classics, "card-classic")}
+        {/* Classics - Dynamically filtered by current grade label */}
+        {(activeTab === 'all' || activeTab === 'classic') && (
+          renderCard("名著导读", data.classics.filter(c => c.grade === (grades.find(g => g.id === selectedGrade)?.label)), "card-classic")
+        )}
+
+        {/* Categories that currently only have 7-down data (placeholders) */}
+        {selectedGrade === '7-down' && (
+          <>
             {(activeTab === 'all' || activeTab === 'exam') && renderCard("单元试卷", data.examPapers, "card-exam")}
             {(activeTab === 'all' || activeTab === 'practice') && renderCard("单元小练", data.unitPractices, "card-practice")}
             {(activeTab === 'all' || activeTab === 'composition') && renderCard("单元作文", data.compositions, "card-composition")}
             {(activeTab === 'all' || activeTab === 'extra-wenyan') && renderCard("课外文言", data.extracurricular, "card-extra-wenyan")}
             {(activeTab === 'all' || activeTab === 'poetry') && renderCard("古诗赏析", data.poetry, "card-poetry-analysis")}
           </>
-        ) : (
+        )}
+
+        {/* Show coming soon message only if absolutely no data for this grade */}
+        {selectedGrade !== '7-down' && data.classics.filter(c => c.grade === (grades.find(g => g.id === selectedGrade)?.label)).length === 0 && (
           <div className="col-span-1 md:col-span-2 lg:col-span-3 py-32 text-center">
             <div className="max-w-md mx-auto space-y-6">
               <div className="w-20 h-20 bg-paper-dark/20 rounded-full flex items-center justify-center mx-auto">

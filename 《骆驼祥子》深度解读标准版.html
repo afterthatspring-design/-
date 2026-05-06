@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《骆驼祥子》深度解读 | 老舍·京味文学经典 | A4正反面双面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* A4纸张 — 设计为双面打印，共2页（正面+背面） */
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.8rem 1.2rem;
+        }
+
+        /* 通过分页控制：第一页正面，第二页背面 */
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.7cm 1.1cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.2cm 1.1cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1, h2, h3, .section, .subsection {
+                break-after: avoid;
+            }
+            p, li, .compact-p {
+                orphans: 3;
+                widows: 3;
+            }
+        }
+
+        /* 标题区域 */
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.4rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.12rem;
+        }
+        h1 {
+            font-size: 1.65rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.76rem;
+            color: #6a5c47;
+            font-style: italic;
+            margin-bottom: 0.12rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.15rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* 章节样式 */
+        .section {
+            margin: 0.55rem 0 0.4rem;
+        }
+        .section-title {
+            font-size: 1.12rem;
+            font-weight: bold;
+            color: #8b5a2b;
+            background: #e8e0cf;
+            padding: 0.14rem 0.7rem;
+            border-left: 5px solid #b67b41;
+            margin-bottom: 0.3rem;
+        }
+        .subsection {
+            margin: 0.4rem 0 0.3rem 0.6rem;
+        }
+        .subsection-title {
+            font-size: 0.93rem;
+            font-weight: 600;
+            color: #9b6a3c;
+            margin-bottom: 0.18rem;
+            border-left: 3px solid #d4a373;
+            padding-left: 0.48rem;
+        }
+        p {
+            font-size: 0.83rem;
+            line-height: 1.34;
+            margin-bottom: 0.32rem;
+            text-align: justify;
+            color: #2c2a28;
+        }
+        .compact-list {
+            margin: 0.15rem 0 0.25rem 1.5rem;
+            font-size: 0.81rem;
+            line-height: 1.32;
+        }
+        .highlight-box {
+            background: #fefaf2;
+            padding: 0.35rem 0.7rem;
+            border-radius: 8px;
+            margin: 0.4rem 0;
+            border: 1px solid #e7dac8;
+        }
+        hr {
+            margin: 0.3rem 0;
+        }
+        strong {
+            color: #b1622c;
+        }
+        /* 第二面专用样式 — 拉大行距 */
+        .second-half .section {
+            margin: 0.6rem 0 0.45rem;
+        }
+        .second-half p {
+            line-height: 1.44;
+            margin-bottom: 0.38rem;
+        }
+        .second-half .subsection {
+            margin: 0.45rem 0 0.35rem 0.6rem;
+        }
+        .second-half .subsection-title {
+            margin-bottom: 0.22rem;
+        }
+        .second-half .highlight-box {
+            margin: 0.5rem 0;
+            padding: 0.4rem 0.7rem;
+        }
+        .second-half .compact-list {
+            line-height: 1.4;
+            margin-bottom: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 正面（第1页） ================= -->
+    <div class="page">
+        <div class="main-title">
+            <h1>《骆驼祥子》深度解读</h1>
+            <div class="subhead">老舍 · 京味文学经典 · 底层人民的命运悲歌</div>
+            <div class="author-line">老舍 著 | 七年级下册语文必读名著 · 全面解读</div>
+        </div>
+
+        <!-- 一、故事梗概 -->
+        <div class="section">
+            <div class="section-title">📖 一、故事梗概 · 祥子的三起三落</div>
+            <p>《骆驼祥子》是老舍先生的代表作，以20世纪20年代北洋军阀统治下的北平为背景，讲述了人力车夫祥子的悲剧人生。18岁的祥子失去父母后从农村来到北平谋生，他勤劳、朴实、要强，最大的梦想是拥有一辆属于自己的洋车。然而，在黑暗的社会现实面前，他的梦想一次次破灭，最终从“体面的、要强的、好梦想的”青年，堕落为“堕落的、自私的、不幸的”行尸走肉。</p>
+            
+            <div class="subsection">
+                <div class="subsection-title">🚩 一起一落</div>
+                <p>祥子省吃俭用三年，攒下100块钱买了一辆崭新的洋车。然而好景不长，他为了多赚两块钱冒险拉车去清华，途中连人带车被军阀士兵抢走，被抓去当壮丁。这是祥子人生的第一次起落。</p>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">🐫 二起二落</div>
+                <p>祥子趁兵营混乱逃了出来，顺手牵走三匹骆驼，卖了35块大洋（考试重点数字）。病倒后说梦话泄露了牵骆驼的事，从此得了个外号“骆驼祥子”。他回到人和车厂，更加拼命拉车攒钱，还在曹先生家拉上了包月。然而，钱还没攒够，就被当年抓他当壮丁的孙侦探（已升为排长）以“革命党”的罪名全部敲诈走。祥子的买车梦再次破灭。</p>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">💔 三起三落</div>
+                <p>虎妞设计让祥子就范，谎称自己怀孕，祥子被迫与她结婚。婚后虎妞用私房钱给祥子买了一辆二手车（原是二强子的车）。然而虎妞因好吃懒做导致难产，祥子没钱送她去医院，最终虎妞带着死孩子断了气。为了办丧事，祥子卖掉了车。至此，祥子的买车梦想彻底破灭。</p>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">💀 彻底堕落</div>
+                <p>虎妞死后，邻居小福子曾给祥子带来一丝希望，但祥子养不起她，狠心拒绝。后来祥子得知小福子被父亲卖到白房子后上吊自杀，这成为压死骆驼的最后一根稻草。祥子开始吃喝嫖赌、骗钱、出卖人命，最终沦为“社会病胎里的产儿，个人主义的末路鬼”。</p>
+            </div>
+        </div>
+
+        <!-- 二、人物形象分析 -->
+        <div class="section">
+            <div class="section-title">👥 二、人物形象分析</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">祥子 · 从“人”到“鬼”的堕落史</div>
+                <p>祥子是小说的核心人物，他的形象经历了鲜明的变化。前期：他“像一棵树，坚壮，沉默，而又有生气”，勤劳、朴实、善良、要强，怀揣着买车的梦想，自尊心极强。后期：经过三起三落的打击，特别是虎妞的纠缠和小福子的死，他变得麻木、自私、懒惰、吃喝嫖赌、坑蒙拐骗，成为一具行尸走肉。祥子的悲剧根源，一方面是黑暗社会对底层劳动者的残酷压迫（军阀混战、侦探敲诈、资本剥削），另一方面是他自身的局限性（认死理、狭隘、懦弱、不善变通）。</p>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">虎妞 · 复杂的悲剧人物</div>
+                <p>虎妞是人和车厂刘四爷的女儿，三十七八岁，外表丑陋，“像一个大黑塔”。她性格泼辣、有心计、敢爱敢恨。一方面，她大胆追求祥子，对祥子有真诚的爱；另一方面，她沾染了剥削阶级的好吃懒做、工于心计，想控制祥子。虎妞的形象具有双重性：她是压迫者（剥削祥子），也是受害者（被父亲耽误青春、难产而死）。</p>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">小福子 · 底层女性的悲歌</div>
+                <p>小福子是二强子的女儿，善良、温顺、逆来顺受。她被父亲卖给军官，后被抛弃，为养家被迫卖身。她爱上祥子，是祥子最后的精神寄托。然而，她最终被卖到白房子后上吊自杀。小福子的死彻底击垮了祥子，她的悲剧反映了旧社会底层女性无法摆脱的宿命。</p>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">其他重要人物</div>
+                <p><strong>刘四爷</strong>：人和车厂老板，残忍霸道，代表剥削阶级。<strong>曹先生</strong>：祥子眼中的“圣人”，待人宽和。<strong>孙侦探</strong>：敲诈祥子的帮凶。<strong>老马小马</strong>：穷困车夫，预示祥子的未来。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 背面（第2页）第二面行距拉大，确保排满 ================= -->
+    <div class="page second-half">
+        <!-- 三、主题思想 -->
+        <div class="section">
+            <div class="section-title">💡 三、主题思想</div>
+            <div class="highlight-box">
+                <p><strong>对旧社会的血泪控诉</strong>：小说通过祥子的悲剧，深刻揭露了军阀混战时期旧中国“吃人”的本质。在黑暗的社会制度下，底层劳动者无论多么勤劳、多么努力，都无法通过个人奋斗改变命运。</p>
+                <p><strong>个人奋斗的幻灭</strong>：祥子坚信“勤劳致富”，但他的梦想一次次被社会现实击碎。小说揭示了在旧社会，“个人主义的末路”是必然的结局。</p>
+                <p><strong>人性的扭曲与异化</strong>：祥子从善良到堕落的转变，展示了黑暗社会环境对人性的摧残。这不仅是一个人的悲剧，更是整个时代的悲剧。</p>
+            </div>
+        </div>
+
+        <!-- 四、艺术特色 -->
+        <div class="section">
+            <div class="section-title">🎨 四、艺术特色</div>
+            <div class="subsection">
+                <div class="subsection-title">京味语言的典范</div>
+                <p>老舍被誉为“语言大师”，《骆驼祥子》大量使用北京方言口语，如“拉晚儿”“嚼谷”“耍骨头”等，生动传神。叙述语言俗白、凝练、纯净，极具生活气息。</p>
+                
+                <div class="subsection-title">生动的环境描写</div>
+                <p>小说中对北平的胡同、大杂院、烈日、暴雨的描写，不仅真实再现了老北京的风貌，更烘托了祥子拉车的艰辛，象征了社会环境的冷酷无情。如第十八章的“烈日暴雨”描写，是中学语文的经典片段。</p>
+                
+                <div class="subsection-title">心理刻画的深度</div>
+                <p>老舍深入祥子的内心世界，细致描写了他的希望、挣扎、痛苦、绝望。这种心理描写使人物形象更加丰满，也让读者更能理解祥子堕落的必然性。</p>
+                
+                <div class="subsection-title">“三起三落”的叙事结构</div>
+                <p>小说以祥子买车卖车的“三起三落”为主线，情节跌宕起伏，层层递进，有力地表现了“个人奋斗在黑暗社会中的无力感”这一主题。</p>
+            </div>
+        </div>
+
+        <!-- 五、中考考点速记 -->
+        <div class="section">
+            <div class="section-title">📚 五、中考考点速记</div>
+            <div class="highlight-box">
+                <ul class="compact-list">
+                    <li><strong>作者</strong>：老舍（舒庆春，字舍予），满族正红旗人，被誉为“人民艺术家”。</li>
+                    <li><strong>主人公</strong>：祥子，外号“骆驼祥子”（源于牵回三匹骆驼卖钱）。</li>
+                    <li><strong>三起三落</strong>：一起：三年攒钱买车；一落：车被军阀抢走。二起：卖骆驼后重新攒钱；二落：钱被孙侦探敲诈。三起：虎妞买车给他；三落：卖车葬虎妞。</li>
+                    <li><strong>关键数字</strong>：买车100元；卖骆驼35元；虎妞买车90元。</li>
+                    <li><strong>核心人物</strong>：虎妞、小福子、刘四爷、曹先生、孙侦探。</li>
+                    <li><strong>主题</strong>：批判旧社会黑暗、揭示底层劳动者悲剧、个人奋斗的幻灭。</li>
+                    <li><strong>艺术特色</strong>：京味语言、环境描写、心理刻画、“三起三落”结构。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 六、深度思考 · 经典的意义 -->
+        <div class="section">
+            <div class="section-title">💭 六、深度思考 · 经典的意义</div>
+            <p>鲁迅先生说：“悲剧就是把人生有价值的东西毁灭给人看。”《骆驼祥子》正是这样一部悲剧。祥子的毁灭，不仅是那个时代的缩影，也给今天的我们留下深刻启示。</p>
+            <p>祥子勤劳、朴实、要强，但他认死理、狭隘、不善变通。在黑暗的社会面前，他选择了个人奋斗的道路，但这条路在旧中国走不通。今天，我们生活在不同的时代，但祥子的故事依然提醒我们：个人的奋斗需要与时代同行，单纯的“埋头苦干”并不能解决所有问题。</p>
+            <p>老舍曾说：“我所要观察的不仅是车夫的一点点的浮现在衣冠上的、表现在言语与姿态上的那些小事情了，而是要由车夫的内心状态观察到地狱究竟是什么样子。”《骆驼祥子》不仅是一部文学作品，更是一面镜子，让我们看到旧社会的黑暗，也更加珍惜今天的幸福生活。</p>
+            <p>致敬每一个在这个时代里为了梦想拼搏奔跑的我们，愿我们都能在梦想的彼岸找到属于自己的花海。</p>
+        </div>
+    </div>
+</div>
+</body>

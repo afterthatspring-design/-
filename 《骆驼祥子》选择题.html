@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《骆驼祥子》选择题专练 | 50题 正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1.2cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.5cm 1.2cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .q-item {
+                break-inside: avoid;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.2rem;
+        }
+        h1 {
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6a5c47;
+            margin-top: 0.1rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.2rem;
+            margin-top: 0.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.25rem 0.8rem;
+            font-size: 1.15rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.8rem;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 0.3rem;
+        }
+        .q-item {
+            background: #fefcf8;
+            border-bottom: 0.5px solid #e2d9cc;
+            padding: 0.1rem 0.2rem 0.1rem 0.6rem;
+            line-height: 1.45;
+            font-size: 0.87rem;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <div class="page">
+        <div class="main-title">
+            <h1>《骆驼祥子》选择题专练</h1>
+            <div class="subhead">老舍 · 京味文学经典 · 七年级下册必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">🔘 一、选择题（共50题 · 第一面 第1-25题）</div>
+        <div class="questions-list">
+            <div class="q-item">1. 《骆驼祥子》的作者是？ A.巴金 B.老舍 C.茅盾 D.鲁迅</div>
+            <div class="q-item">2. 祥子的职业是什么？ A.工人 B.农民 C.车夫 D.商人</div>
+            <div class="q-item">3. 祥子第一次买车的钱是多少？ A.五十元 B.八十元 C.一百元 D.一百二十元</div>
+            <div class="q-item">4. 祥子的第一辆车是被谁抢走的？ A.孙侦探 B.刘四爷 C.军阀士兵 D.二强子</div>
+            <div class="q-item">5. 祥子从军队逃跑时牵回了几匹骆驼？ A.一匹 B.两匹 C.三匹 D.四匹</div>
+            <div class="q-item">6. 祥子卖骆驼得了多少钱？ A.二十五元 B.三十元 C.三十五元 D.四十元</div>
+            <div class="q-item">7. 人和车厂的老板是？ A.曹先生 B.刘四爷 C.孙侦探 D.二强子</div>
+            <div class="q-item">8. 虎妞是刘四爷的什么人？ A.妻子 B.女儿 C.侄女 D.外甥女</div>
+            <div class="q-item">9. 祥子第二次买车钱被谁敲诈了？ A.刘四爷 B.二强子 C.孙侦探 D.杨太太</div>
+            <div class="q-item">10. 曹先生因为什么被迫离开北平？ A.被学生告发 B.经济破产 C.生病 D.家庭纠纷</div>
+            <div class="q-item">11. 虎妞用多少钱给祥子买了车？ A.五十元 B.八十元 C.九十元 D.一百元</div>
+            <div class="q-item">12. 小福子的父亲是谁？ A.刘四爷 B.曹先生 C.二强子 D.老马</div>
+            <div class="q-item">13. 虎妞最终死于？ A.难产 B.自杀 C.疾病 D.车祸</div>
+            <div class="q-item">14. 小福子最后在哪里自杀？ A.树林 B.河边 C.庙里 D.白房子</div>
+            <div class="q-item">15. 祥子最后的结局是？ A.发家致富 B.回乡务农 C.堕落成乞丐 D.当上老板</div>
+            <div class="q-item">16. 小说中象征祥子精神支柱的是？ A.房子 B.车子 C.金钱 D.家庭</div>
+            <div class="q-item">17. 祥子第一次生病的原因是什么？ A.淋雨 B.打架 C.劳累过度 D.饥饿</div>
+            <div class="q-item">18. 曹先生家的女仆是谁？ A.虎妞 B.小福子 C.高妈 D.杨太太</div>
+            <div class="q-item">19. 高妈建议祥子把钱怎样处理？ A.存银行 B.放高利贷 C.买彩票 D.藏起来</div>
+            <div class="q-item">20. 祥子曾在谁家拉包月受尽屈辱？ A.曹先生 B.杨先生 C.刘四爷 D.夏先生</div>
+            <div class="q-item">21. 老马和小马是什么关系？ A.父子 B.爷孙 C.兄弟 D.叔侄</div>
+            <div class="q-item">22. 夏太太引诱祥子导致他染上什么病？ A.伤寒 B.花柳病 C.肺病 D.痢疾</div>
+            <div class="q-item">23. 刘四爷在虎妞死后做了什么？ A.寻找祥子 B.独自离开 C.给女儿报仇 D.继续开厂</div>
+            <div class="q-item">24. 祥子一共经历了几次买车卖车？ A.两次 B.三次 C.四次 D.五次</div>
+            <div class="q-item">25. 祥子第一次丢车是因为？ A.出车祸 B.被偷 C.被抢 D.赌博输掉</div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="questions-list">
+            <div class="q-item">26. 孙侦探以什么罪名敲诈祥子？ A.偷窃 B.杀人 C.革命党 D.诈骗</div>
+            <div class="q-item">27. 小福子被卖到什么地方？ A.戏院 B.茶楼 C.白房子 D.工厂</div>
+            <div class="q-item">28. 虎妞欺骗刘四爷说自己怀了谁的孩子？ A.祥子 B.二强子 C.老马 D.孙侦探</div>
+            <div class="q-item">29. 祥子拒绝了小福子什么请求？ A.借钱 B.带她走 C.救她弟弟 D.帮她找工作</div>
+            <div class="q-item">30. 二强子打死妻子后做了什么？ A.自首 B.逃跑 C.卖女儿 D.自杀</div>
+            <div class="q-item">31. 祥子在曹家拉包月时，曹先生对他怎样？ A.苛刻 B.一般 C.和善 D.冷漠</div>
+            <div class="q-item">32. 小说中“人和车厂”的厂主最终？ A.破产 B.去世 C.独自生活 D.与祥子和好</div>
+            <div class="q-item">33. 祥子拉车摔伤曹先生后做了什么？ A.逃跑 B.道歉并赔偿 C.不认账 D.打架</div>
+            <div class="q-item">34. 老舍是哪族人？ A.汉族 B.满族 C.回族 D.蒙古族</div>
+            <div class="q-item">35. 《骆驼祥子》的故事背景是？ A.上海 B.天津 C.北平 D.南京</div>
+            <div class="q-item">36. 祥子最后的职业是什么？ A.车夫 B.乞丐 C.小贩 D.工人</div>
+            <div class="q-item">37. 虎妞比祥子大多少岁？ A.五岁左右 B.十岁左右 C.十五岁左右 D.二十岁左右</div>
+            <div class="q-item">38. 小说中“骆驼”的外号是谁给祥子起的？ A.刘四爷 B.虎妞 C.车夫们 D.曹先生</div>
+            <div class="q-item">39. 二强子把女儿小福子卖给了谁？ A.军官 B.商人 C.地主 D.车夫</div>
+            <div class="q-item">40. 祥子最后对生活的态度是？ A.积极奋斗 B.麻木堕落 C.乐观向上 D.平静接受</div>
+            <div class="q-item">41. 小说中老马和小马的结局是？ A.小马病死，老马流浪 B.一起发财 C.回乡务农 D.被车厂收留</div>
+            <div class="q-item">42. 曹先生的学生是谁？ A.阮明 B.小福子 C.高妈 D.杨太太</div>
+            <div class="q-item">43. 祥子曾经在谁家拉包月时被诬陷偷钱？ A.杨先生 B.曹先生 C.夏先生 D.刘四爷</div>
+            <div class="q-item">44. 虎妞死后，祥子把车卖了多少钱？ A.五十元 B.六十元 C.七十元 D.八十元</div>
+            <div class="q-item">45. 小福子自杀后，祥子到什么地方找她？ A.白房子 B.树林 C.河边 D.庙里</div>
+            <div class="q-item">46. 小说中祥子的理想破灭主要是因为？ A.社会黑暗 B.自身懒惰 C.疾病缠身 D.家庭拖累</div>
+            <div class="q-item">47. 老舍的《骆驼祥子》属于什么流派？ A.浪漫主义 B.现实主义 C.现代主义 D.象征主义</div>
+            <div class="q-item">48. 祥子最后靠什么为生？ A.拉车 B.打杂 C.乞讨 D.偷窃</div>
+            <div class="q-item">49. 小说中哪个女性形象最令人同情？ A.虎妞 B.小福子 C.杨太太 D.夏太太</div>
+            <div class="q-item">50. 《骆驼祥子》的主题思想是？ A.歌颂奋斗精神 B.批判旧社会黑暗 C.宣扬个人主义 D.描写爱情故事</div>
+        </div>
+    </div>
+</div>
+</body>

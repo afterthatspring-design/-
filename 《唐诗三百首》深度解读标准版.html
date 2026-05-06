@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《唐诗三百首》深度解读 | 诗家之冠冕·万古之流芳 | 九年级上册必读名著</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.2cm 1cm;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.55rem;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 0.1rem;
+        }
+        h1 {
+            font-size: 1.58rem;
+            letter-spacing: 2px;
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 0.04rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #333;
+            margin-top: 0.03rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.66rem;
+            color: #555;
+            border-top: 1px dashed #ccc;
+            padding-top: 0.1rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.55rem;
+        }
+
+        /* 第一面压缩行距，解决溢出 */
+        .first-half .section {
+            margin: 0.45rem 0 0.35rem;
+        }
+        .first-half .section-title {
+            margin-bottom: 0.28rem;
+            padding: 0.1rem 0.6rem;
+            font-size: 0.97rem;
+        }
+        .first-half .compact-p {
+            margin-bottom: 0.24rem;
+            line-height: 1.42;
+            font-size: 0.83rem;
+        }
+        .first-half .subsection {
+            margin: 0.3rem 0 0.22rem 0.5rem;
+        }
+        .first-half .subsection-title {
+            margin-bottom: 0.1rem;
+            font-size: 0.86rem;
+        }
+        .first-half .highlight-box {
+            margin: 0.35rem 0;
+            padding: 0.28rem 0.7rem;
+        }
+        .first-half .book-list-compact {
+            margin: 0.3rem 0;
+            padding: 0.25rem 0.6rem;
+        }
+
+        /* 第二面保持正常行距 */
+        .second-half .section {
+            margin: 0.65rem 0 0.55rem;
+        }
+        .second-half .section-title {
+            margin-bottom: 0.42rem;
+        }
+        .second-half .compact-p {
+            margin-bottom: 0.38rem;
+            line-height: 1.52;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            background: #eee;
+            border-left: 5px solid #999;
+        }
+        .subsection-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #000;
+            border-left: 3px solid #aaa;
+            padding-left: 0.45rem;
+        }
+        .compact-p {
+            font-size: 0.84rem;
+            text-align: justify;
+            color: #000;
+        }
+        .inline-item {
+            font-size: 0.84rem;
+            line-height: 1.52;
+            margin-bottom: 0.34rem;
+            text-align: justify;
+            color: #000;
+        }
+        .highlight-box {
+            background: #f9f9f9;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+        .book-list-compact {
+            background: #f9f9f9;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+        .quote-line {
+            font-style: italic;
+            color: #000;
+            background: #f5f5f5;
+            padding: 0.2rem 0.8rem;
+            border-left: 4px solid #aaa;
+            margin: 0.2rem 0;
+            font-size: 0.81rem;
+            line-height: 1.38;
+        }
+        .poem-bg {
+            background: #fefaf2;
+            padding: 0.3rem 0.8rem;
+            border-left: 3px solid #aaa;
+            margin: 0.25rem 0;
+            font-size: 0.8rem;
+            line-height: 1.45;
+            font-family: '楷体', '华文楷书', 'KaiTi', serif;
+        }
+        strong {
+            color: #000;
+            font-weight: 700;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        li {
+            font-size: 0.82rem;
+            line-height: 1.44;
+            margin-bottom: 0.18rem;
+            color: #000;
+        }
+
+        /* 考点两列布局 */
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none;
+            padding-left: 0;
+        }
+        .two-columns li {
+            width: 48%;
+            margin-bottom: 0.26rem;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 1rem;
+            color: #000;
+        }
+        .two-columns li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000;
+        }
+        .two-columns li strong {
+            display: inline-block;
+            color: #000;
+        }
+        @media (max-width: 800px) {
+            .two-columns li {
+                width: 48%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面（压缩行距） ================= -->
+    <div class="first-half">
+        <div class="main-title">
+            <h1>唐诗三百首</h1>
+            <div class="subhead">蘅塘退士 · 诗歌选集典范 · 九年级上册必读名著</div>
+            <div class="author-line">[清]蘅塘退士 编 | 九年级上册语文必读名著 · 深度解读 | 锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>📖 编撰说明</strong><br>
+            《唐诗三百首》是清代蘅塘退士（孙洙）编选的唐诗选集，共选77位诗人、310首诗作，按体裁分为古诗、律诗、绝句等。该书“俾童而习之，白首亦莫能废”，成为中国流传最广、影响最大的唐诗读本。本文根据权威资料整理，系统梳理诗人生平、题材分类、名句赏析、艺术特色及中考考点，便于读者研习或打印装订。
+        </div>
+
+        <!-- 一、编者简介与成书背景 -->
+        <div class="section">
+            <div class="section-title">✍️ 一、编者简介与成书背景</div>
+            <div class="compact-p"><strong>蘅塘退士</strong>（1711—1778），原名孙洙，字临西，号蘅塘，江苏无锡人。清代乾隆年间进士，曾任知县。有感于当时《千家诗》选诗标准不严，遂与继室徐兰英合编《唐诗三百首》。选诗“专就唐诗中脍炙人口之作，择其尤要者”，兼顾不同诗体、不同流派，既通俗易懂又不失风雅，成为后世最通行的唐诗选本。</div>
+        </div>
+
+        <!-- 二、诗体分类与全书结构 -->
+        <div class="section">
+            <div class="section-title">📖 二、诗体分类与全书结构</div>
+            <div class="compact-p">全书按诗体编排，共八卷（或六卷），主要包括：</div>
+            <div class="subsection"><div class="subsection-title">📜 古诗（五言/七言）</div><div class="compact-p">篇幅较长，格律自由。代表作：李白《月下独酌》、杜甫《望岳》、白居易《长恨歌》（节选）、杜甫《兵车行》。</div></div>
+            <div class="subsection"><div class="subsection-title">📏 律诗（五言/七言）</div><div class="compact-p">八句四联，讲究平仄对仗。五律如王维《山居秋暝》、杜甫《春夜喜雨》；七律如崔颢《黄鹤楼》、杜甫《登高》。</div></div>
+            <div class="subsection"><div class="subsection-title">🍃 绝句（五言/七言）</div><div class="compact-p">四句短小精悍。五绝如王之涣《登鹳雀楼》、柳宗元《江雪》；七绝如王昌龄《出塞》、杜牧《泊秦淮》。</div></div>
+            <div class="subsection"><div class="subsection-title">🎵 乐府诗</div><div class="compact-p">可配乐歌唱，李白《蜀道难》《将进酒》为代表。</div></div>
+        </div>
+
+        <!-- 三、核心诗人谱系（代表诗人） -->
+        <div class="section">
+            <div class="section-title">👥 三、核心诗人谱系</div>
+            <div class="compact-p"><strong>李白（诗仙）</strong>：浪漫主义高峰。选诗最多（34首）。风格豪放飘逸、想象奇特。代表作：《将进酒》《蜀道难》《梦游天姥吟留别》《静夜思》。名句：“长风破浪会有时，直挂云帆济沧海。”“天生我材必有用，千金散尽还复来。”</div>
+            <div class="compact-p"><strong>杜甫（诗圣）</strong>：现实主义高峰。选诗38首（最多）。风格沉郁顿挫，记录安史之乱的社会苦难，被誉为“诗史”。代表作：《望岳》《春望》《登高》《茅屋为秋风所破歌》《闻官军收河南河北》。名句：“安得广厦千万间，大庇天下寒士俱欢颜。”“无边落木萧萧下，不尽长江滚滚来。”</div>
+            <div class="compact-p"><strong>王维（诗佛）</strong>：山水田园诗代表。诗中有画，恬淡自然。苏轼评“味摩诘之诗，诗中有画”。代表作：《山居秋暝》《使至塞上》《九月九日忆山东兄弟》。名句：“大漠孤烟直，长河落日圆。”“独在异乡为异客，每逢佳节倍思亲。”</div>
+            <div class="compact-p"><strong>孟浩然</strong>：山水田园诗代表。风格清淡自然。代表作：《过故人庄》《春晓》《宿建德江》。名句：“春眠不觉晓，处处闻啼鸟。”</div>
+            <div class="compact-p"><strong>王昌龄</strong>：七绝圣手。边塞诗与宫怨诗俱佳。代表作：《出塞》《从军行》《芙蓉楼送辛渐》。名句：“秦时明月汉时关，万里长征人未还。”“洛阳亲友如相问，一片冰心在玉壶。”</div>
+            <div class="compact-p"><strong>白居易</strong>：新乐府运动倡导者。语言通俗，妇孺能解。代表作：《长恨歌》《琵琶行》《赋得古原草送别》。名句：“野火烧不尽，春风吹又生。”“同是天涯沦落人，相逢何必曾相识。”</div>
+            <div class="compact-p"><strong>李商隐、杜牧（小李杜）</strong>：晚唐代表。李商隐含蓄朦胧（“相见时难别亦难”），杜牧俊爽清丽（“停车坐爱枫林晚”）。</div>
+        </div>
+    </div>
+
+    <!-- 手动分页确保：第四部分从第二面开始 -->
+    <div style="page-break-before: avoid; break-before: page;"></div>
+
+    <!-- ================= 第二面（保持不变） ================= -->
+    <div class="second-half">
+        <!-- 四、题材主题分类 -->
+        <div class="section">
+            <div class="section-title">💡 四、题材主题分类（中考重点）</div>
+            <div class="highlight-box">
+                <div class="compact-p"><strong>山水田园诗</strong>：王维、孟浩然为代表。表达对自然的热爱和隐逸情怀。考点：意象分析（空山、清泉、明月）、动静结合手法。</div>
+                <div class="compact-p"><strong>边塞诗</strong>：王昌龄、岑参、高适为代表。歌颂将士报国，反映战争艰苦。考点：意象（大漠、孤城、羌笛）、情感分析（思乡、报国）。</div>
+                <div class="compact-p"><strong>送别诗</strong>：王勃、王维、李白为代表。表达离愁别绪与劝慰勉励。考点：意象（长亭、杨柳、酒）、手法（借景抒情）。</div>
+                <div class="compact-p"><strong>思乡怀人诗</strong>：李白、王维为代表。表达羁旅之愁和亲情思念。考点：意象（明月、鸿雁）、抒情方式。</div>
+                <div class="compact-p"><strong>咏史怀古诗</strong>：杜牧、李商隐为代表。借古讽今，感慨兴衰。考点：典故运用、主旨理解。</div>
+                <div class="compact-p"><strong>民生疾苦诗</strong>：杜甫、白居易为代表。反映社会现实，同情人民苦难。考点：现实主义手法、思想情感。</div>
+            </div>
+        </div>
+
+        <!-- 五、艺术特色 -->
+        <div class="section">
+            <div class="section-title">🎨 五、艺术特色</div>
+            <div class="inline-item"><strong>格律精严</strong>：唐代是近体诗（律诗、绝句）的成熟期，平仄、对仗、押韵形成严谨规范。杜甫是其最高成就代表。</div>
+            <div class="inline-item"><strong>意象丰富</strong>：月、酒、山、水、柳、雁等意象承载深厚文化内涵，成为后世诗词的经典符号。</div>
+            <div class="inline-item"><strong>语言凝练</strong>：“僧推月下门”之“推敲”典故，体现了唐诗炼字的极致追求。</div>
+            <div class="inline-item"><strong>风格多样</strong>：豪放（李白）、沉郁（杜甫）、淡远（王维）、通俗（白居易）、朦胧（李商隐），流派纷呈。</div>
+            <div class="inline-item"><strong>情景交融</strong>：“一切景语皆情语”，唐诗擅长借自然景物传达内心情感。</div>
+        </div>
+
+        <!-- 六、经典名句分类赏析 -->
+        <div class="section">
+            <div class="section-title">📜 六、经典名句分类赏析</div>
+            <div class="quote-line">“长风破浪会有时，直挂云帆济沧海。” —— 李白《行路难》（励志）</div>
+            <div class="quote-line">“安得广厦千万间，大庇天下寒士俱欢颜。” —— 杜甫《茅屋为秋风所破歌》（民生）</div>
+            <div class="quote-line">“大漠孤烟直，长河落日圆。” —— 王维《使至塞上》（边塞·画面）</div>
+            <div class="quote-line">“独在异乡为异客，每逢佳节倍思亲。” —— 王维《九月九日忆山东兄弟》（思乡）</div>
+            <div class="quote-line">“同是天涯沦落人，相逢何必曾相识。” —— 白居易《琵琶行》（感怀）</div>
+            <div class="quote-line">“春蚕到死丝方尽，蜡炬成灰泪始干。” —— 李商隐《无题》（爱情）</div>
+            <div class="compact-p" style="margin-top:0.3rem;"><strong>中考古诗鉴赏常考点：</strong>炼字（“直”“圆”的妙处）、画面描绘（“大漠孤烟直”）、情感把握（思乡、报国、忧民）、手法分析（借景抒情、对比、用典）。</div>
+        </div>
+
+        <!-- 七、中考考点速记 -->
+        <div class="section">
+            <div class="section-title">📚 七、中考考点速记</div>
+            <div class="book-list-compact">
+                <ul class="two-columns">
+                    <li><strong>编者</strong>：蘅塘退士（孙洙）</li>
+                    <li><strong>选诗数量</strong>：310首（77位诗人）</li>
+                    <li><strong>“诗仙”</strong>：李白（浪漫主义）</li>
+                    <li><strong>“诗圣”</strong>：杜甫（现实主义，“诗史”）</li>
+                    <li><strong>“诗佛”</strong>：王维（山水田园）</li>
+                    <li><strong>“七绝圣手”</strong>：王昌龄</li>
+                    <li><strong>“小李杜”</strong>：李商隐、杜牧</li>
+                    <li><strong>体裁</strong>：古诗、律诗、绝句、乐府</li>
+                    <li><strong>题材</strong>：山水田园、边塞、送别、思乡、咏史</li>
+                    <li><strong>艺术手法</strong>：借景抒情、托物言志、用典、对比</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 八、深度思考 · 唐诗的永恒魅力 -->
+        <div class="section">
+            <div class="section-title">💭 八、深度思考 · 唐诗的永恒魅力</div>
+            <div class="compact-p">《唐诗三百首》不仅是诗歌选集，更是中华文化的精神密码。李白的“天生我材必有用”给了后人无尽的自信；杜甫的“安得广厦千万间”塑造了知识分子的家国情怀；王维的“行到水穷处，坐看云起时”教会我们从容面对人生困境。唐代诗人用最凝练的语言，写出了最丰富的内心世界。今天读唐诗，我们依然能被千年前的情感击中——那些关于离别、思念、理想、孤独的体验，从未过时。正如蘅塘退士所言：“熟读唐诗三百首，不会作诗也会吟。”这不是鼓励模仿，而是让我们在诗意中栖居，让语言的珍珠照亮平凡的日常。</div>
+        </div>
+    </div>
+
+</div>
+</body>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《朝花夕拾》填空题专练 | 50空 正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* A4纸张 — 正反面各一页 */
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        /* 分页：第一面（1-23题），第二面（24-50题） */
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1.2cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.5cm 1.2cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .q-item {
+                break-inside: avoid;
+            }
+        }
+
+        /* 标题区域 */
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.2rem;
+        }
+        h1 {
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6a5c47;
+            margin-top: 0.1rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.2rem;
+            margin-top: 0.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        /* 题型标题（仅第一面） */
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.25rem 0.8rem;
+            font-size: 1.15rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.8rem;
+        }
+
+        /* 题目列表 — 行距适中 */
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 0.3rem;
+        }
+        .q-item {
+            background: #fefcf8;
+            border-bottom: 0.5px solid #e2d9cc;
+            padding: 0.1rem 0.2rem 0.1rem 0.6rem;
+            line-height: 1.45;
+            font-size: 0.87rem;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 70px;
+            border-bottom: 1.2px dotted #a5682c;
+            margin: 0 3px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面：填空题 第1-23题 ================= -->
+    <div class="page">
+        <div class="main-title">
+            <h1>《朝花夕拾》填空题专练</h1>
+            <div class="subhead">鲁迅 · 散文回忆录 · 七年级上册必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">📝 一、填空题（共50空）</div>
+        <div class="questions-list">
+            <div class="q-item">1. 《朝花夕拾》的作者是<span class="blank">__________</span>，原名周树人，字豫才。</div>
+            <div class="q-item">2. 《朝花夕拾》原名《<span class="blank">__________</span>》，写于1926年，共<span class="blank">__________</span>篇。</div>
+            <div class="q-item">3. 《朝花夕拾》是鲁迅唯一一部<span class="blank">__________</span>性散文集。</div>
+            <div class="q-item">4. 《从百草园到三味书屋》中，百草园是鲁迅童年的<span class="blank">__________</span>，三味书屋是读书的<span class="blank">__________</span></div>
+            <div class="q-item">5. 三味书屋的先生名叫<span class="blank">__________</span>，他是鲁迅的启蒙老师。</div>
+            <div class="q-item">6. 《阿长与〈山海经〉》中，阿长是鲁迅的<span class="blank">__________</span>，她买来的《<span class="blank">__________</span>》给童年鲁迅带来了巨大惊喜。</div>
+            <div class="q-item">7. 阿长踩死了鲁迅心爱的<span class="blank">__________</span>。</div>
+            <div class="q-item">8. 《五猖会》中，父亲强迫鲁迅在去看赛会前背诵《<span class="blank">__________</span>》，导致他兴致全无。</div>
+            <div class="q-item">9. 《五猖会》批判了<span class="blank">__________</span>教育对儿童天性的摧残。</div>
+            <div class="q-item">10. 《二十四孝图》中，鲁迅最反感的两个孝道故事是“<span class="blank">__________</span>”和“<span class="blank">__________</span>”。</div>
+            <div class="q-item">11. 《父亲的病》中，为父亲治病的庸医开出“原配蟋蟀一对”和“<span class="blank">__________</span>”做药引。</div>
+            <div class="q-item">12. 《父亲的病》结尾，鲁迅在父亲的临终前大声呼喊，使他无法安宁死去，后来鲁迅认为这是<span class="blank">__________</span>的习俗害了父亲。</div>
+            <div class="q-item">13. 《琐记》中，鲁迅离乡求学，考入<span class="blank">__________</span>学堂，后转入矿路学堂。</div>
+            <div class="q-item">14. 《琐记》中，衍太太是一个<span class="blank">__________</span>、心术不正的妇人。</div>
+            <div class="q-item">15. 《藤野先生》中，藤野先生是鲁迅在<span class="blank">__________</span>学医时的解剖学教授。</div>
+            <div class="q-item">16. 藤野先生最让鲁迅感动的举动是为他修改<span class="blank">__________</span>。</div>
+            <div class="q-item">17. 鲁迅弃医从文的原因是在<span class="blank">__________</span>事件中受到刺激。</div>
+            <div class="q-item">18. 《范爱农》中，范爱农是鲁迅的同乡好友，最终<span class="blank">__________</span>身亡。</div>
+            <div class="q-item">19. 《无常》中，迎神赛会里的“活无常”是一个<span class="blank">__________</span>、有人情味的鬼魂。</div>
+            <div class="q-item">20. 《狗·猫·鼠》中，鲁迅清算猫的“罪行”，实则是讽刺现实中的“<span class="blank">__________</span>”型人物。</div>
+            <div class="q-item">21. 《朝花夕拾》中的十篇散文，按内容可分为童年生活、求学经历和<span class="blank">__________</span>三类。</div>
+            <div class="q-item">22. 鲁迅在《朝花夕拾》中既写了温馨的回忆，也写了<span class="blank">__________</span>的批判。</div>
+            <div class="q-item">23. 《藤野先生》中，鲁迅离开仙台时，藤野先生送给他一张照片，背后写着“<span class="blank">__________</span>”二字。</div>
+        </div>
+    </div>
+
+    <!-- ================= 第二面：填空题 第24-50题 ================= -->
+    <div class="page">
+        <div class="questions-list" style="margin-top: 0;">
+            <div class="q-item">24. 《从百草园到三味书屋》中，百草园里有<span class="blank">__________</span>、鸣蝉、黄蜂等动植物。</div>
+            <div class="q-item">25. 三味书屋的匾额下面画着一幅画，画着一只很肥大的<span class="blank">__________</span>伏在树下。</div>
+            <div class="q-item">26. 鲁迅在三味书屋读书时，趁先生不注意偷偷描<span class="blank">__________</span>。</div>
+            <div class="q-item">27. 《阿长与〈山海经〉》中，阿长睡觉时摆成“<span class="blank">__________</span>”字。</div>
+            <div class="q-item">28. 鲁迅对阿长的感情经历了从“不大佩服”到“空前的<span class="blank">__________</span>”的变化。</div>
+            <div class="q-item">29. 《二十四孝图》中，鲁迅最害怕的是“<span class="blank">__________</span>”的故事。</div>
+            <div class="q-item">30. 《父亲的病》中，绍兴城里的名医开出“经霜三年的<span class="blank">__________</span>”做药引。</div>
+            <div class="q-item">31. 《琐记》中，江南水师学堂的“<span class="blank">__________</span>”课程引起了鲁迅的兴趣。</div>
+            <div class="q-item">32. 《琐记》中，鲁迅离开绍兴前往<span class="blank">__________</span>求学。</div>
+            <div class="q-item">33. 鲁迅在《藤野先生》中描写藤野先生的外貌：“黑瘦，八字须，戴着<span class="blank">__________</span>。”</div>
+            <div class="q-item">34. 藤野先生为中国留学生鲁迅修改讲义中的<span class="blank">__________</span>错误。</div>
+            <div class="q-item">35. 鲁迅弃医从文后，将藤野先生的照片挂在书桌对面的<span class="blank">__________</span>上，以此鞭策自己。</div>
+            <div class="q-item">36. 《范爱农》中，范爱农与鲁迅因<span class="blank">__________</span>事件发生争执。</div>
+            <div class="q-item">37. 范爱农最后在<span class="blank">__________</span>落水身亡。</div>
+            <div class="q-item">38. 《无常》中的“活无常”戴着<span class="blank">__________</span>高的帽子。</div>
+            <div class="q-item">39. 鲁迅在《狗·猫·鼠》中说猫折磨猎物、与狮虎同族却一副<span class="blank">__________</span>。</div>
+            <div class="q-item">40. 鲁迅在《狗·猫·鼠》中声明自己仇猫的原因是猫伤害了<span class="blank">__________</span>。</div>
+            <div class="q-item">41. 《朝花夕拾》的书名寓意是：早晨的花到傍晚才<span class="blank">__________</span>，比喻晚年回忆童年往事。</div>
+            <div class="q-item">42. 《从百草园到三味书屋》中，捕鸟的方法是闰土的父亲<span class="blank">__________</span>的。</div>
+            <div class="q-item">43. 鲁迅儿时最喜欢的迎神赛会是<span class="blank">__________</span>。</div>
+            <div class="q-item">44. 《二十四孝图》中，鲁迅将<span class="blank">__________</span>描写为“将肉麻当有趣”。</div>
+            <div class="q-item">45. 《父亲的病》中，鲁迅对于父亲的死一直怀着<span class="blank">__________</span>的自责。</div>
+            <div class="q-item">46. 《琐记》中，衍太太怂恿鲁迅去看<span class="blank">__________</span>。</div>
+            <div class="q-item">47. 鲁迅在《藤野先生》中回忆了他在仙台医学专门学校学习<span class="blank">__________</span>的经历。</div>
+            <div class="q-item">48. 鲁迅弃医从文后，用<span class="blank">__________</span>作为武器继续战斗。</div>
+            <div class="q-item">49. 《范爱农》中，范爱农是一个正直、倔强、<span class="blank">__________</span>的知识分子形象。</div>
+            <div class="q-item">50. 《朝花夕拾》中，鲁迅对<span class="blank">__________</span>、封建孝道、庸医、虚伪文人等进行了深刻的批判。</div>
+        </div>
+    </div>
+</div>
+</body>

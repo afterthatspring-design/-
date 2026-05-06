@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《朝花夕拾》选择题专练 | 50题 正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1.2cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.5cm 1.2cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .q-item {
+                break-inside: avoid;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.2rem;
+        }
+        h1 {
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6a5c47;
+            margin-top: 0.1rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.2rem;
+            margin-top: 0.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.25rem 0.8rem;
+            font-size: 1.15rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.8rem;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 0.3rem;
+        }
+        .q-item {
+            background: #fefcf8;
+            border-bottom: 0.5px solid #e2d9cc;
+            padding: 0.1rem 0.2rem 0.1rem 0.6rem;
+            line-height: 1.45;
+            font-size: 0.87rem;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <div class="page">
+        <div class="main-title">
+            <h1>《朝花夕拾》选择题专练</h1>
+            <div class="subhead">鲁迅 · 散文回忆录 · 七年级上册必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">🔘 一、选择题（共50题 · 第一面 第1-25题）</div>
+        <div class="questions-list">
+            <div class="q-item">1. 《朝花夕拾》的作者是？ A.胡适 B.鲁迅 C.茅盾 D.老舍</div>
+            <div class="q-item">2. 《朝花夕拾》原名是什么？ A.《呐喊》 B.《彷徨》 C.《旧事重提》 D.《野草》</div>
+            <div class="q-item">3. 《朝花夕拾》写于哪一年？ A.1924年 B.1925年 C.1926年 D.1927年</div>
+            <div class="q-item">4. 《朝花夕拾》共有多少篇？ A.8篇 B.9篇 C.10篇 D.11篇</div>
+            <div class="q-item">5. 《朝花夕拾》是鲁迅唯一的什么体裁作品？ A.小说 B.散文诗 C.回忆性散文集 D.杂文</div>
+            <div class="q-item">6. 《从百草园到三味书屋》中，百草园是鲁迅的什么？ A.书房 B.乐园 C.学堂 D.故园</div>
+            <div class="q-item">7. 三味书屋的先生叫什么名字？ A.寿镜吾 B.章太炎 C.蔡元培 D.胡适之</div>
+            <div class="q-item">8. 《阿长与〈山海经〉》中，阿长是鲁迅的？ A.母亲 B.姐姐 C.保姆 D.邻居</div>
+            <div class="q-item">9. 阿长给鲁迅买来的书是？ A.《论语》 B.《山海经》 C.《诗经》 D.《千字文》</div>
+            <div class="q-item">10. 阿长踩死了鲁迅心爱的什么动物？ A.猫 B.狗 C.隐鼠 D.鸟</div>
+            <div class="q-item">11. 《五猖会》中，父亲强迫鲁迅背诵什么书？ A.《论语》 B.《大学》 C.《鉴略》 D.《中庸》</div>
+            <div class="q-item">12. 《五猖会》批判了什么？ A.封建孝道 B.封建教育 C.封建迷信 D.封建礼教</div>
+            <div class="q-item">13. 《二十四孝图》鲁迅最反感的孝道故事是？ A.卧冰求鲤 B.老莱娱亲 C.黄香温席 D.鹿乳奉亲</div>
+            <div class="q-item">14. 《二十四孝图》“将肉麻当有趣”是哪个故事？ A.郭巨埋儿 B.老莱娱亲 C.卧冰求鲤 D.哭竹生笋</div>
+            <div class="q-item">15. 《父亲的病》中，庸医开出的荒唐药引是？ A.原配蟋蟀 B.经霜三年的甘蔗 C.原配蟋蟀和经霜三年的甘蔗 D.人血馒头</div>
+            <div class="q-item">16. 《父亲的病》中，鲁迅对父亲的死怀着怎样的感情？ A.解脱 B.庆幸 C.自责 D.愤怒</div>
+            <div class="q-item">17. 《琐记》中鲁迅考入什么学堂？ A.江南水师学堂 B.江南陆师学堂 C.求是书院 D.京师大学堂</div>
+            <div class="q-item">18. 《琐记》中的衍太太是一个怎样的人？ A.善良 B.虚伪 C.正直 D.诚实</div>
+            <div class="q-item">19. 《藤野先生》中，鲁迅在什么地方学医？ A.东京 B.京都 C.仙台 D.大阪</div>
+            <div class="q-item">20. 藤野先生教的是什么学科？ A.内科 B.外科 C.解剖学 D.药学</div>
+            <div class="q-item">21. 鲁迅弃医从文的原因是什么？ A.学医太难 B.幻灯片事件 C.藤野先生离开 D.经济困难</div>
+            <div class="q-item">22. 《范爱农》中，范爱农最终怎样死去？ A.病逝 B.被杀 C.落水 D.自尽</div>
+            <div class="q-item">23. 《无常》中迎神赛会里的“活无常”是怎样的鬼魂？ A.可怕 B.公正有人情味 C.冷酷 D.贪婪</div>
+            <div class="q-item">24. 《狗·猫·鼠》中鲁迅清算猫的罪行是讽刺？ A.封建统治者 B.“猫”型人物 C.帝国主义 D.封建礼教</div>
+            <div class="q-item">25. 《朝花夕拾》中哪一篇批判了封建孝道的虚伪？ A.《五猖会》 B.《二十四孝图》 C.《父亲的病》 D.《琐记》</div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="questions-list">
+            <div class="q-item">26. 《藤野先生》中描写藤野先生外貌：“黑瘦，八字须，戴着”？ A.眼镜 B.帽子 C.围巾 D.手套</div>
+            <div class="q-item">27. 《藤野先生》中，鲁迅离开仙台时，藤野先生送给他一张照片，背后写着？ A.惜别 B.珍重 C.努力 D.再见</div>
+            <div class="q-item">28. 《范爱农》中，范爱农与鲁迅因什么事发生争执？ A.革命 B.留学 C.学费 D.徐锡麟事件</div>
+            <div class="q-item">29. 《阿长与〈山海经〉》中，阿长睡觉时的睡相是？ A.大字 B.人字 C.之字 D.一字</div>
+            <div class="q-item">30. 鲁迅对阿长的感情经历了怎样的变化？ A.从佩服到厌恶 B.从讨厌到敬意 C.从喜欢到讨厌 D.始终如一</div>
+            <div class="q-item">31. 《五猖会》中，鲁迅盼望观看的是什么活动？ A.庙会 B.迎神赛会 C.灯会 D.花会</div>
+            <div class="q-item">32. 《无常》中的“活无常”戴着多高的帽子？ A.一尺 B.二尺 C.三尺 D.一丈</div>
+            <div class="q-item">33. 《从百草园到三味书屋》中，百草园里有哪种动物？ A.画眉 B.黄蜂 C.鹦鹉 D.燕子</div>
+            <div class="q-item">34. 鲁迅在三味书屋读书时，趁先生不注意偷偷做什么？ A.睡觉 B.描绣像 C.吃零食 D.看小说</div>
+            <div class="q-item">35. 《二十四孝图》中鲁迅最害怕的故事？ A.卧冰求鲤 B.郭巨埋儿 C.老莱娱亲 D.哭竹生笋</div>
+            <div class="q-item">36. 《父亲的病》中城里的名医开出“经霜三年的什么”做药引？ A.甘蔗 B.竹叶 C.荷叶 D.梧桐叶</div>
+            <div class="q-item">37. 《琐记》中，衍太太怂恿鲁迅去看什么？ A.电影 B.戏 C.热闹 D.杀头</div>
+            <div class="q-item">38. 鲁迅在《琐记》中离开绍兴前往哪里求学？ A.北京 B.上海 C.南京 D.杭州</div>
+            <div class="q-item">39. 《范爱农》中，范爱农是一个怎样的人？ A.圆滑 B.正直、倔强 C.胆小 D.自私</div>
+            <div class="q-item">40. 《朝花夕拾》的书名寓意是什么？ A.早晨的花 B.傍晚的花 C.早晨的花到傍晚才拾起 D.童年的回忆</div>
+            <div class="q-item">41. 《从百草园到三味书屋》中，捕鸟的方法是谁教的？ A.闰土 B.闰土的父亲 C.先生 D.鲁迅自己</div>
+            <div class="q-item">42. 《藤野先生》中鲁迅将藤野先生的照片挂在？ A.书桌上 B.书桌对面 C.床头 D.墙上</div>
+            <div class="q-item">43. 《阿长与〈山海经〉》中，鲁迅对阿长的“敬意”源于什么？ A.她讲故事 B.她买《山海经》 C.她照顾鲁迅 D.她教鲁迅</div>
+            <div class="q-item">44. 《五猖会》中，父亲要求鲁迅背诵《鉴略》时，鲁迅的心情是？ A.兴奋 B.无奈烦闷 C.高兴 D.平静</div>
+            <div class="q-item">45. 《二十四孝图》中，鲁迅还将哪个故事描写为“将肉麻当有趣”？ A.郭巨埋儿 B.老莱娱亲 C.卧冰求鲤 D.哭竹生笋</div>
+            <div class="q-item">46. 《朝花夕拾》中，哪一篇表达了鲁迅对藤野先生的怀念？ A.《范爱农》 B.《藤野先生》 C.《琐记》 D.《父亲的病》</div>
+            <div class="q-item">47. 鲁迅在《朝花夕拾》中既写了温馨的回忆，也写了什么？ A.理性的批判 B.美好的憧憬 C.未来的规划 D.个人的成就</div>
+            <div class="q-item">48. 《朝花夕拾》中“给我起外号‘徐锡麟’”的是谁？ A.范爱农 B.衍太太 C.藤野先生 D.寿镜吾</div>
+            <div class="q-item">49. 鲁迅在《父亲的病》中认为是什么害了父亲？ A.庸医 B.疾病 C.封建习俗 D.贫困</div>
+            <div class="q-item">50. 《朝花夕拾》中哪一篇记录了鲁迅在南京求学的生活？ A.《琐记》 B.《藤野先生》 C.《范爱农》 D.《父亲的病》</div>
+        </div>
+    </div>
+</div>
+</body>

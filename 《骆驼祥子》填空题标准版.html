@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《骆驼祥子》填空题专练 | 50空 正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* A4纸张 — 正反面各一页 */
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 1rem 1.3rem;
+        }
+
+        /* 分页：第一面（1-23题），第二面（24-50题） */
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1.2cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.5cm 1.2cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .q-item {
+                break-inside: avoid;
+            }
+        }
+
+        /* 标题区域 — 紧凑（仅第一面显示完整标题） */
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.2rem;
+        }
+        h1 {
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6a5c47;
+            margin-top: 0.1rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.2rem;
+            margin-top: 0.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        /* 题型标题（仅第一面） */
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.25rem 0.8rem;
+            font-size: 1.15rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.8rem;
+        }
+
+        /* 题目列表 — 行距适中 */
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 0.3rem;
+        }
+        .q-item {
+            background: #fefcf8;
+            border-bottom: 0.5px solid #e2d9cc;
+            padding: 0.1rem 0.2rem 0.1rem 0.6rem;
+            line-height: 1.45;
+            font-size: 0.87rem;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 70px;
+            border-bottom: 1.2px dotted #a5682c;
+            margin: 0 3px;
+            font-weight: 600;
+        }
+
+        .print-footer {
+            text-align: center;
+            font-size: 0.62rem;
+            margin-top: 0.8rem;
+            color: #bbaa8a;
+            border-top: 1px solid #ece1d1;
+            padding-top: 0.3rem;
+        }
+        .page-number {
+            text-align: center;
+            font-size: 0.62rem;
+            color: #9b8a74;
+            margin-top: 0.4rem;
+        }
+        /* 第二面隐藏标题的样式 */
+        .no-title {
+            margin-top: 0;
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面：填空题 第1-23题（带完整标题） ================= -->
+    <div class="page">
+        <div class="main-title">
+            <h1>《骆驼祥子》填空题专练</h1>
+            <div class="subhead">老舍 · 京味文学经典 · 七年级下册必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">📝 一、填空题（共50空·第一面 第1-23题）</div>
+        <div class="questions-list">
+            <div class="q-item">1. 《骆驼祥子》的作者是<span class="blank">__________</span>，原名舒庆春，字舍予，满族正红旗人。</div>
+            <div class="q-item">2. 小说的主人公祥子来自<span class="blank">__________</span>，他失去了父母与几亩薄田，十八岁便跑到北平谋生。</div>
+            <div class="q-item">3. 祥子最大的梦想是拥有一辆属于自己的<span class="blank">__________</span>。</div>
+            <div class="q-item">4. 祥子第一次买车的钱是他花了<span class="blank">__________</span>年时间省吃俭用攒下来的。</div>
+            <div class="q-item">5. 祥子买的第一辆车被<span class="blank">__________</span>抢走了，当时他为了多赚两块钱冒险拉车去清华。</div>
+            <div class="q-item">6. 祥子从军队逃跑时，顺手牵走了<span class="blank">__________</span>匹骆驼，卖了三十五块钱，因此得了“骆驼祥子”的外号。</div>
+            <div class="q-item">7. 祥子回到人和车厂，将卖骆驼剩下的钱寄存在<span class="blank">__________</span>那里。</div>
+            <div class="q-item">8. 人和车厂的老板是<span class="blank">__________</span>，他是一个残忍、霸道、唯利是图的资本家。</div>
+            <div class="q-item">9. 刘四爷的女儿叫<span class="blank">__________</span>，她性格大胆泼辣，三十七八岁还未出嫁。</div>
+            <div class="q-item">10. 虎妞设计嫁给祥子，谎称自己<span class="blank">__________</span>，迫使祥子就范。</div>
+            <div class="q-item">11. 祥子第二次准备买车的钱被<span class="blank">__________</span>敲诈走了，因为孙侦探抓住了他曹先生家跟踪的机会。</div>
+            <div class="q-item">12. 曹先生被学生<span class="blank">__________</span>告发，被迫离开北平避难。</div>
+            <div class="q-item">13. 虎妞与刘四爷闹翻后，用<span class="blank">__________</span>块钱买下了二强子的车，给祥子拉。</div>
+            <div class="q-item">14. 二强子曾打死自己的妻子，为了钱把女儿<span class="blank">__________</span>卖给了军官。</div>
+            <div class="q-item">15. 小福子被军官抛弃后回到家中，为了养活弟弟和酒鬼父亲，被迫<span class="blank">__________</span>。</div>
+            <div class="q-item">16. 虎妞因<span class="blank">__________</span>难产而死，祥子不得不卖车料理丧事。</div>
+            <div class="q-item">17. 小福子后来被卖到了<span class="blank">__________</span>，最后上吊自杀。</div>
+            <div class="q-item">18. 祥子得知小福子死讯后彻底堕落，开始<span class="blank">__________</span>、抽烟、酗酒、逛窑子。</div>
+            <div class="q-item">19. 祥子最后的结局是<span class="blank">__________</span>，靠替红白喜事打旗子糊口。</div>
+            <div class="q-item">20. 《骆驼祥子》通过祥子的悲剧，深刻批判了旧<span class="blank">__________</span>社会的黑暗。</div>
+            <div class="q-item">21. 老舍被誉为<span class="blank">__________</span>，他的作品具有浓郁的京味语言特色。</div>
+            <div class="q-item">22. 祥子的第一辆车被抢发生在<span class="blank">__________</span>时代背景下。</div>
+            <div class="q-item">23. 曹先生是祥子眼中的<span class="blank">__________</span>，他待人宽和，同情祥子。</div>
+        </div>
+        <div class="print-footer">本页为第1-23题 | 背面为第24-50题</div>
+        <div class="page-number">—— 第1页 / 共2页（正面）——</div>
+    </div>
+
+    <!-- ================= 第二面：填空题 第24-50题（无任何标题，直接从第24题开始） ================= -->
+    <div class="page">
+        <div class="questions-list" style="margin-top: 0;">
+            <div class="q-item">24. 夏太太引诱祥子，导致祥子染上了<span class="blank">__________</span>病。</div>
+            <div class="q-item">25. 老马和小马祖孙俩是<span class="blank">__________</span>的代表，他们穷困潦倒却无力改变。</div>
+            <div class="q-item">26. 祥子经历了<span class="blank">__________</span>起<span class="blank">__________</span>落的买车卖车过程。</div>
+            <div class="q-item">27. 小说中祥子的外号“骆驼”源于他<span class="blank">__________</span>的经历。</div>
+            <div class="q-item">28. 虎妞骗刘四爷说自己怀了祥子的孩子，刘四爷<span class="blank">__________</span>了她。</div>
+            <div class="q-item">29. 小福子死后，祥子彻底失去了对<span class="blank">__________</span>的信念。</div>
+            <div class="q-item">30. 小说中多次提到<span class="blank">__________</span>是祥子精神支柱的象征。</div>
+            <div class="q-item">31. 祥子拉车摔伤了<span class="blank">__________</span>先生，内心十分愧疚。</div>
+            <div class="q-item">32. 孙侦探以<span class="blank">__________</span>的罪名敲诈了祥子。</div>
+            <div class="q-item">33. 虎妞死后，祥子把车卖了给虎妞办<span class="blank">__________</span>。</div>
+            <div class="q-item">34. 小福子曾请求祥子<span class="blank">__________</span>她，但祥子因养不起她而拒绝了。</div>
+            <div class="q-item">35. 二强子卖掉女儿后，用钱买了辆<span class="blank">__________</span>，后来因喝酒打死了妻子。</div>
+            <div class="q-item">36. 老舍创作《骆驼祥子》的灵感来源于朋友讲述的一个<span class="blank">__________</span>的故事。</div>
+            <div class="q-item">37. 小说中祥子曾在一个<span class="blank">__________</span>人家拉包月，后来因为被怀疑偷钱而离开。</div>
+            <div class="q-item">38. 杨太太为人<span class="blank">__________</span>，把祥子当奴隶使唤。</div>
+            <div class="q-item">39. 祥子拉车途中看到<span class="blank">__________</span>被饿死在路边，感到世事艰难。</div>
+            <div class="q-item">40. 小说结尾祥子变得<span class="blank">__________</span>、自私、吃喝嫖赌，成为一具行尸走肉。</div>
+            <div class="q-item">41. 虎妞的性格特点可以概括为<span class="blank">__________</span>、有心计、泼辣。</div>
+            <div class="q-item">42. 小福子的性格特点是<span class="blank">__________</span>、善良、逆来顺受。</div>
+            <div class="q-item">43. 刘四爷在女儿死后，独自<span class="blank">__________</span>，表现了冷酷自私的一面。</div>
+            <div class="q-item">44. 祥子第一次生病是因为<span class="blank">__________</span>，加上身心疲惫。</div>
+            <div class="q-item">45. 曹先生被跟踪时，祥子为了保护曹先生而<span class="blank">__________</span>。</div>
+            <div class="q-item">46. 小说中“人和车厂”象征了<span class="blank">__________</span>对底层劳动者的剥削。</div>
+            <div class="q-item">47. 祥子最后的命运揭示了旧社会<span class="blank">__________</span>的残酷性。</div>
+            <div class="q-item">48. 老舍的语言风格被称为<span class="blank">__________</span>文学，富有生活气息。</div>
+            <div class="q-item">49. 小说中多次描写<span class="blank">__________</span>的天气，烘托了祥子艰难的生活。</div>
+            <div class="q-item">50. 《骆驼祥子》是老舍的代表作之一，也是中国现代<span class="blank">__________</span>文学的经典。</div>
+        </div>
+        <div class="print-footer">本页为第24-50题 | 填空题共50空</div>
+        <div class="page-number">—— 第2页 / 共2页（背面）——</div>
+    </div>
+</div>
+</body>

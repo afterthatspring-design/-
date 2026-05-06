@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《红岩》选择题专练 | 50题 正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 0.9rem 1.2rem;
+        }
+
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1.2cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.5cm 1.2cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .q-item {
+                break-inside: avoid;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.2rem;
+        }
+        h1 {
+            font-size: 1.65rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.72rem;
+            color: #6a5c47;
+            margin-top: 0.08rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.68rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.15rem;
+            margin-top: 0.15rem;
+            margin-bottom: 0.55rem;
+        }
+
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.22rem 0.7rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.7rem;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.42rem;
+            margin-bottom: 0.3rem;
+        }
+        .q-item {
+            background: #fefcf8;
+            border-bottom: 0.5px solid #e2d9cc;
+            padding: 0.08rem 0.2rem 0.08rem 0.6rem;
+            line-height: 1.42;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <div class="page">
+        <div class="main-title">
+            <h1>《红岩》选择题专练</h1>
+            <div class="subhead">罗广斌、杨益言 · 红色经典 · 七年级必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">🔘 一、选择题（共50题 · 第一面 第1-25题）</div>
+        <div class="questions-list">
+            <div class="q-item">1. 《红岩》的作者是谁？ A.罗广斌、杨益言 B.周而复 C.曲波 D.梁斌</div>
+            <div class="q-item">2. 《红岩》的故事背景是什么时期？ A.抗日战争 B.解放战争 C.土地革命 D.北伐战争</div>
+            <div class="q-item">3. 小说主要发生在哪里？ A.延安 B.重庆 C.南京 D.北京</div>
+            <div class="q-item">4. 江姐的原型是谁？ A.江竹筠 B.赵一曼 C.刘胡兰 D.向警予</div>
+            <div class="q-item">5. 江姐被捕后受尽了什么酷刑？ A.老虎凳 B.辣椒水 C.竹签钉入十指 D.电刑</div>
+            <div class="q-item">6. 江姐的名言是？ A.毒刑拷打是太小的考验 B.怕死不当共产党 C.砍头不要紧 D.为了新中国冲啊</div>
+            <div class="q-item">7. 许云峰是什么身份？ A.地下党领导者 B.游击队长 C.工人领袖 D.学生领袖</div>
+            <div class="q-item">8. 许云峰在狱中做了什么壮举？ A.挖通地道 B.组织越狱 C.写诗 D.绝食</div>
+            <div class="q-item">9. 小萝卜头原名是什么？ A.宋振中 B.宋振华 C.宋振国 D.宋振民</div>
+            <div class="q-item">10. 小萝卜头遇害时年仅多少岁？ A.6岁 B.7岁 C.8岁 D.9岁</div>
+            <div class="q-item">11. 华子良的真实身份是什么？ A.省委书记 B.特务 C.叛徒 D.普通囚犯</div>
+            <div class="q-item">12. 华子良在狱中长期装疯卖傻是为了什么？ A.迷惑敌人 B.逃避劳动 C.偷懒 D.保命</div>
+            <div class="q-item">13. 双枪老太婆是谁？ A.华蓥山游击纵队司令员 B.江姐的母亲 C.许云峰的妻子 D.叛徒</div>
+            <div class="q-item">14. 双枪老太婆善使什么？ A.双枪 B.双刀 C.双剑 D.双鞭</div>
+            <div class="q-item">15. 叛徒是谁？ A.甫志高 B.徐鹏飞 C.严醉 D.马歇尔</div>
+            <div class="q-item">16. 甫志高出卖了哪些同志？ A.许云峰、江姐 B.成岗、刘思扬 C.以上都是 D.以上都不是</div>
+            <div class="q-item">17. 徐鹏飞是什么身份？ A.国民党特务头子 B.共产党领导人 C.民主人士 D.工人代表</div>
+            <div class="q-item">18. 重庆解放前夕，国民党特务对狱中革命者进行了什么大屠杀？ A.11·27大屠杀 B.12·9大屠杀 C.7·15大屠杀 D.8·13大屠杀</div>
+            <div class="q-item">19. “绣红旗”发生在哪里？ A.渣滓洞 B.白公馆 C.中美合作所 D.红岩村</div>
+            <div class="q-item">20. “红岩”象征着什么？ A.革命意志坚不可摧 B.红色的岩石 C.美丽的风景 D.烈士的鲜血</div>
+            <div class="q-item">21. 小说中狱中党支部的领导核心是谁？ A.许云峰 B.齐晓轩 C.江姐 D.成岗</div>
+            <div class="q-item">22. 重庆解放前夕，关押革命者的两个主要监狱是什么？ A.渣滓洞和白公馆 B.南京监狱和重庆监狱 C.中美合作所和渣滓洞 D.白公馆和红岩村</div>
+            <div class="q-item">23. 齐晓轩是什么身份？ A.白公馆地下党负责人 B.渣滓洞地下党负责人 C.游击队长 D.工人领袖</div>
+            <div class="q-item">24. 成岗在狱中负责什么工作？ A.创办《挺进报》 B.组织越狱 C.传递情报 D.照顾伤病员</div>
+            <div class="q-item">25. 刘思扬出身什么家庭？ A.豪门 B.农民 C.工人 D.教师</div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="questions-list">
+            <div class="q-item">26. “狱中八条”是烈士们的什么？ A.遗言和嘱托 B.家书 C.日记 D.诗歌</div>
+            <div class="q-item">27. 《红岩》被称为什么精神的象征？ A.红岩精神 B.长征精神 C.延安精神 D.井冈山精神</div>
+            <div class="q-item">28. “红岩精神”的核心内涵是什么？ A.坚如磐石、不畏牺牲 B.艰苦奋斗 C.实事求是 D.团结协作</div>
+            <div class="q-item">29. 小说中哪一位烈士留下了“永远跟党走”的遗言？ A.许云峰 B.江姐 C.刘思扬 D.成岗</div>
+            <div class="q-item">30. 《红岩》的艺术特色是什么？ A.纪实性 B.双线结构 C.对比手法 D.以上都是</div>
+            <div class="q-item">31. 小说中很多人物都有真实原型，江姐的原型是？ A.江竹筠 B.赵一曼 C.刘胡兰 D.向警予</div>
+            <div class="q-item">32. 小说中“小萝卜头”在狱中学习用的笔是什么做的？ A.树枝 B.钉子 C.石头 D.筷子</div>
+            <div class="q-item">33. 许云峰就义前说了什么？ A.人生自古谁无死 B.共产党万岁 C.新中国万岁 D.打倒国民党</div>
+            <div class="q-item">34. 江姐在狱中绣红旗时的心情是怎样的？ A.悲伤 B.绝望 C.充满希望 D.愤怒</div>
+            <div class="q-item">35. 成岗在《挺进报》上写下了什么？ A.革命真理 B.爱情诗 C.生活琐事 D.日记</div>
+            <div class="q-item">36. 刘思扬在狱中写下了什么？ A.长诗《我的自白书》 B.日记 C.家书 D.革命宣言</div>
+            <div class="q-item">37. 华子良在关键时刻做了什么？ A.带领战友突围 B.叛变 C.逃跑 D.自杀</div>
+            <div class="q-item">38. 双枪老太婆劫刑车救了谁？ A.江姐 B.许云峰 C.成岗 D.刘思扬</div>
+            <div class="q-item">39. 甫志高为什么叛变？ A.贪生怕死 B.金钱诱惑 C.受刑不过 D.爱情迷惑</div>
+            <div class="q-item">40. 徐鹏飞象征着什么？ A.反动势力的残暴 B.革命者的英勇 C.爱国者 D.民主人士</div>
+            <div class="q-item">41. 小说中狱中“红旗”是用什么绣的？ A.被面 B.衣服 C.床单 D.手帕</div>
+            <div class="q-item">42. 11·27大屠杀发生在哪一年？ A.1948年 B.1949年 C.1950年 D.1947年</div>
+            <div class="q-item">43. 重庆解放后，幸存者发现了狱中烈士留下的什么？ A.“狱中八条” B.遗书 C.日记 D.家书</div>
+            <div class="q-item">44. 《红岩》中哪位烈士被称为“我党卓越的地下工作者”？ A.许云峰 B.江姐 C.齐晓轩 D.成岗</div>
+            <div class="q-item">45. 小说中“白公馆”和“渣滓洞”位于哪里？ A.重庆歌乐山 B.重庆南山 C.重庆缙云山 D.重庆四面山</div>
+            <div class="q-item">46. 小说中“小萝卜头”为狱中党组织传递消息，他传递的是什么？ A.纸条 B.情报 C.报纸 D.信件</div>
+            <div class="q-item">47. 齐晓轩最后怎样牺牲的？ A.为掩护战友牺牲 B.被枪杀 C.被活埋 D.被火烧死</div>
+            <div class="q-item">48. 许云峰在狱中用双手挖通地道，体现了他什么精神？ A.坚强不屈 B.自私 C.贪婪 D.懦弱</div>
+            <div class="q-item">49. 小说中敢于和敌人正面交锋的狱中领导人是谁？ A.许云峰 B.齐晓轩 C.江姐 D.成岗</div>
+            <div class="q-item">50. 《红岩》的主题思想是什么？ A.讴歌革命英雄主义 B.揭露反动派的残暴 C.弘扬红岩精神 D.以上都是</div>
+        </div>
+    </div>
+</div>
+</body>
