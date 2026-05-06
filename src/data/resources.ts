@@ -102,7 +102,7 @@ export const RESOURCES_DATA = {
       files: {
         interpretation: "《经典常谈》深度解读标准版.html",
         choice: "《经典常谈》选择题.html",
-        fillBlank: "《经典常谈》填空题标准版.html",
+        fillBlank: "《经典常谈》填空题.html",
         shortAnswer: "《经典常谈》问答题.html"
       }
     },
@@ -115,7 +115,7 @@ export const RESOURCES_DATA = {
       files: {
         interpretation: "《昆虫记》深度解读标准版.html",
         choice: "《昆虫记》选择题.html",
-        fillBlank: "《昆虫记》填空题标准版.html",
+        fillBlank: "《昆虫记》填空题.html",
         shortAnswer: "《昆虫记》问答题.html"
       }
     },
@@ -128,7 +128,7 @@ export const RESOURCES_DATA = {
       files: {
         interpretation: "《简·爱》深度解读标准版.html",
         choice: "《简·爱》选择题.html",
-        fillBlank: "《简·爱》填空题标准版.html",
+        fillBlank: "《简·爱》填空题.html",
         shortAnswer: "《简·爱》问答题.html"
       }
     },
@@ -141,7 +141,7 @@ export const RESOURCES_DATA = {
       files: {
         interpretation: "《唐诗三百首》深度解读标准版.html",
         choice: "《唐诗三百首》选择题.html",
-        fillBlank: "《唐诗三百首》填空题标准版.html",
+        fillBlank: "《唐诗三百首》填空题.html",
         shortAnswer: "《唐诗三百首》问答题.html"
       }
     },
@@ -154,7 +154,7 @@ export const RESOURCES_DATA = {
       files: {
         interpretation: "《儒林外史》深度解读标准版.html",
         choice: "《儒林外史》选择题.html",
-        fillBlank: "《儒林外史》填空题标准版.html",
+        fillBlank: "《儒林外史》填空题.html",
         shortAnswer: "《儒林外史》问答题.html"
       }
     },
@@ -167,7 +167,7 @@ export const RESOURCES_DATA = {
       files: {
         interpretation: "《水浒传》深度解读标准版.html",
         choice: "《水浒传》选择题.html",
-        fillBlank: "《水浒传》填空题标准版.html",
+        fillBlank: "《水浒传》填空题.html",
         shortAnswer: "《水浒传》问答题.html"
       }
     },
@@ -176,8 +176,13 @@ export const RESOURCES_DATA = {
       grade: "七年级上",
       tags: ["吴承恩", "神魔小说", "经典"], 
       icon: "🐵", 
-      desc: "追求真经与自由的浪漫主义巨著",
-      file: "xiyouji.html" 
+      desc: "替天行道，梁山好汉英雄本色",
+      files: {
+        interpretation: "《西游记》深度解读标准版.html",
+        choice: "《西游记》选择题.html",
+        fillBlank: "《西游记》填空题标准版.html",
+        shortAnswer: "《西游记》问答题.html"
+      }
     }
   ],
   examPapers: [

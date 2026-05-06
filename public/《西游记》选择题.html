@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《西游记》选择题专练 | 50题 正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 1rem 1.3rem;
+        }
+
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1.2cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.5cm 1.2cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .q-item {
+                break-inside: avoid;
+            }
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.2rem;
+        }
+        h1 {
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            color: #2c4b2f;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6a5c47;
+            margin-top: 0.1rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.2rem;
+            margin-top: 0.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.25rem 0.8rem;
+            font-size: 1.15rem;
+            font-weight: bold;
+            border-left: 6px solid #8b5a2b;
+            margin-bottom: 0.8rem;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 0.3rem;
+        }
+        .q-item {
+            background: #fefcf8;
+            border-bottom: 0.5px solid #e2d9cc;
+            padding: 0.1rem 0.2rem 0.1rem 0.6rem;
+            line-height: 1.45;
+            font-size: 0.87rem;
+        }
+
+        .print-footer {
+            text-align: center;
+            font-size: 0.62rem;
+            margin-top: 0.8rem;
+            color: #bbaa8a;
+            border-top: 1px solid #ece1d1;
+            padding-top: 0.3rem;
+        }
+        .page-number {
+            text-align: center;
+            font-size: 0.62rem;
+            color: #9b8a74;
+            margin-top: 0.4rem;
+        }
+        strong {
+            color: #b1622c;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面：选择题 第1-25题 ================= -->
+    <div class="page">
+        <div class="main-title">
+            <h1>《西游记》选择题专练</h1>
+            <div class="subhead">吴承恩 · 中国古代第一部浪漫主义长篇神魔小说 · 七年级必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">🔘 二、选择题（共50题·第一面 第1-25题）</div>
+        <div class="questions-list">
+            <div class="q-item">1. 《西游记》作者？ A.罗贯中 B.吴承恩 C.施耐庵 D.曹雪芹</div>
+            <div class="q-item">2. 孙悟空从何而出？ A.石头迸裂 B.莲花化生 C.仙丹转世 D.菩提点化</div>
+            <div class="q-item">3. 孙悟空拜谁为师？ A.如来佛祖 B.太上老君 C.菩提祖师 D.观音菩萨</div>
+            <div class="q-item">4. 悟空学的法术不包括？ A.七十二变 B.筋斗云 C.火眼金睛 D.长生不老术</div>
+            <div class="q-item">5. 金箍棒原是谁的？ A.大禹 B.东海龙王 C.太上老君 D.轩辕黄帝</div>
+            <div class="q-item">6. 悟空自封的称号？ A.齐天大圣 B.斗战胜佛 C.美猴王 D.弼马温</div>
+            <div class="q-item">7. 大闹天宫时与谁赌变化？ A.二郎神 B.哪吒 C.四大天王 D.巨灵神</div>
+            <div class="q-item">8. 悟空被压五行山下多少年？ A.五百年 B.六百年 C.七百年 D.八百年</div>
+            <div class="q-item">9. 唐僧前世是谁？ A.金蝉子 B.金翅大鹏 C.金毛犼 D.金鼻白毛鼠</div>
+            <div class="q-item">10. 观音赐给唐僧的宝物？ A.锦斓袈裟 B.九环锡杖 C.紫金钵盂 D.紧箍咒</div>
+            <div class="q-item">11. 揭去五行山六字真言的是？ A.唐僧 B.观音 C.如来 D.悟空自己</div>
+            <div class="q-item">12. 悟空头上金箍是谁给的？ A.如来 B.观音 C.唐僧 D.菩提祖师</div>
+            <div class="q-item">13. 猪八戒原是天庭？ A.天蓬元帅 B.卷帘大将 C.御马监 D.广寒宫</div>
+            <div class="q-item">14. 唐僧在哪收猪八戒？ A.高老庄 B.流沙河 C.鹰愁涧 D.火焰山</div>
+            <div class="q-item">15. 沙僧原是天庭？ A.卷帘大将 B.天蓬元帅 C.御马监 D.托塔天王</div>
+            <div class="q-item">16. 沙僧兵器是？ A.降妖宝杖 B.九齿钉耙 C.金箍棒 D.月牙铲</div>
+            <div class="q-item">17. 白龙马原是？ A.西海龙王三太子 B.东海龙王太子 C.南海龙王太子 D.北海龙王太子</div>
+            <div class="q-item">18. 取经第一难遇谁？ A.寅将军 B.白骨精 C.黑熊精 D.黄风怪</div>
+            <div class="q-item">19. 悟空三打何人？ A.白骨精 B.蜘蛛精 C.玉兔精 D.蝎子精</div>
+            <div class="q-item">20. 车迟国三妖不包括？ A.羊力大仙 B.鹿力大仙 C.虎力大仙 D.牛力大仙</div>
+            <div class="q-item">21. 红孩儿被谁收服？ A.观音菩萨 B.如来佛祖 C.太上老君 D.弥勒佛</div>
+            <div class="q-item">22. 女儿国国王欲招唐僧为？ A.夫君 B.国师 C.太傅 D.驸马</div>
+            <div class="q-item">23. 真假美猴王中假悟空是？ A.六耳猕猴 B.通臂猿猴 C.灵明石猴 D.赤尻马猴</div>
+            <div class="q-item">24. 假悟空被谁识破？ A.如来佛祖 B.观音菩萨 C.地藏王 D.玉帝</div>
+            <div class="q-item">25. 火焰山须用何物扇灭？ A.芭蕉扇 B.蒲扇 C.铁扇 D.羽扇</div>
+        </div>
+        <div class="print-footer">本页为第1-25题 | 背面为第26-50题</div>
+        <div class="page-number">—— 第1页 / 共2页（正面）——</div>
+    </div>
+
+    <!-- ================= 第二面：选择题 第26-50题 ================= -->
+    <div class="page">
+        <div class="questions-list" style="margin-top: 0;">
+            <div class="q-item">26. 铁扇公主的扇子产于？ A.昆仑山 B.火焰山 C.翠云山 D.花果山</div>
+            <div class="q-item">27. 牛魔王曾变为何物骗回扇子？ A.猪八戒 B.孙悟空 C.唐僧 D.沙僧</div>
+            <div class="q-item">28. 盘丝洞七女妖原形？ A.蜘蛛 B.蝎子 C.蜈蚣 D.蝴蝶</div>
+            <div class="q-item">29. 黄花观蜈蚣精被谁降服？ A.毗蓝婆菩萨 B.观音菩萨 C.文殊菩萨 D.普贤菩萨</div>
+            <div class="q-item">30. 比丘国妖道要的药材？ A.小儿心肝 B.唐僧肉 C.悟空血 D.龙肝凤髓</div>
+            <div class="q-item">31. 狮驼岭大鹏雕是如来？ A.舅舅 B.外甥 C.弟子 D.坐骑</div>
+            <div class="q-item">32. 隐雾山用什么计捉唐僧？ A.分瓣梅花计 B.美人计 C.调虎离山 D.苦肉计</div>
+            <div class="q-item">33. 天竺国假公主原形？ A.玉兔 B.狐狸 C.老鼠 D.蛇精</div>
+            <div class="q-item">34. 通天河灵感大王原形？ A.金鱼 B.鲤鱼 C.乌龟 D.鼋龙</div>
+            <div class="q-item">35. 金兜洞独角兕大王的兵器？ A.金刚琢 B.紫金铃 C.芭蕉扇 D.阴阳二气瓶</div>
+            <div class="q-item">36. 子母河水喝了会怎样？ A.怀孕 B.中毒 C.变老 D.失忆</div>
+            <div class="q-item">37. 落胎泉水在何处？ A.聚仙庵 B.清华庄 C.解阳山 D.破儿洞</div>
+            <div class="q-item">38. 朱紫国金圣宫娘娘被谁抢？ A.赛太岁 B.黄眉怪 C.青牛精 D.九头虫</div>
+            <div class="q-item">39. 赛太岁法宝紫金铃原主？ A.太上老君 B.观音菩萨 C.文殊菩萨 D.普贤菩萨</div>
+            <div class="q-item">40. 无底洞老鼠精曾偷食？ A.香花宝烛 B.蟠桃 C.金丹 D.人参果</div>
+            <div class="q-item">41. 凤仙郡干旱因郡侯？ A.推倒供桌 B.辱骂玉帝 C.杀生 D.贪赃枉法</div>
+            <div class="q-item">42. 玉华州盗兵器引出？ A.黄狮精 B.九头狮 C.白象精 D.大鹏雕</div>
+            <div class="q-item">43. 祭赛国佛宝被谁盗？ A.九头虫 B.万圣龙王 C.奔波儿灞 D.灞波儿奔</div>
+            <div class="q-item">44. 唐僧师徒历经多少难？ A.八十一难 B.七十二难 C.九十九难 D.一百零八难</div>
+            <div class="q-item">45. 阿难、伽叶索要？ A.人事 B.袈裟 C.锡杖 D.紫金钵</div>
+            <div class="q-item">46. 唐僧被封为？ A.旃檀功德佛 B.斗战胜佛 C.净坛使者 D.金身罗汉</div>
+            <div class="q-item">47. 悟空被封为？ A.斗战胜佛 B.旃檀功德佛 C.净坛使者 D.八部天龙</div>
+            <div class="q-item">48. 八戒被封为？ A.净坛使者 B.金身罗汉 C.八部天龙 D.斗战胜佛</div>
+            <div class="q-item">49. 沙僧被封为？ A.金身罗汉 B.净坛使者 C.八部天龙 D.斗战胜佛</div>
+            <div class="q-item">50. 白龙马被封为？ A.八部天龙广力菩萨 B.净坛使者 C.金身罗汉 D.斗战胜佛</div>
+        </div>
+        <div class="print-footer">本页为第26-50题 | 选择题共50题</div>
+        <div class="page-number">—— 第2页 / 共2页（背面）——</div>
+    </div>
+</div>
+</body>

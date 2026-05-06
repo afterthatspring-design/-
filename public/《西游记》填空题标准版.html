@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>《西游记》填空题专练 | 50空 正反面打印</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2ddce;
+            font-family: 'Times New Roman', '宋体', 'SimSun', 'Georgia', '华文楷书', 'KaiTi', serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* A4纸张 — 正反面各一页 */
+        .paper {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin: 20px auto;
+            padding: 1rem 1.3rem;
+        }
+
+        /* 分页：第一面（1-23题），第二面（24-50题） */
+        .page {
+            page-break-after: always;
+            break-after: page;
+        }
+        .page:last-child {
+            page-break-after: auto;
+            break-after: auto;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                padding: 0.8cm 1.2cm;
+                max-width: 100%;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 1.5cm 1.2cm;
+            }
+            .page {
+                page-break-after: always;
+                break-after: page;
+            }
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            h1 {
+                break-after: avoid;
+            }
+            .q-item {
+                break-inside: avoid;
+            }
+        }
+
+        /* 标题区域 — 紧凑（仅第一面显示完整标题） */
+        .main-title {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #c0a36b;
+            padding-bottom: 0.2rem;
+        }
+        h1 {
+            font-size: 1.7rem;
+            letter-spacing: 2px;
+            color: #b45f2b;
+            font-weight: 700;
+            margin-bottom: 0.05rem;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6a5c47;
+            margin-top: 0.1rem;
+        }
+        .author-line {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #7a5a4a;
+            border-top: 1px dashed #e2d8c6;
+            padding-top: 0.2rem;
+            margin-top: 0.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        /* 题型标题（仅第一面） */
+        .part-title {
+            background: #e8e0cf;
+            padding: 0.25rem 0.8rem;
+            font-size: 1.15rem;
+            font-weight: bold;
+            border-left: 6px solid #b45f2b;
+            margin-bottom: 0.8rem;
+        }
+
+        /* 题目列表 — 行距适中 */
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 0.3rem;
+        }
+        .q-item {
+            background: #fefcf8;
+            border-bottom: 0.5px solid #e2d9cc;
+            padding: 0.1rem 0.2rem 0.1rem 0.6rem;
+            line-height: 1.45;
+            font-size: 0.87rem;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 70px;
+            border-bottom: 1.2px dotted #a5682c;
+            margin: 0 3px;
+            font-weight: 600;
+        }
+
+        .print-footer {
+            text-align: center;
+            font-size: 0.62rem;
+            margin-top: 0.8rem;
+            color: #bbaa8a;
+            border-top: 1px solid #ece1d1;
+            padding-top: 0.3rem;
+        }
+        .page-number {
+            text-align: center;
+            font-size: 0.62rem;
+            color: #9b8a74;
+            margin-top: 0.4rem;
+        }
+        /* 第二面隐藏标题的样式（无额外标题，直接从列表开始） */
+        .no-title {
+            margin-top: 0;
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <!-- ================= 第一面：填空题 第1-23题（带完整标题） ================= -->
+    <div class="page">
+        <div class="main-title">
+            <h1>《西游记》填空题专练</h1>
+            <div class="subhead">吴承恩 · 中国古代第一部浪漫主义长篇神魔小说 · 七年级必读名著</div>
+            <div class="author-line">锦水微澜教育工作室 黄国荣 编制</div>
+        </div>
+
+        <div class="part-title">📝 一、填空题（共50空·第一面 第1-23题）</div>
+        <div class="questions-list">
+            <div class="q-item">1. 《西游记》的作者是<span class="blank">__________</span>，号射阳山人，明代小说家。</div>
+            <div class="q-item">2. 孙悟空是从<span class="blank">__________</span>中诞生的，目运两道金光，惊动玉皇大帝。</div>
+            <div class="q-item">3. 孙悟空拜<span class="blank">__________</span>为师，学会了七十二变和<span class="blank">__________</span>。</div>
+            <div class="q-item">4. 孙悟空在东海龙宫得到的兵器是<span class="blank">__________</span>，重一万三千五百斤。</div>
+            <div class="q-item">5. 孙悟空被玉帝封为“弼马温”，因官职太小而反下天宫，自封<span class="blank">__________</span>。</div>
+            <div class="q-item">6. 孙悟空大闹天宫，与<span class="blank">__________</span>赌斗变化，最终被<span class="blank">__________</span>压在五行山下。</div>
+            <div class="q-item">7. 唐僧是如来佛祖弟子<span class="blank">__________</span>转世，法号玄奘，奉旨西天取经。</div>
+            <div class="q-item">8. 观音菩萨在长安点化唐僧，赐予他<span class="blank">__________</span>锦斓袈裟和<span class="blank">__________</span>。</div>
+            <div class="q-item">9. 唐僧在五行山下揭去<span class="blank">__________</span>，救出孙悟空，收他为大徒弟。</div>
+            <div class="q-item">10. 孙悟空戴上<span class="blank">__________</span>，从此受唐僧紧箍咒的约束。</div>
+            <div class="q-item">11. 猪八戒原本是天庭的<span class="blank">__________</span>，因调戏嫦娥被贬下凡间，错投猪胎。</div>
+            <div class="q-item">12. 唐僧在<span class="blank">__________</span>收猪八戒为徒，给他取名八戒。</div>
+            <div class="q-item">13. 沙悟净原是灵霄殿上的<span class="blank">__________</span>，因打碎琉璃盏被贬到流沙河。</div>
+            <div class="q-item">14. 唐僧在流沙河收沙僧为徒，沙僧使用的兵器是<span class="blank">__________</span>。</div>
+            <div class="q-item">15. 白龙马本是西海龙王之子，因纵火烧毁殿上明珠，被贬至<span class="blank">__________</span>，后化为唐僧坐骑。</div>
+            <div class="q-item">16. 取经第一难是<span class="blank">__________</span>，唐僧遭遇三个魔头——寅将军、熊山君、特处士。</div>
+            <div class="q-item">17. 孙悟空三打<span class="blank">__________</span>，因白骨精三次变化迷惑唐僧，被唐僧赶回花果山。</div>
+            <div class="q-item">18. 车迟国三位国师——虎力大仙、鹿力大仙、<span class="blank">__________</span>与孙悟空斗法，最终都被消灭。</div>
+            <div class="q-item">19. 在<span class="blank">__________</span>，孙悟空大战红孩儿，被三昧真火烧得几乎丧命。</div>
+            <div class="q-item">20. 红孩儿最终被观音菩萨收为<span class="blank">__________</span>，成为善财童子。</div>
+            <div class="q-item">21. 女儿国国王欲招唐僧为夫，孙悟空献计让唐僧假意<span class="blank">__________</span>，脱身西行。</div>
+            <div class="q-item">22. 真假美猴王一难中，假悟空是六耳猕猴所变，最终被如来佛祖识破，被<span class="blank">__________</span>打死。</div>
+            <div class="q-item">23. 在火焰山，孙悟空三调<span class="blank">__________</span>，先后与牛魔王、铁扇公主斗智斗勇。</div>
+        </div>
+        <div class="print-footer">本页为第1-23题 | 背面为第24-50题</div>
+        <div class="page-number">—— 第1页 / 共2页（正面）——</div>
+    </div>
+
+    <!-- ================= 第二面：填空题 第24-50题（无任何标题，直接从第24题开始） ================= -->
+    <div class="page">
+        <div class="questions-list" style="margin-top: 0;">
+            <div class="q-item">24. 铁扇公主的芭蕉扇能扇灭火焰山大火，扇子是从<span class="blank">__________</span>的嘴里得来。</div>
+            <div class="q-item">25. 牛魔王曾变为<span class="blank">__________</span>骗回芭蕉扇，后孙悟空与猪八戒合力将其降服。</div>
+            <div class="q-item">26. 盘丝洞的七个女妖原形是<span class="blank">__________</span>，唐僧被她们捉住欲蒸食。</div>
+            <div class="q-item">27. 黄花观的<span class="blank">__________</span>是蜈蚣精，用毒茶毒害唐僧师徒，被毗蓝婆菩萨降服。</div>
+            <div class="q-item">28. 比丘国国王听信妖言要用<span class="blank">__________</span>做药引，孙悟空救出婴儿并降伏国丈白鹿精。</div>
+            <div class="q-item">29. 孙悟空在狮驼岭与<span class="qlalank">__________</span>、白象精、大鹏雕三魔王斗法，大鹏雕是如来的舅舅。</div>
+            <div class="q-item">30. 隐雾山<span class="blank">__________</span>抓住唐僧，用“分瓣梅花计”骗走悟空，后被孙悟空除掉。</div>
+            <div class="q-item">31. 天竺国<span class="blank">__________</span>假扮公主，抛绣球招唐僧为婿，被孙悟空识破是玉兔精。</div>
+            <div class="q-item">32. 唐僧师徒在<span class="blank">__________</span>遭遇通天河灵感大王，后被观音菩萨收为金鱼。</div>
+            <div class="q-item">33. 金兜洞的独角兕大王是太上老君的坐骑<span class="blank">__________</span>，手持金刚琢难倒众神。</div>
+            <div class="q-item">34. 女儿国子母河的水喝了会<span class="blank">__________</span>，唐僧、八戒误饮后腹痛难忍。</div>
+            <div class="q-item">35. 孙悟空为救唐僧，到<span class="blank">__________</span>讨来落胎泉水，解了胎气。</div>
+            <div class="q-item">36. 朱紫国国王因金圣宫娘娘被<span class="blank">__________</span>抢走，三年忧思成疾，孙悟空治好了他的病。</div>
+            <div class="q-item">37. 赛太岁的法宝是紫金铃，原是太上老君<span class="blank">__________</span>的法器。</div>
+            <div class="q-item">38. 无底洞的金鼻白毛老鼠精曾偷食<span class="blank">__________</span>，化为人形，被李天王父子收服。</div>
+            <div class="q-item">39. 凤仙郡三年大旱的原因是郡侯<span class="blank">__________</span>，冒犯玉帝，孙悟空劝其行善得甘霖。</div>
+            <div class="q-item">40. 玉华州三位王子拜孙悟空、猪八戒、沙僧为师，他们的兵器被黄狮精盗走，引出<span class="blank">__________</span>之宴。</div>
+            <div class="q-item">41. 碧波潭万圣龙王驸马<span class="blank">__________</span>盗取祭赛国佛宝，被孙悟空与二郎神联手剿灭。</div>
+            <div class="q-item">42. 唐僧师徒历经<span class="blank">__________</span>难，最终抵达西天大雷音寺。</div>
+            <div class="q-item">43. 阿难、伽叶向唐僧索要人事，最后传<span class="blank">__________</span>经，经佛祖点化换取有字经书。</div>
+            <div class="q-item">44. 唐僧一行取回经书共五千零四十八卷，合<span class="blank">__________</span>之数。</div>
+            <div class="q-item">45. 唐僧被如来封为<span class="blank">__________</span>，孙悟空被封为斗战胜佛。</div>
+            <div class="q-item">46. 猪八戒被封为净坛使者，沙僧被封为<span class="blank">__________</span>。</div>
+            <div class="q-item">47. 白龙马被加封为<span class="blank">__________</span>菩萨，盘绕在山门擎天华表柱上。</div>
+            <div class="q-item">48. 《西游记》通过神话故事，深刻反映了明代<span class="blank">__________</span>社会的黑暗与不公。</div>
+            <div class="q-item">49. 小说塑造了孙悟空<span class="blank">__________</span>、机智勇敢、忠于师父的英雄形象。</div>
+            <div class="q-item">50. 《西游记》是中国古典<span class="blank">__________</span>四大名著之一，具有极高的文学价值。</div>
+        </div>
+        <div class="print-footer">本页为第24-50题 | 填空题共50空</div>
+        <div class="page-number">—— 第2页 / 共2页（背面）——</div>
+    </div>
+</div>
+</body>
