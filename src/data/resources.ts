@@ -74,7 +74,7 @@ export const RESOURCES_DATA = {
       icon: "⭐", 
       desc: "真实报道红色中国、讴歌革命精神",
       files: {
-        interpretation: "《红星照耀中国》深度解析标准版.html",
+        interpretation: "《红星照耀中国》深度解读标准版.html",
         choice: "《红星照耀中国》选择题.html",
         fillBlank: "《红星照耀中国》填空题标准版.html",
         shortAnswer: "《红星照耀中国》问答题.html"
